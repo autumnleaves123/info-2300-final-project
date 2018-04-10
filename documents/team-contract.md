@@ -15,13 +15,15 @@
 
     * Create a website that can easily be maintained by the client
     * Complete weekly milestones and final submission in a timely manner
+    * Put in the necessary time and effort needed to deliver a high quality product 
 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
 
+    * Be respectful
     * Effective communication
     * Getting work done in timely manner
-    * Delivering work that is of high quality
+    * Delivering high quality work
     * Equal distribution of work
 
 4. By what means and how frequently will we meet or communicate?
@@ -31,8 +33,8 @@
 
 5. How will we communicate and work with our client?
 
-    * Set up in-person meeting with client [meeting schedule for Friday April 13 2018]
-    * Email the rest of the communication
+    * Set up in-person meeting with client [meeting scheduled for Friday April 13 2018]
+    * Other communication will likely be through email
 
 6. What roles will we create? Include a description of exactly what each role is responsible for.
 
