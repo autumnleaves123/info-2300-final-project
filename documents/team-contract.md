@@ -13,8 +13,8 @@
 
 2. To what goals do we all commit?
 
-    * sustaining website
-    * do work in a timely manner
+    * Create a website that can easily be maintained by the client
+    * Complete weekly milestones and final submission in a timely manner
 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
@@ -26,8 +26,8 @@
 
 4. By what means and how frequently will we meet or communicate?
 
-    * communicate by WhatsApp
-    * plan on meeting up once every other week
+    * Group communication through email and WhatsApp
+    * We will meet to 
 
 5. How will we communicate and work with our client?
 
@@ -36,15 +36,17 @@
 
 6. What roles will we create? Include a description of exactly what each role is responsible for.
 
-    * user testing
-    * functionality
-    * design
-    * write-ups
+    * User Testing
+    * Functionality
+    * Design
+    * Write-ups
+    * We may assign 
 
 7. How will we hold ourselves and one another accountable? What (exactly) will we say to a team member who appears not to be contributing equally? To a team member who fails to deliver what was promised?
 
-    * politely talk to person to encourage them to carry their weight
-    * do more work later if you don't do the work you promised earlier
+    * Politely talk to person to encourage them to carry their weight
+    * Do more work later if you don't do the work you promised earlier
+    * If a team member consistently produces work of subpar quality or completely fails to deliver, we will not include their name on the project.
 
 8. What do we do when we disagree? What approach to conflict to we all agree to uphold?
 
@@ -56,6 +58,6 @@
 
 10. What else do we want to include in this contract? (Think about a *fun* clause... not everything is always about work! Sometimes you need to celebrate your accomplishments!)
 
-    * end of semester dinner
+    * End of semester dinner!
 
 
