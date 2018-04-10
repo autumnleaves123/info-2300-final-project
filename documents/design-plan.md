@@ -1,6 +1,6 @@
 # Project 4 - Design & Plan
 
-Your Team Name: [your team name]
+Your Team Name: Red Elephant
 
 ## Milestone 1, Part II: Client Selection
 
