@@ -4,11 +4,11 @@
 
 1. Team name or project name. Plus full name and NetID of each of your team members.
 
-    red-elephant
-    Autumn Watt (acw227)
-    Bethany Tang (bt293)
-    Hyun Seo (Lucy) Lee (hl566)
-    Derek Cheng (dsc252)
+    * Team name: Red Elephant
+    * Autumn Watt (acw227)
+    * Bethany Tang (bt293)
+    * Hyun Seo (Lucy) Lee (hl566)
+    * Derek Cheng (dsc252)
 
 
 2. To what goals do we all commit?
@@ -58,8 +58,4 @@
 
     * end of semester dinner
 
-## Using your Contract
 
-You are expected to follow your team contract. If you are having issues (e.g. conflicts) in your team, the first thing you should do is follow the contract. If the contract isn't working, then your team should revise it.
-
-If you cannot resolve your issue using the contract, you may reach out to the instructor via the <info2300-prof@cornell.edu> email. Be advised, that the first thing the instructor will ask you is, "did you try to resolve your issue with the contract?" The next question the instructor will ask you is, "what change did you make to your contract to resolve the issue?"
