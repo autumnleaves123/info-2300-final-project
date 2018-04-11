@@ -8,6 +8,10 @@ Your Team Name: Red Elephant
 
 [Tell us about your client. Who is your client? What kind of website do they want? What are their key goals?]
 
+  CUDAP --> sign language?
+  kind of website they want:
+  their key goals:
+
 [NOTE: If you are redesigning an existing website, give us the current URL and some screenshots of the current site. Tell us how you plan to update the site in a significant way that meets the final project requirements.]
 
 ## Milestone 1, Part III: Client Requirements
@@ -88,6 +92,8 @@ Example:
 ## Milestone 1, Part V: Additional Comments
 
 [If you feel like you haven't fully explained your design choices, or if you want to explain some other functions in your site (such as special design decisions that might not meet the final project requirements), you can use this space to justify your design choices or ask other questions about the project and process.]
+
+
 
 
 
