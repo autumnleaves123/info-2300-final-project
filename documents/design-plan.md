@@ -42,6 +42,7 @@ Example:
 ### Hosting Plan
 
 [What is your plan for hosting your client's website?]
+- We will not be hosting our website for the client, as stated by the requirements of this project. We have notified the client of this. 
 
 ### Client's Edits
 
