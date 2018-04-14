@@ -42,7 +42,8 @@ Example:
 ### Hosting Plan
 
 [What is your plan for hosting your client's website?]
-- We will not be hosting our website for the client, as stated by the requirements of this project. We have notified the client of this. 
+
+* We will not be hosting our website for the client, as stated by the requirements of this project. We have notified the client of this.
 
 ### Client's Edits
 
@@ -84,11 +85,15 @@ Example:
 
 [How large will the site be (approximate number of pages) and how many hours of work will be required to complete it?]
 
+* The site will contain 10 pages, but this number is subject to change. We estimate that the project will take approximately 150 hours to complete. This includes time for planning, designing, building, and testing the website with our client and target audience.
+
 ## Milestone 1, Part IV: Work Distribution
 
 [Describe how each of your responsibilities will be distributed among your group members.]
 
 [Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
+
+
 
 ## Milestone 1, Part V: Additional Comments
 
