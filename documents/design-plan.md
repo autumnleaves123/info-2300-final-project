@@ -41,12 +41,11 @@ Example:
 
 ### Hosting Plan
 
-[What is your plan for hosting your client's website?]
-- We will not be hosting our website for the client, as stated by the requirements of this project. We have notified the client of this. 
+- We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the website and they can host the website. We have notified the client of this.
 
 ### Client's Edits
 
-[Does the client need the ability to edit the site after the end of the semester? If **Yes**, tell us how you site fit your client's need. If **No**, write down N/A.]
+- Yes. We will implement different forms for changing/updating the content of the website for teh admins. For instance, our website would have a form for uploading different content on the feeds/announcement section in the home page (only visible/accessible by admins)
 
 ### Information Architecture, Content, and Navigation
 
@@ -70,15 +69,13 @@ Example:
 
 ### Interactivity
 
-[What interactive features will your site have? What PHP elements will you include?]
-
-[Much of this is up to you, however, implementing a login system is **required**. Logging in should not be required to view the site, however it must unlock extra functionality, e.g., admin functionality, comment posting, etc.]
-
-[Also, describe how the interactivity connects with the needs of the clients/target audience.]
+- We will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language. Such feature can help induce interest in potential club members and also to increase awareness of American Sign Language in people who view these photos.
+- We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
+- Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be a admin-only nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
 
 ### External Code
 
-[What libraries (e.g. editor.js, jQuery Cookie, Image Sliders, jQuery) are you planning to use for the site? What do you have to do to incorporate those libraries? How much of your own code will satisfy the project requirements?]
+We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
 
 ### Scale
 
