@@ -41,17 +41,11 @@ Example:
 
 ### Hosting Plan
 
-<<<<<<< HEAD
 - We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the website and they can host the website. We have notified the client of this.
-=======
-[What is your plan for hosting your client's website?]
-
-* We will not be hosting our website for the client, as stated by the requirements of this project. We have notified the client of this.
->>>>>>> ca35c1bda8589930170def4c67f5209d7eba89f5
 
 ### Client's Edits
 
-- Yes. We will implement different forms for changing/updating the content of the website for teh admins. For instance, our website would have a form for uploading different content on the feeds/announcement section in the home page (only visible/accessible by admins)
+- Yes. We will implement different forms for changing/updating the content of the website for the admins. For instance, our website would have a form for uploading different content on the feeds/announcement section in the home page (only visible/accessible by admins)
 
 ### Information Architecture, Content, and Navigation
 
