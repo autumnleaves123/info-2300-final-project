@@ -51,7 +51,7 @@ For the people who would want to learn more about the deaf community, they would
 
 Potential people who are interested in the club would probably use the website most during the beginning of semesters around club fest. They would also utilize the "sign up for the listserv" feature.
 
-Members of the club and alumni ould use the website as supplemental to the weekly emails that the program sends out. They would also use it to keep up with events.
+Members of the club and alumni could use the website as supplemental to the weekly emails that the program sends out. They would also use it to keep up with events.
 
 The officers would need to access the website from an admin portal to update content like officers, pictures, posts, and learning material.
 
