@@ -8,11 +8,36 @@ Your Team Name: Red Elephant
 
 [Tell us about your client. Who is your client? What kind of website do they want? What are their key goals?]
 
-  CUDAP --> sign language?
-  kind of website they want:
-  their key goals:
+Our client will be CUDAP, the Cornell University Deaf Awareness Project, which is a club under SAFC and the Public Service Center. CUDAP was created 7 years ago when there was an emergency situation in Ithaca and someone needed an interpreter, but there was none available. Then, a Cornell student stepped in who was not certified, and thus CUDAP was founded. CUDAP provides students with opportunities to learn about and participate in raising awareness concerning the issues facing the Deaf community through meetings, service trip, events, and incorporating ASL into the school-year curriculum at Cornell.
+
+The club part of this program involves general body meetings, where the members present a powerpoint of signs with a theme to increase awareness of ASL and teach popular songs in ASL and perform them, and they conduct workshops with different groups on campus. CUDAP just recently brought SA initiative 41 (establishing American Sign Language ASL classes to fulfill the foreign languages requirement at Cornell) to the Student Assembly and it passed unanimously!
+
+CUDAP would like a website that is user-friendly and promotes more interaction with their program for students, club members, and Ithaca residents by announcing events, teaching some basic signs, and providing contact information. One of their goals is to also have a website that can be updated easily with an admin feature so they don't have to code.
+
+These are ideas that CUDAP would like us to include:
+* about page *** need to have
+* meet the board page (contact info) *** need to have
+* gbody info, events
+* Increasing awareness, recruiting, getting more involved
+* Photo gallery  
+* Accessible to the community, not just the club
+* Feed maybe? Instead of announcements
+* Information page with links to different resources
+* A learning page for a crash-course of Sign Language → few common signs displayed for better User Experience
+
+The key goals of CUDAP are stated in their three-fold mission:
+1. Work to integrate the Deaf and hearing communities
+2. Work to provide an opportunity for students to learn about the Deaf community and American Sign Language (ASL) through meetings, service trips, and events, while educating the Cornell campus and the greater Ithaca community to facilitate a better understanding of the Deaf community.
+3. Aim to incorporate ASL into the school-year curriculum at Cornell University.
+
 
 [NOTE: If you are redesigning an existing website, give us the current URL and some screenshots of the current site. Tell us how you plan to update the site in a significant way that meets the final project requirements.]
+
+Existing website: http://orgsync.rso.cornell.edu/org/cudap/home
+
+Screenshot: ![](cudap_existing_website.jpg)
+
+Update the site: The website is currently run through OrgSync, which is a platform that limits user choices. We plan on redesigning the content of the website in a more eye-appealing manner. Also, we plan on restructuring the pages on the website and adding a "learning" page where CUDAP can control uploading a picture of a sign and it's meaning. The homepage will feature a feed where they can announce current happenings with the program or promote Deaf awareness in other ways. We will be making this website mobile-friendly and implementing a header instead. Lastly, we will be including a log-in feature for the admin to update existing board members, photo galleries, the homepage feed, and the learning page.
 
 ## Milestone 1, Part III: Client Requirements
 
@@ -20,9 +45,29 @@ Your Team Name: Red Elephant
 
 [Tell us about the potential audience for this website. How, when, and where would they interact with the website? Get as much detail as possible from the client to help you find representative users.]
 
+The potential audiences for this website will include anyone who wants to know about the deaf community & ASL experience, potential people interested in the club, people already involved with the club and are members, alumni of the program, officers of the club (admins), and Ithaca residents.
+
+For the people who would want to learn more about the deaf community, they would not necessarily have an affiliation with Cornell or want to be involved in the program, so they would use this website as an informative site.
+
+Potential people who are interested in the club would probably use the website most during the beginning of semesters around club fest. They would also utilize the "sign up for the listserv" feature.
+
+Members of the club and alumni could use the website as supplemental to the weekly emails that the program sends out. They would also use it to keep up with events.
+
+The officers would need to access the website from an admin portal to update content like officers, pictures, posts, and learning material.
+
+Ithaca residents would use this website year round for if they wanted to contact the club for some reason or become involved with events offered by the program.
+
 ### Purpose & Content
 
 [Tell us the purpose of the website and what it is all about.]
+
+The purpose of this website will be...
+* promoting CUDAP
+* promoting the deaf community and raising awareness
+* recruiting for their club
+* let members know about events and announcements
+
+CUDAP will be using the website to appeal to their target audiences and display information about what their program offers to increase awareness of the deaf community. For the information portion, there will be a page with pictures of members signing some basic ASL signs as a kind of "crash-course" and to stimulate interest in the club and the deaf movement. The events page will integrate a calendar so the audience can get involved if they choose. Additionally, the website will include the student involvement side (the club aspect) and explain what they do on campus, introduce their e-board, and show action pictures.
 
 ### Needs and Wants
 
