@@ -8,17 +8,23 @@ Your Team Name: Red Elephant
 
 [Tell us about your client. Who is your client? What kind of website do they want? What are their key goals?]
 
-  CUDAP --> sign language?
-  kind of website they want:
-  their key goals:
+Our client will be CUDAP, the Cornell University Deaf Awareness Project, which is a club under SAFC and the Public Service Center. CUDAP was created 7 years ago when there was an emergency situation in Ithaca and someone needed an interpreter, but there was none available. Then, a Cornell student stepped in who was not certified, and thus CUDAP was founded. CUDAP provides students with opportunities to learn about and participate in raising awareness concerning the issues facing the Deaf community through meetings, service trip, events, and incorporating ASL into the school-year curriculum at Cornell.
+
+CUDAP would like a website that is user-friendly and promotes more interaction with their program for students, club members, and Ithaca residents by announcing events, teaching some basic signs, and providing contact information. One of their goals is to also have a website that can be updated easily with an admin feature so they don't have to code.
 
 [NOTE: If you are redesigning an existing website, give us the current URL and some screenshots of the current site. Tell us how you plan to update the site in a significant way that meets the final project requirements.]
+
+Existing website: http://orgsync.rso.cornell.edu/org/cudap/home
+
+Screenshot: ![](cudap_existing_website.jpg)
 
 ## Milestone 1, Part III: Client Requirements
 
 ### Target Audience(s)
 
 [Tell us about the potential audience for this website. How, when, and where would they interact with the website? Get as much detail as possible from the client to help you find representative users.]
+
+T
 
 ### Purpose & Content
 
