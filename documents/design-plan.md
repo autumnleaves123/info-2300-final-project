@@ -73,7 +73,7 @@ CUDAP will be using the website to appeal to their target audiences and display 
 
 [Collect your client's and target audience's needs and wants for the website. Come up with several appropriate design ideas on how those needs may be met. In the **Memo** field, justify your ideas and add any additional comments you have. There is no specific number of needs required for this, but you need enough to do the job.]
 
-Example:
+[Example:
 * Needs/Wants #1
   * **Needs and Wants** (What does your client and audience need and want?)
     * Client wants to cater to people who speak different languages.
@@ -82,15 +82,58 @@ Example:
     * Use google translate to auto-translate the site on the fly.
   * **Memo** (Justify your decisions; additional notes.)
     * Creating multiple pages manually would require manual skills, effort and time that we do not have.
-    * Using auto-translate using Google-Translate API is an easier way to go. Plus, we would like to learn the Google Translate API.
+    * Using auto-translate using Google-Translate API is an easier way to go. Plus, we would like to learn the Google Translate API.]
+
+
+* Needs/Wants #1
+	* **Needs and Wants**
+		* Client is required to have an About page to satisfy requirements as an organization under the Public Services Center, and wants the flexibility to change this information
+	* **Design Ideas and Choices**
+		* Create an About page that describes the organization and its goals and initiatives
+		* Keep the structure of this page simple and allow webmaster to change the text in HTML if changes are needed
+		* Create an Update About Page with HTML form on the website which can only be accessed by members who can log in to the admin pages
+	* **Memo**
+		* We will allow the webmaster to make changes via an HTML form, but also leave instructions as to how changes in HTML can be made. The club has members well versed in programming languages, so maintaining the website should not be a difficult task
+
+
+* Needs/Wants #2
+	* **Needs and Wants**
+		* Client would like the ability to update the Meet the Board page for each new E-board
+	* **Design Ideas and Choices**
+		* Allow webmaster to make changes in HTML
+		* Create an Update E-board page as an admin page that can only be viewed members of the e-board. Provide an HTML form that allows users to delete existing members and another form for adding the new e-board (name, email, description, photo)
+	* **Memo**
+		* Both options are viable, but it is probably better to allow updates to be made on the admin pages for a more user-friendly interface, and to prevent code from being tampered with. We want to make this website self-sustaining so that even those unfamiliar with HTML/CSS/PHP have the ability to make changes when necessary
+
+
+* Needs/Wants #3
+	* **Needs and Wants**
+		* Client wants a learning page to share ASL resources with members and the general public
+	* **Design Ideas and Choices**
+		* Create a page and display links to different websites
+		* Create a photo gallery with different pictures of signs and allow users to hover over it/click on it to see its meaning
+	* **Memo**
+		* We think that the second option would be more effective because it is attention-grabbing and different from how websites usually present information
+		* We could still display relevant links at the bottom of the page for those who are interested in delving deeper
+
+
+* Needs/Wants #4
+	* **Needs and Wants**
+		* Client would like a calendar to list organization events on the website
+	* **Design Ideas and Choices**
+		* Embed a Google calendar onto one of the pages
+		* Create a list of events on one of the pages, providing date, time, and event details
+	* **Memo**
+		* We will likely embed the Google calendar in the version of the website that we submit to the client, but create a list of events for the website that we submit for class to satisfy project requirements
+
 
 ### Hosting Plan
 
-- We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the website and they can host the website. We have notified the client of this.
+We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the website and they can host the website. We have notified the client of this.
 
 ### Client's Edits
 
-- Yes. We will implement different forms for changing/updating the content of the website for the admins. For instance, our website would have a form for uploading different content on the feeds/announcement section in the home page (only visible/accessible by admins)
+Yes. We will implement different forms for changing/updating the content of the website for the admins. For instance, our website would have a form for uploading different content on the feeds/announcement section in the home page (only visible/accessible by admins)
 
 ### Information Architecture, Content, and Navigation
 
@@ -114,19 +157,21 @@ Example:
 
 ### Interactivity
 
-- We will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language. Such feature can help induce interest in potential club members and also to increase awareness of American Sign Language in people who view these photos.
-- We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
-- Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
+We will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language. Such feature can help induce interest in potential club members and also to increase awareness of American Sign Language in people who view these photos.
+
+We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
+
+Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
 
 ### External Code
 
-* We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
+We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
 
 ### Scale
 
 [How large will the site be (approximate number of pages) and how many hours of work will be required to complete it?]
 
-* The site will contain 10 pages, but this number is subject to change. We estimate that the project will take approximately 150 hours to complete. This includes time for planning, designing, building, and testing the website with our client and target audience.
+The site will contain 10 pages, but this number is subject to change. We estimate that the project will take approximately 150 hours to complete. This includes time for planning, designing, building, and testing the website with our client and target audience.
 
 ## Milestone 1, Part IV: Work Distribution
 
