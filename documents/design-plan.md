@@ -75,7 +75,7 @@ Example:
 
 ### External Code
 
-- We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
+* We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
 
 ### Scale
 
