@@ -192,20 +192,13 @@ In order to ensure a fair distribution of work and an equal learning experience 
 
 For instance, if Autumn is a strong designer, she will hold a larger proportion of design responsibilities than other team members, but will still have programming and testing responsibilities.
 
-Specific work distributions are listed below:
-
-
-
-[Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
+This section will be updated as we set more concrete tasks to complete.
 
 
 
 ## Milestone 1, Part V: Additional Comments
 
-[If you feel like you haven't fully explained your design choices, or if you want to explain some other functions in your site (such as special design decisions that might not meet the final project requirements), you can use this space to justify your design choices or ask other questions about the project and process.]
-
-
-
+CUDAP would like to have an events page on their website. Given that CUDAP already has a Google Calendar to keep track of their events, and that such functionality is already very effectively implemented by Google Calendar, the ideal way to implement the events page is to use the Google Calendar API. However, since this does not conform to the final project rules, we will be implementing two versions of the event page. One version will be a PHP implementation backed by an events table in our database. This will be submitted for the class. A second version will use the Google Calendar API, and this will be delivered to the client.
 
 
 ## Milestone 2, Part I: PHP Interactivity
