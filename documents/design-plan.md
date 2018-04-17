@@ -73,17 +73,6 @@ CUDAP will be using the website to appeal to their target audiences and display 
 
 [Collect your client's and target audience's needs and wants for the website. Come up with several appropriate design ideas on how those needs may be met. In the **Memo** field, justify your ideas and add any additional comments you have. There is no specific number of needs required for this, but you need enough to do the job.]
 
-[Example:
-* Needs/Wants #1
-  * **Needs and Wants** (What does your client and audience need and want?)
-    * Client wants to cater to people who speak different languages.
-  * **Design Ideas and Choices** (How will you meet those needs and wants?)
-    * Create web-pages manually in multiple languages.
-    * Use google translate to auto-translate the site on the fly.
-  * **Memo** (Justify your decisions; additional notes.)
-    * Creating multiple pages manually would require manual skills, effort and time that we do not have.
-    * Using auto-translate using Google-Translate API is an easier way to go. Plus, we would like to learn the Google Translate API.]
-
 
 * Needs/Wants #1
 	* **Needs and Wants**
@@ -141,19 +130,41 @@ Yes. We will implement different forms for changing/updating the content of the 
 
 [Note: As with the Needs and Wants table, there is no specific amount to write here. You simply need enough content to do the job.]
 
-Example:
 * Content #1
-  * **Main Navigation** (List your site's navigation here.)
-    * Portfolio
-  * **Sub-Categories** (List any sub-categories of under the main navigation.)
-    * Websites
-    * Mobile Apps
-    * Tablets
-  * **Content** (List all the content corresponding to main navigation and sub-categories.)
-    * *Portfolio*: list all the projects (as images) this client has worked on. When the image is hovered over, display a description of the project; add a search function to enable users search for specific projects;
-    * *Websites*: showcase all the websites designed by the client, with thumbnail images and a brief description for each design;
-    * *Mobile Apps*: showcase all the mobile apps designed by the client, with thumbnail images and a brief description for each design;
-    * *Tablets*: showcase all the tablet applications designed by the client, with thumbnail images and a brief description for each design;
+  * **Main Navigation**
+    * About
+  * **Sub-Categories**
+    * Meet the Board
+    * Initiatives
+      * Goal 1
+      * Goal 2, etc
+    * GBody Info
+  * **Content**
+    * *About*: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains information about the organization, its goals, and its initiatives. This information will be obtained from the client.
+    * *Meet the Board*: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client.
+    * *Initiatives*: The organization has a few major goals (project initiatives), and each one will have its own page describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. These pages will be displayed under an initiatives subcategory within the dropdown - initiatives itself will serve only as a category and not an actual page. The information for this page will be provided by the client.
+    * *GBody Info*: This page shall also be linked to via the dropdown menu. It should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
+
+  * Content #2
+    * **Main Navigation**
+      * Learning
+    * **Content**
+      * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+
+  * Content #3
+    * **Main Navigation**
+      * Events
+    * **Sub-Categories**
+      * Photos
+    * **Content**
+      * *Events*: This page shall contain information about the organization's upcoming events. The closest 5 events will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
+      * *Photos*: A link to this page will appear in a dropdown menu from the Events link. This page will contain a gallery and slideshow of photos taken during their events. These photos will be provided by the client.
+
+  * Content #4
+    * **Main Navigation**
+      * Contact
+    * **Content**
+      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It should also contain a contact form.
 
 ### Interactivity
 
@@ -175,7 +186,15 @@ The site will contain 10 pages, but this number is subject to change. We estimat
 
 ## Milestone 1, Part IV: Work Distribution
 
-[Describe how each of your responsibilities will be distributed among your group members.]
+Initial planning and preparation work has been equally divided between all team members.
+
+In order to ensure a fair distribution of work and an equal learning experience for all group members, we aim to distribute some design, front end development, back end development, and testing responsibilities to all team members. However, in order to most effectively leverage the specific skills of each team member, a larger proportion of the work distributed to each team member will be under a category that that person is skilled at.
+
+For instance, if Autumn is a strong designer, she will hold a larger proportion of design responsibilities than other team members, but will still have programming and testing responsibilities.
+
+Specific work distributions are listed below:
+
+
 
 [Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
 
