@@ -14,16 +14,17 @@ The club part of this program involves general body meetings, where the members 
 
 CUDAP would like a website that is user-friendly and promotes more interaction with their program for students, club members, and Ithaca residents by announcing events, teaching some basic signs, and providing contact information. One of their goals is to also have a website that can be updated easily with an admin feature so they don't have to code.
 
-These are ideas that CUDAP would like us to include:
-* about page *** need to have
-* meet the board page (contact info) *** need to have
-* gbody info, events
-* Increasing awareness, recruiting, getting more involved
-* Photo gallery  
-* Accessible to the community, not just the club
-* Feed maybe? Instead of announcements
-* Information page with links to different resources
-* A learning page for a crash-course of Sign Language → few common signs displayed for better User Experience
+These are some main ideas that CUDAP would like us to promote in our website:
+	- Increasing awareness, recruiting, getting more involved
+	- Accessible to the community, not just the club
+
+Some possible pages of our website:
+	- About page *** need to have ***
+	- Meet the Board page (contact info) *** need to have ***
+	- G-body info, events --> a NewsFeed maybe? Instead of an announcements page
+	- Photo gallery
+	- Information page with links to different resources
+	- A learning page for a crash-course of Sign Language → few common signs displayed for better User Experience
 
 The key goals of CUDAP are stated in their three-fold mission:
 1. Work to integrate the Deaf and hearing communities
@@ -38,6 +39,7 @@ Existing website: http://orgsync.rso.cornell.edu/org/cudap/home
 Screenshot: ![](cudap_existing_website.jpg)
 
 Update the site: The website is currently run through OrgSync, which is a platform that limits user choices. We plan on redesigning the content of the website in a more eye-appealing manner. Also, we plan on restructuring the pages on the website and adding a "learning" page where CUDAP can control uploading a picture of a sign and it's meaning. The homepage will feature a feed where they can announce current happenings with the program or promote Deaf awareness in other ways. We will be making this website mobile-friendly and implementing a header instead. Lastly, we will be including a log-in feature for the admin to update existing board members, photo galleries, the homepage feed, and the learning page.
+
 
 ## Milestone 1, Part III: Client Requirements
 
@@ -192,13 +194,20 @@ In order to ensure a fair distribution of work and an equal learning experience 
 
 For instance, if Autumn is a strong designer, she will hold a larger proportion of design responsibilities than other team members, but will still have programming and testing responsibilities.
 
-This section will be updated as we set more concrete tasks to complete.
+Specific work distributions are listed below:
+
+
+
+[Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
 
 
 
 ## Milestone 1, Part V: Additional Comments
 
-CUDAP would like to have an events page on their website. Given that CUDAP already has a Google Calendar to keep track of their events, and that such functionality is already very effectively implemented by Google Calendar, the ideal way to implement the events page is to use the Google Calendar API. However, since this does not conform to the final project rules, we will be implementing two versions of the event page. One version will be a PHP implementation backed by an events table in our database. This will be submitted for the class. A second version will use the Google Calendar API, and this will be delivered to the client.
+[If you feel like you haven't fully explained your design choices, or if you want to explain some other functions in your site (such as special design decisions that might not meet the final project requirements), you can use this space to justify your design choices or ask other questions about the project and process.]
+
+
+
 
 
 ## Milestone 2, Part I: PHP Interactivity
