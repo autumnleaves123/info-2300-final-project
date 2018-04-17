@@ -15,7 +15,7 @@
 
     * Create a website that can easily be maintained by the client
     * Complete weekly milestones and final submission in a timely manner
-    * Put in the necessary time and effort needed to deliver a high quality product 
+    * Put in the necessary time and effort needed to deliver a high quality product
 
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
@@ -48,21 +48,20 @@
 
     * Politely talk to person to encourage them to carry their weight
     * Team members will be assigned more work the following week if you do not deliver what they were assigned
-    * If a team member consistently produces work of subpar quality or completely fails to deliver, we will not include their name on the project.
+    * If a team member consistently produces work of subpar quality or completely fails to deliver, we will speak to a TA/the prof and not include their name on the project if poor behavior persists.
 
 8. What do we do when we disagree? What approach to conflict to we all agree to uphold?
 
     * [In this order]
     * Find a compromise or a democracy approach
     * Seek a fair opinion from someone outside the group
-    * Seek help from course assistances or professor 
-    
+    * Seek help from course assistants or professor
+
 9. What are our procedures for re-visiting this contract?
 
     * If something doesn't go as planned, any group member can revisit this contract 
+		* All group members will decide on a time to meet and update the contract
 
 10. What else do we want to include in this contract? (Think about a *fun* clause... not everything is always about work! Sometimes you need to celebrate your accomplishments!)
 
     * End of semester dinner!
-
-
