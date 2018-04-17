@@ -26,10 +26,10 @@ Note: Forgetting to commit, push, or check your assignment before the deadline i
 
 We affirm our awareness of the standards of the Cornell Code of Academic Integrity.
 
-Full Names:
-Net IDs:
+Full Names: Autumn Watt, Bethany Tang, Derek Cheng, Lucy Lee
+Net IDs: acw227, bt293, dsc252, hl556
 (Only include the names/NetIDs of team members who contributed to this milestone.)
 
-Date:
+Date: April 17 2018
 
 ---
