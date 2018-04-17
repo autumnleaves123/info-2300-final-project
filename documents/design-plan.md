@@ -196,6 +196,19 @@ For instance, if Autumn is a strong designer, she will hold a larger proportion 
 
 Specific work distributions are listed below:
 
+	Autumn - Talking with the client, learning page
+
+	Lucy - Forms, interactive component (slideshow, etc.)
+
+	Bethany - CSS, style/layout
+
+	Derek - Admin-specific features (hidden features, login, etc.)
+
+** These are our main responsibilities, but we will all work on the code and design distributively.
+
+- Log in feature implemented by certain time, most likely before end of April
+- We need to create databases first before we can get started working on the photo gallery and the learning page.
+- We will first need the basic  website before we do admin-specific hidden features with the log-in and hidden elements. 
 
 
 [Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
