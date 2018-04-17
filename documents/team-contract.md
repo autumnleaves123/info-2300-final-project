@@ -3,20 +3,17 @@
 **Your group contract/working agreement should include these elements. Feel free to add other terms, too.**
 
 1. Team name or project name. Plus full name and NetID of each of your team members.
-
     * Team name: Red Elephant
     * Autumn Watt (acw227)
     * Bethany Tang (bt293)
     * Hyun Seo (Lucy) Lee (hl566)
     * Derek Cheng (dsc252)
 
-
 2. To what goals do we all commit?
 
     * Create a website that can easily be maintained by the client
     * Complete weekly milestones and final submission in a timely manner
     * Put in the necessary time and effort needed to deliver a high quality product
-
 
 3. What are our “ground rules”? (Don't make an exhaustive list—stick with just a few.)
 
@@ -59,7 +56,7 @@
 
 9. What are our procedures for re-visiting this contract?
 
-    * If something doesn't go as planned, any group member can revisit this contract 
+    * If something doesn't go as planned, any group member can revisit this contract
 		* All group members will decide on a time to meet and update the contract
 
 10. What else do we want to include in this contract? (Think about a *fun* clause... not everything is always about work! Sometimes you need to celebrate your accomplishments!)
