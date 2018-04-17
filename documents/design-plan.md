@@ -6,8 +6,6 @@ Your Team Name: Red Elephant
 
 ### Client Description
 
-[Tell us about your client. Who is your client? What kind of website do they want? What are their key goals?]
-
 Our client will be CUDAP, the Cornell University Deaf Awareness Project, which is a club under SAFC and the Public Service Center. CUDAP was created 7 years ago when there was an emergency situation in Ithaca and someone needed an interpreter, but there was none available. Then, a Cornell student stepped in who was not certified, and thus CUDAP was founded. CUDAP provides students with opportunities to learn about and participate in raising awareness concerning the issues facing the Deaf community through meetings, service trip, events, and incorporating ASL into the school-year curriculum at Cornell.
 
 The club part of this program involves general body meetings, where the members present a powerpoint of signs with a theme to increase awareness of ASL and teach popular songs in ASL and perform them, and they conduct workshops with different groups on campus. CUDAP just recently brought SA initiative 41 (establishing American Sign Language ASL classes to fulfill the foreign languages requirement at Cornell) to the Student Assembly and it passed unanimously!
@@ -31,9 +29,6 @@ The key goals of CUDAP are stated in their three-fold mission:
 2. Work to provide an opportunity for students to learn about the Deaf community and American Sign Language (ASL) through meetings, service trips, and events, while educating the Cornell campus and the greater Ithaca community to facilitate a better understanding of the Deaf community.
 3. Aim to incorporate ASL into the school-year curriculum at Cornell University.
 
-
-[NOTE: If you are redesigning an existing website, give us the current URL and some screenshots of the current site. Tell us how you plan to update the site in a significant way that meets the final project requirements.]
-
 Existing website: http://orgsync.rso.cornell.edu/org/cudap/home
 
 Screenshot: ![](cudap_existing_website.jpg)
@@ -44,8 +39,6 @@ Update the site: The website is currently run through OrgSync, which is a platfo
 ## Milestone 1, Part III: Client Requirements
 
 ### Target Audience(s)
-
-[Tell us about the potential audience for this website. How, when, and where would they interact with the website? Get as much detail as possible from the client to help you find representative users.]
 
 The potential audiences for this website will include anyone who wants to know about the deaf community & ASL experience, potential people interested in the club, people already involved with the club and are members, alumni of the program, officers of the club (admins), and Ithaca residents.
 
@@ -61,8 +54,6 @@ Ithaca residents would use this website year round for if they wanted to contact
 
 ### Purpose & Content
 
-[Tell us the purpose of the website and what it is all about.]
-
 The purpose of this website will be...
 * promoting CUDAP
 * promoting the deaf community and raising awareness
@@ -72,9 +63,6 @@ The purpose of this website will be...
 CUDAP will be using the website to appeal to their target audiences and display information about what their program offers to increase awareness of the deaf community. For the information portion, there will be a page with pictures of members signing some basic ASL signs as a kind of "crash-course" and to stimulate interest in the club and the deaf movement. The events page will integrate a calendar so the audience can get involved if they choose. Additionally, the website will include the student involvement side (the club aspect) and explain what they do on campus, introduce their e-board, and show action pictures.
 
 ### Needs and Wants
-
-[Collect your client's and target audience's needs and wants for the website. Come up with several appropriate design ideas on how those needs may be met. In the **Memo** field, justify your ideas and add any additional comments you have. There is no specific number of needs required for this, but you need enough to do the job.]
-
 
 * Needs/Wants #1
 	* **Needs and Wants**
@@ -128,10 +116,6 @@ Yes. We will implement different forms for changing/updating the content of the 
 
 ### Information Architecture, Content, and Navigation
 
-[Lay out the plan for how you'll organize the site and which content will go where. Note any content (e.g., text, image) that you need to make/get from the client.]
-
-[Note: As with the Needs and Wants table, there is no specific amount to write here. You simply need enough content to do the job.]
-
 * Content #1
   * **Main Navigation**
     * About
@@ -182,8 +166,6 @@ We are planning to use jQuery, so that we can implement the slideshow mentioned 
 
 ### Scale
 
-[How large will the site be (approximate number of pages) and how many hours of work will be required to complete it?]
-
 The site will contain 10 pages, but this number is subject to change. We estimate that the project will take approximately 150 hours to complete. This includes time for planning, designing, building, and testing the website with our client and target audience.
 
 ## Milestone 1, Part IV: Work Distribution
@@ -194,33 +176,45 @@ In order to ensure a fair distribution of work and an equal learning experience 
 
 For instance, if Autumn is a strong designer, she will hold a larger proportion of design responsibilities than other team members, but will still have programming and testing responsibilities.
 
-Specific work distributions are listed below:
+Specific work distributions are listed below (subject to change):
 
-	Autumn - Talking with the client, learning page
+| Autumn | Lucy | Bethany | Derek |
+|----------------------------------------|------------------------------------------------|-------------------|--------------------------------------------------------|
+| Talking with the client, learning page | Forms, interactive component (slideshow, etc.) | CSS, style/layout | Admin-specific features (hidden features, login, etc.) |
 
-	Lucy - Forms, interactive component (slideshow, etc.)
-
-	Bethany - CSS, style/layout
-
-	Derek - Admin-specific features (hidden features, login, etc.)
-
-** These are our main responsibilities, but we will all work on the code and design distributively.
+*These are our main responsibilities, but we will all work on the code and design distributively.*
 
 - Log in feature implemented by certain time, most likely before end of April
 - We need to create databases first before we can get started working on the photo gallery and the learning page.
-- We will first need the basic  website before we do admin-specific hidden features with the log-in and hidden elements. 
+- We will first need the basic  website before we do admin-specific hidden features with the log-in and hidden elements.
 
+**Preliminary timeline (subject to change):**
 
-[Set internal deadlines. Determine your internal dependencies. Whose task needs to be completed first in order for another person's task to be relevant? Be specific in your task descriptions so that everyone knows what needs to be done and can track the progress effectively. Consider how much time will be needed to review and integrate each other's work. Most of all, make sure that tasks are balanced across the team.]
+| Deadline/Date | Action |
+|---------------|-----------------------------------------------------|
+| 4/17 | Milestone 1 submission |
+| 4/20 | Discuss preliminary sketches and database structure |
+| 4/23 | Review wireframes |
+| 4/24 | Milestone 2 submission |
+| 4/26 | Complete basic website structure |
+| 4/29 | Implement HTML page layouts and CSS |
+| 4/31 | Implement login system and add client content |
+| 5/1 | Milestone 3 submission |
+| 5/3 | Make presentation |
+| 5/4 | Milestone 4: present in lab |
+| 5/8 | Implement front-end dynamic features |
+| 5/12 | Implement back-end (admin) dynamic features |
+| 5/13 | Implement any extra features |
+| 5/15 | Review and bug test |
+| 5/16 | Milestone 5: final submission |
+
+This section will be updated as we set more concrete tasks to complete.
 
 
 
 ## Milestone 1, Part V: Additional Comments
 
-[If you feel like you haven't fully explained your design choices, or if you want to explain some other functions in your site (such as special design decisions that might not meet the final project requirements), you can use this space to justify your design choices or ask other questions about the project and process.]
-
-
-
+CUDAP would like to have an events page on their website. Given that CUDAP already has a Google Calendar to keep track of their events, and that such functionality is already very effectively implemented by Google Calendar, the ideal way to implement the events page is to use the Google Calendar API. However, since this does not conform to the final project rules, we will be implementing two versions of the event page. One version will be a PHP implementation backed by an events table in our database. This will be submitted for the class. A second version will use the Google Calendar API, and this will be delivered to the client.
 
 
 ## Milestone 2, Part I: PHP Interactivity
