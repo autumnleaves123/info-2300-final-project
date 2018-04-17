@@ -120,7 +120,7 @@ CUDAP will be using the website to appeal to their target audiences and display 
 
 ### Hosting Plan
 
-We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the website and they can host the website. We have notified the client of this.
+We will not be hosting our website for the client, as stated by the requirements of this project. But we can give them the files for the website and they can host the website. We have notified the client of this.
 
 ### Client's Edits
 
