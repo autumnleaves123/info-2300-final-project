@@ -236,13 +236,19 @@ Events: ![](sketches/events-calendar.jpg)
 
 [Tip: If you use card sorting for your navigation, show us that work by including a picture!]
 
-Example:
-* Products (top-level)
-  * Shoes (sub-page)
-  * Pants
-  * Shirts
-* Shopping Cart
+These will be the pages we are planning on
+* Home (top-level)
+* About
+  * Initiatives
+* Events
+  * Photos
+* Learn
+* Sign Choir
+* Meet the Board
+  * Admin Portal
 * Contact
+
+We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
 ### Wireframes
 
@@ -302,9 +308,18 @@ Task 3:
 
 [Describe the structure of your database. You may use words or a picture. A bulleted list is probably the simplest way to do this.]
 
-Table: movies
-* field 1: description...
-* field...
+Table: execboard
+* field 1: id - primary key (necessary?)
+* field 2: name - name of executive board member
+* field 3: position - position of member
+* field 4: major - major of student
+* field 5: classyear - year member is graduating
+* field 6: year - year started signing (can write a formula for how many years of experience from this number)
+
+Table: learn
+* field 1: sign - word being signed
+* field 2: background - blurb providing background for sign
+* field 3: image - file path of image showing this sign
 
 ### Database Queries
 
@@ -381,6 +396,8 @@ db = connect to db
 ## Milestone 5: Final Notes to the Graders
 
 [1. Give us three specific strengths of your site that sets it apart from the previous website of the client (if applicable) and/or from other websites. Think of this as your chance to argue for the things you did really well.]
+
+Design (looks bad now)
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 
