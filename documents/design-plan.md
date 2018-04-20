@@ -135,7 +135,8 @@ Yes. We will implement different forms for changing/updating the content of the 
     * **Main Navigation**
       * Learning
     * **Content**
-      * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+      * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+			* Events: This page will contain a table of events that are coming up.
 
   * Content #3
     * **Main Navigation**
@@ -155,7 +156,7 @@ We will implement a slideshow using Javascript, which the user can click arrows 
 
 We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
 
-Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
+Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.
 
 ### External Code
 
@@ -177,7 +178,7 @@ Specific work distributions are listed below (subject to change):
 
 | Autumn | Lucy | Bethany | Derek |
 |----------------------------------------|------------------------------------------------|-------------------|--------------------------------------------------------|
-| Talking with the client, learning page | Forms, interactive component (slideshow, etc.) | CSS, style/layout | Admin-specific features (hidden features, login, etc.) |
+| Talking with the client, understanding their goals; End goal: get necessary information | Organize/plan interactive components; End goal: Facilitate implementation of forms, interactive component (slideshow, etc.) as the entire team works on it | Give feedback on design; End goal: Suggest/outline overall style/layout, so the entire team can start discussing what works best | Plan admin-specific features; End goal: Keep track of these features (hidden features, login, etc.) so that the whole team can work on them efficiently |
 
 *These are our main responsibilities, but we will all work on the code and design distributively.*
 
@@ -217,22 +218,36 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 ## Milestone 2, Part I: PHP Interactivity
 
 [Describe here what you plan to do for your PHP Interactivity requirement.]
-* gallery?
-* feed with tags?
+
+As mentioned in milestone 1 plan, we will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language.
+
+Secondly, we will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc.
+Similar interactivity element will be used for the photo gallery page, where users can click on images to see only that image on the page and its description.
+
+Thirdly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
+
 
 ## Milestone 2, Part II: Sketches, Navigation & Wireframes
 
 ### Sketches
 
-[Insert your sketches here.]
+1. Home/Feed:
+![](sketches/home.jpg)
 
-About: ![](sketches/About_sketch.jpg)
+2. About: ![](sketches/about_sketch.jpg)
 
-Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
+3. Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
 
-Home/Feed: ![](sketches/home.jpg)
-Events: ![](sketches/events-calendar.jpg)
-Learning: ![](sketches/learn_sketch.jpeg)
+4. Sign Choir:
+*** sketch needed ***
+
+5. Photo Gallery: ![](sketches/gallery_sketch.JPG)
+
+6. Events: ![](sketches/events-calendar.jpg)
+
+7. Learning: ![](sketches/learn_sketch.jpeg)
+
+8. Contact: ![](sketches/contact_sketch.JPG)
 
 ### Navigation
 
@@ -242,13 +257,18 @@ Learning: ![](sketches/learn_sketch.jpeg)
 
 These will be the pages we are planning on
 * Home (top-level)
-* About - what is CUDAP?
-* Events
-  * Photos
-* Learn
-* Sign Choir
+* About
+  * What is CUDAP?
+	* Initiatives
 * Meet the Board
-* Contact - listserv form, contact form
+  * Admin Portal
+* Sign Choir
+	* G-body info
+	* Some photos
+* Events
+* Photo Gallery
+* Learning ASL (weekly updated)
+* Contact
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
@@ -256,7 +276,7 @@ We plan to implement a navigation menu that will be our header. However, when th
 
 [Insert your wireframes here.]
 
-Learning: ![](sketches/learn_wireframe.jpg)
+Learning: ![](sketches/learn_wireframe.jpeg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
@@ -353,7 +373,11 @@ Pseudocode for index.php...
 
 include init.php
 
-TODO
+include navigation.php, header.php, footer.php
+
+$current_page = "index";
+
+
 ```
 
 #### includes/init.php
@@ -365,9 +389,377 @@ messages = array to store messages for user (you may remove this)
 
 db = connect to db
 
+title variable
+
+pages array for navigation bar
+
+function add_message($message) {
+  global messages
+  array_push
+}
+
+function display_message() {
+  global messages
+  foreach (messages as message) {
+    echo it
+  }
+}
+
+// DB helper functions (you do not need to write this out since they are provided.)
+$db = open_or_init_sqlite_db("website.sqlite", "init/init.sql");
+
+For log in and log out: **We will include all the code from the demo from lecture**
+
+function check_login() {
+	global $db;
+	if (isset($_COOKIE["session"])) {
+		$session = $_COOKIE["session"];
+		$sql = "SELECT * FROM accounts WHERE session = :session_id;";
+		$params = array (
+			":session_id" => $session,
+		);
+		$records = exec_sql_query($db, $sql, $params)->fetchAll();
+		if ($records) {
+			$account = $records[0];
+			return $account["username"];
+		}
+	}
+	return NULL;
+	}
+
+function log_in($username, $password) {
+	global $db;
+	if ($username && $password) {
+
+		$db->beginTransaction();
+
+		$sql = "SELECT * FROM accounts WHERE username = :username;";
+		$params = array(
+			':username' => $username
+		);
+		$records = exec_sql_query($db, $sql, $params)->fetchAll();
+		if ($records) {
+			// Username is UNIQUE, so there should only be 1 record.
+			$account = $records[0];
+			if ($account['password'] == $password) {
+				// Generate session
+				// Warning: Not a secure method for generating a session id
+				// TODO: secure session
+				$session = uniqid();
+				$sql = "UPDATE accounts SET session = :session WHERE id = :user_id;";
+				$params = array (
+					":user_id" => $account['id'],
+					":session" => $session
+				);
+				$result = exec_sql_query($db, $sql, $params);
+				if ($result) {
+					// Success, session stored in DB
+					// Send this back to the client
+					setcookie("session", $session, time()+3600);
+					record_message("Logged in as $username");
+					return $username;
+				}
+			} else {
+				record_message("Invalid username or password.");
+			}
+		} else {
+			record_message("Invalid username or password.");
+		}
+		$db->commit();
+	} else {
+		record_message("No username or password given.");
+	}
+	return NULL;
+}
+
+function log_out() {
+	global $current_user;
+	global $db;
+	if ($current_user) {
+		$db->beginTransaction();
+		$sql = "UPDATE accounts SET session = :session WHERE username = :username;";
+		$params = array (
+			":username" => $current_user,
+			":session" => NULL
+		);
+		if (!exec_sql_query($db, $sql, $params)) {
+			record_message("log out failed.");
+		}
+		//
+		setcookie("session", "", time()-3600);
+		$current_user = NULL;
+		$db->commit();
+}
+}
+// Check if we should login the user
+if (isset($_POST['login'])) {
+	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+	$username = trim($username);
+	$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+	$current_user = log_in($username, $password);
+}
+// check if logged in
+$current_user = check_login();
 ...
 
 ```
+
+####  admin_only.php
+
+```
+
+log-in form for admins:
+  - push relevant messages (including errors) into $messages array (most of the code in init.php)
+
+if ($current_user) {
+  record_message("[Logged in as $current_user]");
+}
+
+display log-out form if admin is logged-in, display log-in form if admin is not logged-in
+
+```
+
+####  photo_gallery.php
+
+```
+include('includes/init.php');
+$current_page = "gallery";
+
+if ($current_user) {
+  record_message("[Logged in as $current_user]");
+}
+
+const IMAGE_UPLOADS_PATH = "uploads/images/";
+
+if (isset($_GET['image_id'])) {
+  $image_id = $_GET['image_id'];
+}
+
+//displaying all tags:
+
+$sql = "SELECT * FROM tags;";
+					$params = array();
+					$tags = exec_sql_query($db, $sql, $params);
+					if (isset($tags) && !empty($tags)) {
+						echo "<div class = 'break'></div>";
+						foreach($tags as $tag) {
+							$data = array(
+								'tag_id' => $tag['id'],
+								'tag_name' => $tag['name']
+							);
+							echo "<a class = 'tags' href = 'gallery.php?" . http_build_query($data) . "'>" . htmlspecialchars($tag['name']) . "</a>";
+						}
+					}
+
+$conduct_search = FALSE;
+
+if (isset($_GET['tag_id']) && isset($_GET['tag_name'])) {
+  $tag_id = $_GET['tag_id'];
+  $tag_name = $_GET['tag_name'];
+  $conduct_search = TRUE;
+}
+
+$viewallbutton = "";
+
+if (isset($_GET["viewall"])) {
+  $conduct_search = FALSE;
+}
+
+$sql = "SELECT images.id, images.file_name, images.file_ext FROM images INNER JOIN image_tag_map ON images.id = image_tag_map.image_id WHERE image_tag_map.tag_id = :tagid";
+        $params = array(':tagid' => $tag_id);
+
+        $viewallbutton = "<div class = 'break'></div>\n<form action = 'gallery.php' name = 'viewall' method = 'get'>\n<input name = 'viewall' type = 'submit' value = 'Back to All Images'/>\n</form>\n";
+
+//displaying all images:
+
+$sql = "SELECT * FROM images;";
+          $params = array();
+        }
+        $images = exec_sql_query($db, $sql, $params);
+        if (isset($images) && !empty($images)) {
+          foreach($images as $image) {
+            if (isset($image_id) && $image_id == $image['id']) {
+              echo "<div id = 'chosenimagebox'>\n";
+              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img id = 'chosenimage' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
+              if ($image['description']) {
+                echo "<p><strong>Description:</strong><br/>" . htmlspecialchars($image["description"]) . "</p>\n";
+              }
+              $sql = "SELECT tags.id, tags.name FROM tags INNER JOIN image_tag_map ON tags.id = image_tag_map.tag_id WHERE image_tag_map.image_id = :id_of_specified_image";
+              $params = array(':id_of_specified_image' => $image_id);
+              $tagsforimage = exec_sql_query($db, $sql, $params)->fetchAll();
+              echo "<p><strong>Tags:</strong><br/>";
+              if (!empty($tagsforimage)) {
+                if ($image['uploader'] && $current_user == $image['uploader']) {
+                  echo "</p>";
+                  foreach($tagsforimage as $tag) {
+                    echo "<form class='deletetagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "' method='post'>\n<input type='hidden' name='currentimagename' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='currentimageid' value='" . htmlspecialchars($image['id']) . "'/>\n";
+                    echo "<input type='hidden' name='idoftagtodelete' value='" . htmlspecialchars($tag['id']) . "'/>\n<input type='hidden' name='tagtodelete' value='" . htmlspecialchars($tag['name']) . "'/>\n'" . htmlspecialchars($tag['name']) . "' <button name='deletetag' type='submit'>Delete Tag</button>\n</form>";
+                  }
+                } else {
+                  foreach($tagsforimage as $tag) {
+                    echo "'" . htmlspecialchars($tag["name"]) . "'<br/>";
+                  }
+                  echo "</p>";
+                }
+              } else {
+                echo "<em>[No tags for this image.]</em></p>";
+              }
+              echo "<form id='addtagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox' method='post'>\n<input type='hidden' name='idofimagetoaddtag' value='" . htmlspecialchars($image['id']) . "'/>\n<input type='hidden' name='imagetoaddtag' value='" . htmlspecialchars($image['file_name']) . "'/>\n<strong>Add a Tag: </strong><input type='text' name='tagtoadd' required/>\n<button name='addtag' type='submit'>Add Tag</button>\n</form>";
+              echo "<p>\n<strong>Source:</strong><br/><span class = 'smallfont'><a href='" . htmlspecialchars($image['source']) . "'>" . htmlspecialchars($image["source"]) . "</a></span><br/></p>";
+              if ($image['uploader']) {
+                echo "<p>\n<strong>Uploader:</strong> " . htmlspecialchars($image['uploader']) . "</p>";
+                if ($current_user == $image['uploader']) {
+                  echo "\n<form id='deleteform' action='gallery.php' method='post'>\n<input type='hidden' name='imagetodelete' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='locationofimage' value='" . htmlspecialchars($image['id'] . "." . $image['file_ext']) . "'/>\n<input type='hidden' name='imageid' value='" . htmlspecialchars($image['id']) . "'/>\n<button name='delete' type='submit'>Delete Image</button>\n</form>";
+                }
+              } else {
+                echo "<p>\n<strong>Uploader:</strong> admin </p>";
+              }
+              echo "<p><a href='gallery.php#G3'>Return to normal view</a> <br/><br/></p>";
+              echo "\n</div>";
+            } else {
+              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img class = 'catalog' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
+            }
+          }
+        }
+        echo $viewallbutton;
+
+//These forms only displayed if admin is logged-in.
+
+if (isset($_POST['submitimage'])) {
+  $upload_info = $_FILES["image_file"];
+  $source = $_POST['source'];
+  $source = filter_var($source, FILTER_SANITIZE_STRING);
+  $source = trim($source);
+  $description = $_POST['description'];
+  $description = filter_var($description, FILTER_SANITIZE_STRING);
+  $description = trim($description);
+  if ($upload_info['error'] == UPLOAD_ERR_OK) {
+    $target_file = basename($_FILES["image_file"]["name"]);
+    $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+      array_push($messages, "[Error uploading your image.]");
+      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+    } else {
+      $sql = "INSERT INTO images (file_name, file_ext, description, source, uploader) VALUES (:target_file, :filetype, :description, :source, :uploader)";
+      $params = array(':target_file' => $target_file, ':filetype' => $filetype, ':description' => $description, ':source' => $source, ':uploader' => $current_user);
+      $records = exec_sql_query($db, $sql, $params);
+
+      $fileid = $db->lastInsertId("id");
+      $newfilename = "$fileid.$filetype";
+      $destination = IMAGE_UPLOADS_PATH . $newfilename;
+      if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
+          array_push($messages, "[The image ". htmlspecialchars($target_file) . " has been uploaded.]");
+          $description = NULL;
+          $source = NULL;
+      } else {
+          array_push($messages, "[Error uploading your image.]");
+      }
+    }
+  } else {
+    array_push($messages, "[Error uploading your image.]");
+    if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
+      if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+        array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+      } else {
+        array_push($messages, "[Image size too large.]");
+      }
+    }
+  }
+}
+
+if (isset($_POST['deletetag'])) {
+  $tagtodelete = filter_input(INPUT_POST,'tagtodelete', FILTER_SANITIZE_STRING);
+  $idoftagtodelete = filter_input(INPUT_POST,'idoftagtodelete', FILTER_SANITIZE_STRING);
+  $imageid = filter_input(INPUT_POST,'currentimageid', FILTER_SANITIZE_STRING);
+  $currentimagename = filter_input(INPUT_POST,'curcurrentimagename', FILTER_SANITIZE_STRING);
+  $sql2 = "DELETE FROM image_tag_map WHERE tag_id = :tagid AND image_id = :imageid";
+  $params2 = array(':tagid' => $idoftagtodelete, ':imageid' => $imageid);
+  $records2 = exec_sql_query($db, $sql2, $params2);
+  $sql = "SELECT * FROM image_tag_map WHERE tag_id = :tagid";
+  $params = array(':tagid' => $idoftagtodelete);
+  $records = exec_sql_query($db, $sql, $params)->fetchAll();
+  if (empty($records)) { //there are no images with this tag, so delete this tag from tags table
+    $sql = "DELETE FROM tags WHERE id = :tagid";
+    $params = array(':tagid' => $idoftagtodelete);
+    $records = exec_sql_query($db, $sql, $params);
+  }
+  array_push($messages, "[The tag '". htmlspecialchars($tagtodelete) . "' has been deleted from " . htmlspecialchars($currentimagename) . ".]");
+}
+
+if (isset($_POST['delete'])) {
+  $imagetodelete = filter_input(INPUT_POST,'imagetodelete', FILTER_SANITIZE_STRING);
+  $locationofimage = filter_input(INPUT_POST, 'locationofimage', FILTER_SANITIZE_STRING);
+  $imageid = filter_input(INPUT_POST,'imageid', FILTER_SANITIZE_STRING);
+  $sqltags = "SELECT tags.id, tags.name FROM tags INNER JOIN image_tag_map ON tags.id = image_tag_map.tag_id WHERE image_tag_map.image_id = :id_of_specified_image";
+  $paramstags = array(':id_of_specified_image' => $imageid);
+  $tagsforimage = exec_sql_query($db, $sqltags, $paramstags)->fetchAll();
+  $sql = "DELETE FROM images WHERE file_name = :imagetodelete";
+  $params = array(':imagetodelete' => $imagetodelete);
+  $records = exec_sql_query($db, $sql, $params);
+  $sql2 = "DELETE FROM image_tag_map WHERE image_id = :imageid";
+  $params2 = array(':imageid' => $imageid);
+  $records2 = exec_sql_query($db, $sql2, $params2);
+  foreach ($tagsforimage as $tag) {
+    $tagid = $tag['id'];
+    $sql = "SELECT * FROM image_tag_map WHERE tag_id = :tagid";
+    $params = array(':tagid' => $tagid);
+    $records = exec_sql_query($db, $sql, $params)->fetchAll();
+    if (empty($records)) { //there are no images with this tag, so delete this tag from tags table
+      $sql = "DELETE FROM tags WHERE id = :tagid";
+      $params = array(':tagid' => $tagid);
+      $records = exec_sql_query($db, $sql, $params);
+    }
+  }
+  unlink(IMAGE_UPLOADS_PATH . $locationofimage);
+  array_push($messages, "[The image ". htmlspecialchars($imagetodelete) . " has been deleted.]");
+}
+
+if (isset($_POST['addtag'])) {
+  $tagtoadd = $_POST['tagtoadd'];
+  $tagtoadd = filter_var($tagtoadd, FILTER_SANITIZE_STRING);
+  $tagtoadd = trim($tagtoadd);
+  $imagetoaddtag = $_POST['imagetoaddtag'];
+  $idofimagetoaddtag = $_POST['idofimagetoaddtag'];
+  $sql = "SELECT * FROM tags INNER JOIN image_tag_map ON tags.id = image_tag_map.tag_id WHERE image_tag_map.image_id = :id_of_specified_image AND LOWER(tags.name) = LOWER(:tagtoadd)";
+  $params = array(':id_of_specified_image' => $idofimagetoaddtag, ':tagtoadd' => $tagtoadd);
+  $tagsforthisimage = exec_sql_query($db, $sql, $params)->fetchAll();
+  if (empty($tagsforthisimage)) { //this image is not already tagged with this tag
+    $sql = "SELECT * FROM tags WHERE LOWER(name) = LOWER(:tagtoadd)";
+    $params = array(':tagtoadd' => $tagtoadd);
+    $records = exec_sql_query($db, $sql, $params)->fetchAll();
+    if (empty($records)) { //check if this tag already exists in tags table
+      //there is no tag with that name yet, so add it to tags table
+      $sql = "INSERT INTO tags (name) VALUES (:tagtoadd)";
+      $params = array(':tagtoadd' => $tagtoadd);
+      $executeinsert = exec_sql_query($db, $sql, $params);
+      $idofaddedtag = $db->lastInsertId('id');
+    } else { //there is already a tag with this name in tags table
+      //since tag names are unique, $records must return only 1 tag with this name
+      $idofaddedtag = $records[0]['id'];
+    }
+    //add this tag and image relationship to the image_tag_map table
+    $sql = "INSERT INTO image_tag_map (image_id, tag_id) VALUES (:image_id, :tag_id);";
+    $params = array(':image_id' => $idofimagetoaddtag, ':tag_id' => $idofaddedtag);
+    $executeinsert = exec_sql_query($db, $sql, $params);
+    array_push($messages, "[Tag '". htmlspecialchars($tagtoadd) . "' successfully added to image " . htmlspecialchars($imagetoaddtag) . ".]");
+  } else {
+    //this image already has this tag, don't add it and display an error message
+    array_push($messages, "[This image is already tagged as '". htmlspecialchars($tagtoadd) . "'.]");
+  }
+
+
+}
+
+```
+
+####  learning.php
+
+```
+
+//** include same thing as gallery.php, so perhaps all the pseudocode can be included in init.php instead. Then gallery.php and learning.php can both just include the init.php file to reduce code redundancy.
+
+```
+
 
 ## Milestone 2, Part VI: Additional Comments
 
