@@ -10,6 +10,7 @@ $current_page_id = "resources"; ?>
 </head>
 
 <body>
+  <?php include("includes/header.php"); ?>
 
 </body>
 </html>

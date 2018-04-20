@@ -10,6 +10,7 @@ $current_page_id = "signs"; ?>
 </head>
 
 <body>
+  <?php include("includes/header.php"); ?>
 
 </body>
 </html>
