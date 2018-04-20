@@ -232,7 +232,9 @@ Meet the Board: ![](Meettheboard_sketch.jpg)
 
 Home/Feed: ![](sketches/home.jpg)
 Events: ![](sketches/events-calendar.jpg)
-Learning: ![](sketches/learn_sketch.jpg)
+Gallery: ![](sketches/gallery_sketch.jpg)
+Learning: ![](sketches/learn_sketch.jpeg)
+Contact: ![](sketches/contact_sketch.jpg)
 
 ### Navigation
 
@@ -259,7 +261,7 @@ We plan to implement a navigation menu that will be our header. However, when th
 
 [Insert your wireframes here.]
 
-Learning: ![](sketches/learn_wireframe.jpg)
+Learning: ![](sketches/learn_wireframe.jpeg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
