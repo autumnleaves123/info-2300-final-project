@@ -295,30 +295,70 @@ Most of the executive board members and club members are female, so Abby would a
 
 [For each task, list the ideal set of actions that you would like your users to take when working towards the task.]
 
-Task 1: Abby is a
+Task 1: Suppose that we are in a new academic year, and Abby is an incoming board member of CUDAP. She wishes to update the profiles of the executive board members on the website.
 
-  1. [action 1...]
-  2. [action 2...]
-  3. ...
+  1. Type login.php in the browser
+  2. Type in username and password, then click Log In
+  3. Look at the sidebar on the left, and click to update Meet the Board page
+	4. Using the delete members form, delete all existing members
+	5. Using the add members form, complete information for each e-board member and submit
+	6. Check the Meet the Board page now to see that new e-board members have been updated
 
-Task 2:
+Task 2: Suppose that Abby is a freshman at Cornell. She stopped by CUDAP's booth at Club Fest and is interested in learning more about the Sign Choir meetings that the club holds every week.
 
-Task 3:
+	1. Type index.php (or rather the URL) in the browser
+	2. Click on Sign Choir in the nav bar
+	3. Peruse relevant information to learn about the club's activities
+
+Task 3: Suppose that Abby is a member of the club, and would like to check the time for practise this week.
+
+	1. Visit website
+	2. Click on Events
+	3. Access the calendar on the Events page to look up rehearsal time
 
 ### Cognitive Walkthrough
 
 [Perform a cognitive walkthrough using the GenderMag method for all of your Tasks. Use the GenderMag template in the <documents/gendermag-template.md> file.]
 
-#### Task 1 - Cognitive Walkthrough
+###### Task 1 - Cognitive Walkthrough
 
 [copy the GenderMag template here and conduct a cognitive walkthrough to evaluate your design (wireframes).]
 
 [You may need to add additional subgoals and/or actions for each task.]
 
-#### Task 2 - Cognitive Walkthrough
+**Task name: [name of task]**
+
+[Add as many subgoals as you needs]
+**Subgoal # [subgoal number] : [subgoal name]**
+	(e.g., "# 1 : Select the section of the document you want to print")
+
+  - Will [persona name] have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: [yes/maybe/no]
+    - Why? (Especially consider [persona name]'s Motivations/Strategies.)
+
+        [Tell us why..]
+
+[Add as many actions as you need...]
+**Action # [action number] : [action name]**
+	(e.g., "# 1 : Put the mouse at the beginning of the section you want to print")
+
+  - Will [persona name] know what to do at this step?
+    - Yes, maybe or no: [yes/maybe/no]
+    - Why? (Especially consider [persona name]'s Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+        [Tell us why...]
+
+  - If [persona name] does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: [yes/maybe/no]
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+        [Tell us why...]
 
 
-#### Task 3 - Cognitive Walkthrough
+###### Task 2 - Cognitive Walkthrough
+
+
+###### Task 3 - Cognitive Walkthrough
 
 
 ### Cognitive Walk-though Results
@@ -796,6 +836,10 @@ $sql = "SELECT * FROM images;";
 ## Milestone 2, Part VI: Additional Comments
 
 [Add any additional comments you have here.]
+
+We plan to create a login.php page that only E-board members will know about. They will have access to the username and password. Upon logging in, the user will be taken to an admin page that allows them to manage the content of the website. Please see admin.php wireframe for details.
+
+^ We were wondering if this is acceptable practice, or whether the login page for admin should be visible on the general website.
 
 
 ## Milestone 3: Updates
