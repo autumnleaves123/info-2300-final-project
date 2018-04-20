@@ -1,5 +1,5 @@
 <?php include('includes/init.php');
-$current_page_id = "meettheboard"; ?>
+$current_page_id = "about"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +10,7 @@ $current_page_id = "meettheboard"; ?>
 </head>
 
 <body>
+  <?php include("includes/header.php"); ?>
 
 </body>
 </html>

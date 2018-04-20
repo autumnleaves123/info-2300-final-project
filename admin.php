@@ -1,12 +1,12 @@
 <?php include('includes/init.php');
-$current_page_id = "events"; ?>
+$current_page_id = "admin"; ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
   <?php include('includes/head.php'); ?>
-  <title>Events</title>
+  <title>Admin</title>
 </head>
 
 <body>
