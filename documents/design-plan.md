@@ -156,7 +156,7 @@ We will implement a slideshow using Javascript, which the user can click arrows 
 
 We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
 
-Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.
+Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). ~~There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.~~ There will be a url given to the admins who can put that in the browser to get to the log-in form, and once they're logged in, they will be able to see an "Admin" page on the navigation bar, which will contain all the forms necessary to update content on the website. 
 
 ### External Code
 
@@ -256,18 +256,16 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 [Tip: If you use card sorting for your navigation, show us that work by including a picture!]
 
 These will be the pages we are planning on
-* Home (top-level)
+* Home (top-level, maybe not in nav bar)
 * About
-  * What is CUDAP?
-	* Initiatives
-* Meet the Board
-  * Admin Portal
-* Sign Choir
-	* G-body info
-	* Some photos
-* Events
-* Photo Gallery
-* Learning ASL (weekly updated)
+  * About CUDAP
+	* Meet the Board --> Admin Portal
+* Sign Choir - G-body info, some photos
+* Events - Google calendar, a makeshift calendar for class
+* Gallery
+* Learning (weekly updated)
+	* ASL signs
+	* Resources (powerpoints and links)
 * Contact
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
@@ -380,6 +378,37 @@ include init.php
 include navigation.php, header.php, footer.php
 
 $current_page = "index";
+
+slideshow --> on the side
+pseudocode written in Javascript:
+
+$(document).ready(function() {
+	// the array of images
+	// Image source: E.Motion executive board
+	var images = ["images/groupphoto.jpg", "images/groupphoto2.jpg", "images/groupphoto3.jpg"];
+
+	//Set the current image to image 0
+	$("#current_img").attr("src", images[0]);
+	var slideIndex = 0;
+	// When the left button is clicked:
+	document.getElementById("left").onclick = function() {
+		if (slideIndex == 0) {
+			slideIndex = images.length - 1
+			$("#current_img").attr("src", images[slideIndex]);
+		} else {
+			slideIndex -= 1;
+	    $("#current_img").attr("src", images[slideIndex]);
+		}
+	}
+	document.getElementById("right").onclick = function() {
+		if (slideIndex == (images.length - 1)) {
+			slideIndex = 0;
+			$("#current_img").attr("src", images[slideIndex]);
+		} else {
+			slideIndex += 1;
+		  $("#current_img").attr("src", images[slideIndex]);
+		}
+	}
 
 
 ```
@@ -521,112 +550,6 @@ if ($current_user) {
 
 display log-out form if admin is logged-in, display log-in form if admin is not logged-in
 
-```
-
-####  photo_gallery.php
-
-```
-include('includes/init.php');
-$current_page = "gallery";
-
-if ($current_user) {
-  record_message("[Logged in as $current_user]");
-}
-
-const IMAGE_UPLOADS_PATH = "uploads/images/";
-
-if (isset($_GET['image_id'])) {
-  $image_id = $_GET['image_id'];
-}
-
-//displaying all tags:
-
-$sql = "SELECT * FROM tags;";
-					$params = array();
-					$tags = exec_sql_query($db, $sql, $params);
-					if (isset($tags) && !empty($tags)) {
-						echo "<div class = 'break'></div>";
-						foreach($tags as $tag) {
-							$data = array(
-								'tag_id' => $tag['id'],
-								'tag_name' => $tag['name']
-							);
-							echo "<a class = 'tags' href = 'gallery.php?" . http_build_query($data) . "'>" . htmlspecialchars($tag['name']) . "</a>";
-						}
-					}
-
-$conduct_search = FALSE;
-
-if (isset($_GET['tag_id']) && isset($_GET['tag_name'])) {
-  $tag_id = $_GET['tag_id'];
-  $tag_name = $_GET['tag_name'];
-  $conduct_search = TRUE;
-}
-
-$viewallbutton = "";
-
-if (isset($_GET["viewall"])) {
-  $conduct_search = FALSE;
-}
-
-$sql = "SELECT images.id, images.file_name, images.file_ext FROM images INNER JOIN image_tag_map ON images.id = image_tag_map.image_id WHERE image_tag_map.tag_id = :tagid";
-        $params = array(':tagid' => $tag_id);
-
-        $viewallbutton = "<div class = 'break'></div>\n<form action = 'gallery.php' name = 'viewall' method = 'get'>\n<input name = 'viewall' type = 'submit' value = 'Back to All Images'/>\n</form>\n";
-
-//displaying all images:
-
-$sql = "SELECT * FROM images;";
-          $params = array();
-        }
-        $images = exec_sql_query($db, $sql, $params);
-        if (isset($images) && !empty($images)) {
-          foreach($images as $image) {
-            if (isset($image_id) && $image_id == $image['id']) {
-              echo "<div id = 'chosenimagebox'>\n";
-              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img id = 'chosenimage' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
-              if ($image['description']) {
-                echo "<p><strong>Description:</strong><br/>" . htmlspecialchars($image["description"]) . "</p>\n";
-              }
-              $sql = "SELECT tags.id, tags.name FROM tags INNER JOIN image_tag_map ON tags.id = image_tag_map.tag_id WHERE image_tag_map.image_id = :id_of_specified_image";
-              $params = array(':id_of_specified_image' => $image_id);
-              $tagsforimage = exec_sql_query($db, $sql, $params)->fetchAll();
-              echo "<p><strong>Tags:</strong><br/>";
-              if (!empty($tagsforimage)) {
-                if ($image['uploader'] && $current_user == $image['uploader']) {
-                  echo "</p>";
-                  foreach($tagsforimage as $tag) {
-                    echo "<form class='deletetagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "' method='post'>\n<input type='hidden' name='currentimagename' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='currentimageid' value='" . htmlspecialchars($image['id']) . "'/>\n";
-                    echo "<input type='hidden' name='idoftagtodelete' value='" . htmlspecialchars($tag['id']) . "'/>\n<input type='hidden' name='tagtodelete' value='" . htmlspecialchars($tag['name']) . "'/>\n'" . htmlspecialchars($tag['name']) . "' <button name='deletetag' type='submit'>Delete Tag</button>\n</form>";
-                  }
-                } else {
-                  foreach($tagsforimage as $tag) {
-                    echo "'" . htmlspecialchars($tag["name"]) . "'<br/>";
-                  }
-                  echo "</p>";
-                }
-              } else {
-                echo "<em>[No tags for this image.]</em></p>";
-              }
-              echo "<form id='addtagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox' method='post'>\n<input type='hidden' name='idofimagetoaddtag' value='" . htmlspecialchars($image['id']) . "'/>\n<input type='hidden' name='imagetoaddtag' value='" . htmlspecialchars($image['file_name']) . "'/>\n<strong>Add a Tag: </strong><input type='text' name='tagtoadd' required/>\n<button name='addtag' type='submit'>Add Tag</button>\n</form>";
-              echo "<p>\n<strong>Source:</strong><br/><span class = 'smallfont'><a href='" . htmlspecialchars($image['source']) . "'>" . htmlspecialchars($image["source"]) . "</a></span><br/></p>";
-              if ($image['uploader']) {
-                echo "<p>\n<strong>Uploader:</strong> " . htmlspecialchars($image['uploader']) . "</p>";
-                if ($current_user == $image['uploader']) {
-                  echo "\n<form id='deleteform' action='gallery.php' method='post'>\n<input type='hidden' name='imagetodelete' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='locationofimage' value='" . htmlspecialchars($image['id'] . "." . $image['file_ext']) . "'/>\n<input type='hidden' name='imageid' value='" . htmlspecialchars($image['id']) . "'/>\n<button name='delete' type='submit'>Delete Image</button>\n</form>";
-                }
-              } else {
-                echo "<p>\n<strong>Uploader:</strong> admin </p>";
-              }
-              echo "<p><a href='gallery.php#G3'>Return to normal view</a> <br/><br/></p>";
-              echo "\n</div>";
-            } else {
-              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img class = 'catalog' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
-            }
-          }
-        }
-        echo $viewallbutton;
-
 //These forms only displayed if admin is logged-in.
 
 if (isset($_POST['submitimage'])) {
@@ -756,11 +679,118 @@ if (isset($_POST['addtag'])) {
 
 ```
 
+####  photo_gallery.php
+
+```
+include('includes/init.php');
+$current_page = "gallery";
+
+if ($current_user) {
+  record_message("[Logged in as $current_user]");
+}
+
+const IMAGE_UPLOADS_PATH = "uploads/images/";
+
+if (isset($_GET['image_id'])) {
+  $image_id = $_GET['image_id'];
+}
+
+//displaying all tags:
+
+$sql = "SELECT * FROM tags;";
+					$params = array();
+					$tags = exec_sql_query($db, $sql, $params);
+					if (isset($tags) && !empty($tags)) {
+						echo "<div class = 'break'></div>";
+						foreach($tags as $tag) {
+							$data = array(
+								'tag_id' => $tag['id'],
+								'tag_name' => $tag['name']
+							);
+							echo "<a class = 'tags' href = 'gallery.php?" . http_build_query($data) . "'>" . htmlspecialchars($tag['name']) . "</a>";
+						}
+					}
+
+$conduct_search = FALSE;
+
+if (isset($_GET['tag_id']) && isset($_GET['tag_name'])) {
+  $tag_id = $_GET['tag_id'];
+  $tag_name = $_GET['tag_name'];
+  $conduct_search = TRUE;
+}
+
+$viewallbutton = "";
+
+if (isset($_GET["viewall"])) {
+  $conduct_search = FALSE;
+}
+
+$sql = "SELECT images.id, images.file_name, images.file_ext FROM images INNER JOIN image_tag_map ON images.id = image_tag_map.image_id WHERE image_tag_map.tag_id = :tagid";
+        $params = array(':tagid' => $tag_id);
+
+        $viewallbutton = "<div class = 'break'></div>\n<form action = 'gallery.php' name = 'viewall' method = 'get'>\n<input name = 'viewall' type = 'submit' value = 'Back to All Images'/>\n</form>\n";
+
+//displaying all images:
+
+$sql = "SELECT * FROM images;";
+          $params = array();
+        }
+        $images = exec_sql_query($db, $sql, $params);
+        if (isset($images) && !empty($images)) {
+          foreach($images as $image) {
+            if (isset($image_id) && $image_id == $image['id']) {
+              echo "<div id = 'chosenimagebox'>\n";
+              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img id = 'chosenimage' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
+              if ($image['description']) {
+                echo "<p><strong>Description:</strong><br/>" . htmlspecialchars($image["description"]) . "</p>\n";
+              }
+              $sql = "SELECT tags.id, tags.name FROM tags INNER JOIN image_tag_map ON tags.id = image_tag_map.tag_id WHERE image_tag_map.image_id = :id_of_specified_image";
+              $params = array(':id_of_specified_image' => $image_id);
+              $tagsforimage = exec_sql_query($db, $sql, $params)->fetchAll();
+              echo "<p><strong>Tags:</strong><br/>";
+              if (!empty($tagsforimage)) {
+                if ($image['uploader'] && $current_user == $image['uploader']) {
+                  echo "</p>";
+                  foreach($tagsforimage as $tag) {
+                    echo "<form class='deletetagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "' method='post'>\n<input type='hidden' name='currentimagename' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='currentimageid' value='" . htmlspecialchars($image['id']) . "'/>\n";
+                    echo "<input type='hidden' name='idoftagtodelete' value='" . htmlspecialchars($tag['id']) . "'/>\n<input type='hidden' name='tagtodelete' value='" . htmlspecialchars($tag['name']) . "'/>\n'" . htmlspecialchars($tag['name']) . "' <button name='deletetag' type='submit'>Delete Tag</button>\n</form>";
+                  }
+                } else {
+                  foreach($tagsforimage as $tag) {
+                    echo "'" . htmlspecialchars($tag["name"]) . "'<br/>";
+                  }
+                  echo "</p>";
+                }
+              } else {
+                echo "<em>[No tags for this image.]</em></p>";
+              }
+              echo "<form id='addtagform' action='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox' method='post'>\n<input type='hidden' name='idofimagetoaddtag' value='" . htmlspecialchars($image['id']) . "'/>\n<input type='hidden' name='imagetoaddtag' value='" . htmlspecialchars($image['file_name']) . "'/>\n<strong>Add a Tag: </strong><input type='text' name='tagtoadd' required/>\n<button name='addtag' type='submit'>Add Tag</button>\n</form>";
+              echo "<p>\n<strong>Source:</strong><br/><span class = 'smallfont'><a href='" . htmlspecialchars($image['source']) . "'>" . htmlspecialchars($image["source"]) . "</a></span><br/></p>";
+              if ($image['uploader']) {
+                echo "<p>\n<strong>Uploader:</strong> " . htmlspecialchars($image['uploader']) . "</p>";
+                if ($current_user == $image['uploader']) {
+                  echo "\n<form id='deleteform' action='gallery.php' method='post'>\n<input type='hidden' name='imagetodelete' value='" . htmlspecialchars($image['file_name']) . "'/>\n<input type='hidden' name='locationofimage' value='" . htmlspecialchars($image['id'] . "." . $image['file_ext']) . "'/>\n<input type='hidden' name='imageid' value='" . htmlspecialchars($image['id']) . "'/>\n<button name='delete' type='submit'>Delete Image</button>\n</form>";
+                }
+              } else {
+                echo "<p>\n<strong>Uploader:</strong> admin </p>";
+              }
+              echo "<p><a href='gallery.php#G3'>Return to normal view</a> <br/><br/></p>";
+              echo "\n</div>";
+            } else {
+              echo "<a href='gallery.php?image_id=" . htmlspecialchars($image["id"]) . "#chosenimagebox'>\n<img class = 'catalog' alt='" . htmlspecialchars($image["file_name"]) . "' src='uploads/images/" . htmlspecialchars($image["id"]) . "." . htmlspecialchars($image["file_ext"]) . "'/>\n</a>";
+            }
+          }
+        }
+        echo $viewallbutton;
+
+
+```
+
 ####  learning.php
 
 ```
 
-//** include same thing as gallery.php, so perhaps all the pseudocode can be included in init.php instead. Then gallery.php and learning.php can both just include the init.php file to reduce code redundancy. 
+//** include same thing as gallery.php, so perhaps all the pseudocode can be included in init.php instead. Then gallery.php and learning.php can both just include the init.php file to reduce code redundancy.
 
 ```
 
