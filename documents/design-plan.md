@@ -135,12 +135,7 @@ Yes. We will implement different forms for changing/updating the content of the 
     * **Main Navigation**
       * Learning
     * **Content**
-<<<<<<< HEAD
-      * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
-			* Events: This page will contain a table of events that are coming up.
-=======
       * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
->>>>>>> 4899fc03cf3ee979d8771fc73d88c3b761bc4c6a
 
   * Content #3
     * **Main Navigation**
@@ -229,19 +224,15 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 ### Sketches
 
-About: ![](sketches/about_sketch.jpg)
+[Insert your sketches here.]
 
-Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
+About: ![](About_sketch.jpg)
+
+Meet the Board: ![](Meettheboard_sketch.jpg)
 
 Home/Feed: ![](sketches/home.jpg)
-
-Gallery: ![](sketches/gallery_sketch.JPG)
-
 Events: ![](sketches/events-calendar.jpg)
-
 Learning: ![](sketches/learn_sketch.jpeg)
-
-Contact: ![](sketches/contact_sketch.JPG)
 
 ### Navigation
 
@@ -251,16 +242,13 @@ Contact: ![](sketches/contact_sketch.JPG)
 
 These will be the pages we are planning on
 * Home (top-level)
-* About
-  * What is CUDAP?
-	* Initiatives
+* About - what is CUDAP?
 * Events
-* Photos
+  * Photos
 * Learn
 * Sign Choir
 * Meet the Board
-  * Admin Portal
-* Contact
+* Contact - listserv form, contact form
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
@@ -338,10 +326,6 @@ Table: learn
 * field 2: sign - word being signed
 * field 3: background - blurb providing background for sign
 * field 4: image - file path of image showing this sign
-
-photo Gallery
-
-feed gallery
 
 
 ### Database Queries
