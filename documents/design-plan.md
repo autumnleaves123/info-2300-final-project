@@ -137,6 +137,7 @@ Yes. We will implement different forms for changing/updating the content of the 
 			* Events
     * **Content**
       * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+			* Events: This page will contain a table of events that are coming up.
 
   * Content #3
     * **Main Navigation**
@@ -245,7 +246,7 @@ These will be the pages we are planning on
 * Home (top-level)
 * About - what is CUDAP?
 * Events
-  * Photos
+* Photos
 * Learn
 * Sign Choir
 * Meet the Board
@@ -328,6 +329,9 @@ Table: learn
 * field 3: background - blurb providing background for sign
 * field 4: image - file path of image showing this sign
 
+photo Gallery
+
+feed gallery
 
 
 ### Database Queries
