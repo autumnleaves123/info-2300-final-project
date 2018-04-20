@@ -242,16 +242,13 @@ Learning: ![](sketches/learn_sketch.jpeg)
 
 These will be the pages we are planning on
 * Home (top-level)
-* About
-  * What is CUDAP?
-	* Initiatives
+* About - what is CUDAP?
 * Events
   * Photos
 * Learn
 * Sign Choir
 * Meet the Board
-  * Admin Portal
-* Contact
+* Contact - listserv form, contact form
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
