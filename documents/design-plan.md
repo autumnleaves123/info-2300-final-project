@@ -156,7 +156,7 @@ We will implement a slideshow using Javascript, which the user can click arrows 
 
 We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
 
-Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). ~~There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.~~ There will be a url given to the admins who can put that in the browser to get to the log-in form, and once they're logged in, they will be able to see an "Admin" page on the navigation bar, which will contain all the forms necessary to update content on the website. 
+Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). ~~There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.~~ **Update (M2): there will be a url provided to e-board/admins who can put that in the browser to get to the log-in form, and once they're logged in, they will be able to see an "Admin" page on the navigation bar, which will contain all the forms necessary to update content on the website.**
 
 ### External Code
 
@@ -231,8 +231,7 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 
 ### Sketches
 
-1. Home/Feed:
-![](sketches/home.jpg)
+1. Home/Feed: ![](sketches/home.jpg)
 
 2. About: ![](sketches/about_sketch.jpg)
 
@@ -249,6 +248,7 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 
 8. Contact: ![](sketches/contact_sketch.JPG)
 
+
 ### Navigation
 
 [What will be your top-level pages and your sub-pages for those top-level pages? What will your website's navigational structure?]
@@ -259,13 +259,13 @@ These will be the pages we are planning on
 * Home (top-level, maybe not in nav bar)
 * About
   * About CUDAP
-	* Meet the Board --> Admin Portal
+	* Meet the Board
 * Sign Choir - G-body info, some photos
 * Events - Google calendar, a makeshift calendar for class
-* Gallery
-* Learning (weekly updated)
-	* ASL signs
-	* Resources (powerpoints and links)
+* Gallery - photos of past events
+* Learning (weekly updated??)
+	* ASL signs page
+	* Resources (PowerPoints and links)
 * Contact
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
@@ -280,11 +280,14 @@ Learning: ![](sketches/learn_wireframe.jpeg)
 
 [Use the GenderMag method to evaluate your wireframes.]
 
-[Pick a persona that you believe will help you address the gender bias within your design.]
+[Pick a persona that you believe will help you address the gender bias within your design. Tell us why you picked your persona in 1-3 sentences. Your explanation should include why your persona will help you address gender-inclusiveness bugs in your design.]
 
-I've selected **[Abby/Patricia/Patrick/Tim]** as my persona.
+We've selected **Abby** as our persona. She is suitable because our website has a wide range of audiences, from those who feel more comfortable using technology and enjoy learning by tinkering, to those who prefer perusing static webpages to access the information that they need.
 
-I've selected my persona because... [Tell us why you picked your persona in 1-3 sentences. Your explanation should include why your persona will help you address gender-inclusiveness bugs in your design.]
+Abby represents users who already have some familiarity with using technology to accomplish tasks, but has low confidence about doing unfamiliar computing tasks, and is risk averse about using unfamiliar technologies that might need her to spend extra time on them. We want to design our webpage so that it is easily accessible to such a group of users, by focusing on presenting information in a well-structured manner, and creating tools (mainly forms) that are consistent across the website and follow the same methodical steps.
+
+Most of the executive board members and club members are female, so Abby would also be representative of the major users of the website. We will design our website with Abby in mind to help address gender-inclusiveness bugs in our design.
+
 
 ### Tasks
 
@@ -292,7 +295,7 @@ I've selected my persona because... [Tell us why you picked your persona in 1-3 
 
 [For each task, list the ideal set of actions that you would like your users to take when working towards the task.]
 
-Task 1: [describe your task]
+Task 1: Abby is a
 
   1. [action 1...]
   2. [action 2...]
@@ -323,6 +326,7 @@ Task 3:
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
 [Your responses here should be very thorough and thoughtful.]
+
 
 ## Milestone 2, Part IV: Database Plan
 
@@ -405,8 +409,6 @@ $(document).ready(function() {
 		  $("#current_img").attr("src", images[slideIndex]);
 		}
 	}
-
-
 ```
 
 #### includes/init.php
