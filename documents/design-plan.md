@@ -226,9 +226,9 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 [Insert your sketches here.]
 
-About: ![](About_sketch.jpg)
+About: ![](sketches/About_sketch.jpg)
 
-Meet the Board: ![](Meettheboard_sketch.jpg)
+Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
 
 Home/Feed: ![](sketches/home.jpg)
 Events: ![](sketches/events-calendar.jpg)
