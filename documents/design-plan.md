@@ -119,16 +119,15 @@ Yes. We will implement different forms for changing/updating the content of the 
 * Content #1
   * **Main Navigation**
     * About
+			* Initiatives
+      	* Goal 1
+      	* Goal 2, etc
   * **Sub-Categories**
-    * Meet the Board
-    * Initiatives
-      * Goal 1
-      * Goal 2, etc
+    * Meet the
     * GBody Info
   * **Content**
     * *About*: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains general information about the organization, its goals, and its initiatives. This information will be obtained from the client.
-    * *Meet the Board*: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client.
-    * *Initiatives*: This page will explain the initiatives mentioned in the About page with more details. The organization has a few major goals (project initiatives), and each one will have its own page describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. These pages will be displayed under an initiatives subcategory within the dropdown - initiatives itself will serve only as a category and not an actual page. The information for this page will be provided by the client.
+    * *Meet the Board*: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client. As for the initiatives, the organization has a few major goals (project initiatives), and each one will have its own bullet describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. The information for this page will be provided by the client.
     * *GBody Info*: This page shall also be linked to via the dropdown menu. It should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
 
   * Content #2
