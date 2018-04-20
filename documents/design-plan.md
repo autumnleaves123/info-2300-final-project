@@ -134,9 +134,8 @@ Yes. We will implement different forms for changing/updating the content of the 
   * Content #2
     * **Main Navigation**
       * Learning
-			* Events
     * **Content**
-      * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+      * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
 
   * Content #3
     * **Main Navigation**
@@ -148,7 +147,7 @@ Yes. We will implement different forms for changing/updating the content of the 
     * **Main Navigation**
       * Contact
     * **Content**
-      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It will have directions on how to get on the listserv. It should also contain a contact form.
+      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It should also contain a contact form.
 
 ### Interactivity
 
@@ -225,15 +224,19 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 ### Sketches
 
-[Insert your sketches here.]
+About: ![](sketches/about_sketch.jpg)
 
-About: ![](About_sketch.jpg)
-
-Meet the Board: ![](Meettheboard_sketch.jpg)
+Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
 
 Home/Feed: ![](sketches/home.jpg)
+
+Gallery: ![](sketches/gallery_sketch.JPG)
+
 Events: ![](sketches/events-calendar.jpg)
+
 Learning: ![](sketches/learn_sketch.jpeg)
+
+Contact: ![](sketches/contact_sketch.JPG)
 
 ### Navigation
 
@@ -243,13 +246,16 @@ Learning: ![](sketches/learn_sketch.jpeg)
 
 These will be the pages we are planning on
 * Home (top-level)
-* About - what is CUDAP?
+* About
+  * What is CUDAP?
+	* Initiatives
 * Events
   * Photos
 * Learn
 * Sign Choir
 * Meet the Board
-* Contact - listserv form, contact form
+  * Admin Portal
+* Contact
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
