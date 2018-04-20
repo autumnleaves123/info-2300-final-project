@@ -234,7 +234,7 @@ Meet the Board: ![](Meettheboard_sketch.jpg)
 
 Home/Feed: ![](sketches/home.jpg)
 Events: ![](sketches/events-calendar.jpg)
-Learning: ![](sketches/learn_sketch.jpg)
+Learning: ![](sketches/learn_sketch.jpeg)
 
 ### Navigation
 
