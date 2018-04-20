@@ -227,6 +227,10 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 [Insert your sketches here.]
 
+![](About_sketch.jpg)
+
+![](Meettheboard_sketch.jpg)
+
 ### Navigation
 
 [What will be your top-level pages and your sub-pages for those top-level pages? What will your website's navigational structure?]
