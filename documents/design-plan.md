@@ -329,6 +329,8 @@ Table: learn
 * field 3: background - blurb providing background for sign
 * field 4: image - file path of image showing this sign
 
+Table: feed
+
 
 
 ### Database Queries
