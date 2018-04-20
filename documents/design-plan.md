@@ -231,6 +231,7 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 Home/Feed: ![](sketches/home.jpg)
 Events: ![](sketches/events-calendar.jpg)
+Learning: ![](sketches/learn_sketch.jpg)
 
 ### Navigation
 
@@ -256,6 +257,8 @@ We plan to implement a navigation menu that will be our header. However, when th
 ### Wireframes
 
 [Insert your wireframes here.]
+
+Learning: ![](sketches/learn_wireframe.jpg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
