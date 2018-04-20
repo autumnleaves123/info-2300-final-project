@@ -274,7 +274,7 @@ We plan to implement a navigation menu that will be our header. However, when th
 
 [Insert your wireframes here.]
 
-Learning: ![](sketches/learn_wireframe.jpg)
+Learning: ![](sketches/learn_wireframe.jpeg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
