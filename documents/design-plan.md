@@ -135,12 +135,8 @@ Yes. We will implement different forms for changing/updating the content of the 
     * **Main Navigation**
       * Learning
     * **Content**
-<<<<<<< HEAD
       * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
 			* Events: This page will contain a table of events that are coming up.
-=======
-      * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
->>>>>>> 4899fc03cf3ee979d8771fc73d88c3b761bc4c6a
 
   * Content #3
     * **Main Navigation**
