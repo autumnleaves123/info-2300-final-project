@@ -1,5 +1,7 @@
 <?php
 
+$current_page = null;
+
 function exec_sql_query($db, $sql, $params = array()) {
   $query = $db->prepare($sql);
   if ($query and $query->execute($params)) {

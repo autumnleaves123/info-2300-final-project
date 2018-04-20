@@ -6,7 +6,7 @@ $current_page_id = "about"; ?>
 
 <head>
   <?php include('includes/head.php'); ?>
-  <title>Learn Signs</title>
+  <title>About CUDAP</title>
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 <header>
   <nav>
-    <ul id="nav">
+    <ul>
       <?php
       $pages = ["index"=>"Home",
                 "about"=>"About",
@@ -19,21 +19,21 @@
       $hidden_pages = ["login"=>"Login"];
 
       foreach ($pages as $page=>$page_name){
+        //create li tag that contains a hyperlink to the file named
+        //condition: if current page is same as key, then add id attribute
 
-      //create li tag that contains a hyperlink to the file named
-      //condition: if current page is same as key, then add id attribute
-
-      // make an if for
-      if ($current_page_id == $page) {
-        echo "<li><a href='" . $page . ".php' id='current_page'" . ">" . $page_name . "</a></li>";
-      } else if ($page == "about" || $page == "learn") {
-        echo "<li>$page_name</li>";
-      } else {
-        echo "<li><a href='" . $page . ".php'>" . $page_name . "</a></li>";
+        // TODO: make an if for logo
+        // TODO: make sublevels
+        // TODO: if logged in, add admin and if not, do not
+        if ($current_page_id == $page) {
+          echo "<li><a href='" . $page . ".php' id='current_page'" . ">" . $page_name . "</a></li>";
+        } else if ($page == "about" || $page == "learn") {
+          echo "<li>$page_name</li>";
+        } else {
+          echo "<li><a href='" . $page . ".php'>" . $page_name . "</a></li>";
+        }
       }
-
-    }
-  ?>
+    ?>
     </ul>
   </nav>
 </header>

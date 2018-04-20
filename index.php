@@ -5,13 +5,12 @@ $current_page_id = "home"; ?>
 <html>
 
 <head>
-	<?php include('includes/init.php'); ?>
+	<?php include('includes/head.php'); ?>
+	<title>Home</title>
 </head>
 
 <body>
-	<header>
-		<?php include('includes/header.php'); ?>
-	</header>
+	<?php include('includes/header.php'); ?>
 
 	<section>
 	</section>
