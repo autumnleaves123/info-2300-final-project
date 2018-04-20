@@ -220,6 +220,8 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 ## Milestone 2, Part I: PHP Interactivity
 
 [Describe here what you plan to do for your PHP Interactivity requirement.]
+* gallery?
+* feed with tags?
 
 ## Milestone 2, Part II: Sketches, Navigation & Wireframes
 
@@ -239,7 +241,8 @@ Events: ![](sketches/events-calendar.jpg)
 These will be the pages we are planning on
 * Home (top-level)
 * About
-  * Initiatives
+  * What is CUDAP?
+	* Initiatives
 * Events
   * Photos
 * Learn
@@ -315,11 +318,15 @@ Table: execboard
 * field 4: major - major of student
 * field 5: classyear - year member is graduating
 * field 6: year - year started signing (can write a formula for how many years of experience from this number)
+* field 7: description
 
 Table: learn
-* field 1: sign - word being signed
-* field 2: background - blurb providing background for sign
-* field 3: image - file path of image showing this sign
+* field 1: id - primary key
+* field 2: sign - word being signed
+* field 3: background - blurb providing background for sign
+* field 4: image - file path of image showing this sign
+
+
 
 ### Database Queries
 
