@@ -1,5 +1,5 @@
 <?php include('includes/init.php');
-$current_page_id = "login"; ?>
+$current_page_id = "learn"; ?>
 
 <!DOCTYPE html>
 <html>
