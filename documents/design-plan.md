@@ -118,17 +118,18 @@ Yes. We will implement different forms for changing/updating the content of the 
 
 * Content #1
   * **Main Navigation**
+		* Home
     * About
 			* Initiatives
       	* Goal 1
       	* Goal 2, etc
-  * **Sub-Categories**
-    * Meet the
-    * GBody Info
+    * Meet the Board
+    * Sign Choir
   * **Content**
+		* *Home*: This page shall contain some general photos of the club, a feed system that displays information about the organization's upcoming events and/or announcements. The closest 5 events and announcements will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
     * *About*: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains general information about the organization, its goals, and its initiatives. This information will be obtained from the client.
     * *Meet the Board*: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client. As for the initiatives, the organization has a few major goals (project initiatives), and each one will have its own bullet describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. The information for this page will be provided by the client.
-    * *GBody Info*: This page shall also be linked to via the dropdown menu. It should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
+    * *Sign Choir*: This page should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
 
   * Content #2
     * **Main Navigation**
@@ -138,12 +139,9 @@ Yes. We will implement different forms for changing/updating the content of the 
 
   * Content #3
     * **Main Navigation**
-      * Events
-    * **Sub-Categories**
-      * Photos
+      * Photo Gallery
     * **Content**
-      * *Events*: This page shall contain information about the organization's upcoming events. The closest 5 events will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
-      * *Photos*: A link to this page will appear in a dropdown menu from the Events link. This page will contain a gallery and slideshow of photos taken during their events. These photos will be provided by the client.
+		This page will contain a gallery and slideshow of photos taken during their events and activities. These photos will be provided by the client.
 
   * Content #4
     * **Main Navigation**
