@@ -134,8 +134,9 @@ Yes. We will implement different forms for changing/updating the content of the 
   * Content #2
     * **Main Navigation**
       * Learning
+			* Events
     * **Content**
-      * This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+      * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
 
   * Content #3
     * **Main Navigation**
@@ -147,7 +148,7 @@ Yes. We will implement different forms for changing/updating the content of the 
     * **Main Navigation**
       * Contact
     * **Content**
-      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It should also contain a contact form.
+      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It will have directions on how to get on the listserv. It should also contain a contact form.
 
 ### Interactivity
 
