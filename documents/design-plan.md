@@ -220,6 +220,8 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 ## Milestone 2, Part I: PHP Interactivity
 
 [Describe here what you plan to do for your PHP Interactivity requirement.]
+* gallery?
+* feed with tags?
 
 ## Milestone 2, Part II: Sketches, Navigation & Wireframes
 
@@ -227,9 +229,15 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 [Insert your sketches here.]
 
+<<<<<<< HEAD
 ![](About_sketch.jpg)
 
 ![](Meettheboard_sketch.jpg)
+=======
+Home/Feed: ![](sketches/home.jpg)
+Events: ![](sketches/events-calendar.jpg)
+Learning: ![](sketches/learn_sketch.jpg)
+>>>>>>> c583380b82a0b4519dd7154edfdf15a1db6d04b1
 
 ### Navigation
 
@@ -237,17 +245,26 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 [Tip: If you use card sorting for your navigation, show us that work by including a picture!]
 
-Example:
-* Products (top-level)
-  * Shoes (sub-page)
-  * Pants
-  * Shirts
-* Shopping Cart
+These will be the pages we are planning on
+* Home (top-level)
+* About
+  * What is CUDAP?
+	* Initiatives
+* Events
+  * Photos
+* Learn
+* Sign Choir
+* Meet the Board
+  * Admin Portal
 * Contact
+
+We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
 ### Wireframes
 
 [Insert your wireframes here.]
+
+Learning: ![](sketches/learn_wireframe.jpg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
@@ -303,9 +320,22 @@ Task 3:
 
 [Describe the structure of your database. You may use words or a picture. A bulleted list is probably the simplest way to do this.]
 
-Table: movies
-* field 1: description...
-* field...
+Table: execboard
+* field 1: id - primary key (necessary?)
+* field 2: name - name of executive board member
+* field 3: position - position of member
+* field 4: major - major of student
+* field 5: classyear - year member is graduating
+* field 6: year - year started signing (can write a formula for how many years of experience from this number)
+* field 7: description
+
+Table: learn
+* field 1: id - primary key
+* field 2: sign - word being signed
+* field 3: background - blurb providing background for sign
+* field 4: image - file path of image showing this sign
+
+
 
 ### Database Queries
 
@@ -382,6 +412,8 @@ db = connect to db
 ## Milestone 5: Final Notes to the Graders
 
 [1. Give us three specific strengths of your site that sets it apart from the previous website of the client (if applicable) and/or from other websites. Think of this as your chance to argue for the things you did really well.]
+
+Design (looks bad now)
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 
