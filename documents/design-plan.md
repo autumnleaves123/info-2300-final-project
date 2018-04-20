@@ -118,14 +118,13 @@ Yes. We will implement different forms for changing/updating the content of the 
 
 * Content #1
   * **Main Navigation**
-		*Home
+		* Home
     * About
 			* Initiatives
       	* Goal 1
       	* Goal 2, etc
-  * **Sub-Categories**
-    * Meet the
-    * GBody Info
+    * Meet the Board
+    * Sign Choir
   * **Content**
 		* *Home*: This page shall contain some general photos of the club, a feed system that displays information about the organization's upcoming events and/or announcements. The closest 5 events and announcements will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
     * *About*: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains general information about the organization, its goals, and its initiatives. This information will be obtained from the client.
