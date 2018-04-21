@@ -26,7 +26,7 @@
         // TODO: make sublevels
         // TODO: if logged in, add admin and if not, do not
         if ($current_page_id == $page) {
-          echo "<li><a href='" . $page . ".php' id='current_page'" . ">" . $page_name . "</a></li>";
+          echo "<li><a href='" . $page . ".php' id='current-page'" . ">" . $page_name . "</a></li>";
         } else if ($page == "about" || $page == "learn") {
           echo "<li>$page_name</li>";
         } else {
