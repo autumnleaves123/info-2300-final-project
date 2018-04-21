@@ -295,7 +295,7 @@ Most of the executive board members and club members are female, so Abby would a
 
 [For each task, list the ideal set of actions that you would like your users to take when working towards the task.]
 
-Task 1: Suppose that we are in a new academic year, and Abby is an incoming board member of CUDAP. She wishes to update the profiles of the executive board members on the website.
+Task 1: Suppose that it is the start of a new academic year, and Abby is an incoming board member of CUDAP. She wishes to update the profiles of the executive board members on the website.
 
   1. Type login.php in the browser
   2. Type in username and password, then click Log In
@@ -320,16 +320,11 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Perform a cognitive walkthrough using the GenderMag method for all of your Tasks. Use the GenderMag template in the <documents/gendermag-template.md> file.]
 
-###### Task 1 - Cognitive Walkthrough
+### Task 1 - Cognitive Walkthrough
 
-[copy the GenderMag template here and conduct a cognitive walkthrough to evaluate your design (wireframes).]
+**Task name: Update E-board**
 
-[You may need to add additional subgoals and/or actions for each task.]
-
-**Task name: [name of task]**
-
-[Add as many subgoals as you needs]
-**Subgoal # [subgoal number] : [subgoal name]**
+**Subgoal #1: Access login.php**
 	(e.g., "# 1 : Select the section of the document you want to print")
 
   - Will [persona name] have formed this sub-goal as a step to their overall goal?
@@ -339,6 +334,7 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
         [Tell us why..]
 
 [Add as many actions as you need...]
+
 **Action # [action number] : [action name]**
 	(e.g., "# 1 : Put the mouse at the beginning of the section you want to print")
 
