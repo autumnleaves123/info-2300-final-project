@@ -15,8 +15,6 @@ $current_page_id = "home"; ?>
 	<section>
 	</section>
 
-	<footer>
 		<?php include('includes/footer.php'); ?>
-	</footer>
 </body>
 </html>

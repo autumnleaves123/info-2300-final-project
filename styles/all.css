@@ -64,5 +64,17 @@ a#current_page{
 }
 
 /* ===============
+   		FOOTER
+   =============== */
+
+#logo img {
+	height: 90px;
+}
+
+footer {
+	text-align: center;
+}
+
+/* ===============
    		INDEX
    =============== */
