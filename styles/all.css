@@ -57,10 +57,22 @@ li#header_logo {
   width: 175px;
 }
 
-a#current_page {
+a#current-page{
   color: #104373;
   font-weight: bold;
   text-decoration: none;
+}
+
+/* ===============
+   		FOOTER
+   =============== */
+
+#logo img {
+	height: 80px;
+}
+
+footer {
+	text-align: center;
 }
 
 /* ===============

@@ -1,5 +1,5 @@
 <?php include('includes/init.php');
-$current_page_id = "home"; ?>
+$current_page_id = "index"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,6 @@ $current_page_id = "home"; ?>
 	<section>
 	</section>
 
-	<footer>
 		<?php include('includes/footer.php'); ?>
-	</footer>
 </body>
 </html>
