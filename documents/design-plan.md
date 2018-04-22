@@ -314,26 +314,26 @@ Most of the executive board members and club members are female, so Abby would a
 
 Task 1: Suppose that it is the start of a new academic year, and Abby is an incoming board member of CUDAP. She wishes to update the profiles of the executive board members on the website.
 
-  1. Type login.php in the browser
-  2. Type in username and password, then click Log In
-  3. Look at the sidebar on the left, and click to update Meet the Board page
-	4. Using the delete members form, delete all existing members
-	5. Using the add members form, complete information for each e-board member and submit
-	6. Check the Meet the Board page now to see that new e-board members have been updated
+1. Type login.php in the browser
+2. Type in username and password, then click Log In
+3. Look at the sidebar on the left, and click to update Meet the Board page
+4. Using the delete members form, delete all existing members
+5. Using the add members form, complete information for each e-board member and submit
+6. Check the Meet the Board page now to see that new e-board members have been updated
 
 
 Task 2: Suppose that Abby is a freshman at Cornell. She stopped by CUDAP's booth at Club Fest and is interested in learning more about the Sign Choir meetings that the club holds every week.
 
-	1. Type index.php (or rather the URL) in the browser
-	2. Click on Sign Choir in the nav bar
-	3. Peruse relevant information to learn about the club's activities
+1. Type index.php (or rather the URL) in the browser
+2. Click on Sign Choir in the nav bar
+3. Peruse relevant information to learn about the club's activities
 
 
 Task 3: Suppose that Abby is a member of the club, and would like to check the time for practise this week.
 
-	1. Visit website
-	2. Click on Events
-	3. Access the calendar on the Events page to look up rehearsal time
+1. Visit website
+2. Click on Events
+3. Access the calendar on the Events page to look up rehearsal time
 
 ### Cognitive Walkthrough
 
