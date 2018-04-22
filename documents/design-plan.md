@@ -350,20 +350,33 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
         Assuming that Abby has been properly briefed by the previous E-board, she will know that she must access login.php to make changes to the webpage.
 
 
-**Action # [action number] : [action name]**
-	(e.g., "# 1 : Put the mouse at the beginning of the section you want to print")
+**Action #1: Type in the username and password, the click Log In**
 
-  - Will [persona name] know what to do at this step?
-    - Yes, maybe or no: [yes/maybe/no]
-    - Why? (Especially consider [persona name]'s Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-        [Tell us why...]
+      Abby has some experience using technologies to accomplish her tasks. A standard login page should be something that she is already familiar and comfortable with.
 
-  - If [persona name] does the right thing, will she know that she did the right thing, and is making progress towards her goal?
-    - Yes, maybe or no: [yes/maybe/no]
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-        [Tell us why...]
+        Abby will be taken to the admin page if she successfully logs in. If not, there will be an error message below the login form.
+
+**Action #2: Click Update Meet the Board page**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+      
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+
 
 
 ###### Task 2 - Cognitive Walkthrough
