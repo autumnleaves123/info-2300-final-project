@@ -372,27 +372,56 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-      	Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update Meet the Board link on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
+      Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update Meet the Board link on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-				Upon clicking on the link, the update Meet the Board forms will appear on the right side of the webpage. This should all be familiar to Abby.
+			Upon clicking on the link, the update Meet the Board forms will appear on the right side of the webpage. This should all be familiar to Abby.
 
-**Action #3: Click Update Meet the Board page**
+**Action #3: Use delete members form to delete all existing members**
 
   - Will Abby know what to do at this step?
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-      	Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update Meet the Board link on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
+			A form is something that Abby should be familiar with, even with limited exposure to technology. In addition, the form follows a step by step process. Abby has to first select the member that she would like to delete. Then she needs to click the delete button.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-				Upon clicking on the link, the update Meet the Board forms will appear on the right side of the webpage. This should all be familiar to Abby.
+			Feedback will be provided to Abby to inform her that the persona has been deleted. In addition, Abby can verify this by clicking the Meet the Board page on the nav bar.
+
+
+**Action #4: Using the add members form, fill out information for each e-board member and submit**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+			Again, a form is something that Abby should be familiar with. The form takes Abby through the process step by step. First she needs to fill out the e-board member's information. Required fields will be indicated. Then, Abby should click the submit button.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+			Yes, the form will provide feedback to Abby to inform her if the e-board member has successfully been added, or whether she will have to input the information again.
+
+**Action #5: Check the Meet the Board page to see that new e-board members have been updated**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Maybe
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+			Abby will mostly likely want to check that the e-board members have been updated. This is the most logical way of doing it. Of course, Abby could also just skip this step if she is confident that the update form has already provided her with all the information that she needs - i.e. everything has been successfully updated.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+			Yes, if she clicks on the Meet the Board page on the nav bar, she will be able to view all the updated profiles of incoming e-board members.
 
 
 ###### Task 2 - Cognitive Walkthrough
