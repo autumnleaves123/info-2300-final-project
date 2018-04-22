@@ -372,13 +372,13 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-      Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update Meet the Board link on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
+    Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update Meet the Board link on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-			Upon clicking on the link, the update Meet the Board forms will appear on the right side of the webpage. This should all be familiar to Abby.
+		Upon clicking on the link, the update Meet the Board forms will appear on the right side of the webpage. This should all be familiar to Abby.
 
 **Action #3: Use delete members form to delete all existing members**
 
@@ -386,13 +386,13 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-			A form is something that Abby should be familiar with, even with limited exposure to technology. In addition, the form follows a step by step process. Abby has to first select the member that she would like to delete. Then she needs to click the delete button.
+		A form is something that Abby should be familiar with, even with limited exposure to technology. In addition, the form follows a step by step process. Abby has to first select the member that she would like to delete. Then she needs to click the delete button.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-			Feedback will be provided to Abby to inform her that the persona has been deleted. In addition, Abby can verify this by clicking the Meet the Board page on the nav bar.
+		Feedback will be provided to Abby to inform her that the persona has been deleted. In addition, Abby can verify this by clicking the Meet the Board page on the nav bar.
 
 
 **Action #4: Using the add members form, fill out information for each e-board member and submit**
@@ -401,13 +401,13 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-			Again, a form is something that Abby should be familiar with. The form takes Abby through the process step by step. First she needs to fill out the e-board member's information. Required fields will be indicated. Then, Abby should click the submit button.
+		Again, a form is something that Abby should be familiar with. The form takes Abby through the process step by step. First she needs to fill out the e-board member's information. Required fields will be indicated. Then, Abby should click the submit button.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-			Yes, the form will provide feedback to Abby to inform her if the e-board member has successfully been added, or whether she will have to input the information again.
+		Yes, the form will provide feedback to Abby to inform her if the e-board member has successfully been added, or whether she will have to input the information again.
 
 **Action #5: Check the Meet the Board page to see that new e-board members have been updated**
 
@@ -415,19 +415,97 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Maybe
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-			Abby will mostly likely want to check that the e-board members have been updated. This is the most logical way of doing it. Of course, Abby could also just skip this step if she is confident that the update form has already provided her with all the information that she needs - i.e. everything has been successfully updated.
+		Abby will mostly likely want to check that the e-board members have been updated. This is the most logical way of doing it. Of course, Abby could also just skip this step if she is confident that the update form has already provided her with all the information that she needs - i.e. everything has been successfully updated.
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
     - Yes, maybe or no: Yes
     - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
 
-			Yes, if she clicks on the Meet the Board page on the nav bar, she will be able to view all the updated profiles of incoming e-board members.
+		Yes, if she clicks on the Meet the Board page on the nav bar, she will be able to view all the updated profiles of incoming e-board members.
 
 
-###### Task 2 - Cognitive Walkthrough
+#### Task 2 - Cognitive Walkthrough
+
+**Task name: Learning about Sign Choir Meetings**
+
+**Subgoal #1: Visit CUDAP website**
+
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
+
+    	Assuming that CUDAP has done its advertising well, people interested in CUDAP should have access to its URL. Abby should be familiar with the process of visiting websites for more information.
+
+**Action #1: Click on Sign Choir tab in nav bar**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Maybe
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+    	Abby is risk averse about using unfamiliar technologies. The items in the nav bar should be fairly self explanatory and predictable.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+    	Yes, clicking on a tab in the nav bar should be fairly intuitive, even for Abby.
+
+**Action #2: Look for relevant information on Sign Choir page**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+    	Abby likes to gather information comprehensively to try to form a complete understanding of the problem before trying to solve it. The Sign Choir should provide Abby with all the information that she needs to know about the club (CUDAP) and its activities.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+    	Again, Abby should be familiar with this task - gathering information from webpages.
+
+#### Task 3 - Cognitive Walkthrough
+
+**Task name: Checking practice time for the week**
+
+**Subgoal #1: Access the CUDAP website**
+
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
+
+        Again, we would assume that Abby knows of the CUDAP website, or might even have it bookmarked.
 
 
-###### Task 3 - Cognitive Walkthrough
+**Action #1: Click on the Events tab in the nav bar**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		This should be a task that Abby is familiar and comfortable with. She does not need to spend extra time tinkering with unfamiliar features.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Yes, she will be taken to the Events page if she successfully clicks on the correct tab on the nav bar.
+
+
+**Action #2: Access the calendar on the events page to look up rehearsal time**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		Yes, this is the only information that will be presented on the page, so it should be logical for Abby to scroll through events on the calendar. The calendar also provides Abby with comprehensive information about other events that the club is hosting in the next month or two.
+
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		She will be able to obtain practice times for the week using the calendar.
 
 
 ### Cognitive Walk-though Results
