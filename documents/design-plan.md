@@ -612,6 +612,7 @@ display log-out form if admin is logged-in, display log-in form if admin is not 
 
 //These forms only displayed if admin is logged-in.
 
+//uploading images or file uploads to change content of website
 if (isset($_POST['submitimage'])) {
   $upload_info = $_FILES["image_file"];
   $source = $_POST['source'];
@@ -654,24 +655,7 @@ if (isset($_POST['submitimage'])) {
   }
 }
 
-if (isset($_POST['deletetag'])) {
-  $tagtodelete = filter_input(INPUT_POST,'tagtodelete', FILTER_SANITIZE_STRING);
-  $idoftagtodelete = filter_input(INPUT_POST,'idoftagtodelete', FILTER_SANITIZE_STRING);
-  $imageid = filter_input(INPUT_POST,'currentimageid', FILTER_SANITIZE_STRING);
-  $currentimagename = filter_input(INPUT_POST,'curcurrentimagename', FILTER_SANITIZE_STRING);
-  $sql2 = "DELETE FROM image_tag_map WHERE tag_id = :tagid AND image_id = :imageid";
-  $params2 = array(':tagid' => $idoftagtodelete, ':imageid' => $imageid);
-  $records2 = exec_sql_query($db, $sql2, $params2);
-  $sql = "SELECT * FROM image_tag_map WHERE tag_id = :tagid";
-  $params = array(':tagid' => $idoftagtodelete);
-  $records = exec_sql_query($db, $sql, $params)->fetchAll();
-  if (empty($records)) { //there are no images with this tag, so delete this tag from tags table
-    $sql = "DELETE FROM tags WHERE id = :tagid";
-    $params = array(':tagid' => $idoftagtodelete);
-    $records = exec_sql_query($db, $sql, $params);
-  }
-  array_push($messages, "[The tag '". htmlspecialchars($tagtodelete) . "' has been deleted from " . htmlspecialchars($currentimagename) . ".]");
-}
+//deleting images and/or other content from website
 
 if (isset($_POST['delete'])) {
   $imagetodelete = filter_input(INPUT_POST,'imagetodelete', FILTER_SANITIZE_STRING);
@@ -700,6 +684,8 @@ if (isset($_POST['delete'])) {
   unlink(IMAGE_UPLOADS_PATH . $locationofimage);
   array_push($messages, "[The image ". htmlspecialchars($imagetodelete) . " has been deleted.]");
 }
+
+//for photo gallery
 
 if (isset($_POST['addtag'])) {
   $tagtoadd = $_POST['tagtoadd'];
