@@ -274,7 +274,24 @@ We plan to implement a navigation menu that will be our header. However, when th
 
 [Insert your wireframes here.]
 
-Learning: ![](sketches/learn_wireframe.jpeg)
+Home: ![]()
+
+About CUDAP: ![]()
+
+Meet the Board: ![]()
+
+Sign Choir: ![]()
+
+Events: ![]()
+
+Gallery: ![]()
+
+ASL Signs: ![]()
+
+Resources: ![]()
+
+Contact: ![]()
+
 
 ## Milestone 2, Part III: Evaluate your Design
 
@@ -320,20 +337,18 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Perform a cognitive walkthrough using the GenderMag method for all of your Tasks. Use the GenderMag template in the <documents/gendermag-template.md> file.]
 
-### Task 1 - Cognitive Walkthrough
+#### Task 1 - Cognitive Walkthrough
 
 **Task name: Update E-board**
 
 **Subgoal #1: Access login.php**
-	(e.g., "# 1 : Select the section of the document you want to print")
 
-  - Will [persona name] have formed this sub-goal as a step to their overall goal?
-    - Yes, maybe or no: [yes/maybe/no]
-    - Why? (Especially consider [persona name]'s Motivations/Strategies.)
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
 
-        [Tell us why..]
+        Assuming that Abby has been properly briefed by the previous E-board, she will know that she must access login.php to make changes to the webpage.
 
-[Add as many actions as you need...]
 
 **Action # [action number] : [action name]**
 	(e.g., "# 1 : Put the mouse at the beginning of the section you want to print")
@@ -396,9 +411,20 @@ Table: learn
 
 [List the PHP files you will have. You will probably want to do this with a bulleted list.]
 
-* index.php - main page.
-* includes/init.php - stuff that useful for every web page.
-* TODO
+* includes/init.php
+* includes/head.php
+* includes/header.php
+* includes/footer.php
+* index.php - main page
+* about.php
+* meettheboard.php
+* signchoir.php
+* events.php
+* gallery.php
+* signs.php
+* resources.php
+* login.php
+* admin.php
 
 ### Pseudocode
 
@@ -823,7 +849,6 @@ $sql = "SELECT * FROM images;";
 ####  learning.php
 
 ```
-
 //** include same thing as gallery.php, so perhaps all the pseudocode can be included in init.php instead. Then gallery.php and learning.php can both just include the init.php file to reduce code redundancy.
 
 ```
@@ -836,6 +861,10 @@ $sql = "SELECT * FROM images;";
 We plan to create a login.php page that only E-board members will know about. They will have access to the username and password. Upon logging in, the user will be taken to an admin page that allows them to manage the content of the website. Please see admin.php wireframe for details.
 
 ^ We were wondering if this is acceptable practice, or whether the login page for admin should be visible on the general website.
+
+We were also wondering if we currently have too many pages.
+
+Thank you!
 
 
 ## Milestone 3: Updates
