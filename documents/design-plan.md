@@ -274,24 +274,27 @@ We plan to implement a navigation menu that will be our header. However, when th
 
 [Insert your wireframes here.]
 
-Home: ![]()
+Home: ![](wireframes/p4wireframes_1.jpg)
 
-About CUDAP: ![]()
+About CUDAP: ![](wireframes/p4wireframes_2.jpg)
 
-Meet the Board: ![]()
+Meet the Board: ![](wireframes/p4wireframes_3.jpg)
 
-Sign Choir: ![]()
+Sign Choir: ![](wireframes/p4wireframes_4.jpg)
 
-Events: ![]()
+Events: ![](wireframes/p4wireframes_5.jpg)
 
-Gallery: ![]()
+Gallery: ![](wireframes/p4wireframes_6.jpg)
 
-ASL Signs: ![]()
+ASL Signs: ![](wireframes/p4wireframes_7.jpg)
 
-Resources: ![]()
+Resources: ![](wireframes/p4wireframes_8.jpg)
 
-Contact: ![]()
+Contact: ![](wireframes/p4wireframes_9.jpg)
 
+Login: ![](wireframes/p4wireframes_10.jpg)
+
+Admin: ![](wireframes/p4wireframes_11.jpg)
 
 ## Milestone 2, Part III: Evaluate your Design
 
@@ -512,9 +515,7 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
-	Just a slight flaw we noticed as a side note during CW Task 1.
-	We originally had a "secret" button is the CUDAP logo.
-	Through this cognitive walkthrough, we can reflect that users can accidentally click on a CUDAP logo and users like Abby would be confused like "what is this admin page."
+Just a slight flaw we noticed as a side note during CW Task 1. We originally had a "secret" button is the CUDAP logo, but through this cognitive walkthrough, we realized that users can accidentally click on a CUDAP logo and users like Abby would be confused like "what is this admin page."
 
 [Your responses here should be very thorough and thoughtful.]
 
