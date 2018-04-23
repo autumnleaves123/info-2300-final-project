@@ -520,8 +520,9 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
-	* A side result result of Cognitive Walkthrough Task #1 was that we originally were planning on using the CUDAP logo as a "secret" button for the admin to access the admin login page login.php. However, it would be confusing for general users to stumble upon the login page, so we decided to designate a url for just the admins that directs to login.php so that the general public does not encounter this page.
-	* We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
+A side result result of Cognitive Walkthrough Task #1 was that we originally were planning on using the CUDAP logo as a "secret" button for the admin to access the admin login page login.php. However, it would be confusing for general users to stumble upon the login page, so we decided to designate a url for just the admins that directs to login.php so that the general public does not encounter this page.
+
+We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
 
 [Your responses here should be very thorough and thoughtful.]
 
