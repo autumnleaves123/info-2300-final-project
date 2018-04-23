@@ -1,8 +1,8 @@
 <header>
-	<div>
-		<a href='index.php'>CUDAP</a>
+	<div id="cudap-logo">
+		<a href='index.php'><img alt="cudap logo" src="../images/cudap_logo.png"></a>
 	</div>
-	
+
   <nav>
     <ul>
       <?php

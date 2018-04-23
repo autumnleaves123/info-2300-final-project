@@ -12,6 +12,19 @@ html, body{
 	padding: 0;
 }
 
+header {
+	background-color: var(--grey);
+	text-align: center;
+}
+
+#cudap-logo {
+	padding-top: 20px;
+}
+
+#cudap-logo img {
+	width: 300px;
+}
+
 /* ===============
    		NAV
    =============== */
@@ -21,8 +34,8 @@ nav {
   margin: 0;
   padding: 0;
   width: 100%;
-	background-color: var(--grey);
-	border-bottom: 2px solid black;
+	/* background-color: var(--grey); */
+	/* border-bottom: 2px solid black; */
 }
 
 nav ul {
