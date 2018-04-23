@@ -4,40 +4,60 @@
 	</div>
 
   <nav>
-    <ul>
-      <?php
-      $pages = ["index"=>"Home",
-                "about"=>"About",
-                "signchoir"=>"Sign Choir",
-                "events"=>"Events",
-                "gallery"=>"Gallery",
-                "learn"=>"Learn",
-                "contact"=>"Contact",
-                "admin"=>"Admin"
-              ];
-      $subpages = ["aboutcudap"=>"About CUDAP",
-                "meettheboard"=>"Meet the Board",
-                "signs"=>"Learn Signs",
-                "resources"=>"Resources"
-              ];
-      $hidden_pages = ["login"=>"Login"];
+    <?php
+    $top_pages = ["index"=>"Home",
+              "about"=>"About",
+              "signchoir"=>"Sign Choir",
+              "events"=>"Events",
+              "gallery"=>"Gallery",
+              "learn"=>"Learn",
+              "contact"=>"Contact",
+              "admin"=>"Admin"
+            ];
 
-      foreach ($pages as $page=>$page_name){
-        //create li tag that contains a hyperlink to the file named
-        //condition: if current page is same as key, then add id attribute
+    // $about_subpages = ["aboutcudap"=>"About CUDAP", "meettheboard"=>"Meet the Board"];
+		// $learn_subpages = ["signs"=>"Learn Signs", "resources"=>"Resources"];
 
-        // TODO: make an if for logo
-        // TODO: make sublevels
-        // TODO: if logged in, add admin and if not, do not
-        if ($current_page_id == $page) {
-          echo "<li><a href='" . $page . ".php' id='current-page'" . ">" . $page_name . "</a></li>";
-        } else if ($page == "about" || $page == "learn") {
-          echo "<li>$page_name</li>";
-        } else {
-          echo "<li><a href='" . $page . ".php'>" . $page_name . "</a></li>";
-        }
-      }
-    ?>
-    </ul>
+    $hidden_pages = ["login"=>"Login"];
+
+    foreach ($top_pages as $page=>$page_name){
+
+      if ($page == "about") {
+				?>
+
+				<div class="dropdown <?php if ($current_page_id == 'about') { echo ("current-page");}?>">
+					<button class="dropbtn" >About &#9660;</button>
+					<div class="dropdown-pages">
+						<a href="aboutcudap.php">About CUDAP</a>
+						<a href="meettheboard.php">Meet the Board</a>
+					</div>
+				</div>
+
+			<?php
+
+			} else if ($page == "learn") { ?>
+
+				<div class="dropdown <?php if ($current_page_id == 'learn') { echo ("current-page");}?>">
+					<button class="dropbtn <?php $active_css_class?>">Learn &#9660;</button>
+					<div class="dropdown-pages">
+						<a href="signs.php">Learn Signs</a>
+						<a href="resources.php">Resources</a>
+					</div>
+				</div>
+
+			<?php
+
+			} else if ($page == $current_page_id) {
+
+				echo "<a href='" . $page . ".php' class='current-page'" . ">" . $page_name . "</a>";
+
+			} else {
+
+				echo "<a href='" . $page . ".php'>" . $page_name . "</a>";
+			}
+		}
+
+		?>
+
   </nav>
 </header>
