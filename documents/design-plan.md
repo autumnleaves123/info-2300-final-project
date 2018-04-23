@@ -126,29 +126,29 @@ Yes. We will implement different forms for changing/updating the content of the 
     * Meet the Board
     * Sign Choir
   * **Content**
-		* *Home*: This page shall contain some general photos of the club, a feed system that displays information about the organization's upcoming events and/or announcements. The closest 5 events and announcements will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
-    * *About*: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains general information about the organization, its goals, and its initiatives. This information will be obtained from the client.
-    * *Meet the Board*: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client. As for the initiatives, the organization has a few major goals (project initiatives), and each one will have its own bullet describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. The information for this page will be provided by the client.
-    * *Sign Choir*: This page should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
+		* Home: This page shall contain some general photos of the club, a feed system that displays information about the organization's upcoming events and/or announcements. The closest 5 events and announcements will be shown, but the user will be given the opportunity to expand the list of events if they so choose (if we choose to implement this functionality). Each event shall have a title, time, location, and brief description. These events will be provided by the client.
+    * About: The About link in the main navigation should like to the About page necessitated by Public Services Center requirements which contains general information about the organization, its goals, and its initiatives. This information will be obtained from the client.
+    * Meet the Board: A link to this page shall be displayed in a dropdown menu that appears when About is hovered over. This page will contain photos and short bios for each of the organization's eboard members. These photos and bios will be obtained from the client. As for the initiatives, the organization has a few major goals (project initiatives), and each one will have its own bullet describing the goal, the steps that have been taken to reach the goal, the steps that the organization plans to take to reach the goal, and how far they are to reaching the goal. The information for this page will be provided by the client.
+    * Sign Choir: This page should contain information about the organization's Gbody meetings including where and when they are held, and the activities conducted at the meetings. This information will be obtained from the client.
 
-  * Content #2
-    * **Main Navigation**
-      * Learning
-    * **Content**
-      * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
-			* Events: This page will contain a table of events that are coming up.
+* Content #2
+  * **Main Navigation**
+    * Learning
+  * **Content**
+    * Learning: This page shall contain the various resources that the organization provides for people who are interested in learning ASL. It will incorporate an interactive gallery of signs which displays the meaning of each sign when it is hovered over. It will also contain links to external resources for more advanced study.
+		* Events: This page will contain a table of events that are coming up.
 
-  * Content #3
-    * **Main Navigation**
-      * Photo Gallery
-    * **Content**
-		This page will contain a gallery and slideshow of photos taken during their events and activities. These photos will be provided by the client.
+* Content #3
+  * **Main Navigation**
+    * Photo Gallery
+  * **Content**
+	This page will contain a gallery and slideshow of photos taken during their events and activities. These photos will be provided by the client.
 
-  * Content #4
-    * **Main Navigation**
-      * Contact
-    * **Content**
-      * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It should also contain a contact form.
+* Content #4
+  * **Main Navigation**
+    * Contact
+  * **Content**
+    * This page shall contain contact information for important members of the eboard, and contain information on who to contact for whatever purpose. It should also contain a contact form.
 
 ### Interactivity
 
@@ -317,7 +317,7 @@ Most of the executive board members and club members are female, so Abby would a
 
 Task 1: Suppose that it is the start of a new academic year, and Abby is an incoming board member of CUDAP. She wishes to update the profiles of the executive board members on the website.
 
-1. Type login.php in the browser
+1. Click on hidden button (CUDAP logo) to access login.php
 2. Type in username and password, then click Log In
 3. Look at the sidebar on the left, and click to update Meet the Board page
 4. Using the delete members form, delete all existing members
@@ -332,7 +332,7 @@ Task 2: Suppose that Abby is a freshman at Cornell. She stopped by CUDAP's booth
 3. Peruse relevant information to learn about the club's activities
 
 
-Task 3: Suppose that Abby is a member of the club, and would like to check the time for practise this week.
+Task 3: Suppose that Abby is a member of the club, and would like to check the time for practice this week.
 
 1. Visit website
 2. Click on Events
@@ -352,7 +352,7 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Motivations/Strategies.)
 
-        Assuming that Abby has been properly briefed by the previous E-board, she will know that she must access login.php to make changes to the webpage.
+        Assuming that Abby has been properly briefed by the previous E-board to know this is a hidden button, she will have clicked on the CUDAP logo in the header of the main pages. However, this reveals the issue that normal users like Abby may accidentally click on the CUDAP logo and be confused as to what the login.php page is since they aren't an admin.
 
 
 **Action #1: Type in the username and password, the click Log In**
@@ -515,7 +515,12 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
+<<<<<<< HEAD
 Just a slight flaw we noticed as a side note during CW Task 1. We originally had a "secret" button is the CUDAP logo, but through this cognitive walkthrough, we realized that users can accidentally click on a CUDAP logo and users like Abby would be confused like "what is this admin page."
+=======
+	* A side result result of Cognitive Walkthrough Task #1 was that we originally were planning on using the CUDAP logo as a "secret" button for the admin to access the admin login page login.php. However, it would be confusing for general users to stumble upon the login page, so we decided to designate a url for just the admins that directs to login.php so that the general public does not encounter this page.
+	* We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
+>>>>>>> 651dc670eae2756aeedc6cd73e8d7e59e53a79ab
 
 [Your responses here should be very thorough and thoughtful.]
 
@@ -534,6 +539,7 @@ Table: execboard
 * field 5: classyear - year member is graduating
 * field 6: year - year started signing (can write a formula for how many years of experience from this number)
 * field 7: description
+* field 8: image - file path of image of member
 
 Table: learn
 * field 1: id - primary key
@@ -541,6 +547,9 @@ Table: learn
 * field 3: background - blurb providing background for sign
 * field 4: image - file path of image showing this sign
 
+Table: gallery
+
+Table: feed
 
 ### Database Queries
 
@@ -990,7 +999,7 @@ We plan to create a login.php page that only E-board members will know about. Th
 
 ^ We were wondering if this is acceptable practice, or whether the login page for admin should be visible on the general website.
 
-We were also wondering if we currently have too many pages.
+We were also wondering if we currently have too many pages. Some of the pages are static and another page we plan to embed a google calendar for the final version to our client, so for the submission to INFO 2300, we will put fake event data so we can spend more time on the webpages that will actually be implemented in the client's final website.
 
 Thank you!
 
