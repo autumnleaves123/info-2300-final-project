@@ -750,7 +750,7 @@ $current_user = check_login();
 
 ```
 
-####  admin_only.php
+####  admin.php
 
 ```
 
@@ -878,7 +878,7 @@ if (isset($_POST['addtag'])) {
 
 ```
 
-####  photo_gallery.php
+####  gallery.php
 
 ```
 include('includes/init.php');
