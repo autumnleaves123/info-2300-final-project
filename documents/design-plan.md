@@ -542,6 +542,8 @@ Table: learn
 
 Table: gallery
 
+Table: feed
+
 ### Database Queries
 
 [Plan your database queries. You may use natural language, pseudocode, or SQL.]
