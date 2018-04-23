@@ -156,7 +156,7 @@ We will implement a slideshow using Javascript, which the user can click arrows 
 
 We will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. This interactive feature will help CUDAP achieve one of their main goals of providing an opportunity for students to learn about sign language.
 
-Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). ~~There will most likely be an "admin_only" button on the "Meet the Board" page that will direct the user to a page with log-in form, which only the admins will know the password to log-in and unlock admin functionality.~~ **Update (M2): there will be a url provided to e-board/admins who can put that in the browser to get to the log-in form, and once they're logged in, they will be able to see an "Admin" page on the navigation bar, which will contain all the forms necessary to update content on the website.**
+Lastly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). ~~There will most likely be an "secret" button (e.g., CUDAP logo) on the home page that will direct the user to a page with a log-in form, which only the admins will know the password to log-in and unlock admin functionality.~~ **Update (M2): there will be a url provided to e-board/admins who can put that in the browser to get to the log-in form, and once they're logged in, they will be able to see an "Admin" page on the navigation bar, which will contain all the forms necessary to update content on the website. (change made after doing cognitive walkthrough for Abby persona)**
 
 ### External Code
 
@@ -511,6 +511,7 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 ### Cognitive Walk-though Results
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
+
 
 [Your responses here should be very thorough and thoughtful.]
 
