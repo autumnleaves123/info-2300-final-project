@@ -541,6 +541,7 @@ Table: learn
 
 [Plan your database queries. You may use natural language, pseudocode, or SQL.]
 
+
 ## Milestone 2, Part V: Structure and Pseudocode
 
 ### Structure
