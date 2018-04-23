@@ -12,6 +12,11 @@ $current_page_id = "events"; ?>
 <body>
   <?php include("includes/header.php"); ?>
   <section>
+		<h1>Events</h1>
+
+		<!-- TODO: Create table with events -->
+		<!-- Table: Date, time, event, location -->
+
   </section>
 
   <?php include('includes/footer.php'); ?>

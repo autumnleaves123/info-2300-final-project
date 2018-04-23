@@ -1,5 +1,12 @@
-<?php include('includes/init.php');
-$current_page_id = "gallery"; ?>
+<?php
+
+include('includes/init.php');
+
+$current_page_id = "gallery";
+
+// fetch gallery/images array
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +18,13 @@ $current_page_id = "gallery"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
+
   <section>
+		<h1>Gallery</h1>
+
+		<!-- TODO: Print images from gallery/images array -->
+
+
   </section>
 
   <?php include('includes/footer.php'); ?>

@@ -6,12 +6,14 @@ $current_page_id = "learn"; ?>
 
 <head>
   <?php include('includes/head.php'); ?>
-  <title>Login</title>
+  <title>Learn ASL</title>
 </head>
 
 <body>
   <?php include("includes/header.php"); ?>
   <section>
+		<h1>Learn ASL with Us</h1>
+
   </section>
 
   <?php include('includes/footer.php'); ?>

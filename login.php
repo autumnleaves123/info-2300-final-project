@@ -10,11 +10,19 @@ $current_page_id = "login"; ?>
 </head>
 
 <body>
-  <?php include("includes/header.php"); ?>
-  <section>
+	<!-- Don't need header -->
+
+	<section>
+
+		<form id="login-form" action="login.php" method="POST">
+			<input type="text" name="username" placeholder="Username" required/>
+			<input type="password" name="password" placeholder="Password" required/>
+			<!-- TODO: create button -->
+		</form>
+
   </section>
 
-  <?php include('includes/footer.php'); ?>
-
+	<!-- Don't need footer -->
 </body>
+
 </html>

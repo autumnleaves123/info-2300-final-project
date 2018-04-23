@@ -12,6 +12,9 @@ $current_page_id = "learn"; ?>
 <body>
   <?php include("includes/header.php"); ?>
   <section>
+		<h1>Resources</h1>
+
+		
   </section>
 
   <?php include('includes/footer.php'); ?>

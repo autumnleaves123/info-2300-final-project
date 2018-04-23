@@ -1,5 +1,11 @@
-<?php include('includes/init.php');
-$current_page_id = "about"; ?>
+<?php
+include('includes/init.php');
+
+$current_page_id = "about";
+
+// Fetch eboard array
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -11,10 +17,14 @@ $current_page_id = "about"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section>
-  </section>
+
+	<section>
+		<!-- TODO: create a div class for each person
+		Each div contains photo, name, title etc.
+		Pull info from database array above (php code) -->
+	</section>
 
   <?php include('includes/footer.php'); ?>
-
 </body>
+
 </html>
