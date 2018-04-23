@@ -512,6 +512,8 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
+We originally had a "secret" button is the CUDAP logo.
+Through this cognitive walkthrough, we can reflect that users can accidentally click on a CUDAP logo and users like Abby would be confused like "what is this admin page."
 
 [Your responses here should be very thorough and thoughtful.]
 
