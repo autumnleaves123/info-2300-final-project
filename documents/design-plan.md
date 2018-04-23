@@ -233,12 +233,11 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 
 1. Home/Feed: ![](sketches/home.jpg)
 
-2. About: ![](sketches/about_sketch.jpg)
+2. About CUDAP: ![](sketches/about_sketch.jpg)
 
 3. Meet the Board: ![](sketches/Meettheboard_sketch.jpg)
 
-4. Sign Choir:
-*** sketch needed ***
+4. Sign Choir: ![](sketches/signchoir_sketch.jpg)
 
 5. Photo Gallery: ![](sketches/gallery_sketch.JPG)
 
@@ -246,7 +245,13 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 
 7. Learning: ![](sketches/learn_sketch.jpeg)
 
-8. Contact: ![](sketches/contact_sketch.JPG)
+8. Resources: ![](sketches/resources_sketch.jpg)
+
+9. Contact: ![](sketches/contact_sketch.JPG)
+
+10. Login: ![](sketches/login_sketch.jpg)
+
+11. Admin: ![](sketches/admin_sketch.jpg)
 
 
 ### Navigation
@@ -515,12 +520,8 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
-<<<<<<< HEAD
-Just a slight flaw we noticed as a side note during CW Task 1. We originally had a "secret" button is the CUDAP logo, but through this cognitive walkthrough, we realized that users can accidentally click on a CUDAP logo and users like Abby would be confused like "what is this admin page."
-=======
 	* A side result result of Cognitive Walkthrough Task #1 was that we originally were planning on using the CUDAP logo as a "secret" button for the admin to access the admin login page login.php. However, it would be confusing for general users to stumble upon the login page, so we decided to designate a url for just the admins that directs to login.php so that the general public does not encounter this page.
 	* We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
->>>>>>> 651dc670eae2756aeedc6cd73e8d7e59e53a79ab
 
 [Your responses here should be very thorough and thoughtful.]
 
