@@ -51,11 +51,6 @@ nav {
 	 text-align: center;
 }
 
-
-nav a:hover {
-	background-color: var(--grey);
-}
-
 a.top-nav, .dropdown {
 	display: inline-block;
 	font-size: 18px;
@@ -185,7 +180,7 @@ table td {
 	font-weight: normal;
 }
 
-#FormButton button:hover {
+#formButton button:hover {
 	background-color: white;
 }
 
