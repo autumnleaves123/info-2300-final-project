@@ -879,7 +879,13 @@ if ($current_user) {
 
 display log-out form if admin is logged-in, display log-in form if admin is not logged-in
 
+
+
 //These forms only displayed if admin is logged-in.
+
+//use Javascript to display different category of forms (Eboard, Feed, Gallery, etc.)
+	onclick --> display these sets of forms
+	- if a user clicks on a category on the left panel, the corresponding forms will show up (e.g., for Eboard category, Add new member form and Delete existing member form as shown on the wireframe for admin.php) 
 
 //uploading images or file uploads to change content of website
 if (isset($_POST['submitimage'])) {
@@ -1019,7 +1025,7 @@ $sql = "SELECT * FROM tags;";
 						echo "<div class = 'break'></div>";
 						foreach($tags as $tag) {
 							$data = array(
-								'tag_id' => $tag['id'],
+								'tag_id' => $tag['id'],`1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111`
 								'tag_name' => $tag['name']
 							);
 							echo "<a class = 'tags' href = 'gallery.php?" . http_build_query($data) . "'>" . htmlspecialchars($tag['name']) . "</a>";
@@ -1193,7 +1199,7 @@ if (isset($submit)) {
 	$formValid = $fnameValid && $lnameValid && $emailValid;
 	// if valid, allow submission
 	if ($formValid) {
-		//put user on listserv
+		//put user on listserv with the information submitted
 	}
 } else {
 	// no form submitted
