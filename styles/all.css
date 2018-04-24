@@ -4,6 +4,7 @@
 
 :root {
 	--red: #8f0302;
+	--brighter_red: rgb(210, 60, 69);
 	--grey: #b2b2b2;
 	--lightgrey: #f7f7f7;
 }
@@ -14,7 +15,6 @@ html, body{
 }
 
 header {
-	/* background-color: var(--grey); */
 	text-align: center;
 }
 
@@ -68,6 +68,10 @@ a.top-nav, .dropbtn {
 	text-decoration: none;
 }
 
+a.top-nav:hover, .dropbtn:hover {
+	color: var(--brighter_red);
+}
+
 .dropdown-pages {
 	display: none;
 	position: absolute;
@@ -93,8 +97,8 @@ a.top-nav, .dropbtn {
    display: block;
 }
 
-.current-page {
-	background-color: var(--red);
+a.current-page {
+	color: var(--red);
 }
 
 
@@ -216,7 +220,7 @@ table td {
    =============== */
 
 #logo img {
-	height: 80px;
+	height: 50px;
 }
 
 footer {

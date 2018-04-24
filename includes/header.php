@@ -49,11 +49,11 @@
 
 			} else if ($page == $current_page_id) {
 
-				echo "<a class='top-nav' href='" . $page . ".php' class='current-page'" . ">" . $page_name . "</a>";
+				echo "<a class='top-nav current-page' href='" . $page . ".php'" . ">" . $page_name . "</a>";
 
 			} else {
 
-				echo "<a class='top-nav'href='" . $page . ".php'>" . $page_name . "</a>";
+				echo "<a class='top-nav' href='" . $page . ".php'>" . $page_name . "</a>";
 			}
 		}
 
