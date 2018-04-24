@@ -57,6 +57,10 @@ nav a {
    text-decoration: none;
 }
 
+nav a:hover {
+	background-color: var(--red);
+}
+
 .dropdown {
    float: left;
    overflow: hidden;
@@ -74,7 +78,7 @@ nav a {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-   background-color: red;
+   background-color: var(--red);
 }
 
 .dropdown-pages {
@@ -104,11 +108,11 @@ nav a {
 }
 
 .current-page {
-	background-color: yellow;
+	background-color: var(--red);
 }
 
 button.current-page {
-	background-color: yellow;
+	background-color: var(--red);
 }
 
 /* ===============
