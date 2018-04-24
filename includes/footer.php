@@ -1,5 +1,3 @@
-<div class = "break"></div>
-<hr/>
 <footer>
 		<p>CUDAP. 2018-2019. Designed by Autumn Watt, Bethany Tang, Derek Cheng, Lucy Lee.</p>
 
