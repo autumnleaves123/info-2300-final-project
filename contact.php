@@ -1,12 +1,14 @@
-<?php include('includes/init.php');
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include('includes/init.php');
 $current_page_id = "contact";
 
 $HIDDEN_ERROR_CLASS = "hiddenError";
-// Get information about the form
-$submit = $_POST["submit"];
 
 // when the user submits a form
-if (isset($submit)) {
+if (isset($_POST["submit"])) {
 	// validate form here
 	$firstName = $_POST['firstName'];
 	// if the first name field is not empty:
@@ -87,10 +89,9 @@ if (isset($submit)) {
 	$emailValEmail = true;
 }
 
-$submitmessage = $_POST["submitmessage"];
 
 // when the user submits a form
-if (isset($submitmessage)) {
+if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = $_POST['message'];
 	// if the first name field is not empty:
