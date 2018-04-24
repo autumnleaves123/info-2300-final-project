@@ -531,32 +531,148 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 ### Database Schema
 
-[Describe the structure of your database. You may use words or a picture. A bulleted list is probably the simplest way to do this.]
+Table: users
+* **id**: integer (PK, AI, unique, non-null)
+  * surrogate key for users
+* **username**: text (unique, non-null)
+  * another natural key for users
+* **password**: text (non-null)
+  * will be stored in hashed form
+* **session**: text (unique)
+  * stores session
 
-Table: execboard
-* field 1: id - primary key (necessary?)
-* field 2: name - name of executive board member
-* field 3: position - position of member
-* field 4: major - major of student
-* field 5: classyear - year member is graduating
-* field 6: year - year started signing (can write a formula for how many years of experience from this number)
-* field 7: description
-* field 8: image - file path of image of member
+Table: eboard
+* **id**: integer (PK, AI, unique, non-null)
+ 	* surrogate key for eboard member
+* **name**: text (non-null)
+	* full name of eboard member
+* **position**: text (non-null)
+	* position of eboard member
+* **major**: text (non-null)
+	* major of eboard member
+* **class**: integer (non-null)
+	* year eboard member is graduating
+* **year**: integer (non-null)
+	* year eboard member started signing (can write a formula for how many years of experience from this number)
+* **bio**: text (non-null)
+	* a short bio for the eboard member (2-3 sentences)
+* **image**: text (non-null)
+	* file name of image of eboard member (to be uploaded to images/eboard folder)
 
-Table: learn
-* field 1: id - primary key
-* field 2: sign - word being signed
-* field 3: background - blurb providing background for sign
-* field 4: image - file path of image showing this sign
+Table: signs
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the sign
+* **sign**: text (non-null)
+	* english translation of the sign
+* **info**: text (non-null)
+	* information on how to properly produce this sign
+* **image**: text (non-null)
+	* file path of image showing this sign (to be uploaded to images/signs folder)
 
-Table: gallery
+#### Tables for Gallery Page
 
-Table: feed
+Table: images
+* **id**: integer (PK, AI, unique, non-null)
+  * surrogate key for images, also file name when stored
+* **title**: text (non-null)
+  * title of image
+* **caption**: text
+  * caption for image, optional
+* **file_ext**: text (non-null)
+  * file type of the image, could be png or jpg or whatever
+
+Table: categories
+* **id**: integer (PK, AI, unique, non-null)
+  * surrogate key for categories
+* **name**: text (unique, non-null)
+  * the name of the category, a natural key
+
+Table: images_cats
+* **image_id**: integer (non-null)
+  * id of the the image in an image-category relationship, a foreign key linked to the primary key of the images table
+* **cat_id**: integer (non-null)
+  * id of the category in an image-category relationship, a foreign key linked to the primary key of the categories table
+* this table facilitates the many-to-many relationship between images and categories
+* records in this table will be unique by means of a query checking if an image-category pair already exists in the table before inserting a new image-category pair into the table
+
+Table: events
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for event
+* **title**: text (non-null)
+	* title of the event
+* **date**: datetime (non-null)
+	* date and time of the event
+* **description**: text (non-null)
+	* short description of the event
 
 ### Database Queries
 
-[Plan your database queries. You may use natural language, pseudocode, or SQL.]
+### Uploading an image (and adding categories)
 
+When users upload an image, they have the option to specify a caption. Depending on if they decide to do so, one of the following queries will be used:
+
+```
+INSERT INTO images (title, caption, file_ext) VALUES (:title, :caption, :file_ext);
+INSERT INTO images (title, file_ext) VALUES (:title, :file_ext);
+```
+
+There will be a field in the image upload form to permit the user to specify tags they want to add to their image in a comma-separated format (tag1, tag2, tag3, etc). This string will be parsed to separate the tags into individual strings, and they will be placed in an array.
+
+First, we will use the following line of PHP to get the ID of the image that was just uploaded:
+
+```
+$image_id = $db->lastInsertID("id");
+```
+
+We would then use the following query for each string in said array:
+
+```
+SELECT * FROM categories WHERE name = :name;
+```
+
+If the result of the above query is null, this means the category does not yet exist. It will thus be added to the categories table with the following query:
+
+```
+INSERT INTO categories (name) VALUES (:name);
+```
+
+The following PHP code will be used to save the ID of the category that was just added:
+
+```
+$tag_id = $db->lastInsertID("id");
+```
+
+Finally, the category will be associated with the image through the following query:
+
+```
+INSERT INTO images_cats (image_id, cat_id) VALUES (:image_id, :cat_id);
+```
+
+Note that each image's page will also contain a form to add/remove categories to that image, if the user is logged in. If the user uses that form to add categories to the image, the same approach described above will be taken, with the added step of checking first if a category entered by the user is already associated with that image, in which case that category will not be added.
+
+### Removing an image or category
+
+Each image page will include a button for deleting the image that displays only when the user is logged in. If the user chooses to delete the image, we will use the following queries:
+
+```
+DELETE FROM images WHERE id = :image_id;
+DELETE FROM images_cats WHERE image_id = :image_id;
+```
+
+The user will also be allowed to add and remove categories. This will probably be done in an admin page. The following queries will be used:
+
+```
+DELETE FROM categories WHERE id = :category_id;
+INSERT INTO categories (name) VALUES (:name);
+```
+
+### Adding/removing events, eboard members, and signs
+
+The queries used here are simple INSERT INTO and DELETE FROM queries that add and remove the relevant records. We may also implement a form that allows the user to change a record in addition to adding and deleting. This would use an UPDATE query. There is not too much involved in this.
+
+### Logging in and out
+
+This will be done in a similar manner to what was shown during lecture.
 
 ## Milestone 2, Part V: Structure and Pseudocode
 
