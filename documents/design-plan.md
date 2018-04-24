@@ -924,7 +924,7 @@ if (isset($_POST['submitimage'])) {
   }
 }
 
-//deleting images and/or other content from website
+//deleting images and/or other content (learning page, meet the board entries) from website
 
 if (isset($_POST['delete'])) {
   $imagetodelete = filter_input(INPUT_POST,'imagetodelete', FILTER_SANITIZE_STRING);
@@ -1104,7 +1104,110 @@ $sql = "SELECT * FROM images;";
 ####  learning.php
 
 ```
-//** include same thing as gallery.php, so perhaps all the pseudocode can be included in init.php instead. Then gallery.php and learning.php can both just include the init.php file to reduce code redundancy.
+//** include same thing as gallery.php, so perhaps some of the shared code can be included in init.php instead to reduce code redundancy.
+The forms for learning page entries and photo gallery page entries would be different because learning.php would also contain additional fields like "sign meaning"
+
+```
+
+####  meettheboard.php
+
+```
+//** similar to gallery.php and learning.php, database of images (of officers) with fields like "position", "name", "responsibilities", "email", etc.
+
+```
+
+####  contact.php
+
+```
+
+The listserv form:
+- checking inputs for correct format
+- displaying error message if input not valid
+
+$HIDDEN_ERROR_CLASS = "hiddenError";
+
+// Get information about the form
+$submit = $_REQUEST["submit"];
+// when the user submits a form
+if (isset($submit)) {
+	// validate form here
+	$firstName = $_REQUEST['firstName'];
+	// if the first name field is not empty:
+	if ( !empty($firstName) ) {
+		// the first name field is valid
+		$fnameFilled = true;
+		if ((strlen(strval($firstName)) >= 2) && (ctype_alpha(str_replace(' ', '', $firstName)))) {
+			$fnameValid = true;
+			$fnameLetter = true;
+		} else {
+			$fnameValid = false;
+			$fnameLetter = false;
+		}
+	} else {
+		// the first name field is not valid
+		$fnameValid = false;
+		$fnameFilled = false;
+		//disable letter error msg because filled is already showing
+		$fnameLetter = true;
+	}
+
+	$lastName = $_REQUEST['lastName'];
+	// if the last name field is not empty:
+	if ( !empty($lastName) ) {
+		// the first name field is valid
+		$lnameFilled = true;
+		if ((strlen(strval($lastName)) >= 2) && (ctype_alpha(str_replace(' ', '', $lastName)))) {
+			$lnameValid = true;
+			$lnameLetter = true;
+		} else {
+			$lnameValid = false;
+			$lnameLetter = false;
+		}
+	} else {
+		// the first name field is not valid
+		$lnameValid = false;
+		$lnameFilled = false;
+		//disable letter error msg because filled is already showing
+		$lnameLetter = true;
+	}
+
+	$email = $_REQUEST["userEmail"];
+	if ( !empty($email) ) {
+		// the first name field is valid
+		$emailFilled = true;
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$emailValid = true;
+			$emailValEmail = true;
+		} else {
+			$emailValid = false;
+			$emailValEmail = false;
+		}
+	} else {
+		// the first name field is not valid
+		$emailValid = false;
+		$emailFilled = false;
+		//disable letter error msg because filled is already showing
+		$emailValEmail = true;
+	}
+
+	$formValid = $fnameValid && $lnameValid && $emailValid;
+	// if valid, allow submission
+	if ($formValid) {
+		//put user on listserv
+	}
+} else {
+	// no form submitted
+	// put default behavior here
+	$fnameValid = true;
+	$fnameLetter = true;
+	$fnameFilled = true;
+	$lnameValid = true;
+	$lnameLetter = true;
+	$lnameFilled = true;
+	$emailValid = true;
+	$emailFilled = true;
+	$emailValEmail = true;
+}
 
 ```
 
