@@ -168,7 +168,7 @@ if (isset($submitmessage)) {
 
           <div class="largeContainer">
             <div class="labelContainer">
-              <label for="email">Email: </label>
+              <label for="userEmail">Email: </label>
             </div>
             <div class="inputContainer">
               <input type="email" id="userEmail" name="userEmail" value="<?php if (!$emailValid) {echo($email);}?>" placeholder="Your Email" required>
