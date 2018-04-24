@@ -128,7 +128,7 @@ if (isset($_POST["submitmessage"])) {
       <div class="contactpage">
         <h2>Questions or Feedback?</h2>
         <!-- TODO: link this to send email? -->
-        <p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.
+        <p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.<br/>
           You can also send us a message through this website on the bottom of this page! </p>
       </div>
 

@@ -147,6 +147,10 @@ a.current-page {
    		EVENTS
    =============== */
 
+table {
+	margin: 0 auto;
+}
+
 table th {
 	padding-bottom: 10px;
 }
@@ -230,7 +234,6 @@ table td {
 	background-color: white;
 }
 
-
 #formButton button:focus {
 	outline: 0;
 }
@@ -247,8 +250,16 @@ table td {
 	font-size: 16px;
 }
 
+#messageButton button:hover {
+	background-color: white;
+}
+
 #messageButton button:active {
 	background-color: white;
+}
+
+#messageButton button:focus {
+	outline: 0;
 }
 
 /* ===============
