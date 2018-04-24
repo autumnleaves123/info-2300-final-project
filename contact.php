@@ -5,7 +5,9 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // Get information about the form
 $submit = $_POST["submit"];
 
-// when the user submits a form
+//
+// when the user submits mailing list form
+//
 if (isset($submit)) {
 	// validate form here
 	$firstName = $_POST['firstName'];
@@ -89,7 +91,9 @@ if (isset($submit)) {
 
 $submitmessage = $_POST["submitmessage"];
 
+//
 // when the user submits a form
+//
 if (isset($submitmessage)) {
 	// validate form here
 	$message = $_POST['message'];
@@ -195,7 +199,7 @@ if (isset($submitmessage)) {
           Message: <div class = "break"></div>
           <textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea> <div class = "break"></div>
           <div id="messageButton">
-            <button type = "submit" name = "submitmessage">SUBMIT MESSAGE</button>
+            <button type="submit" name="submitmessage">SUBMIT MESSAGE</button>
           </div>
         </form>
       </div>
