@@ -9,9 +9,10 @@
 	--lightgrey: #f7f7f7;
 }
 
-html, body{
+html, body {
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
 }
 
 header {
@@ -23,11 +24,7 @@ header {
 }
 
 #cudap-logo img {
-	width: 250px;
-}
-
-section {
-	background-color: var(--lightgrey);
+	width: 400px;
 }
 
 .hiddenError {
@@ -39,9 +36,24 @@ section {
 }
 
 .content {
-	padding: 15px;
+	padding: 40px 200px;
+	background-color: var(--lightgrey);
 }
 
+/* Centers content on a page that does not scroll */
+.centered {
+	position: fixed;
+  top: 40%;
+  left: 50%;
+	margin-top: -70px;
+  margin-left: -100px;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	font-weight: lighter;
+}
 
 /* ===============
    			NAV
@@ -53,7 +65,7 @@ nav {
 
 a.top-nav, .dropdown {
 	display: inline-block;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 10px 14px;
 	margin: 0 5px;
 }
@@ -63,7 +75,7 @@ a.top-nav, .dropbtn {
 	text-decoration: none;
 }
 
-a.top-nav:hover, .dropbtn:hover {
+a.top-nav:hover, .dropbtn:hover, .dropdown-pages a:hover {
 	color: var(--brighter_red);
 }
 
@@ -79,6 +91,7 @@ a.top-nav:hover, .dropbtn:hover {
 .dropdown-pages a {
 	color: black;
 	padding: 12px 16px;
+	font-size: 16;
 	text-decoration: none;
 	display: block;
 	text-align: left;
@@ -96,10 +109,39 @@ a.current-page {
 	color: var(--red);
 }
 
+/* ===============
+   		LOGIN
+   =============== */
 
-button.current-page {
-	background-color: var(--red);
+#login-form input {
+	border: none;
+	border-bottom: 2px solid silver;
+	display: block;
+	margin: 20px 0;
+	color: black;
+	width: 250px;
+	height: 30px;
+	background-color: white;
+	font-size: 15px;
 }
+
+#login-form input:focus, #login-form-button:focus {
+  outline: none;
+}
+
+#login-form-button {
+	width: 250px;
+	height: 40px;
+	margin: 20px 0;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+
+/* ===============
+   		INDEX
+   =============== */
+
 
 /* ===============
    		EVENTS
@@ -209,7 +251,6 @@ table td {
 	background-color: white;
 }
 
-
 /* ===============
    		FOOTER
    =============== */
@@ -221,7 +262,3 @@ table td {
 footer {
 	text-align: center;
 }
-
-/* ===============
-   		INDEX
-   =============== */
