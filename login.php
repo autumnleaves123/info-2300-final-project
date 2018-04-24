@@ -12,7 +12,7 @@ $current_page_id = "login"; ?>
 <body>
 	<!-- Don't need header -->
 
-	<section>
+	<section class = "content">
 
 		<form id="login-form" action="login.php" method="POST">
 			<input type="text" name="username" placeholder="Username" required/>

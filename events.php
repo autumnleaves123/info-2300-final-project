@@ -11,7 +11,7 @@ $current_page_id = "events"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section>
+  <section class = "content">
 		<h1>Events</h1>
 
 		<table>

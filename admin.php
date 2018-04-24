@@ -12,7 +12,7 @@ $current_page_id = "admin"; ?>
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section>
+	<section class = "content">
 
 		<!-- TODO: Use flexboxes to create this page
 		Left flex - admin panel

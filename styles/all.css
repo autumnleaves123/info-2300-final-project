@@ -30,6 +30,19 @@ section {
 	background-color: var(--lightgrey);
 }
 
+.hiddenError {
+	display: none;
+}
+
+.break {
+  margin: 20px;
+}
+
+.content {
+	padding: 15px;
+}
+
+
 /* ===============
    			NAV
    =============== */
@@ -76,7 +89,7 @@ a.top-nav, .dropbtn {
 }
 
 .current-page {
-	background-color: yellow;
+	background-color: var(--red);
 }
 
 

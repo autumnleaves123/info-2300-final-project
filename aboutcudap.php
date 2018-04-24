@@ -12,7 +12,7 @@ $current_page_id = "about"; ?>
 <body>
   <?php include("includes/header.php"); ?>
 
-  <section>
+  <section class = "content">
 		<h1>About CUDAP</h1>
 
 		<p>The Cornell University Deaf Awareness Project (CUDAP) is a student-run program of the Cornell Public Service Center which provides students with opportunities to learn about and participate in raising awareness of the issues facing the Deaf community. Our mission has three parts.</p>
