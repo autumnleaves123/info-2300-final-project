@@ -18,7 +18,7 @@ $current_page_id = "about";
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section>
+	<section class = "content">
 		<h1>Meet the Board</h1>
 		<!-- TODO: create a div class for each person
 		Each div contains photo, name, title etc.

@@ -11,7 +11,7 @@ $current_page_id = "learn"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section>
+  <section class = "content">
 		<h1>Learn ASL with Us</h1>
 
   </section>

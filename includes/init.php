@@ -2,6 +2,24 @@
 
 $current_page = null;
 
+$messages = array(); //inspired by lecture demo code
+
+//inspired by lecture demo code
+// Record a message to display to the user.
+function record_message($message) {
+  global $messages;
+  array_push($messages, $message);
+}
+
+//inspired by lecture demo code
+// Write out any messages to the user.
+function print_messages() {
+  global $messages;
+  foreach ($messages as $message) {
+    echo "<p><em>" . htmlspecialchars($message) . "</em></p>\n";
+  }
+}
+
 function exec_sql_query($db, $sql, $params = array()) {
   $query = $db->prepare($sql);
   if ($query and $query->execute($params)) {

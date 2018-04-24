@@ -19,7 +19,7 @@ $current_page_id = "gallery";
 <body>
   <?php include("includes/header.php"); ?>
 
-  <section>
+  <section class = "content">
 		<h1>Gallery</h1>
 
 		<!-- TODO: Print images from gallery/images array -->

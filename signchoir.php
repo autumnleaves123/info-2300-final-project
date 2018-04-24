@@ -12,7 +12,7 @@ $current_page_id = "signchoir"; ?>
 <body>
   <?php include("includes/header.php"); ?>
 
-  <section>
+  <section class = "content">
 		<h1>Sign Choir</h1>
 
 		<p>Join the Sign Choir every Wednesday from 5:30-6:30 in Goldwin Smith Hall 164! No prior knowledge of ASL is required!</p>
