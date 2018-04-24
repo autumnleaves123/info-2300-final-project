@@ -51,6 +51,11 @@ nav {
 	 text-align: center;
 }
 
+
+nav a:hover {
+	background-color: var(--grey);
+}
+
 a.top-nav, .dropdown {
 	display: inline-block;
 	font-size: 18px;
@@ -97,6 +102,121 @@ a.current-page {
 }
 
 
+<<<<<<< HEAD
+=======
+button.current-page {
+	background-color: var(--red);
+}
+
+/* ===============
+   		EVENTS
+   =============== */
+
+table th {
+	padding-bottom: 10px;
+}
+
+table td {
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+}
+
+
+/* ===============
+   		CONTACT
+   =============== */
+
+#contactCentering p, #contactCentering h2 {
+	text-align: center;
+}
+
+.contactpage {
+	text-align: center;
+	margin-bottom: 45px;
+}
+
+.highlight {
+	color: #8f0302;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.highlight a {
+	color: var(--red);
+}
+
+.largeContainer {
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.labelContainer {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+.inputContainer {
+	display: block;
+}
+
+.errorContainer {
+	color: red;
+	font-size: 14px;
+}
+
+#formButton {
+	margin: 0;
+	padding: 0;
+}
+
+#formButton button {
+	/*margin-top: 0;*/
+	margin: 30px auto;
+	border: 2px solid #8f0302;
+	background-color: var(--grey);
+	width: 250px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #8f0302;
+	border-radius: 1px;
+	padding: 10px;
+	font-weight: normal;
+}
+
+#FormButton button:hover {
+	background-color: white;
+}
+
+#formButton button:active {
+	background-color: white;
+}
+
+
+#formButton button:focus {
+	outline: 0;
+}
+
+#messageButton button {
+	margin: 30px auto;
+	border: 2px solid #8f0302;
+	color: var(--red);
+	background-color: #b2b2b2;
+	width: 250px;
+	text-decoration: none;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#messageButton button:active {
+	background-color: white;
+}
+
+>>>>>>> 29f3496bbb4c65e793f9e19f976422f671a05dc7
 
 /* ===============
    		FOOTER
