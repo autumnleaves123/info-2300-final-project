@@ -51,11 +51,6 @@ nav {
 	 text-align: center;
 }
 
-
-nav a:hover {
-	background-color: var(--grey);
-}
-
 a.top-nav, .dropdown {
 	display: inline-block;
 	font-size: 18px;
@@ -102,8 +97,6 @@ a.current-page {
 }
 
 
-<<<<<<< HEAD
-=======
 button.current-page {
 	background-color: var(--red);
 }
@@ -187,7 +180,7 @@ table td {
 	font-weight: normal;
 }
 
-#FormButton button:hover {
+#formButton button:hover {
 	background-color: white;
 }
 
@@ -216,7 +209,6 @@ table td {
 	background-color: white;
 }
 
->>>>>>> 29f3496bbb4c65e793f9e19f976422f671a05dc7
 
 /* ===============
    		FOOTER
