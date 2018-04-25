@@ -220,12 +220,12 @@ table td {
 #formButton button {
 	/*margin-top: 0;*/
 	margin: 30px auto;
-	border: 2px solid #8f0302;
+	border: 2px solid var(--red);
 	background-color: var(--grey);
 	width: 250px;
 	text-decoration: none;
 	font-size: 16px;
-	color: #8f0302;
+	color: var(--red);
 	border-radius: 1px;
 	padding: 10px;
 	font-weight: normal;
@@ -245,7 +245,7 @@ table td {
 
 #messageButton button {
 	margin: 30px auto;
-	border: 2px solid #8f0302;
+	border: 2px solid var(--red);
 	color: var(--red);
 	background-color: #b2b2b2;
 	width: 250px;
