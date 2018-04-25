@@ -36,7 +36,7 @@ $current_page_id = "about";
         foreach($eboard as $member) {
           echo "<div>";
           echo "<img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>";
-          echo "<h2>" . htmlspecialchars($member["position"]) . "</h2><hr/><p>Name: " . htmlspecialchars($member['name']) . "</p><p>Major: " . htmlspecialchars($member['major']) . "</p></div>";
+          echo "<h2>" . htmlspecialchars($member["position"]) . "</h2><hr/><p><strong>Name: </strong>" . htmlspecialchars($member['name']) . "</p><p><strong>Major: </strong>" . htmlspecialchars($member['major']) . "</p><p><strong>Class Year: </strong>" . htmlspecialchars($member['classyear']) . "</p><p><strong>Bio: </strong> " . htmlspecialchars($member['bio']) . "</p></div>";
         }
       }
     ?>
