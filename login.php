@@ -4,6 +4,21 @@ $current_page_id = "login";
 // TODO: implement login
 // use header function to take user to admin page
 
+// LOGIN
+// Check if we should login the user
+if (isset($_POST['login-form-button'])) {
+  $username = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
+  $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+  $current_user = log_in($username, $password);
+
+  if ($current_user) {
+    header("Location: admin.php");
+  } else {
+    array_push($messages, "incorrect username or password");
+  }
+}
+
 ?>
 
 <!DOCTYPE html>

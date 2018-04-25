@@ -47,7 +47,9 @@
 
 			<?php
 
-			} else if ($page == $current_page_id) {
+		} else if ($page == "admin" && $current_user == null) {
+			// skip over this one
+		} else if ($page == $current_page_id) {
 
 				echo "<a class='top-nav current-page' href='" . $page . ".php'" . ">" . $page_name . "</a>";
 

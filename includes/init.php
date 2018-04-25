@@ -20,6 +20,11 @@ function print_messages() {
   }
 }
 
+// show database errors during development.
+function handle_db_error($exception) {
+  echo '<p><strong>' . htmlspecialchars('Exception : ' . $exception->getMessage()) . '</strong></p>';
+}
+
 function exec_sql_query($db, $sql, $params = array()) {
   $query = $db->prepare($sql);
   if ($query and $query->execute($params)) {
@@ -57,7 +62,7 @@ function open_or_init_sqlite_db($db_filename, $init_sql_filename) {
 }
 
 // open connection to database
-$db = open_or_init_sqlite_db("data.sqlite", "init/init.sql");
+$db = open_or_init_sqlite_db("website.sqlite", "init/init.sql");
 
 function check_login() {
   global $db;
@@ -92,6 +97,7 @@ function user_id() {
   }
 }
 
+// TODO: Implement PHP Sessions!!!!
 // based off lecture 15
 function log_in($username, $password) {
   global $db;
