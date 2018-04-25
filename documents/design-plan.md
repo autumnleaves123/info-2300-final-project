@@ -876,11 +876,11 @@ log-in form for admins:
 if ($current_user) {
   record_message("[Logged in as $current_user]");
 } else {
-	redirect to index.php
-	// hide admin page when user is not logged in
+	redirect to login.php
+	// redirect to login when user is not logged in
 }
 
-display log-out button if admin is logged-in, redirects to homepage if admin is not logged-in, as above
+display log-out button if admin is logged in, redirects to login.php if admin is not logged in, as above
 
 
 
@@ -1237,6 +1237,8 @@ Thank you!
 ## Milestone 3: Updates
 
 [If you make any changes to your plan or design, make a list of the changes here.]
+
+- The slideshow of images on the Home page may be moved to the photo gallery page, making it so that when people click on an image in gallery, they can just click left or right arrows to look through the pictures. 
 
 
 ## Milestone 4: Updates
