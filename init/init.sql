@@ -12,7 +12,7 @@ CREATE TABLE eboard (
   classyear TEXT NOT NULL,
   bio TEXT NOT NULL,
   image TEXT NOT NULL
-)
+);
 
 /* Gallery */
 
