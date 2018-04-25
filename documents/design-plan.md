@@ -875,9 +875,12 @@ log-in form for admins:
 
 if ($current_user) {
   record_message("[Logged in as $current_user]");
+} else {
+	redirect to index.php
+	// hide admin page when user is not logged in
 }
 
-display log-out form if admin is logged-in, display log-in form if admin is not logged-in
+display log-out button if admin is logged-in, redirects to homepage if admin is not logged-in, as above
 
 
 
@@ -885,7 +888,7 @@ display log-out form if admin is logged-in, display log-in form if admin is not 
 
 //use Javascript to display different category of forms (Eboard, Feed, Gallery, etc.)
 	onclick --> display these sets of forms
-	- if a user clicks on a category on the left panel, the corresponding forms will show up (e.g., for Eboard category, Add new member form and Delete existing member form as shown on the wireframe for admin.php) 
+	- if a user clicks on a category on the left panel, the corresponding forms will show up (e.g., for Eboard category, Add new member form and Delete existing member form as shown on the wireframe for admin.php)
 
 //uploading images or file uploads to change content of website
 if (isset($_POST['submitimage'])) {
