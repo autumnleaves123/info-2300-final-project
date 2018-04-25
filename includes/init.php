@@ -2,6 +2,10 @@
 
 $current_page = null;
 
+/* ===============
+   		MESSAGES
+   =============== */
+
 $messages = array(); //inspired by lecture demo code
 
 // inspired by lecture demo code
@@ -19,6 +23,11 @@ function print_messages() {
     echo "<p><em>" . htmlspecialchars($message) . "</em></p>\n";
   }
 }
+
+
+/* ===============
+   		DATABASE
+   =============== */
 
 function exec_sql_query($db, $sql, $params = array()) {
   $query = $db->prepare($sql);
@@ -58,6 +67,11 @@ function open_or_init_sqlite_db($db_filename, $init_sql_filename) {
 
 // open connection to database
 $db = open_or_init_sqlite_db("data.sqlite", "init/init.sql");
+
+
+/* ===============
+   	LOG IN/LOGOUT
+   =============== */
 
 function check_login() {
   global $db;
@@ -162,6 +176,11 @@ function log_out() {
     record_message("log out successful.");
   }
 }
+
+/* ===============
+   		EXECUTE
+   =============== */
+
 
 // check if logged in
 $current_user = check_login();
