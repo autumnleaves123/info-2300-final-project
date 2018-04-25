@@ -26,17 +26,21 @@ $current_page_id = "about";
 		<!-- TODO: create a div class for each person
 		Each div contains photo, name, title etc.
 		Pull info from database array above (php code) -->
+    <div id="eboardFlex">
     <?php
-      $sql = "SELECT * FROM eboard;";
+
+      $sql = "SELECT * FROM eboard";
       $params = array();
       $eboard = exec_sql_query($db, $sql, $params);
-      var_dump($eboard);
       if (isset($eboard) && !empty($eboard)) {
         foreach($eboard as $member) {
+          echo "<div>";
           echo "<img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>";
+          echo "<h2>" . htmlspecialchars($member["position"]) . "</h2><hr/><p>Name: " . htmlspecialchars($member['name']) . "</p><p>Major: " . htmlspecialchars($member['major']) . "</p></div>";
         }
       }
     ?>
+    </div>
 	</section>
 
   <?php include('includes/footer.php'); ?>
