@@ -1,9 +1,6 @@
 <?php include('includes/init.php');
 $current_page_id = "login";
 
-// TODO: implement login
-// use header function to take user to admin page
-
 // LOGIN
 // Check if we should login the user
 if (isset($_POST['login-form-button'])) {

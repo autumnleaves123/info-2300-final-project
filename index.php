@@ -15,7 +15,7 @@ $current_page_id = "index"; ?>
 <body>
 	<?php include('includes/header.php'); ?>
 
-	<section class = "content">
+	<section class="content">
 	</section>
 
 		<?php include('includes/footer.php'); ?>
