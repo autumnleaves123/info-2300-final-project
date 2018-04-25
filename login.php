@@ -31,10 +31,10 @@ if (isset($_POST['login-form-button'])) {
 
 <body>
 	<!-- Don't need header -->
-
 	<section>
 
 		<div class="centered">
+      <h1>Log-in</h1>
 			<form id="login-form" action="login.php" method="POST">
 				<input type="text" name="username" placeholder="Username" required/>
 				<input type="password" name="password" placeholder="Password" required/>
