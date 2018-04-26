@@ -151,38 +151,66 @@ a.current-page {
 	 MEET THE BOARD
    =============== */
 
-	 #eboardFlex {
-	 	display: flex;
-	 	flex-direction: row;
-	 	flex-wrap: wrap;
-	 }
+#eboardFlex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 
-	 #eboardFlex > div {
-	 	width: 31%;
-	 	text-align: center;
-	 	margin: 15px 15px 10px 0;
-	 }
+#eboardFlex > div {
+	width: 31%;
+  text-align: center;
+  margin: 15px 15px 10px 0;
+}
 
-	 #eboardFlex img {
-	 	width: 70%;
-	 	/*height: 320px;*/
-	 }
+#eboardFlex img {
+	width: 70%;
+	/*height: 320px;*/
+}
 
-	 #eboardFlex hr {
-	 	width: 20%
-	 }
+#eboardFlex hr {
+	width: 20%
+}
 
-	 #eboardFlex h3 {
-	 	margin-top: 10px;
-	 	margin-bottom: 5px;
-	 }
+#eboardFlex h3 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
 
-	 #eboardFlex p {
-		width: 80%;
-	 	text-align: left;
-	 	margin: 0 auto;
-	 	padding-left: 10%;
-	 }
+#eboardFlex p {
+  width: 80%;
+	text-align: left;
+	margin: 0 auto;
+	padding-left: 10%;
+}
+
+.memberimage {
+	width: 400px;
+  text-align: center;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: black;
+  height: 530px;
+  position: relative;
+	padding-top: 20px;
+}
+
+.memberimage img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.memberimage p{
+	max-width: 100%;
+	position: relative;
+	margin: 10px;
+}
 
 /* ===============
    		EVENTS

@@ -34,9 +34,9 @@ $current_page_id = "about";
       $eboard = exec_sql_query($db, $sql, $params);
       if (isset($eboard) && !empty($eboard)) {
         foreach($eboard as $member) {
-          echo "<div>";
-          echo "<img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>";
-          echo "<h2>" . htmlspecialchars($member["position"]) . "</h2><hr/><p><strong>Name: </strong>" . htmlspecialchars($member['name']) . "</p><p><strong>Major: </strong>" . htmlspecialchars($member['major']) . "</p><p><strong>Class Year: </strong>" . htmlspecialchars($member['classyear']) . "</p><p><strong>Bio: </strong> " . htmlspecialchars($member['bio']) . "</p></div>";
+          echo "<div class = 'memberimage'>";
+          echo "<div><img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>";
+          echo "<h2>" . htmlspecialchars($member["position"]) . "</h2><hr/><p><strong>Name: </strong>" . htmlspecialchars($member['name']) . "</p><p><strong>Major: </strong>" . htmlspecialchars($member['major']) . "</p><p><strong>Class Year: </strong>" . htmlspecialchars($member['classyear']) . "</p><p><strong>Bio: </strong> " . htmlspecialchars($member['bio']) . "</p></div></div>";
         }
       }
     ?>
