@@ -36,9 +36,9 @@ header {
 }
 
 .content {
-	padding: 40px 200px;
+	padding: 40px 80px;
 	background-color: var(--lightgrey);
-	width: 60%;
+	width: 50%;
 	margin: 20px auto;
 	border-radius: 10px;
 }
