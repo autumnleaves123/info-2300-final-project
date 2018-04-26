@@ -158,9 +158,9 @@ a.current-page {
 }
 
 #eboardFlex > div {
-	width: 31%;
+	width: 47%;
   text-align: center;
-  margin: 15px 15px 10px 0;
+  margin: 15px 2% 10px 0;
 }
 
 #eboardFlex img {
@@ -185,14 +185,12 @@ a.current-page {
 }
 
 .memberimage {
-	width: 400px;
   text-align: center;
   border-width: 2px;
   border-style: dashed;
   border-color: black;
-  height: 530px;
   position: relative;
-	padding-top: 20px;
+	padding: 20px 0;
 }
 
 .memberimage img {
