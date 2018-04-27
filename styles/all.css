@@ -36,9 +36,9 @@ header {
 }
 
 .content {
-	padding: 40px 200px;
+	padding: 40px 80px;
 	background-color: var(--lightgrey);
-	width: 60%;
+	width: 50%;
 	margin: 20px auto;
 	border-radius: 10px;
 }
@@ -158,9 +158,13 @@ a.current-page {
 }
 
 #eboardFlex > div {
+<<<<<<< HEAD
 	width: 30%;
+=======
+	width: 47%;
+>>>>>>> 676a99c93370e68ca86b66ae6f14fe5fbe289add
   text-align: center;
-  margin: 15px 15px 10px 0;
+  margin: 15px 2% 10px 0;
 }
 
 #eboardFlex img {
@@ -185,14 +189,12 @@ a.current-page {
 }
 
 .memberimage {
-	width: 400px;
   text-align: center;
   border-width: 2px;
   border-style: dashed;
   border-color: black;
-  height: 530px;
   position: relative;
-	padding-top: 20px;
+	padding: 20px 0;
 }
 
 .memberimage img {
