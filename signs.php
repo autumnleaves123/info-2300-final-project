@@ -1,5 +1,11 @@
 <?php include('includes/init.php');
-$current_page_id = "learn"; ?>
+$current_page_id = "learn";
+
+// QUERY DATABASE FOR SIGNS
+$sql = "SELECT * FROM signs";
+$params = array();
+$records = exec_sql_query($db, $sql, $params)->fetchAll();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,8 +22,16 @@ $current_page_id = "learn"; ?>
   <?php include("includes/header.php"); ?>
   <section class = "content">
 		<h1>Learn ASL with Us</h1>
-
   </section>
+  <div id = "main-div">
+      <?php
+        if (isset($records) and !empty($records)) {
+          gallery($records);
+        } else {
+          array_push($messages, "No images found.");
+        }
+      ?>
+    </div>
 
   <?php include('includes/footer.php'); ?>
 

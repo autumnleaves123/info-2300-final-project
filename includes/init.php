@@ -147,6 +147,51 @@ function log_out() {
   record_message("log out successful.");
 }
 
+/* ==============================
+   		LEARNING SIGNS GALLERY
+   ============================== */
+
+function gallery($images){
+  $image_count = 1;
+  $number_of_images = count($images);
+  $number_of_columns = 3;
+  $images_in_column = $number_of_images / $number_of_columns;
+
+  foreach($images as $image){
+    if ($image_count == 1) { echo "<div class='column'>"; }
+    echo "<a href='image.php?id=" . $image["id"] . "'><img src='". $image["image_path"] . "' ></a>";
+    if ($image_count >= $images_in_column) { echo "</div>"; $image_count = 0; }
+
+    $image_count += 1;
+  }
+}
+
+function single_view($sign_records){
+  echo "<img src='". $sign_records[0]["image_path"] . "' >";
+  echo "<p><strong>Word: </strong>" . htmlspecialchars($sign_records[0]["word"]) . "</p>";
+  echo "<p><strong>Description: </strong>" . $sign_records[0]["description"] . "</p>";
+
+  /* IF CREDIT IS ADDED
+  echo "<p><strong>Source Credit: </strong>";
+  if (empty($photo_records[0]["credit"])) { // if no credit, assuming user made
+    echo "created by user";
+  } else {
+    echo htmlspecialchars($photo_records[0]["credit"]);
+  }
+  echo "</p>";
+  */
+}
+
+function sign_exists($id) {
+  global $db;
+
+  $sql = "SELECT * FROM signs WHERE signs.id = :id;";
+  $params = array(":id"=>$id);
+  $records = exec_sql_query($db, $sql, $params)->FetchAll();
+
+  return !empty($records); // if $records is not empty, image exists
+}
+
 /* ===============
    		EXECUTE
    =============== */

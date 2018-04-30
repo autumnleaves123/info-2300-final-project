@@ -423,6 +423,45 @@ table td {
 }
 
 /* ===============
+   		LEARN
+   =============== */
+.column {
+  flex: calc(100%/3);
+  padding: 0;
+}
+
+.column img {
+  width: 100%;
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+#main-div {
+  position: relative;
+  float:right;
+  height: auto ;
+  top: 0px;
+  bottom: 0px;
+	margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+
+.single-view img {
+  width: 60%;
+	padding: 0 20%;
+}
+
+.single-view form {
+  margin: 50px 0;
+}
+
+.single-view button[type="submit"] {
+  width: 200px;
+}
+
+/* ===============
    		FOOTER
    =============== */
 

@@ -23,6 +23,12 @@ CREATE TABLE eboard (
 /* Gallery */
 
 /* Learn ASL */
+CREATE TABLE signs (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+  word TEXT NOT NULL UNIQUE,
+  image_path TEXT NOT NULL,
+  description TEXT NOT NULL
+);
 
 /* Resources */
 
@@ -55,6 +61,18 @@ INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Pamela
 /* Gallery */
 
 /* Learn ASL */
+INSERT INTO signs(word, image_path, description) VALUES ('a', 'uploads/signs/a.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('b', 'uploads/signs/b.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('c', 'uploads/signs/c.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('d', 'uploads/signs/d.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('e', 'uploads/signs/e.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('f', 'uploads/signs/f.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('g', 'uploads/signs/g.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('h', 'uploads/signs/h.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('i', 'uploads/signs/i.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('j', 'uploads/signs/j.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('k', 'uploads/signs/k.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('l', 'uploads/signs/l.jpg', 'lorem ipsum');
 
 /* Resources */
 
