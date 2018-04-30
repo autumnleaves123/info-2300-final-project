@@ -7,6 +7,7 @@
 	--brighter_red: rgb(210, 60, 69);
 	--grey: #b2b2b2;
 	--lightgrey: #f7f7f7;
+	--darkergrey: rgb(92, 91, 96);
 }
 
 html, body {
@@ -146,6 +147,87 @@ a.current-page {
    		INDEX
    =============== */
 
+#index {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: var(--lightgrey);
+}
+
+#index img {
+	width: 100%;
+	opacity: 0.3;
+}
+
+#welcome {
+	background-color: white;
+	padding: 60px;
+	display: flex;
+	flex-direction: row;
+	margin-top: -1px;
+}
+
+#welcome h1 {
+	color: var(--red);
+}
+
+#welcome-flex-left {
+	flex: 1.5;
+	order: 1;
+	padding: 0 50px 50px 0px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+#welcome-flex-right {
+	flex: 1;
+	order: 2;
+	text-align: center;
+}
+
+#welcome-flex-right img {
+	opacity: 1;
+}
+
+#welcome-flex-left p {
+	margin-bottom: 50px;
+}
+
+#welcome a {
+	padding: 12px 16px;
+	text-decoration: none;
+	border: 1px solid var(--grey);
+	color: var(--darkergrey);
+	font-weight: lighter;
+}
+
+#welcome a:hover {
+	color: var(--red);
+}
+
+#feed {
+	display: flex;
+	flex-direction: row;
+}
+
+#feed h2 {
+	color: var(--red);
+}
+
+#feed-flex-left {
+	flex: 2.5;
+	order: 1;
+}
+
+#feed-flex-right {
+	flex: 1;
+	order: 2;
+}
+
+.post, #feed-tags, #feed-listserv {
+	background-color: white;
+	margin: 40px 60px;
+	padding: 40px;
+}
 
 /* ===============
 	 MEET THE BOARD
@@ -158,11 +240,7 @@ a.current-page {
 }
 
 #eboardFlex > div {
-<<<<<<< HEAD
-	width: 30%;
-=======
 	width: 47%;
->>>>>>> 676a99c93370e68ca86b66ae6f14fe5fbe289add
   text-align: center;
   margin: 15px 2% 10px 0;
 }
@@ -345,4 +423,5 @@ table td {
 
 footer {
 	text-align: center;
+	padding: 20px;
 }
