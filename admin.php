@@ -15,6 +15,7 @@ if (isset($_POST['logout-button'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<script src="jquery-3.2.1.min.js"></script>
 
   <title>Admin</title>
 </head>
@@ -22,12 +23,21 @@ if (isset($_POST['logout-button'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section class = "content">
+	<section>
+
+		<div id="admin-sidebar">
+
+		</div>
+
+		<div id="admin-content">
+
+		</div>
+
 
     <form id="login-form" action="admin.php" method="POST">
       <button id="login-form-button" type="submit" name="logout-button">Log Out</button>
     </form>
-		
+
 		<!-- TODO: Use flexboxes to create this page
 		Left flex - admin panel
 		Right flex - content will appear based on link clicked on the left (use jQuery onclick) -->

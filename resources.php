@@ -14,11 +14,11 @@ $current_page_id = "learn"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class = "content">
+  <section class="content">
 		<h1>Resources</h1>
     <p>See the links below to learn ASL:
-      <div class = "indent"><a href="https://www.startasl.com/learn-sign-language-asl" target="_blank">www.startasl.com</a><br/></div>
-      <div class = "indent"><a href="http://www.signlanguage101.com/" target="_blank">www.signlanguage101.com</a></div> <br/>
+      <div class="indent"><a href="https://www.startasl.com/learn-sign-language-asl" target="_blank">www.startasl.com</a><br/></div>
+      <div class="indent"><a href="http://www.signlanguage101.com/" target="_blank">www.signlanguage101.com</a></div> <br/>
     </p>
     <p>Click on the links below to download our learning ASL Powerpoints:
       <div class="indent"><a href="uploads/resourcesppt/animal.pptx">Animal Vocab</a><br/></div>

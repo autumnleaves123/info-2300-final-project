@@ -142,6 +142,13 @@ a.current-page {
 	font-size: 14px;
 }
 
+/* ===============
+   		ADMIN
+   =============== */
+
+
+
+
 
 /* ===============
    		INDEX
@@ -321,11 +328,6 @@ table td {
 .indent {
     text-indent: 50px;
 }
-
-
-/* ===============
-   		CONTACT
-   =============== */
 
 #contactCentering p, #contactCentering h2 {
 	text-align: center;
