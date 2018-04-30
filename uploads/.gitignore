@@ -19,3 +19,11 @@
 !/eboard/6.jpg
 !/eboard/7.jpg
 !/eboard/8.jpg
+
+!/resourcesppt/
+/resourcesppt/*
+
+!/resourcesppt/animal.pptx
+!/resourcesppt/education.pptx
+!/resourcesppt/emotions.pptx
+!/resourcesppt/health.pptx
