@@ -237,12 +237,13 @@ a.current-page {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	text-align: center;
 }
 
 #eboardFlex > div {
 	width: 47%;
   text-align: center;
-  margin: 15px 2% 10px 0;
+  margin: 15px 1% 10px 1%
 }
 
 #eboardFlex img {
@@ -367,7 +368,7 @@ table td {
 	/*margin-top: 0;*/
 	margin: 30px auto;
 	border: 2px solid var(--red);
-	background-color: var(--grey);
+	background-color: var(--lightgrey);
 	width: 250px;
 	text-decoration: none;
 	font-size: 16px;
@@ -378,11 +379,11 @@ table td {
 }
 
 #formButton button:hover {
-	background-color: white;
+	background-color: var(--grey);
 }
 
 #formButton button:active {
-	background-color: white;
+	background-color: var(--grey);
 }
 
 #formButton button:focus {
@@ -393,7 +394,7 @@ table td {
 	margin: 30px auto;
 	border: 2px solid var(--red);
 	color: var(--red);
-	background-color: #b2b2b2;
+	background-color: var(--lightgrey);
 	width: 250px;
 	text-decoration: none;
 	margin: 0 auto;
@@ -402,11 +403,11 @@ table td {
 }
 
 #messageButton button:hover {
-	background-color: white;
+	background-color: var(--grey);
 }
 
 #messageButton button:active {
-	background-color: white;
+	background-color: var(--grey);
 }
 
 #messageButton button:focus {

@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include('includes/init.php');
 $current_page_id = "contact";
 
@@ -104,6 +101,8 @@ if (isset($_POST["submitmessage"])) {
 		// the first name field is not valid
 		$messageFilled = false;
 	}
+} else {
+	$messageFilled = true;
 }
 
 ?>
@@ -196,10 +195,16 @@ if (isset($_POST["submitmessage"])) {
       <div class="contactpage">
         <h2>Send Us A Message</h2>
         <p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
-        <form method="post" action="contact.php" id="messageForm">
-          Message: <div class = "break"></div>
-          <textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea> <div class = "break"></div>
-          <div id="messageButton">
+        <form method="post" action="contact.php" id="messageForm" novalidate>
+          Message:
+					<div class = "inputContainer">
+          	<textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+					</div>
+					<span class="errorContainer <?php if ($messageFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="msgErrorNoMsg">
+						Message is required.
+					</span>
+					<div class = "break"></div>
+					<div id="messageButton">
             <button type="submit" name="submitmessage">SUBMIT MESSAGE</button>
           </div>
         </form>
