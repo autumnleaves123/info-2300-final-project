@@ -146,8 +146,26 @@ a.current-page {
    		ADMIN
    =============== */
 
+#admin-wrapper {
+	display: flex;
+	flex-direction: row;
+}
 
+#admin-sidebar {
+	flex: 1;
+	order: 1;
+	background-color: red;
+}
 
+#admin-content {
+	flex: 3;
+	order: 2;
+	background-color: pink;
+}
+
+#admin-sidebar a {
+
+}
 
 
 /* ===============

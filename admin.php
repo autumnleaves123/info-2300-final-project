@@ -15,7 +15,7 @@ if (isset($_POST['logout-button'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
-	<script src="jquery-3.2.1.min.js"></script>
+	<script src="scripts/jquery-3.2.1.min.js"></script>
 
   <title>Admin</title>
 </head>
@@ -24,15 +24,22 @@ if (isset($_POST['logout-button'])) {
   <?php include("includes/header.php"); ?>
 
 	<section>
+		<h1>Admin</h1>
+		
+		<div id="admin-wrapper">
+			<div id="admin-sidebar">
+				<p>Update</p>
+				<a>Feed</a>
+				<a>Eboard</a>
+				<a>Gallery</a>
+				<a>Signs</a>
+				<a>Resources</a>
+			</div>
 
-		<div id="admin-sidebar">
+			<div id="admin-content">
 
+			</div>
 		</div>
-
-		<div id="admin-content">
-
-		</div>
-
 
     <form id="login-form" action="admin.php" method="POST">
       <button id="login-form-button" type="submit" name="logout-button">Log Out</button>
