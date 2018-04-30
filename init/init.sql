@@ -31,8 +31,7 @@ CREATE TABLE eboard (
 CREATE TABLE users (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
   username TEXT NOT NULL,
-  password TEXT NOT NULL,
-  session INTEGER UNIQUE
+  password TEXT NOT NULL
 );
 
 /* TODO: initial seed data */

@@ -8,7 +8,7 @@ if (isset($_POST['login-form-button'])) {
   $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
   $current_user = log_in($username, $password);
-
+  var_dump($current_user);
   if ($current_user) {
     header("Location: admin.php");
   } else {
