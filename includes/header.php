@@ -26,7 +26,11 @@
 				?>
 
 				<div class="dropdown <?php if ($current_page_id == 'about') { echo ("current-page");}?>">
-					<a href="about.php" class="dropbtn" >About</a>
+					<?php if ($page == $current_page_id) { ?>
+						<a href="about.php" class="dropbtn current-page" >About</a>
+					<?php } else { ?>
+						<a href="about.php" class="dropbtn" >About</a>
+					<?php } ?>
 					<div class="dropdown-pages">
 						<a href="board.php">Meet the Board</a>
 					</div>
@@ -37,7 +41,11 @@
 			} else if ($page == "learn") { ?>
 
 				<div class="dropdown <?php if ($current_page_id == 'learn') { echo ("current-page");}?>">
-					<a href="signs.php" class="dropbtn">Learn</a>
+					<?php if ($page == $current_page_id) { ?>
+						<a href="signs.php" class="dropbtn current-page">Learn</a>
+					<?php } else { ?>
+						<a href="signs.php" class="dropbtn">Learn</a>
+					<?php } ?>
 					<div class="dropdown-pages">
 						<a href="resources.php">Resources</a>
 					</div>
