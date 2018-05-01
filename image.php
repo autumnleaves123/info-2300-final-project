@@ -17,7 +17,7 @@ $sign_records = exec_sql_query($db, $sql, $params)->fetchAll();*/
 ?>
 
 <?php
-$page_name = 'image';
+$page_name='image';
 include('includes/init.php');
 
 // if somehow this page is accessed with no get request, redirect to homepage
