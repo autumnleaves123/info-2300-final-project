@@ -87,6 +87,7 @@ function check_login() {
   return NULL;
 }
 
+// do we still need this function?
 function user_id() {
   global $db;
   global $current_user;

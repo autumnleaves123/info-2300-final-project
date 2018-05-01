@@ -29,8 +29,8 @@ $current_page_id = "login";
 				<button id="login-form-button" type="submit" name="login-form-button">Log In</button>
 			</form>
 
-			<p>-- Or --</p>
-			<a href="index.php">Return to website</a>
+			<p>-- or --</p>
+			<a href="index.php" class="link">Return to website</a>
 		</div>
 
   </section>
