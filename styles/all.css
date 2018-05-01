@@ -146,26 +146,79 @@ a.current-page {
    		ADMIN
    =============== */
 
+.content2 {
+	padding: 40px 80px;
+	background-color: var(--lightgrey);
+	margin: 20px auto;
+	border-radius: 10px;
+}
+
+.content2 h1 {
+	color: var(--red);
+}
+
+.white-background {
+	background-color: white;
+}
+
 #admin-wrapper {
 	display: flex;
 	flex-direction: row;
+	padding: 50px 0;
 }
 
 #admin-sidebar {
 	flex: 1;
 	order: 1;
-	background-color: red;
+	/* background-color: red; */
+	margin: 0;
+	padding: 0;
+}
+
+#grey-out {
+	background-color: grey;
 }
 
 #admin-content {
 	flex: 3;
 	order: 2;
-	background-color: pink;
+	/* background-color: pink; */
+}
+
+#admin-sidebar ul {
+	/* background-color: white; */
+	list-style-type: none;
+	margin: 0;
+	border-radius: 10px;
+	padding: 0 50px 0 100px;
+}
+
+#admin-sidebar li {
+	display: block;
+	border: 0.5px solid black;
+	padding: 12px 16px;
 }
 
 #admin-sidebar a {
+	text-decoration: none;
+}
+
+#admin-sidebar a:hover {
+	color: red;
+}
+
+#admin-sidebar li:hover {
+	background-color: white;
+}
+
+#logout-form-button {
+	margin: 20px 50px 0 100px;
+	padding: 0;
+	width: 210px;
+	height: 43px;
 
 }
+
 
 
 /* ===============

@@ -4,8 +4,15 @@ $current_page_id = "admin";
 // LOGOUT
 if (isset($_POST['logout-button'])) {
   log_out();
+	// TODO: create a logged out page?
   header("Location: index.php");
 }
+
+// redirect user to login.php if not logged in
+if ($current_user == NULL) {
+	header("Location: login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,31 +30,34 @@ if (isset($_POST['logout-button'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section>
-		<h1>Admin</h1>
-		
-		<div id="admin-wrapper">
-			<div id="admin-sidebar">
-				<p>Update</p>
-				<a>Feed</a>
-				<a>Eboard</a>
-				<a>Gallery</a>
-				<a>Signs</a>
-				<a>Resources</a>
+	<section class="content2">
+		<h1>Admin Portal</h1>
+
+		<div class="white-background">
+
+			<div id="admin-wrapper">
+				<div id="admin-sidebar">
+					<ul>
+						<li id="grey-out">Update</li>
+						<a href="#"><li>Feed</li></a>
+						<a href="#"><li>Eboard</li></a>
+						<a href="#"><li>Gallery</li></a>
+						<a href="#"><li>Signs</li></a>
+						<a href="#"><li><a href="#">Resources</li></a>
+					</ul>
+
+					<form id="logout-form" action="admin.php" method="POST">
+			      <button id="logout-form-button" type="submit" name="logout-button">Log Out</button>
+			    </form>
+				</div>
+
+				<div id="admin-content">
+
+				</div>
 			</div>
 
-			<div id="admin-content">
-
-			</div>
 		</div>
 
-    <form id="login-form" action="admin.php" method="POST">
-      <button id="login-form-button" type="submit" name="logout-button">Log Out</button>
-    </form>
-
-		<!-- TODO: Use flexboxes to create this page
-		Left flex - admin panel
-		Right flex - content will appear based on link clicked on the left (use jQuery onclick) -->
 
 	</section>
 

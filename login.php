@@ -17,6 +17,9 @@ $current_page_id = "login";
 	<!-- Don't need header -->
 	<section>
 
+		<!-- Check that we want to go ahead with this -->
+		<?php if ($current_user) { header("Location: admin.php"); } ?>
+
 		<div class="centered">
       <h1>Log-in</h1>
 			<form id="login-form" action="login.php" method="POST">
