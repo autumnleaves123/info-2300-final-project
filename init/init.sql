@@ -21,6 +21,21 @@ CREATE TABLE eboard (
 );
 
 /* Gallery */
+CREATE TABLE images (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	title TEXT NOT NULL,
+	file_ext TEXT NOT NULL
+);
+
+CREATE TABLE categories (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE images_cats (
+	image_id INTEGER NOT NULL,
+	cat_id INTEGER NOT NULL
+);
 
 /* Learn ASL */
 CREATE TABLE signs (
@@ -48,7 +63,6 @@ INSERT INTO feed(title, entry_date, content) VALUES ("Rehearsal this week", "Apr
 INSERT INTO feed(title, entry_date, content) VALUES ("Panel discussion on disability and intersectionality", "April 16, 2018", "The Undergraduate Disability Studies Journal is hosting a panel discussion on disability and intersectionality on campus tomorrow, April 17th, from 4:30-6pm in Ives Hall Room 116. Please join us to learn about the experience of students with disabilities on campus who will share about their personal experiences and academic work in this area. The purpose of the panel is to inspire our campus community to think more broadly of disability as diversity, and create a more welcoming space for students with intersectional experiences.");
 
 /* Meet the board (board members) */
-
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Jonathan Masci', 'Alumni Advisor', 'Linguistics', '2016', 'He joined CUDAP in his sophomore year in order to learn more about American Sign Language and Deaf culture. During his time in the organization, he found a passion for advocacy and service learning.', '1.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Mary Grace Hager', 'Co-President', 'Mathematics & Computer Science', '2019', 'She joined CUDAP her freshman year to learn more about ASL and Deaf culture. Mary Grace became Treasurer in the spring of 2016 and transitioned into Co-President a year later.', '2.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Diana Bartolotta', 'Co-President', 'Environmental & Sustainability Sciences', '2019', 'She joined CUDAP her freshman year to pursue advocacy opportunities and to connect with others who share an interest in learning and improving their American Sign Language skills.', '3.jpg');
@@ -59,6 +73,50 @@ INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Alyssa
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Pamela Wildstein', 'Publicity Designer', 'Environmental and Sustainability Sciences', '2020', 'She joined CUDAP in the Fall of her sophmore year, after transferring from Penn State, with the goal of becoming an advocate for the Deaf community.', '8.jpg');
 
 /* Gallery */
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+
+INSERT INTO categories (name) VALUES ('Test');
+
+INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('3', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('4', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('5', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('6', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('7', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('8', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('9', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('10', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('11', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('12', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('13', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('14', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('15', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('16', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '1');
+
 
 /* Learn ASL */
 INSERT INTO signs(word, image_path, description) VALUES ('a', 'uploads/signs/a.jpg', 'lorem ipsum');
@@ -77,6 +135,5 @@ INSERT INTO signs(word, image_path, description) VALUES ('l', 'uploads/signs/l.j
 /* Resources */
 
 /* Log in */
-
 INSERT INTO users(username, password) VALUES ('janedoe', '$2y$10$92IushmzxvE9gSiAEb8d2Op16RZSp.5Vtm4snVsyhP1oI8zrEnrOe'); /* Password is 'gobigred' */
 INSERT INTO users(username, password) VALUES ('gm', '$2y$10$jFXqOXL7F.Q4rSBSNosGEus6cF2lOZ8vIVJoFpQCaGXOGggIfaqzq'); /* Password is 'liftthechorus' */
