@@ -1,21 +1,5 @@
 <?php include('includes/init.php');
 $current_page_id = "login";
-
-// LOGIN
-// Check if we should login the user
-if (isset($_POST['login-form-button'])) {
-  $username = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
-  $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
-  $current_user = log_in($username, $password);
-  var_dump($current_user);
-  if ($current_user) {
-    header("Location: admin.php");
-  } else {
-    array_push($messages, "incorrect username or password");
-  }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +16,9 @@ if (isset($_POST['login-form-button'])) {
 <body>
 	<!-- Don't need header -->
 	<section>
+
+		<!-- Check that we want to go ahead with this -->
+		<?php if ($current_user) { header("Location: admin.php"); } ?>
 
 		<div class="centered">
       <h1>Log-in</h1>

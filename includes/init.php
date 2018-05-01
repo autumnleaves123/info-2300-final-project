@@ -12,7 +12,7 @@ $messages = array(); //inspired by lecture demo code
 // Record a message to display to the user.
 function record_message($message) {
   global $messages;
-  array_push($messages, $message);
+  $messages[] = $message;
 }
 
 // inspired by lecture demo code
@@ -20,7 +20,7 @@ function record_message($message) {
 function print_messages() {
   global $messages;
   foreach ($messages as $message) {
-    echo "<p><em>" . htmlspecialchars($message) . "</em></p>\n";
+    echo "<p class=\"message\">" . htmlspecialchars($message) . "</p>\n";
   }
 }
 
@@ -81,8 +81,8 @@ $db = open_or_init_sqlite_db("website.sqlite", "init/init.sql");
 function check_login() {
   global $db;
 
-  if (isset($SESSION['current_user'])) {
-    return $current_user;
+  if (isset($_SESSION['current_user'])) {
+    return $_SESSION['current_user'];
   }
   return NULL;
 }
@@ -122,6 +122,8 @@ function log_in($username, $password) {
 
         // Generate session
         $_SESSION['current_user'] = $username;
+
+				header("Location: admin.php");
         return $username;
 
       } else {
@@ -196,8 +198,21 @@ function sign_exists($id) {
    		EXECUTE
    =============== */
 
+session_start();
 
-// check if logged in
+// LOGIN
+// Check if we should login the user
+if (isset($_POST['login-form-button'])) {
+  $username = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
+  $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+  $current_user = log_in($username, $password);
+
+} else {
+
+	$current_user = check_login();
+}
+
 $current_user = check_login();
 
 ?>

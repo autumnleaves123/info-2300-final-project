@@ -2,6 +2,10 @@
    		GENERAL
    =============== */
 
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	--red: #8f0302;
 	--brighter_red: rgb(210, 60, 69);
@@ -10,10 +14,15 @@
 	--darkergrey: rgb(92, 91, 96);
 }
 
+@font-face {
+	font-family: "Oxygen";
+	src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Oxygen', sans-serif;
 }
 
 header {
@@ -58,6 +67,17 @@ h1 {
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+button:focus {
+	outline: 0;
+}
+
+.message {
+  color: orange;
+  border: 1px solid orange;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /* ===============
@@ -145,6 +165,82 @@ a.current-page {
 /* ===============
    		ADMIN
    =============== */
+
+.content2 {
+	padding: 40px 80px;
+	background-color: var(--lightgrey);
+	margin: 20px auto;
+	border-radius: 10px;
+}
+
+.content2 h1 {
+	color: var(--red);
+}
+
+.white-background {
+	background-color: white;
+	border-radius: 10px;
+	margin: 50px 0;
+}
+
+#admin-wrapper {
+	display: flex;
+	flex-direction: row;
+	padding: 50px 0;
+}
+
+#admin-sidebar {
+	flex: 1;
+	order: 1;
+	/* background-color: red; */
+	margin: 0;
+	padding: 0;
+}
+
+#grey-out {
+	background-color: grey;
+}
+
+#admin-content {
+	flex: 3;
+	order: 2;
+	/* background-color: pink; */
+}
+
+#admin-sidebar ul {
+	/* background-color: white; */
+	list-style-type: none;
+	margin: 0;
+	border-radius: 10px;
+	padding: 0 50px 0 100px;
+}
+
+#admin-sidebar li {
+	display: block;
+	border: 0.5px solid black;
+	padding: 12px 16px;
+}
+
+#admin-sidebar a {
+	text-decoration: none;
+}
+
+#admin-sidebar a:hover {
+	color: red;
+}
+
+#admin-sidebar li:hover {
+	background-color: var(--lightgrey);
+}
+
+#logout-form-button {
+	margin: 20px 50px 0 100px;
+	padding: 0;
+	width: 210px;
+	height: 43px;
+	background-color: white;
+	border: 1px solid silver;
+}
 
 
 
@@ -396,10 +492,6 @@ table td {
 	background-color: var(--grey);
 }
 
-#formButton button:focus {
-	outline: 0;
-}
-
 #messageButton button {
 	margin: 30px auto;
 	border: 2px solid var(--red);
@@ -420,9 +512,6 @@ table td {
 	background-color: var(--grey);
 }
 
-#messageButton button:focus {
-	outline: 0;
-}
 
 /* ===============
    		LEARN
@@ -462,6 +551,43 @@ table td {
 .single-view button[type="submit"] {
   width: 200px;
 }
+
+/* ===============
+   		GALLERY
+   =============== */
+
+/* adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+
+ .row {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0 4px;
+ }
+
+ .column {
+   flex: 25%;
+   max-width: 25%;
+   padding: 0 4px;
+ }
+
+ .column img {
+   margin-top: 8px;
+   vertical-align: middle;
+ }
+
+ @media screen and (max-width: 800px) {
+   .column {
+     flex: 50%;
+     max-width: 50%;
+   }
+ }
+
+ @media screen and (max-width: 600px) {
+   .column {
+     flex: 100%;
+     max-width: 100%;
+   }
+ }
 
 /* ===============
    		FOOTER
