@@ -83,6 +83,7 @@ button:focus {
 .link {
 	color: var(--red);
 	text-decoration: none;
+	font-weight: bold;
 }
 
 /* ===============
@@ -175,17 +176,17 @@ a.current-page {
 	padding: 40px 80px;
 	background-color: var(--lightgrey);
 	margin: 20px auto;
-	border-radius: 10px;
 }
 
 .content2 h1 {
 	color: var(--red);
+	/* color: black; */
 }
 
 .white-background {
 	background-color: white;
-	border-radius: 10px;
 	margin: 50px 0;
+	padding: 60px;
 }
 
 #admin-wrapper {
