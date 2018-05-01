@@ -1238,7 +1238,8 @@ Thank you!
 
 [If you make any changes to your plan or design, make a list of the changes here.]
 
-- The slideshow of images on the Home page may be moved to the photo gallery page, making it so that when people click on an image in gallery, they can just click left or right arrows to look through the pictures. 
+* The slideshow of images on the Home page may be moved to the photo gallery page, making it so that when people click on an image in gallery, they can just click left or right arrows to look through the pictures.
+* Access the admin editing page through a separate URL: login.php (please see init.sql for usernames and passwords)
 
 
 ## Milestone 4: Updates
