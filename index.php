@@ -37,7 +37,7 @@ $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 
 				<p>We are the Cornell University Deaf Awareness Project (CUDAP), a student-run program of the Cornell Public Service Center. Join us to learn more about and participate in raising awareness of the issues facing the Deaf community!</p>
 
-				<a href="aboutcudap.php">Find out more</a>
+				<a href="about.php">Find out more</a>
 			</div>
 
 			<div id="welcome-flex-right">
