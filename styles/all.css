@@ -80,6 +80,11 @@ button:focus {
   border-radius: 5px;
 }
 
+.link {
+	color: var(--red);
+	text-decoration: none;
+}
+
 /* ===============
    			NAV
    =============== */
