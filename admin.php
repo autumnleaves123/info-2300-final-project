@@ -10,7 +10,7 @@ if ($current_user == NULL) {
 if (isset($_POST['logout-button'])) {
   log_out();
 	// TODO: create a logged out page?
-  header("Location: index.php");
+  header("Location: login.php");
 }
 
 

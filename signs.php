@@ -20,18 +20,21 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class = "content">
+  <section class="content2">
 		<h1>Learn ASL with Us</h1>
-  </section>
-  <div id = "main-div">
-      <?php
-        if (isset($records) and !empty($records)) {
-          gallery($records);
-        } else {
-          array_push($messages, "No images found.");
-        }
-      ?>
-    </div>
+
+		<div class="white-background">
+		  <!-- <div id = "main-div"> -->
+	      <?php
+	        if (isset($records) and !empty($records)) {
+	          gallery($records);
+	        } else {
+	          array_push($messages, "No images found.");
+	        }
+	      ?>
+		  <!-- </div> -->
+		</div>
+	</section>
 
   <?php include('includes/footer.php'); ?>
 
