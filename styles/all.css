@@ -69,6 +69,13 @@ button:focus {
 	outline: 0;
 }
 
+.message {
+  color: orange;
+  border: 1px solid orange;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 /* ===============
    			NAV
    =============== */

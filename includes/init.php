@@ -12,7 +12,7 @@ $messages = array(); //inspired by lecture demo code
 // Record a message to display to the user.
 function record_message($message) {
   global $messages;
-  array_push($messages, $message);
+  $messages[] = $message;
 }
 
 // inspired by lecture demo code
@@ -20,7 +20,7 @@ function record_message($message) {
 function print_messages() {
   global $messages;
   foreach ($messages as $message) {
-    echo "<p><em>" . htmlspecialchars($message) . "</em></p>\n";
+    echo "<p class=\"message\">" . htmlspecialchars($message) . "</p>\n";
   }
 }
 
