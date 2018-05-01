@@ -1,6 +1,11 @@
 <?php include('includes/init.php');
 $current_page_id = "admin";
 
+// redirect user to login.php if not logged in
+if ($current_user == NULL) {
+	header("Location: login.php");
+}
+
 // LOGOUT
 if (isset($_POST['logout-button'])) {
   log_out();
@@ -8,10 +13,7 @@ if (isset($_POST['logout-button'])) {
   header("Location: index.php");
 }
 
-// redirect user to login.php if not logged in
-if ($current_user == NULL) {
-	header("Location: login.php");
-}
+
 
 ?>
 
@@ -36,6 +38,7 @@ if ($current_user == NULL) {
 		<div class="white-background">
 
 			<div id="admin-wrapper">
+
 				<div id="admin-sidebar">
 					<ul>
 						<li id="grey-out">Update</li>
@@ -43,7 +46,7 @@ if ($current_user == NULL) {
 						<a href="#"><li>Eboard</li></a>
 						<a href="#"><li>Gallery</li></a>
 						<a href="#"><li>Signs</li></a>
-						<a href="#"><li><a href="#">Resources</li></a>
+						<a href="#"><li>Resources</li></a>
 					</ul>
 
 					<form id="logout-form" action="admin.php" method="POST">
@@ -52,6 +55,17 @@ if ($current_user == NULL) {
 				</div>
 
 				<div id="admin-content">
+
+					<!-- Edit feed forms -->
+
+					<!-- Edit eboard forms -->
+
+					<!-- Edit gallery forms -->
+
+					<!-- Edit signs forms -->
+
+					<!-- Edit resources forms -->
+
 
 				</div>
 			</div>
