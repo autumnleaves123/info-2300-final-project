@@ -2,6 +2,10 @@
    		GENERAL
    =============== */
 
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	--red: #8f0302;
 	--brighter_red: rgb(210, 60, 69);
@@ -547,6 +551,43 @@ table td {
 .single-view button[type="submit"] {
   width: 200px;
 }
+
+/* ===============
+   		GALLERY
+   =============== */
+
+/* adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+
+ .row {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0 4px;
+ }
+
+ .column {
+   flex: 25%;
+   max-width: 25%;
+   padding: 0 4px;
+ }
+
+ .column img {
+   margin-top: 8px;
+   vertical-align: middle;
+ }
+
+ @media screen and (max-width: 800px) {
+   .column {
+     flex: 50%;
+     max-width: 50%;
+   }
+ }
+
+ @media screen and (max-width: 600px) {
+   .column {
+     flex: 100%;
+     max-width: 100%;
+   }
+ }
 
 /* ===============
    		FOOTER
