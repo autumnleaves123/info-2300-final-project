@@ -48,7 +48,7 @@ header {
 .content {
 	padding: 40px 80px;
 	background-color: var(--lightgrey);
-	width: 50%;
+	width: 80%;
 	margin: 20px auto;
 	border-radius: 10px;
 }
@@ -354,7 +354,7 @@ a.current-page {
 }
 
 #eboardFlex > div {
-	width: 47%;
+	width: 31%;
   text-align: center;
   margin: 15px 1% 10px 1%
 }
