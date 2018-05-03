@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 include('includes/init.php');
 $current_page_id = "index";
 
@@ -66,11 +67,17 @@ $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 			<div id="feed-flex-right">
 
 				<div id="feed-tags">
+					<h2>Tags</h2>
 					<p>Fill with tags</p>
 				</div>
 
 				<div id="feed-listserv">
-					<p>Fill with listserv form</p>
+					<h2>Join our listserv</h2>
+					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
+						<label>Email</label>
+						<input type="email" placeholder="netid@cornell.edu"></input>
+						<button name="submit" type="submit">Subscribe</button>
+					</form>
 				</div>
 			</div>
 		</div>

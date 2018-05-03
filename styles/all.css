@@ -275,7 +275,7 @@ a.current-page {
 
 #welcome {
 	background-color: white;
-	padding: 60px;
+	padding: 60px 60px 40px 60px;
 	display: flex;
 	flex-direction: row;
 	margin-top: -1px;
@@ -326,6 +326,8 @@ a.current-page {
 
 #feed h2 {
 	color: var(--red);
+	padding: 0;
+	margin: 0;
 }
 
 #feed-flex-left {
@@ -340,8 +342,15 @@ a.current-page {
 
 .post, #feed-tags, #feed-listserv {
 	background-color: white;
+	padding: 30px;
+}
+
+.post {
 	margin: 40px 60px;
-	padding: 40px;
+}
+
+#feed-tags, #feed-listserv {
+	margin: 40px 60px 40px 10px;
 }
 
 /* ===============
