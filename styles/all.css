@@ -340,7 +340,7 @@ a.current-page {
 	order: 2;
 }
 
-.post, #feed-tags, #feed-listserv {
+.post, #feed-tags, #feed-listserv, #facebook-like {
 	background-color: white;
 	padding: 30px;
 }
@@ -349,7 +349,7 @@ a.current-page {
 	margin: 40px 60px;
 }
 
-#feed-tags, #feed-listserv {
+#feed-tags, #feed-listserv, #facebook-like {
 	margin: 40px 60px 40px 10px;
 }
 
@@ -379,7 +379,6 @@ a.current-page {
 #feed-tags ul li a:hover {
 	color: white;
 }
-
 
 #feed-listserv form {
 	margin-top: 15px;
@@ -851,6 +850,10 @@ img.hover-shadow {
    		FOOTER
    =============== */
 
+#logo {
+	margin-top: 15px;
+}
+
 #logo img {
 	height: 50px;
 }
@@ -858,4 +861,10 @@ img.hover-shadow {
 footer {
 	text-align: center;
 	padding: 20px;
+}
+
+footer p {
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
 }

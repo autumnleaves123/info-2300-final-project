@@ -1,5 +1,6 @@
 <footer>
-		<p>CUDAP. 2018-2019. Designed by Autumn Watt, Bethany Tang, Derek Cheng, Lucy Lee.</p>
+		<p>Cornell University Deaf Awareness Project. 2018-2019. 
+		<p>Designed by Autumn Watt, Bethany Tang, Derek Cheng, Lucy Lee.</p>
 
 		<div id="logo">
 			<!-- Source: https://en.facebookbrand.com/assets/f-logo -->
