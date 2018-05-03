@@ -66,12 +66,23 @@ CREATE TABLE users (
   password TEXT NOT NULL
 );
 
+
+
 /* TODO: initial seed data */
 
 /* Home page (newsfeed) */
 INSERT INTO feed (title, entry_date, content) VALUES ("CUDAP Arch Sign", "April 23, 2018", "Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!");
 INSERT INTO feed (title, entry_date, content) VALUES ("Rehearsal this week", "April 18, 2018", "Join CUDAP this Wednesday, from 5:30 to 6:30, in GSH room 164 for our weekly Sign Choir meeting! We will be reviewing three songs from this past year: Cups Song - Anna Kendrick, It's Time - Imagine Dragons, and Shape of You - Ed Sheeran.");
 INSERT INTO feed (title, entry_date, content) VALUES ("Panel discussion on disability and intersectionality", "April 16, 2018", "The Undergraduate Disability Studies Journal is hosting a panel discussion on disability and intersectionality on campus tomorrow, April 17th, from 4:30-6pm in Ives Hall Room 116. Please join us to learn about the experience of students with disabilities on campus who will share about their personal experiences and academic work in this area. The purpose of the panel is to inspire our campus community to think more broadly of disability as diversity, and create a more welcoming space for students with intersectional experiences.");
+
+INSERT INTO feed_tags (name) VALUES ("#signchoir");
+INSERT INTO feed_tags (name) VALUES ("#performance");
+INSERT INTO feed_tags (name) VALUES ("#eboard");
+INSERT INTO feed_tags (name) VALUES ("#interest");
+
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (1, 2);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (2, 1);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (3, 4);
 
 
 /* Meet the board (board members) */

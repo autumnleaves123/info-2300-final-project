@@ -353,6 +353,34 @@ a.current-page {
 	margin: 40px 60px 40px 10px;
 }
 
+#feed-tags ul {
+	margin: 15px 0 0 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#feed-tags ul li {
+	display: inline-block;
+	margin: 0 5px 8px 0;
+	padding: 4px 6px;
+	border: 1px solid silver;
+}
+
+#feed-tags ul li a {
+	text-decoration: none;
+	color: var(--darkergrey);
+}
+
+#feed-tags ul li:hover {
+	/* switch for lighter color */
+	background-color: var(--darkergrey);
+}
+
+#feed-tags ul li a:hover {
+	color: white;
+}
+
+
 #feed-listserv form {
 	margin-top: 15px;
 }
@@ -366,7 +394,7 @@ a.current-page {
 	height: 30px;
 	width: 180px;
 	font-size: 16px;
-	border-bottom: 2px solid silver;
+	border-bottom: 1px solid silver;
 }
 
 #feed-listserv input:focus {
@@ -376,12 +404,12 @@ a.current-page {
 #feed-listserv button {
 	padding: 8px 7px;
 	background: white;
-	border: 2px solid silver;
+	border: 1px solid silver;
 	border-radius: 5px;
-	font-size: 14px;
+	font-size: 16px;
 	margin-top: 15px;
 	color: var(--darkergrey);
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 
 /* ===============

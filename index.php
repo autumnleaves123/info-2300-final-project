@@ -11,6 +11,11 @@ $sql = "SELECT * FROM feed";
 $params = array();
 $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 
+// fetch tags
+$sql = "SELECT * FROM feed_tags";
+$params = array();
+$fetch_feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -47,28 +52,25 @@ $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 		</div>
 
 		<div id="feed">
+
 			<div id="feed-flex-left">
-				<?php
-
-					foreach($fetch_feed_content as $post) {
-						?>
-
+				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
 							<h2><?php echo "$post[title]";?></h2>
 							<p><?php echo "$post[entry_date]";?></p>
 							<p><?php echo "$post[content]";?></p>
 						</div>
-
-						<?php
-					}
-				?>
+				<?php } ?>
 			</div>
 
 			<div id="feed-flex-right">
-
 				<div id="feed-tags">
 					<h2>Tags</h2>
-					<p>Fill with tags</p>
+					<ul>
+						<?php foreach($fetch_feed_tags as $tag) {
+							echo("<li><a href='/index.php?tag=" . $tag['id'] . "'>" . $tag['name'] ."</a></li>"); }
+						?>
+					</ul>
 				</div>
 
 				<div id="feed-listserv">
@@ -78,6 +80,7 @@ $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 						<button name="submit" type="submit">Subscribe</button>
 					</form>
 				</div>
+
 			</div>
 		</div>
 
