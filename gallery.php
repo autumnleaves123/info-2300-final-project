@@ -4,8 +4,6 @@ include('includes/init.php');
 
 $current_page_id = "gallery";
 
-// fetch gallery/images array
-
 // just select all images for the time being
 $sql = "SELECT * FROM images;";
 $params = array();

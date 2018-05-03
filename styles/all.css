@@ -185,6 +185,8 @@ a.current-page {
 .content2 h1 {
 	color: var(--red);
 	/* color: black; */
+	/* background-color: white; */
+	/* padding: 15px 0; */
 }
 
 .white-background {
