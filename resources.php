@@ -14,7 +14,7 @@ $current_page_id = "learn"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class="content2">
+  <section class="content2 center">
 		<h1>Resources</h1>
 
 		<div class="white-background">

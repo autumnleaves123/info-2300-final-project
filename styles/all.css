@@ -48,7 +48,7 @@ header {
 .content {
 	padding: 40px 80px;
 	background-color: var(--lightgrey);
-	width: 50%;
+	width: 80%;
 	margin: 20px auto;
 	border-radius: 10px;
 }
@@ -356,7 +356,7 @@ a.current-page {
 }
 
 #eboardFlex > div {
-	width: 47%;
+	width: 31%;
   text-align: center;
   margin: 15px 1% 10px 1%
 }
@@ -762,6 +762,16 @@ img.hover-shadow {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
+
+/* ===============
+   		RESOURCES
+   =============== */
+
+.center {
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
 
 /* ===============
    		FOOTER
