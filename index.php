@@ -74,8 +74,7 @@ $fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 				<div id="feed-listserv">
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<label>Email</label>
-						<input type="email" placeholder="netid@cornell.edu"></input>
+						<input type="email" placeholder="netid@cornell.edu" required></input>
 						<button name="submit" type="submit">Subscribe</button>
 					</form>
 				</div>

@@ -353,6 +353,37 @@ a.current-page {
 	margin: 40px 60px 40px 10px;
 }
 
+#feed-listserv form {
+	margin-top: 15px;
+}
+
+#feed-listserv input, #feedlistserv button {
+	display: block;
+}
+
+#feed-listserv input {
+	border: none;
+	height: 30px;
+	width: 180px;
+	font-size: 16px;
+	border-bottom: 2px solid silver;
+}
+
+#feed-listserv input:focus {
+	outline: 0;
+}
+
+#feed-listserv button {
+	padding: 8px 7px;
+	background: white;
+	border: 2px solid silver;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-top: 15px;
+	color: var(--darkergrey);
+	font-weight: bold;
+}
+
 /* ===============
 	 MEET THE BOARD
    =============== */
@@ -560,6 +591,11 @@ table td {
   min-height: 100%;
 }
 
+#signs-container img {
+	width: 33%;
+	margin: 0 auto;
+}
+
 .single-view img {
   width: 60%;
 	padding: 0 20%;
@@ -583,6 +619,7 @@ table td {
  display: flex;
  flex-wrap: wrap;
  padding: 0 4px;
+ margin-top: 40px;
 }
 
 .column {

@@ -23,17 +23,18 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
   <section class="content2">
 		<h1>Learn ASL with Us</h1>
 
-		<div class="white-background">
-		  <!-- <div id = "main-div"> -->
-	      <?php
-	        if (isset($records) and !empty($records)) {
-	          gallery($records);
-	        } else {
-	          array_push($messages, "No images found.");
-	        }
-	      ?>
-		  <!-- </div> -->
-		</div>
+			<!-- Bethany to Autumn: So sorry! I couldn't seem to revert your signs page back to what it originally looked like after changing the css background! -->
+
+			<div>
+		      <?php
+		        if (isset($records) and !empty($records)) {
+		          gallery($records);
+		        } else {
+		          array_push($messages, "No images found.");
+		        }
+		      ?>
+			 </div>
+
 	</section>
 
   <?php include('includes/footer.php'); ?>

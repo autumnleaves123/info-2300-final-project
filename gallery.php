@@ -29,7 +29,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
   <section class = "content2">
 		<h1>Gallery</h1>
 
-		<!-- TODO: Print images from gallery/images array -->
+		<!-- Maybe add tags at the top for filtering? -->
 
     <!-- GALLERY -->
     <div class="row">
