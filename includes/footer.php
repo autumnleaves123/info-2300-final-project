@@ -4,12 +4,13 @@
 		</div>
 
 		<div id="footer-center">
-			<p>Cornell University Deaf Awareness Project. 2018-2019.
-			<p>Designed by Autumn Watt, Bethany Tang, Derek Cheng, Lucy Lee.</p>
+			<p>© Cornell University Deaf Awareness Project. 2018-2019.
+			<p>Designed by Autumn Watt, Bethany Tang, Derek Cheng, and Lucy Lee.</p>
 		</div>
 
 		<div id="footer-right">
 			<!-- Source: https://en.facebookbrand.com/assets/f-logo -->
+			<a href="mailto:cudap@cornell.edu" target="_blank"><img id="icon-margin" alt="Email Icon" src="images/mail.png"/></a>
 			<a href="https://www.facebook.com/cudeafawarenessproject/" target="_blank"><img alt="Facebook Logo" src="images/facebook.png"/></a>
 		</div>
 </footer>

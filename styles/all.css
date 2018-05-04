@@ -212,6 +212,10 @@ a.current-page {
 	/* padding: 15px 0; */
 }
 
+.content2 a:hover {
+	color: var(--brighter_red);
+}
+
 .white-background {
 	background-color: white;
 	margin: 50px 0;
@@ -982,4 +986,8 @@ footer p {
 
 #footer-right img:hover {
 	opacity: 1;
+}
+
+#icon-margin {
+	margin-right: 5px;
 }
