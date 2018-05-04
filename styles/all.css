@@ -75,6 +75,7 @@ h1 {
 	font-family: 'Capture-It', sans-serif;
 	font-size: 70px;
 	margin: 15px;
+	letter-spacing: 5px;
 }
 
 button:focus {
