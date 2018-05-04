@@ -19,14 +19,10 @@
 	src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
-<<<<<<< HEAD
 @font-face {
 	font-family: "Capture-It";
 	src: url("../fonts/Capture-It/Capture-It.ttf");
 }
-=======
-
->>>>>>> d050d7c691ee98f33aebce377dc7788cd90c1672
 
 html, body {
 	margin: 0;
