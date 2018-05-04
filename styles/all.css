@@ -192,7 +192,7 @@ a.current-page {
 .white-background {
 	background-color: white;
 	margin: 50px 0;
-	padding: 60px;
+	padding: 30px 60px;
 }
 
 #admin-wrapper {
@@ -202,7 +202,7 @@ a.current-page {
 }
 
 h2 {
-	text-align: center;
+	padding-left: 102px;
 }
 
 #admin-sidebar {
@@ -211,6 +211,12 @@ h2 {
 	/* background-color: red; */
 	margin: 0;
 	padding: 0;
+	border: 1px solid black;
+}
+
+#admin-sidebar h2 {
+	text-align: left;
+	margin-top: 0;
 }
 
 #grey-out {
@@ -221,6 +227,7 @@ h2 {
 	flex: 3;
 	order: 2;
 	/* background-color: pink; */
+	border: 1px solid black;
 }
 
 #admin-sidebar ul {
@@ -238,6 +245,7 @@ h2 {
 #admin-sidebar li {
 	text-decoration: underline;
 	margin: 4px;
+	border: 1px solid silver;
 }
 
 #admin-sidebar a:hover {
@@ -258,12 +266,12 @@ h2 {
 }
 
 .indentcontent {
-    margin-left: 50px;
+    margin: 0;
 		width: 60%;
 }
 
 .border {
-	border: 2px solid black;
+	border: 1px solid silver;
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-bottom: 15px;
