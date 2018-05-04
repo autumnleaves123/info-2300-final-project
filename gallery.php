@@ -35,7 +35,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
     <div class="row">
       <?php $colsize = (int) floor(count($records) / 4);
       for ($i = 0; $i < 4; $i++) { ?>
-        <div class="column">
+        <div class="column-gal">
         <?php for ($j = 0; $j < $colsize && !empty($records[$colsize * $i + $j]); $j++) { ?>
           <div class="container">
             <img src="<?php echo "uploads/images/" . $records[$colsize * $i + $j]['id'] . "." . $records[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $records[$colsize * $i + $j]['title']; ?>" />

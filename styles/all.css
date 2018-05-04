@@ -634,7 +634,7 @@ table td {
 
 .column img {
   width: 100%;
-  margin-top: 0;
+  margin: 0;
   vertical-align: middle;
 }
 
@@ -681,13 +681,13 @@ table td {
  margin-top: 40px;
 }
 
-.column {
+.column-gal {
  flex: 25%;
  max-width: 25%;
  padding: 0 4px;
 }
 
-.column img {
+.column-gal img {
  width: 100%;
  display: block;
  margin-top: 8px;
@@ -695,21 +695,21 @@ table td {
 }
 
 @media screen and (max-width: 1000px) {
-	.column {
+	.column-gal {
 		flex: 33%;
 		max-width: 33%;
 	}
 }
 
 @media screen and (max-width: 800px) {
- .column {
+ .column-gal {
    flex: 50%;
    max-width: 50%;
  }
 }
 
 @media screen and (max-width: 600px) {
- .column {
+ .column-gal {
    flex: 100%;
    max-width: 100%;
  }
