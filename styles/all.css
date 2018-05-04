@@ -19,10 +19,14 @@
 	src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
+<<<<<<< HEAD
 @font-face {
 	font-family: "Capture-It";
 	src: url("../fonts/Capture-It/Capture-It.ttf");
 }
+=======
+
+>>>>>>> d050d7c691ee98f33aebce377dc7788cd90c1672
 
 html, body {
 	margin: 0;
@@ -150,6 +154,7 @@ a.top-nav:hover, .dropbtn:hover, .dropdown-pages a:hover {
 
 a.current-page {
 	color: var(--red);
+	font-weight: bold;
 }
 
 /* ===============
@@ -490,7 +495,10 @@ a.current-page {
   width: 80%;
 	text-align: left;
 	margin: 0 auto;
-	padding-left: 10%;
+}
+
+.boardtext {
+	padding: 5%;
 }
 
 .memberimage {
@@ -895,21 +903,36 @@ img.hover-shadow {
    		FOOTER
    =============== */
 
-#logo {
-	margin-top: 15px;
-}
-
-#logo img {
-	height: 50px;
-}
-
 footer {
 	text-align: center;
 	padding: 20px;
+	display: flex;
+	flex-direction: row;
 }
 
 footer p {
 	font-size: 14px;
 	padding: 0;
 	margin: 0;
+}
+
+#footer-left {
+	flex: 1;
+	order: 1;
+}
+
+#footer-center {
+	flex: 2;
+	order: 2;
+}
+
+#footer-right {
+	flex: 1;
+	order: 3;
+	text-align: right;
+	padding-right: 20px;
+}
+
+#footer-right img {
+	width: 35px;
 }
