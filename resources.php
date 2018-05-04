@@ -14,12 +14,12 @@ $current_page_id = "learn"; ?>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class="content2 center">
+  <section class="content2">
 		<h1>Resources</h1>
 
 		<div class="white-background resource-div">
       <div class="flex-left resource-padding">
-        <p>See the links below to learn ASL:
+        <p>See the links below to learn ASL:<br></br>
   	      <div class="indent"><a href="https://www.startasl.com/learn-sign-language-asl" target="_blank">www.startasl.com</a><br/></div>
   	      <div class="indent"><a href="http://www.signlanguage101.com/" target="_blank">www.signlanguage101.com</a></div> <br/>
   	    </p>

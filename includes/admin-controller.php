@@ -4,7 +4,6 @@
 	<li><a href="admin-board.php">Eboard</a></li>
 	<li><a href="admin-gallery.php">Gallery</li></a></li>
 	<li><a href="admin-signs.php">Signs</li></a></li>
-	<li><a href="admin-resources.php">Resources</a></li>
 </ul>
 
 <form id="logout-form" action="admin.php" method="POST">
