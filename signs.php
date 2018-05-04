@@ -20,7 +20,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
 <body>
   <?php include("includes/header.php"); ?>
-  <div id='main-div'>
+  <div id='learn-div'>
     <section class="content2">
       <h1>Learn ASL with Us</h1>
 

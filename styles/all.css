@@ -8,7 +8,7 @@
 
 :root {
 	--red: #8f0302;
-	--brighter_red: rgb(210, 60, 69);
+	--brighter_red: #ba0101;
 	--grey: #b2b2b2;
 	--lightgrey: #f7f7f7;
 	--darkergrey: rgb(92, 91, 96);
@@ -24,7 +24,7 @@
 	src: url("../fonts/Capture-It/Capture-It.ttf");
 }
 
-html, body {
+html, body, textarea {
 	margin: 0;
 	padding: 0;
 	font-family: 'Oxygen', sans-serif;
@@ -459,7 +459,6 @@ a.current-page {
 
 #feed-listserv button {
 	padding: 8px 7px;
-	background: white;
 	font-size: 16px;
 	margin-top: 15px;
 	/* font-weight: bold; */
@@ -562,20 +561,20 @@ table td {
    		CONTACT
    =============== */
 
-#contact-div {
+.flex-div {
 	text-align: center;
 	padding: 20px;
 	display: flex;
 	flex-direction: row;
 }
 
-#contact-left {
+.flex-left {
 	flex: 1;
 	order: 1;
 	border-right: 1px solid var(--grey);
 }
 
-#contact-right {
+.flex-right {
 	flex: 1;
 	order: 2;
 	border-left: 1px solid var(--grey);
@@ -583,6 +582,11 @@ table td {
 
 .indent {
     text-indent: 50px;
+}
+
+textarea {
+	font-size: 12px;
+	width: 70%;
 }
 
 #contactCentering p, #contactCentering h2 {
@@ -676,6 +680,18 @@ table td {
   vertical-align: middle;
 }
 
+#learn-div {
+  position: relative;
+  float:right;
+  height: auto ;
+  top: 0px;
+  bottom: 0px;
+	margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+}
+
 #main-div {
   position: relative;
   float:right;
@@ -683,6 +699,7 @@ table td {
   top: 0px;
   bottom: 0px;
 	margin-bottom: 20px;
+	margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   min-height: 100%;
@@ -913,6 +930,17 @@ img.hover-shadow {
 .center {
 	padding-left: 20%;
 	padding-right: 20%;
+}
+
+.resource-div {
+	text-align: left;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+.resource-padding {
+	padding: 0 2.5%;
 }
 
 /* ===============

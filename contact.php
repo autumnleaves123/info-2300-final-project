@@ -120,106 +120,105 @@ if (isset($_POST["submitmessage"])) {
 </head>
 
 <body>
-  <?php include("includes/header.php"); ?>
+	<?php include("includes/header.php"); ?>
 
-  <section class="content2">
+	<section class="content2">
 		<h1>Contact Us</h1>
 
 		<div class="white-background">
-	    <?php print_messages();?>
-	    <div id="contactCentering">
+			<?php print_messages();?>
+			<div id="contactCentering">
 
-	      <div class="contactpage">
-	        <h2>Questions or Feedback?</h2>
-	        <!-- TODO: link this to send email? -->
-	        <p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.<br/>
-	          You can also send us a message through this website on the bottom of this page! </p>
-	      </div>
+				<div class="contactpage">
+					<h2>Questions or Feedback?</h2>
+					<!-- TODO: link this to send email? -->
+					<p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.<br/>
+						You can also send us a message through this website on the bottom of this page! </p>
+					</div>
 
-				<div id="contact-div">
-	      <!-- TODO: create listserv form -->
-	      <div id="contact-left">
-	        <h2>Mailing List</h2>
-	        <p>Leave us your email for more information and updates!</p>
-	        <form method="post" action="contact.php" id="joinForm" novalidate>
+					<div class="flex-div">
+						<!-- TODO: create listserv form -->
+						<div class="flex-left">
+							<h2>Mailing List</h2>
+							<p>Leave us your email for more information and updates!</p>
+							<form method="post" action="contact.php" id="joinForm" novalidate>
 
-	          <div class="largeContainer">
-	            <div class="labelContainer">
-	              <label for="firstName">First Name: </label>
-	            </div>
-	            <div class="inputContainer">
-	              <input id="firstName" name="firstName" value="<?php if (!$fnameValid) { echo($firstName);}?>" placeholder="First name" required>
-	            </div>
-	            <span class="errorContainer  <?php if ($fnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError1">
-	              First name is required.
-	            </span>
-	            <span class="errorContainer  <?php if ($fnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError2">
-	              First name must consist of 2 or more letters.
-	            </span>
-	          </div>
+								<div class="largeContainer">
+									<div class="labelContainer">
+										<label for="firstName">First Name: </label>
+									</div>
+									<div class="inputContainer">
+										<input id="firstName" name="firstName" value="<?php if (!$fnameValid) { echo($firstName);}?>" placeholder="First name" required>
+									</div>
+									<span class="errorContainer  <?php if ($fnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError1">
+										First name is required.
+									</span>
+									<span class="errorContainer  <?php if ($fnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError2">
+										First name must consist of 2 or more letters.
+									</span>
+								</div>
 
-	          <div class="largeContainer">
-	            <div class="labelContainer">
-	              <label for="lastName">Last Name: </label>
-	            </div>
-	            <div class="inputContainer">
-	              <input id="lastName" name="lastName" value="<?php if (!$lnameValid) {echo($lastName);}?>" placeholder="Last name" required>
-	            </div>
-	            <span class="errorContainer <?php if ($lnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError1">
-	              Last name is required.
-	            </span>
-	            <span class="errorContainer <?php if ($lnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError2">
-	              Last name must consist of 2 or more letters.
-	            </span>
-	          </div>
+								<div class="largeContainer">
+									<div class="labelContainer">
+										<label for="lastName">Last Name: </label>
+									</div>
+									<div class="inputContainer">
+										<input id="lastName" name="lastName" value="<?php if (!$lnameValid) {echo($lastName);}?>" placeholder="Last name" required>
+									</div>
+									<span class="errorContainer <?php if ($lnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError1">
+										Last name is required.
+									</span>
+									<span class="errorContainer <?php if ($lnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError2">
+										Last name must consist of 2 or more letters.
+									</span>
+								</div>
 
-	          <div class="largeContainer">
-	            <div class="labelContainer">
-	              <label for="userEmail">Email: </label>
-	            </div>
-	            <div class="inputContainer">
-	              <input type="email" id="userEmail" name="userEmail" value="<?php if (!$emailValid) {echo($email);}?>" placeholder="Your Email" required>
-	            </div>
-	            <span class="errorContainer <?php if ($emailFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorNoEmail">
-	              Email is required.
-	            </span>
-	            <span class="errorContainer <?php if ($emailValEmail) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorInvalEmail">
-	              Not a valid email address.
-	            </span>
-	          </div>
+								<div class="largeContainer">
+									<div class="labelContainer">
+										<label for="userEmail">Email: </label>
+									</div>
+									<div class="inputContainer">
+										<input type="email" id="userEmail" name="userEmail" value="<?php if (!$emailValid) {echo($email);}?>" placeholder="Your Email" required>
+									</div>
+									<span class="errorContainer <?php if ($emailFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorNoEmail">
+										Email is required.
+									</span>
+									<span class="errorContainer <?php if ($emailValEmail) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorInvalEmail">
+										Not a valid email address.
+									</span>
+								</div>
 
-	          <div id="formButton">
-	            <button name="submit" type="submit" class="submit">subscribe to listserv</button>
-	          </div>
-	        </form>
-	      </div>
-
-	      <!-- TODO: create contact form -->
-	      <div id="contact-right">
-	        <h2>Send Us A Message</h2>
-	        <p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
-	        <form method="post" action="contact.php" id="messageForm" novalidate>
-	          Message:
-						<div class = "inputContainer">
-	          	<textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+								<div id="formButton">
+									<button name="submit" type="submit" class="submit">subscribe to listserv</button>
+								</div>
+							</form>
 						</div>
-						<span class="errorContainer <?php if ($messageFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="msgErrorNoMsg">
-							Message is required.
-						</span>
-						<div class = "break"></div>
-						<div id="messageButton">
-	            <button type="submit" name="submitmessage">submit message</button>
-	          </div>
-	        </form>
-	      </div>
+
+						<!-- TODO: create contact form -->
+						<div class="flex-right">
+							<h2>Send Us A Message</h2>
+							<p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
+							<form method="post" action="contact.php" id="messageForm" novalidate>
+								Message:
+								<div class = "inputContainer">
+									<textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+								</div>
+								<span class="errorContainer <?php if ($messageFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="msgErrorNoMsg">
+									Message is required.
+								</span>
+								<div class = "break"></div>
+								<div id="messageButton">
+									<button type="submit" name="submitmessage">submit message</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 
-	    </div>
-		</div>
+		</section>
 
-  </section>
+		<?php include('includes/footer.php'); ?>
 
-  <?php include('includes/footer.php'); ?>
-
-</body>
+	</body>
 </html>
