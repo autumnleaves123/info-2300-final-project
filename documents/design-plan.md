@@ -1250,6 +1250,9 @@ Thank you!
 Our slides:
 https://docs.google.com/presentation/d/1aGvisQ-2_7qNoPQgmrPWuhemXRmfGj_0Ouy9jWUPh6Q/edit?usp=sharing
 
+Also a PDF version:
+![](slides.pdf)
+
 ## Milestone 5: Cognitive Walkthrough
 
 [Copy your tasks here from Milestone 2. Update them if you need to and then conduct another cognitive walkthrough.]
