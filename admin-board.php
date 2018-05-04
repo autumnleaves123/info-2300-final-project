@@ -139,7 +139,6 @@ if (isset($_POST['delete-oldboard'])) {
 								<form method="post" action="admin-board.php" id="delete-oldboard" name="delete-oldboard">
 									Name:
 									<?php
-
 							      $sql = "SELECT * FROM eboard";
 							      $params = array();
 							      $eboard = exec_sql_query($db, $sql, $params);
@@ -150,12 +149,12 @@ if (isset($_POST['delete-oldboard'])) {
 							          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";
 							        }
 											echo "</select>";
+											echo '<div class = "break"></div><button name="submit" type="submit">Submit</button>';
 							      } else {
 											echo "<p>No eboard members.</p>";
 										}
 							    ?>
-								 <div class = "break"></div>
-								 <button name="submit" type="submit">Submit</button>
+
 								</form>
 							</div>
 						</div>
