@@ -25,14 +25,19 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
 			<!-- Bethany to Autumn: So sorry! I couldn't seem to revert your signs page back to what it originally looked like after changing the css background! -->
 
-			<div>
+			<div id="signs-temp">
 		      <?php
-		        if (isset($records) and !empty($records)) {
-		          gallery($records);
-		        } else {
-		          array_push($messages, "No images found.");
-		        }
+		        // if (isset($records) and !empty($records)) {
+		        //   gallery($records);
+		        // } else {
+		        //   array_push($messages, "No images found.");
+		        // }
 		      ?>
+
+					<!-- Bethany: just my temporary code -->
+					<?php foreach ($records as $image) {
+						echo "<a href='image.php?id=" . $image["id"] . "'><img src='". $image["image_path"] . "' ></a>";
+					} ?>
 			 </div>
 
 	</section>

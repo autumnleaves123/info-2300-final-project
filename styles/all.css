@@ -609,6 +609,16 @@ table td {
 /* ===============
    		LEARN
    =============== */
+
+#signs-temp {
+	margin-top: 50px;
+}
+
+#signs-temp img {
+	width: 24%;
+	margin-left: 4px;
+}
+
 .column {
   flex: calc(100%/3);
   padding: 0;
