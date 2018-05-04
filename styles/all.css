@@ -313,8 +313,6 @@ a.current-page {
 	margin: 5px;
 }
 
-
-
 /* ===============
    		INDEX
    =============== */
@@ -412,17 +410,21 @@ a.current-page {
 	margin: 40px 60px 40px 10px;
 }
 
-#feed-tags ul {
+#feed-tags ul, #tags-in-post {
 	margin: 15px 0 0 0;
 	padding: 0;
 	list-style-type: none;
 }
 
-#feed-tags ul li {
+#feed-tags ul li, #tags-in-post li {
 	display: inline-block;
 	margin: 0 5px 8px 0;
 	padding: 4px 6px;
 	border: 1px solid silver;
+}
+
+#tags-in-post li {
+	color: var(--darkergrey);
 }
 
 #feed-tags ul li a {
