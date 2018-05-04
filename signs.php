@@ -20,26 +20,21 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class="content2">
-    <h1>Learn ASL with Us</h1>
+  <div id='main-div'>
+    <section class="content2">
+      <h1>Learn ASL with Us</h1>
 
-    <!-- Bethany to Autumn: So sorry! I couldn't seem to revert your signs page back to what it originally looked like after changing the css background! -->
-
-    <div id='main-div'>
-      <?php
-      if (isset($records) and !empty($records)) {
-        gallery($records);
-      } else {
-        array_push($messages, "No images found.");
-      }
-      ?>
-
-      <!-- Bethany: just my temporary code -->
-      <!-- <?php /*foreach ($records as $image) {
-      echo "<a href='image.php?id=" . $image["id"] . "'><img src='". $image["image_path"] . "' ></a>";
-    }*/ ?> -->
-    </div>
-  </section>
+      <div id='main-div'>
+        <?php
+        if (isset($records) and !empty($records)) {
+          gallery($records);
+        } else {
+          array_push($messages, "No images found.");
+        }
+        ?>
+      </div>
+    </section>
+  </div>
   <?php include('includes/footer.php'); ?>
 </body>
 </html>
