@@ -211,7 +211,7 @@ h2 {
 	/* background-color: red; */
 	margin: 0;
 	padding: 0;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 
 #admin-sidebar h2 {
@@ -227,7 +227,17 @@ h2 {
 	flex: 3;
 	order: 2;
 	/* background-color: pink; */
-	border: 1px solid black;
+	/* border: 1px solid black; */
+}
+
+#admin-content h2 {
+	padding: 0;
+	margin: 0;
+}
+
+#admin-eboard {
+	margin: 0;
+	padding: 0;
 }
 
 #admin-sidebar ul {
@@ -245,7 +255,7 @@ h2 {
 #admin-sidebar li {
 	text-decoration: underline;
 	margin: 4px;
-	border: 1px solid silver;
+	/* border: 1px solid silver; */
 }
 
 #admin-sidebar a:hover {
@@ -266,7 +276,7 @@ h2 {
 }
 
 .indentcontent {
-    margin: 0;
+    margin-left: -5px;
 		width: 60%;
 }
 

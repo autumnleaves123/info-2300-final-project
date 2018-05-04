@@ -58,14 +58,12 @@ if (isset($_POST['logout-button'])) {
 
 					<!-- Edit feed forms -->
 					<div id="admin-feed">
-						<h4>Admin Feed</h4>
-						<p>
-						</p>
+
 					</div>
 
 					<!-- Edit eboard forms -->
 					<div id="admin-eboard">
-						<p>Manage E-board</p>
+						<h2>Manage E-board entries</h2>
 						<div class="indentcontent">
 							<div class="border">
 								<h5>Add New Eboard Entry</h5>
