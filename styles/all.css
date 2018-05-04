@@ -34,6 +34,19 @@ header {
 	text-align: center;
 }
 
+button {
+	background: white;
+	border: 1px solid silver;
+	font-size: 16px;
+	margin-top: 15px;
+	color: var(--darkergrey);
+}
+
+button:hover {
+	background-color: var(--red);
+	color: white;
+}
+
 #cudap-logo {
 	padding-top: 20px;
 }
@@ -281,8 +294,6 @@ a.current-page {
 	padding: 0;
 	width: 210px;
 	height: 43px;
-	background-color: white;
-	border: 1px solid silver;
 }
 
 .indentcontent {
@@ -358,7 +369,9 @@ a.current-page {
 }
 
 #welcome a:hover {
-	color: var(--red);
+	/* switch for lighter color */
+	background-color: var(--red);
+	color: white;
 }
 
 #feed {
@@ -445,13 +458,11 @@ a.current-page {
 #feed-listserv button {
 	padding: 8px 7px;
 	background: white;
-	border: 1px solid silver;
-	border-radius: 5px;
 	font-size: 16px;
 	margin-top: 15px;
-	color: var(--darkergrey);
 	/* font-weight: bold; */
 }
+
 
 /* ===============
 	 MEET THE BOARD
@@ -549,6 +560,25 @@ table td {
    		CONTACT
    =============== */
 
+#contact-div {
+	text-align: center;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+}
+
+#contact-left {
+	flex: 1;
+	order: 1;
+	border-right: 1px solid var(--grey);
+}
+
+#contact-right {
+	flex: 1;
+	order: 2;
+	border-left: 1px solid var(--grey);
+}
+
 .indent {
     text-indent: 50px;
 }
@@ -601,30 +631,22 @@ table td {
 #formButton button {
 	/*margin-top: 0;*/
 	margin: 30px auto;
-	border: 2px solid var(--red);
-	background-color: var(--lightgrey);
+	border: 2px solid silver;
 	width: 250px;
 	text-decoration: none;
 	font-size: 16px;
-	color: var(--red);
 	border-radius: 1px;
 	padding: 10px;
 	font-weight: normal;
 }
 
-#formButton button:hover {
+/* #formButton button:active {
 	background-color: var(--grey);
-}
-
-#formButton button:active {
-	background-color: var(--grey);
-}
+} */
 
 #messageButton button {
 	margin: 30px auto;
-	border: 2px solid var(--red);
-	color: var(--red);
-	background-color: var(--lightgrey);
+	border: 2px solid silver;
 	width: 250px;
 	text-decoration: none;
 	margin: 0 auto;
@@ -632,13 +654,9 @@ table td {
 	font-size: 16px;
 }
 
-#messageButton button:hover {
+/* #messageButton button:active {
 	background-color: var(--grey);
-}
-
-#messageButton button:active {
-	background-color: var(--grey);
-}
+} */
 
 
 /* ===============
@@ -895,7 +913,6 @@ img.hover-shadow {
 	padding-right: 20%;
 }
 
-
 /* ===============
    		FOOTER
    =============== */
@@ -932,4 +949,9 @@ footer p {
 
 #footer-right img {
 	width: 35px;
+	opacity: 0.5;
+}
+
+#footer-right img:hover {
+	opacity: 1;
 }

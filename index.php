@@ -55,7 +55,7 @@ $fetch_feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
 
 				<p>We are the Cornell University Deaf Awareness Project (CUDAP), a student-run program of the Cornell Public Service Center. Join us to learn more about and participate in raising awareness of the issues facing the Deaf community!</p>
 
-				<a href="about.php">Find out more</a>
+				<a href="about.php">find out more</a>
 			</div>
 
 			<div id="welcome-flex-right">
@@ -89,7 +89,7 @@ $fetch_feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
 						<input type="email" placeholder="netid@cornell.edu" required></input>
-						<button name="submit" type="submit">Subscribe</button>
+						<button name="submit" type="submit">subscribe</button>
 					</form>
 				</div>
 
