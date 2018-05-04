@@ -19,6 +19,8 @@
 	src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
+
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -891,14 +893,6 @@ img.hover-shadow {
    		FOOTER
    =============== */
 
-#logo {
-	margin-top: 15px;
-}
-
-#footer-right img {
-	height: 35px;
-}
-
 footer {
 	text-align: center;
 	padding: 20px;
@@ -927,4 +921,8 @@ footer p {
 	order: 3;
 	text-align: right;
 	padding-right: 20px;
+}
+
+#footer-right img {
+	width: 35px;
 }
