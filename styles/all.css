@@ -112,6 +112,10 @@ button:focus {
 	text-align: center;
 }
 
+.enlarge {
+	font-size: 25px;
+}
+
 /* ===============
    			NAV
    =============== */
@@ -236,10 +240,8 @@ a.current-page {
 #admin-sidebar {
 	flex: 1;
 	order: 1;
-	/* background-color: red; */
 	margin: 0;
 	padding: 0;
-	/* border: 1px solid black; */
 }
 
 #admin-sidebar h2 {
@@ -401,6 +403,40 @@ a.current-page {
 .post, #feed-tags, #feed-listserv, #facebook-like {
 	background-color: white;
 	padding: 30px;
+}
+
+#search-criteria {
+	background-color: white;
+	padding: 4px 30px;
+	margin: 40px 60px;
+}
+
+#search-criteria p {
+	display: inline-block;
+}
+
+#search-criteria a {
+	color: var(--red);
+	text-decoration: none;
+	/* border: 1px solid silver; */
+	/* padding: 4px 10px 0px 10px; */
+	margin: 0 0 -10px 0;
+	padding: 0;
+	font-size: 35px;
+}
+
+#search-criteria a:hover {
+	color: var(--red);
+	font-weight: bold;
+}
+
+#tag-name {
+	border: 1px solid silver;
+	/* border-right: none; */
+	margin-left: 10px;
+	padding: 4px 6px;
+	display: inline-block;
+	color: var(--darkergrey);
 }
 
 .post {
