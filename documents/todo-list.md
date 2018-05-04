@@ -3,6 +3,7 @@
 ## General
 * php errors versus HTML control
 * filter EVERYTHING
+* embed stuff
 
 ## Header
 * maybe make header like this? http://lingwangphotography.com/
@@ -25,12 +26,13 @@
 
 ## Meet the Board
 * new pictures
-* reformat this page like this: https://www.cuaftereight.com/members/
+* ~~reformat this page like this: https://www.cuaftereight.com/members/~~
 * move faculty advisor to lower priority
 
 ## Contact
 * Get rid of first and last name??
 * make buttons same vertical height
+* reformat forms
 
 ## Admin
 * LOTS
