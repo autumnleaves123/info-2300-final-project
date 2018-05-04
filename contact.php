@@ -136,8 +136,9 @@ if (isset($_POST["submitmessage"])) {
 	          You can also send us a message through this website on the bottom of this page! </p>
 	      </div>
 
+				<div id="contact-div">
 	      <!-- TODO: create listserv form -->
-	      <div class="contactpage">
+	      <div id="contact-left">
 	        <h2>Mailing List</h2>
 	        <p>Leave us your email for more information and updates!</p>
 	        <form method="post" action="contact.php" id="joinForm" novalidate>
@@ -188,13 +189,13 @@ if (isset($_POST["submitmessage"])) {
 	          </div>
 
 	          <div id="formButton">
-	            <button name="submit" type="submit" class="submit">SUBSCRIBE TO LISTSERV</button>
+	            <button name="submit" type="submit" class="submit">subscribe to listserv</button>
 	          </div>
 	        </form>
 	      </div>
 
 	      <!-- TODO: create contact form -->
-	      <div class="contactpage">
+	      <div id="contact-right">
 	        <h2>Send Us A Message</h2>
 	        <p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
 	        <form method="post" action="contact.php" id="messageForm" novalidate>
@@ -207,10 +208,11 @@ if (isset($_POST["submitmessage"])) {
 						</span>
 						<div class = "break"></div>
 						<div id="messageButton">
-	            <button type="submit" name="submitmessage">SUBMIT MESSAGE</button>
+	            <button type="submit" name="submitmessage">submit message</button>
 	          </div>
 	        </form>
 	      </div>
+			</div>
 
 	    </div>
 		</div>
