@@ -482,7 +482,10 @@ a.current-page {
   width: 80%;
 	text-align: left;
 	margin: 0 auto;
-	padding-left: 10%;
+}
+
+.boardtext {
+	padding: 5%;
 }
 
 .memberimage {
