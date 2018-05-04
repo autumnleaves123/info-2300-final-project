@@ -47,7 +47,7 @@ if (isset($_POST['logout-button'])) {
 
 					<!-- Edit feed forms -->
 					<div id="admin-feed">
-						<h2>Manage Feed Entries</h2>
+						<h2>Manage Gallery</h2>
 						<div class="indentcontent">
 							<div class="border">
 								<h5>Add New Feed Entry</h5>
