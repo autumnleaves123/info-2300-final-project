@@ -201,6 +201,10 @@ a.current-page {
 	padding: 50px 0;
 }
 
+h2 {
+	text-align: center;
+}
+
 #admin-sidebar {
 	flex: 1;
 	order: 1;
@@ -227,14 +231,13 @@ a.current-page {
 	padding: 0 50px 0 100px;
 }
 
-#admin-sidebar li {
-	display: block;
-	border: 0.5px solid black;
-	padding: 12px 16px;
-}
-
 #admin-sidebar a {
 	text-decoration: none;
+}
+
+#admin-sidebar li {
+	text-decoration: underline;
+	margin: 4px;
 }
 
 #admin-sidebar a:hover {
@@ -254,7 +257,18 @@ a.current-page {
 	border: 1px solid silver;
 }
 
+.indentcontent {
+    margin-left: 50px;
+		width: 60%;
+}
 
+.border {
+	border: 2px solid black;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	margin: 5px;
+}
 
 
 

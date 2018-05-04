@@ -40,13 +40,13 @@ if (isset($_POST['logout-button'])) {
 			<div id="admin-wrapper">
 
 				<div id="admin-sidebar">
+					<h2>Update</h2>
 					<ul>
-						<li id="grey-out">Update</li>
-						<a href="#admin-feed-click"><li>Feed</li></a>
-						<a href="#admin-eboard"><li>Eboard</li></a>
-						<a href="#"><li>Gallery</li></a>
-						<a href="#"><li>Signs</li></a>
-						<a href="#"><li>Resources</li></a>
+						<li><a href="#admin-feed">Feed</a></li>
+						<li><a href="#admin-eboard">Eboard</a></li>
+						<li><a href="#">Gallery</li></a></li>
+						<li><a href="#">Signs</li></a></li>
+						<li><a href="#">Resources</a></li>
 					</ul>
 
 					<form id="logout-form" action="admin.php" method="POST">
@@ -66,7 +66,46 @@ if (isset($_POST['logout-button'])) {
 					<!-- Edit eboard forms -->
 					<div id="admin-eboard">
 						<h4>Admin Eboard</h4>
-						<p>Lorem ipsum dolor sit amet, eum id dolorem maiorum forensibus, no nec fabellas expetendis. Doming debitis nam an. Possim timeam reformidans vix ei, has in sale singulis recteque. Mea te assum graecis consequuntur, duo an ignota qualisque instructior.</p>
+						<p>Manage your Eboard page here:</p>
+						<div class = "indentcontent">
+							<div class = "border">
+								<h5>Add New Eboard Entry</h5>
+								<form method="post" action="admin.php" id="add-eboard" name="add-newboard">
+									Name: <input type="text" required/> <div class = "break"></div>
+									Position: <input type="text" required/> <div class = "break"></div>
+									Major: <input type="text" required/> <div class = "break"></div>
+									Class Year: <input type="text" required/> <div class = "break"></div>
+									Bio: <div class = "break"></div>
+									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
+									<div class = "break"></div>
+									<button name="submit" type="submit">Submit</button>
+								</form><div class = "break"></div>
+							</div>
+							<div class = "border">
+								<h5>Delete Existing Eboard Entry</h5>
+								<form method="post" action="admin.php" id="delete-eboard" name="add-newboard">
+									Name:
+									<?php
+
+							      $sql = "SELECT * FROM eboard";
+							      $params = array();
+							      $eboard = exec_sql_query($db, $sql, $params);
+							      if (isset($eboard) && !empty($eboard)) {
+											echo "<select name='deleteboard'required>\n";
+											echo "<option value='' selected disabled>Choose Member</option>";
+							        foreach($eboard as $member) {
+							          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";
+							        }
+											echo "</select>";
+							      } else {
+											echo "<p>No eboard members.</p>";
+										}
+							    ?>
+								 <div class = "break"></div>
+								 <button name="submit" type="submit">Submit</button>
+								</form>
+							</div>
+						</div>
 					</div>
 
 					<!-- Edit gallery forms -->
