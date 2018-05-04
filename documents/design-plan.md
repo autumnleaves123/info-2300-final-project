@@ -1247,6 +1247,8 @@ Thank you!
 
 [If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
 
+Our slides:
+https://docs.google.com/presentation/d/1aGvisQ-2_7qNoPQgmrPWuhemXRmfGj_0Ouy9jWUPh6Q/edit?usp=sharing
 
 ## Milestone 5: Cognitive Walkthrough
 
