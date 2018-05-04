@@ -26,6 +26,7 @@
 ## Meet the Board
 * new pictures
 * reformat this page like this: https://www.cuaftereight.com/members/
+* move faculty advisor to lower priority
 
 ## Contact
 * Get rid of first and last name??
