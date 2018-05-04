@@ -5,7 +5,12 @@ CREATE TABLE feed (
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	title TEXT NOT NULL,
 	entry_date TEXT NOT NULL,
-	content TEXT NOT NULL
+	content TEXT NOT NULL,
+	file_name TEXT,
+	file_ext TEXT,
+	file_name_2 TEXT,
+	file_ext_2 TEXT,
+	url TEXT
 );
 
 CREATE TABLE feed_tags (
@@ -20,7 +25,6 @@ CREATE TABLE feed_to_tags (
 );
 
 /* Meet the board (board members) */
-
 CREATE TABLE eboard (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
   name TEXT NOT NULL,
@@ -58,6 +62,8 @@ CREATE TABLE signs (
 
 /* Resources */
 
+
+
 /* Log in
 --> this is my example users table from P3 for login testing purposes - Autumn */
 CREATE TABLE users (
@@ -71,18 +77,29 @@ CREATE TABLE users (
 /* TODO: initial seed data */
 
 /* Home page (newsfeed) */
-INSERT INTO feed (title, entry_date, content) VALUES ("CUDAP Arch Sign", "April 23, 2018", "Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!");
-INSERT INTO feed (title, entry_date, content) VALUES ("Rehearsal this week", "April 18, 2018", "Join CUDAP this Wednesday, from 5:30 to 6:30, in GSH room 164 for our weekly Sign Choir meeting! We will be reviewing three songs from this past year: Cups Song - Anna Kendrick, It's Time - Imagine Dragons, and Shape of You - Ed Sheeran.");
-INSERT INTO feed (title, entry_date, content) VALUES ("Panel discussion on disability and intersectionality", "April 16, 2018", "The Undergraduate Disability Studies Journal is hosting a panel discussion on disability and intersectionality on campus tomorrow, April 17th, from 4:30-6pm in Ives Hall Room 116. Please join us to learn about the experience of students with disabilities on campus who will share about their personal experiences and academic work in this area. The purpose of the panel is to inspire our campus community to think more broadly of disability as diversity, and create a more welcoming space for students with intersectional experiences.");
+/* 1 */INSERT INTO feed (title, entry_date, content) VALUES ("CUDAP Arch Sign", "April 23, 2018", "Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!");
+/* 2 */INSERT INTO feed (title, entry_date, content) VALUES ("Rehearsal this week", "April 18, 2018", "Join CUDAP this Wednesday, from 5:30 to 6:30, in GSH room 164 for our weekly Sign Choir meeting! We will be reviewing three songs from this past year: Cups Song - Anna Kendrick, It's Time - Imagine Dragons, and Shape of You - Ed Sheeran.");
+/* 3 */INSERT INTO feed (title, entry_date, content) VALUES ("Panel discussion on disability and intersectionality", "April 16, 2018", "The Undergraduate Disability Studies Journal is hosting a panel discussion on disability and intersectionality on campus tomorrow, April 17th, from 4:30-6pm in Ives Hall Room 116. Please join us to learn about the experience of students with disabilities on campus who will share about their personal experiences and academic work in this area. The purpose of the panel is to inspire our campus community to think more broadly of disability as diversity, and create a more welcoming space for students with intersectional experiences.");
+/* 4 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Openings", "April 12 2018", "We are excited to announce that the following positions will be open on our executive board for the Fall 2018 Semester: Treasurer, Secretary, Outreach Chair, Publicity Coordinator, and Events Coordinator. Descriptions of all board positions can be found below. If you're interested, please fill out the application. Applications are due Wednesday, April 25th to cudap@cornell.edu. Any questions or concerns may be directed to our email or any current board member. We encourage any student, regardless of ability or experience, to apply!");
+/* 5 */INSERT INTO feed (title, entry_date, content) VALUES ("Apparel Sale", "April 10 2018", "Thank you to everyone who ordered from CUDAP's first apparel sale! The apparel has been ordered and should arrive within the next two weeks; if you ordered, we will send you an email when it comes in.");
+/* 6 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Office Hours", "April 9 2018", "If you'd like extra practice with a song or vocabulary we've done in Sign Choir, or are interested in learning more about ASL, Deaf culture, or CUDAP, feel free to come to any board member's office hours; times are on the attached board list. Please notify them via email so they know to expect you.");
+/* 7 */INSERT INTO feed (title, entry_date, content, url) VALUES ("D/deaf / Hard of Hearing School Counseling Survey", "April 1 2018", "Phoebe Lo, a New York University graduate student studying School Counseling, is researching how school counselors can understand and help students who are D/deaf / hard of hearing. To facilitate this, she is looking for D/deaf / hard of hearing students to fill out a survey about their experiences. All responses are confidential and used solely for research.", "https://docs.google.com/forms/d/e/1FAIpQLScuN2dMY6eJeJdQdv_RRA7uWD4sifVXAYNZ9AZ6EgZP__ugbQ/viewform");
 
 INSERT INTO feed_tags (name) VALUES ("#signchoir");
 INSERT INTO feed_tags (name) VALUES ("#performance");
 INSERT INTO feed_tags (name) VALUES ("#eboard");
 INSERT INTO feed_tags (name) VALUES ("#interest");
+INSERT INTO feed_tags (name) VALUES ("#apparel");
+INSERT INTO feed_tags (name) VALUES ("#officehours");
 
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (1, 2);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (2, 1);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (3, 4);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (4, 3);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (5, 5);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 3);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 6);
+INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 
 
 /* Meet the board (board members) */
@@ -156,6 +173,8 @@ INSERT INTO signs(word, image_path, description) VALUES ('k', 'uploads/signs/k.j
 INSERT INTO signs(word, image_path, description) VALUES ('l', 'uploads/signs/l.jpg', 'lorem ipsum');
 
 /* Resources */
+
+
 
 /* Log in */
 INSERT INTO users(username, password) VALUES ('janedoe', '$2y$10$92IushmzxvE9gSiAEb8d2Op16RZSp.5Vtm4snVsyhP1oI8zrEnrOe'); /* Password is 'gobigred' */
