@@ -469,6 +469,10 @@ h2 {
 	width: 20%
 }
 
+#eboardFlex h2 {
+	text-align: left;
+}
+
 #eboardFlex h3 {
 	margin-top: 10px;
 	margin-bottom: 5px;
