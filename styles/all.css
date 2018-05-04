@@ -112,6 +112,10 @@ button:focus {
 	text-align: center;
 }
 
+.enlarge {
+	font-size: 25px;
+}
+
 /* ===============
    			NAV
    =============== */
@@ -218,8 +222,9 @@ a.current-page {
 
 .white-background {
 	background-color: white;
-	margin: 50px 0;
+	margin: 50px auto;
 	padding: 30px 60px;
+	width: 75%;
 }
 
 #admin-wrapper {
@@ -235,10 +240,8 @@ a.current-page {
 #admin-sidebar {
 	flex: 1;
 	order: 1;
-	/* background-color: red; */
 	margin: 0;
 	padding: 0;
-	/* border: 1px solid black; */
 }
 
 #admin-sidebar h2 {
@@ -402,6 +405,40 @@ a.current-page {
 	padding: 30px;
 }
 
+#search-criteria {
+	background-color: white;
+	padding: 4px 30px;
+	margin: 40px 60px;
+}
+
+#search-criteria p {
+	display: inline-block;
+}
+
+#search-criteria a {
+	color: var(--red);
+	text-decoration: none;
+	/* border: 1px solid silver; */
+	/* padding: 4px 10px 0px 10px; */
+	margin: 0 0 -10px 0;
+	padding: 0;
+	font-size: 35px;
+}
+
+#search-criteria a:hover {
+	color: var(--red);
+	font-weight: bold;
+}
+
+#tag-name {
+	border: 1px solid silver;
+	/* border-right: none; */
+	margin-left: 10px;
+	padding: 4px 6px;
+	display: inline-block;
+	color: var(--darkergrey);
+}
+
 .post {
 	margin: 40px 60px;
 }
@@ -473,41 +510,66 @@ a.current-page {
 	 MEET THE BOARD
    =============== */
 
-#eboardFlex {
+#content-eboard {
+	padding: 40px 0;
+	background-color: white;
+	margin: 20px auto;
+	width: 75%;
+}
+
+.eboardFlex {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	text-align: center;
+	margin: 0 auto 100px auto;
+	background-color: white;
+	width: 100%;
 }
 
-#eboardFlex > div {
+/* .eboardFlex > div {
 	width: 31%;
   text-align: center;
   margin: 15px 1% 10px 1%
-}
+} */
 
-#eboardFlex img {
-	width: 70%;
+.eboardFlex img {
+	width: 90%;
 	/*height: 320px;*/
 }
 
-#eboardFlex hr {
-	width: 20%
+.eboard-left {
+	flex: 1;
+	order: 1;
+	width: 50%;
 }
 
-#eboardFlex h2 {
+.eboard-right {
+	flex: 1;
+	order: 2;
+	width: 50%;
+}
+
+.eboardFlex hr {
+	width: 20%;
+}
+
+.eboardFlex h2 {
 	text-align: center;
+	letter-spacing: 5px;
+	font-size: 200%;
+	margin-top: 0;
 }
 
-#eboardFlex h3 {
+.eboardFlex h3 {
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
 
-#eboardFlex p {
+.eboardFlex p {
   width: 80%;
 	text-align: left;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 }
 
 .boardtext {
@@ -565,20 +627,27 @@ table td {
    		CONTACT
    =============== */
 
+.no-padding {
+	padding: 30px 0;
+}
+
 .flex-div {
 	text-align: center;
-	padding: 20px;
+	padding: 0;
 	display: flex;
 	flex-direction: row;
+	width: 100%;
 }
 
 .flex-left {
 	flex: 1;
 	order: 1;
+	padding: 10px;
 	border-right: 1px solid var(--grey);
 }
 
 .flex-right {
+	padding: 10px;
 	flex: 1;
 	order: 2;
 	border-left: 1px solid var(--grey);
@@ -938,9 +1007,16 @@ img.hover-shadow {
 
 .resource-div {
 	text-align: left;
-	padding: 20px;
 	display: flex;
 	flex-direction: row;
+}
+
+.resource-div a {
+	color: var(--red);
+}
+
+.resource-div a:hover {
+	color: var(--brighter_red);
 }
 
 .resource-padding {

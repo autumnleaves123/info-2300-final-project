@@ -125,7 +125,7 @@ if (isset($_POST["submitmessage"])) {
 	<section class="content2">
 		<h1>Contact Us</h1>
 
-		<div class="white-background">
+		<div class="white-background no-padding">
 			<?php print_messages();?>
 			<div id="contactCentering">
 

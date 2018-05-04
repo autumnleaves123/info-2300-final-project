@@ -21,6 +21,7 @@ if ( isset($_GET["tag"])) {
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 
 } else {
+	// no tags, so display all feed content
 	$current_tag = NULL;
 
 	// fetch feed content
@@ -77,6 +78,19 @@ if ( isset($_GET["tag"])) {
 		<div id="feed">
 
 			<div id="feed-flex-left">
+
+				<?php
+				if ( isset($_GET["tag"])) {
+					$sql = "SELECT * FROM feed_tags WHERE id = :current_tag";
+					$params = array(':current_tag' => $current_tag);
+					$fetch_tag_name = exec_sql_query($db, $sql, $params)->fetchAll();
+
+					?>
+					<div id="search-criteria">
+						<?php echo "<p>Search results:</p><div id='tag-name'>" . $fetch_tag_name[0]['name'] . "</div><a href='index.php'>&times;</a>"; ?>
+					</div>
+				<?php } ?>
+
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
 							<h2><?php echo "$post[title]";?></h2>
