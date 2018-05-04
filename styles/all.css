@@ -19,6 +19,11 @@
 	src: url("../fonts/Oxygen/Oxygen-Regular.ttf");
 }
 
+@font-face {
+	font-family: "Capture-It";
+	src: url("../fonts/Capture-It/Capture-It.ttf");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -67,6 +72,9 @@ h1 {
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-family: 'Capture-It', sans-serif;
+	font-size: 70px;
+	margin: 15px;
 }
 
 button:focus {
