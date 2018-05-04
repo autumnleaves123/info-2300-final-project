@@ -201,7 +201,7 @@ a.current-page {
 	padding: 50px 0;
 }
 
-h2 {
+#admin-sidebar h2 {
 	padding-left: 102px;
 }
 
@@ -467,6 +467,10 @@ h2 {
 
 #eboardFlex hr {
 	width: 20%
+}
+
+#eboardFlex h2 {
+	text-align: left;
 }
 
 #eboardFlex h3 {
