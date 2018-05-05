@@ -1,5 +1,8 @@
-<?php include('includes/init.php');
+<?php
+include('includes/init.php');
 $current_page_id = "admin";
+
+$HIDDEN_ERROR_CLASS = "hiddenError";
 
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
@@ -15,64 +18,90 @@ if (isset($_POST['logout-button'])) {
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
 
-if (isset($_POST['add-newboard'])) {
+if (isset($_POST['add'])) {
   $upload_info = $_FILES["image_file"];
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
   $name = trim($name);
-
+	if ((strlen(strval($name)) >= 2) && (ctype_alpha(str_replace(' ', '', $name)))) {
+		$nameValid = true;
+	} else {
+		$nameValid = false;
+	}
   $position = $_POST['position'];
   $position = filter_var($position, FILTER_SANITIZE_STRING);
   $position = trim($position);
+	if ((strlen(strval($position)) >= 2) && (ctype_alpha(str_replace(' ', '', $position)))) {
+		$positionValid = true;
+	} else {
+		$oositionValid = false;
+	}
 	$major = $_POST['major'];
   $major = filter_var($major, FILTER_SANITIZE_STRING);
   $major = trim($major);
+	if ((strlen(strval($major)) >= 2) && (ctype_alpha(str_replace(' ', '', $major)))) {
+		$majorValid = true;
+	} else {
+		$majorValid = false;
+	}
 	$classyear = $_POST['classyear'];
   $classyear = filter_var($classyear, FILTER_SANITIZE_STRING);
   $classyear = trim($classyear);
+	if (strtotime($classyear)) {
+		$classyearValid = true;
+	} else {
+		$classyearValid = false;
+	}
 	$bio = $_POST['bio'];
   $bio = filter_var($bio, FILTER_SANITIZE_STRING);
   $bio = trim($bio);
-  if ($upload_info['error'] == UPLOAD_ERR_OK) {
-    $target_file = basename($_FILES["image_file"]["name"]);
-    $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
-      array_push($messages, "[Error uploading your image.]");
-      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
-    } else {
-      $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
-      $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
-      $records = exec_sql_query($db, $sql, $params);
+	if ($nameValid && $positionValid && $majorValid && $classyearValid) {
+  	if ($upload_info['error'] == UPLOAD_ERR_OK) {
+			$target_file = basename($_FILES["image_file"]["name"]);
+	    $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+	    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+	      array_push($messages, "[Error uploading your image.]");
+	      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+	    } else {
+	      $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
+	      $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
+	      $records = exec_sql_query($db, $sql, $params);
 
-      $fileid = $db->lastInsertId("id");
-      $newfilename = "$fileid.$filetype";
-      $destination = IMAGE_UPLOADS_PATH . $newfilename;
-      if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
-          array_push($messages, "[The image ". htmlspecialchars($target_file) . " has been uploaded.]");
-          $description = NULL;
-          $source = NULL;
-      } else {
-          array_push($messages, "[Error uploading your image.]");
-      }
-    }
-  } else {
-    array_push($messages, "[Error uploading your image.]");
-    if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
-      if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
-        array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
-      } else {
-        array_push($messages, "[Image size too large.]");
-      }
-    }
-
-  }
+	      $fileid = $db->lastInsertId("id");
+	      $newfilename = "$fileid.$filetype";
+	      $destination = IMAGE_UPLOADS_PATH . $newfilename;
+				$sql = "UPDATE eboard SET image = :newfilename WHERE name = :name";
+	      $params = array(':newfilename' => $newfilename, ':name' => $name);
+	      $records = exec_sql_query($db, $sql, $params);
+	      if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
+	          array_push($messages, "[The new member ". htmlspecialchars($name) . " has been added.]");
+	          $name = NULL;
+						$position = NULL;
+						$major = NULL;
+						$classyear = NULL;
+	          $bio = NULL;
+	      } else {
+	          array_push($messages, "[Error uploading your image.]");
+	      }
+	    }
+	  } else {
+	    array_push($messages, "[Error uploading your image.]");
+	    if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
+	      array_push($messages, "[Image size too large.]");
+	    }
+	  }
+	}
+} else {
+	$nameValid = true;
+	$positionValid = true;
+	$majorValid = true;
+	$classyearValid = true;
 }
 
-if (isset($_POST['delete-oldboard'])) {
+if (isset($_POST['delete'])) {
   $entrytodelete = $_POST['entrytodelete'];
 	$entrytodelete = filter_var($entrytodelete, FILTER_SANITIZE_STRING);
   $entrytodelete = trim($entrytodelete);
-	var_dump($entrytodelete);
 	$sqlimage = "SELECT image FROM eboard WHERE name = :entrytodelete";
   $paramsimage = array(':entrytodelete' => $entrytodelete);
   $imageofentry = exec_sql_query($db, $sqlimage, $paramsimage)->fetchAll();
@@ -114,29 +143,42 @@ if (isset($_POST['delete-oldboard'])) {
 				</div>
 
 				<div id="admin-content">
-
+					<?php print_messages();?>
 					<!-- Edit feed forms -->
 					<div id="admin-feed">
 						<h2>Manage E-board entries</h2>
 						<div class="indentcontent">
 							<div class="border">
 								<h5>Add New Eboard Entry</h5>
-								<form method="post" action="admin-board.php" id="add-eboard" name="add-newboard" enctype="multipart/form-data">
-									Name: <input name="name" type="text" required/> <div class = "break"></div>
-									Position: <input name="position" type="text" required/> <div class = "break"></div>
-									Major: <input name="major" type="text" required/> <div class = "break"></div>
-									Class Year: <input name="classyear" type="text" required/> <div class = "break"></div>
+								<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
+									Name: <input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" required/>
+									<span class="errorContainer <?php if ($nameValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError">
+										Name must consist of 2 or more letters.
+									</span><div class = "break"></div>
+									Position: <input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" required/>
+									<span class="errorContainer <?php if ($positionValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="positionError">
+										Position must consist of 2 or more letters.
+									</span><div class = "break"></div>
+									Major: <input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" required/>
+									<span class="errorContainer <?php if ($majorValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="majorError">
+										Major must consist of 2 or more letters.
+									</span><div class = "break"></div>
+									Class Year: <input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" required/>
+									<span class="errorContainer <?php if ($classyearValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="classyearError">
+										Class year must be a valid year.
+									</span><div class = "break"></div>
 									Bio: <div class = "break"></div>
 									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
 									<div class = "break"></div>
 									<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
 									Upload File: <input type="file" name="image_file" required><div class = "break"></div><div class = "break"></div>
-									<button name="submit" type="submit">Submit</button>
+									<button name="add" type="submit">Submit</button>
 								</form><div class = "break"></div>
 							</div>
+
 							<div class="border">
 								<h5>Delete Existing Eboard Entry</h5>
-								<form method="post" action="admin-board.php" id="delete-oldboard" name="delete-oldboard">
+								<form method="post" action="admin-board.php" id="delete_oldboard" name="delete_oldboard">
 									Name:
 									<?php
 							      $sql = "SELECT * FROM eboard";
@@ -149,7 +191,7 @@ if (isset($_POST['delete-oldboard'])) {
 							          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";
 							        }
 											echo "</select>";
-											echo '<div class = "break"></div><button name="submit" type="submit">Submit</button>';
+											echo '<div class = "break"></div><button name="delete" type="submit">Submit</button>';
 							      } else {
 											echo "<p>No eboard members.</p>";
 										}

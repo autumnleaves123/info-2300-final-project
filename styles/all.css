@@ -55,10 +55,6 @@ button:hover {
 	width: 400px;
 }
 
-.hiddenError {
-	display: none;
-}
-
 .break {
   margin: 20px;
 }
@@ -700,6 +696,11 @@ textarea {
 .errorContainer {
 	color: red;
 	font-size: 14px;
+	display: block;
+}
+
+.hiddenError {
+	display: none;
 }
 
 #formButton {
