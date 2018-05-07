@@ -1,4 +1,22 @@
 /* ===============
+   		CONTENTS
+
+			GENERAL
+			NAV
+			INDEX
+			LOGIN
+			ADMIN
+			MEET THE BOARD
+			EVENTS
+			CONTACT
+			LEARN
+			GALLERY
+			RESOURCES
+			FOOTER
+   =============== */
+
+
+/* ===============
    		GENERAL
    =============== */
 
@@ -270,26 +288,34 @@ a.current-page {
 	/* background-color: white; */
 	list-style-type: none;
 	margin: 0;
-	border-radius: 10px;
-	padding: 0 50px 0 100px;
-}
-
-#admin-sidebar a {
-	text-decoration: none;
+	border: 1px solid silver;
+	padding: 0;
+	width: 200px;
 }
 
 #admin-sidebar li {
-	text-decoration: underline;
-	margin: 4px;
-	/* border: 1px solid silver; */
+	border-top: 1px solid silver;
+	margin:  0;
+	padding: 8px 0 0 7px;
+	height: 50px;
+	text-decoration: none;
+	color: var(--darkergrey);
+	border-left: 3px solid  white;
+	vertical-align: center;
 }
 
-#admin-sidebar a:hover {
-	color: red;
+#admin-sidebar li:first-child {
+	border-top: none;
 }
 
 #admin-sidebar li:hover {
-	background-color: var(--lightgrey);
+	border-left: 3px solid var(--red);
+}
+
+#admin-sidebar li a {
+	color: var(--darkergrey);
+	text-decoration: none;
+	font-size: 150%;
 }
 
 #logout-form-button {
