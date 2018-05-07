@@ -87,7 +87,9 @@ if ( isset($_GET["tag"])) {
 
 					?>
 					<div id="search-criteria">
-						<?php echo "<p>Search results:</p><div id='tag-name'>" . $fetch_tag_name[0]['name'] . "</div><a href='index.php'>&times;</a>"; ?>
+						<?php /*$unicodeChar = '\u2573';
+						json_decode('"'.$unicodeChar.'"');*/
+						echo "<p>Search results:</p><div id='tag-name'>" . $fetch_tag_name[0]['name'] . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
 					</div>
 				<?php } ?>
 
