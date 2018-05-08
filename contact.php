@@ -6,27 +6,6 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 
 // when the user submits a form
 if (isset($_POST["submit"])) {
-	// validate form here
-	$name = $_POST['name'];
-	// if the name field is not empty:
-	if ( !empty($name) ) {
-		// the name field is valid
-		$nameFilled = true;
-		if ((strlen(strval($name)) >= 2) && (ctype_alpha(str_replace(' ', '', $name)))) {
-			$nameValid = true;
-			$nameLetter = true;
-		} else {
-			$nameValid = false;
-			$nameLetter = false;
-		}
-	} else {
-		// the name field is not valid
-		$nameValid = false;
-		$nameFilled = false;
-		//disable letter error msg because filled is already showing
-		$nameLetter = true;
-	}
-
 
 	$email = $_POST["userEmail"];
 	if ( !empty($email) ) {
@@ -47,7 +26,7 @@ if (isset($_POST["submit"])) {
 		$emailValEmail = true;
 	}
 
-	$formValid = $fnameValid && $lnameValid && $emailValid;
+	$formValid = $emailValid;
 	// if valid, allow submission
 	if ($formValid) {
 		// show success message
@@ -56,9 +35,6 @@ if (isset($_POST["submit"])) {
 } else {
 	// no form submitted
 	// put default behavior here
-	$nameValid = true;
-	$nameLetter = true;
-	$nameFilled = true;
 	$emailValid = true;
 	$emailFilled = true;
 	$emailValEmail = true;
@@ -120,21 +96,6 @@ if (isset($_POST["submitmessage"])) {
 							<h2>Mailing List</h2>
 							<p>Leave us your email for more information and updates!</p>
 							<form method="post" action="contact.php" id="joinForm" novalidate>
-
-								<div class="largeContainer">
-									<div class="labelContainer">
-										<label for="name">Name: </label>
-									</div>
-									<div class="inputContainer">
-										<input id="name" name="name" value="<?php if (!$nameValid) { echo($name);}?>" placeholder="Full name" required>
-									</div>
-									<span class="errorContainer  <?php if ($nameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError1">
-										Your name is required.
-									</span>
-									<span class="errorContainer  <?php if ($nameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError2">
-										Your name must consist of 2 or more letters.
-									</span>
-								</div>
 
 								<div class="largeContainer">
 									<div class="labelContainer">
