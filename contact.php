@@ -19,7 +19,6 @@ if (isset($_POST["submit"])) {
 			$emailValEmail = false;
 		}
 	} else {
-		// the first name field is not valid
 		$emailValid = false;
 		$emailFilled = false;
 		//disable letter error msg because filled is already showing
@@ -30,7 +29,8 @@ if (isset($_POST["submit"])) {
 	// if valid, allow submission
 	if ($formValid) {
 		// show success message
-    record_message("You have been subscribed to the mailing list.");
+		record_message("You have been subscribed to the mailing list.");
+    mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 	}
 } else {
 	// no form submitted
