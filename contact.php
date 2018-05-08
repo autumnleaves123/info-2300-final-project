@@ -7,45 +7,26 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // when the user submits a form
 if (isset($_POST["submit"])) {
 	// validate form here
-	$firstName = $_POST['firstName'];
-	// if the first name field is not empty:
-	if ( !empty($firstName) ) {
-		// the first name field is valid
-		$fnameFilled = true;
-		if ((strlen(strval($firstName)) >= 2) && (ctype_alpha(str_replace(' ', '', $firstName)))) {
-			$fnameValid = true;
-			$fnameLetter = true;
+	$name = $_POST['name'];
+	// if the name field is not empty:
+	if ( !empty($name) ) {
+		// the name field is valid
+		$nameFilled = true;
+		if ((strlen(strval($name)) >= 2) && (ctype_alpha(str_replace(' ', '', $name)))) {
+			$nameValid = true;
+			$nameLetter = true;
 		} else {
-			$fnameValid = false;
-			$fnameLetter = false;
+			$nameValid = false;
+			$nameLetter = false;
 		}
 	} else {
-		// the first name field is not valid
-		$fnameValid = false;
-		$fnameFilled = false;
+		// the name field is not valid
+		$nameValid = false;
+		$nameFilled = false;
 		//disable letter error msg because filled is already showing
-		$fnameLetter = true;
+		$nameLetter = true;
 	}
 
-	$lastName = $_POST['lastName'];
-	// if the last name field is not empty:
-	if ( !empty($lastName) ) {
-		// the first name field is valid
-		$lnameFilled = true;
-		if ((strlen(strval($lastName)) >= 2) && (ctype_alpha(str_replace(' ', '', $lastName)))) {
-			$lnameValid = true;
-			$lnameLetter = true;
-		} else {
-			$lnameValid = false;
-			$lnameLetter = false;
-		}
-	} else {
-		// the first name field is not valid
-		$lnameValid = false;
-		$lnameFilled = false;
-		//disable letter error msg because filled is already showing
-		$lnameLetter = true;
-	}
 
 	$email = $_POST["userEmail"];
 	if ( !empty($email) ) {
@@ -75,12 +56,9 @@ if (isset($_POST["submit"])) {
 } else {
 	// no form submitted
 	// put default behavior here
-	$fnameValid = true;
-	$fnameLetter = true;
-	$fnameFilled = true;
-	$lnameValid = true;
-	$lnameLetter = true;
-	$lnameFilled = true;
+	$nameValid = true;
+	$nameLetter = true;
+	$nameFilled = true;
 	$emailValid = true;
 	$emailFilled = true;
 	$emailValEmail = true;
@@ -145,31 +123,16 @@ if (isset($_POST["submitmessage"])) {
 
 								<div class="largeContainer">
 									<div class="labelContainer">
-										<label for="firstName">First Name: </label>
+										<label for="name">Name: </label>
 									</div>
 									<div class="inputContainer">
-										<input id="firstName" name="firstName" value="<?php if (!$fnameValid) { echo($firstName);}?>" placeholder="First name" required>
+										<input id="name" name="name" value="<?php if (!$nameValid) { echo($name);}?>" placeholder="Full name" required>
 									</div>
-									<span class="errorContainer  <?php if ($fnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError1">
-										First name is required.
+									<span class="errorContainer  <?php if ($nameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError1">
+										Your name is required.
 									</span>
-									<span class="errorContainer  <?php if ($fnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="fnameError2">
-										First name must consist of 2 or more letters.
-									</span>
-								</div>
-
-								<div class="largeContainer">
-									<div class="labelContainer">
-										<label for="lastName">Last Name: </label>
-									</div>
-									<div class="inputContainer">
-										<input id="lastName" name="lastName" value="<?php if (!$lnameValid) {echo($lastName);}?>" placeholder="Last name" required>
-									</div>
-									<span class="errorContainer <?php if ($lnameFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError1">
-										Last name is required.
-									</span>
-									<span class="errorContainer <?php if ($lnameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="lnameError2">
-										Last name must consist of 2 or more letters.
+									<span class="errorContainer  <?php if ($nameLetter) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError2">
+										Your name must consist of 2 or more letters.
 									</span>
 								</div>
 
