@@ -26,12 +26,9 @@
 
 ## Meet the Board
 * new pictures
-* ~~reformat this page like this: https://www.cuaftereight.com/members/~~
-* move faculty advisor to lower priority
+* ~~reformat this page like this: (https://www.cuaftereight.com/members/~~)
 
 ## Contact
-* Get rid of first and last name??
-* make buttons same vertical height
 * reformat forms
 
 ## Admin

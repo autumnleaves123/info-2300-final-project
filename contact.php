@@ -51,6 +51,7 @@ if (isset($_POST["submitmessage"])) {
 		// the first name field is valid
 		$messageFilled = true;
     record_message("Your message has been received.");
+		mail("cudap-l-request@cornell.edu", "message", $message, "");
 	} else {
 		// the first name field is not valid
 		$messageFilled = false;

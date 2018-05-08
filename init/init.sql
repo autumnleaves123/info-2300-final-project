@@ -103,7 +103,6 @@ INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 
 
 /* Meet the board (board members) */
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Jonathan Masci', 'Alumni Advisor', 'Linguistics', '2016', 'He joined CUDAP in his sophomore year in order to learn more about American Sign Language and Deaf culture. During his time in the organization, he found a passion for advocacy and service learning.', '1.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Mary Grace Hager', 'Co-President', 'Mathematics & Computer Science', '2019', 'She joined CUDAP her freshman year to learn more about ASL and Deaf culture. Mary Grace became Treasurer in the spring of 2016 and transitioned into Co-President a year later.', '2.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Diana Bartolotta', 'Co-President', 'Environmental & Sustainability Sciences', '2019', 'She joined CUDAP her freshman year to pursue advocacy opportunities and to connect with others who share an interest in learning and improving their American Sign Language skills.', '3.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Juliet Remi', 'Outreach Chair', 'Industrial and Labor Relations', '2020', 'She joined CUDAP in her freshman year to improve her American Sign Language and learn more about the Deaf community and culture.', '4.jpg');
@@ -111,6 +110,7 @@ INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Kather
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Lucia Gomez', 'Events Coordinator', 'Computer Science & Linguistics', '2021', "She joined CUDAP during her first semester to connect with other students who love ASL and to spread awareness about Deaf culture. Lucia loves to gloss songs, and she's translated everything from Hamilton to Twenty One Pilots.", '6.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Alyssa Trigg', 'Treasurer', 'Computer Science & Linguistics', '2018', 'She has been a member of CUDAP since spring of 2016 and is currently the treasurer of the Cornell University Deaf Awareness Project. She is also a member of the Cornell Swing Dance Club, and assorted other clubs.', '7.jpg');
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Pamela Wildstein', 'Publicity Designer', 'Environmental and Sustainability Sciences', '2020', 'She joined CUDAP in the Fall of her sophmore year, after transferring from Penn State, with the goal of becoming an advocate for the Deaf community.', '8.jpg');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Jonathan Masci', 'Alumni Advisor', 'Linguistics', '2016', 'He joined CUDAP in his sophomore year in order to learn more about American Sign Language and Deaf culture. During his time in the organization, he found a passion for advocacy and service learning.', '1.jpg');
 
 /* Gallery */
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
