@@ -21,7 +21,9 @@ $current_page_id = "learn"; ?>
       <div class="flex-left resource-padding">
         <p>See the links below to learn ASL:<br></br>
   	      <div class="indent"><a href="https://www.startasl.com/learn-sign-language-asl" target="_blank">www.startasl.com</a><br/></div>
-  	      <div class="indent"><a href="http://www.signlanguage101.com/" target="_blank">www.signlanguage101.com</a></div> <br/>
+  	      <div class="indent"><a href="http://www.signlanguage101.com/" target="_blank">www.signlanguage101.com</a></div>
+          <div class="indent"><a href="http://www.aslpro.com/" target="_blank">www.aslpro.com/</a></div> 
+          <div class="indent"><a href="http://theaslapp.com/" target="_blank">theaslapp.com/</a></div> <br/>
   	    </p>
       </div>
       <div class="flex-right resource-padding">
@@ -30,6 +32,9 @@ $current_page_id = "learn"; ?>
   	      <div class="indent"><a href="uploads/resourcesppt/education.pptx">Education Vocab</a><br/></div>
   	      <div class="indent"><a href="uploads/resourcesppt/emotions.pptx">Emotions Vocab</a><br/></div>
   	      <div class="indent"><a href="uploads/resourcesppt/health.pptx">Health Vocab</a><br/></div>
+          <div class="indent"><a href="uploads/resourcesppt/occupations.pptx">Occupations Vocab</a><br/></div>
+          <div class="indent"><a href="uploads/resourcesppt/majors.pptx">Majors Vocab</a><br/></div>
+          <div class="indent"><a href="uploads/resourcesppt/december.pptx">December Holidays Vocab</a><br/></div>
   	    </p>
       </div>
 		</div>
