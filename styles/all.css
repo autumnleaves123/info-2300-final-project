@@ -110,10 +110,10 @@ button:focus {
 }
 
 .message {
-  color: orange;
-  border: 1px solid orange;
-  padding: 5px;
-  border-radius: 5px;
+  color: var(--red);
+  /* border: 1px solid orange; */
+  /* padding: 5px;
+  border-radius: 5px; */
 }
 
 .link {
@@ -548,6 +548,34 @@ a.current-page {
 	margin-top: 15px;
 	/* font-weight: bold; */
 }
+
+/* date header http://themes.typepad.com/guide/2011/12/date-header-ribbon.html */
+h6.date-ribbon {
+	position: relative;
+	width: 40%;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 7px 20px 7px 25px;
+	margin: 0 10px 25px -40px;
+	color: white;
+	background-color: var(--red);
+	box-shadow: 0px 2px 4px #888;
+	}
+
+h6:before, h6:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	}
+
+h6.date-ribbon:after {
+	left: 0px;
+	top: 100%;
+	border-width: 5px 5px;
+	border-style: solid;
+	border-color: #666 #666 transparent transparent;
+	}
 
 
 /* ===============

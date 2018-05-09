@@ -1,3 +1,5 @@
+<!-- TODO: figure out regex for email -->
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -32,13 +34,23 @@ if ( isset($_GET["tag"])) {
 
 // listserv form
 if (isset($_POST["index-listserv-submit"])) {
-}
+	$email = filter_input(INPUT_POST, 'index-listserv-email', FILTER_SANITIZE_EMAIL);
+	$email = strtolower($email);
+	$email = trim($email);
 
+	// assume form inputs are valid
+	$formValid = TRUE;
+
+	if ($formValid) {
+		record_message("Success! Thanks for joining.");
+		mail("bt293@cornell.edu", "join", "", "From: " . $email);
+	}
+}
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
 	<meta charset="UTF-8" />
@@ -90,8 +102,14 @@ if (isset($_POST["index-listserv-submit"])) {
 
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
+
+							<!-- implement date ribbon here -->
+							<h6 class="date-ribbon">
+								<?php echo "$post[entry_date]";?>
+							</h6>
+
 							<h2><?php echo "$post[title]";?></h2>
-							<p><?php echo "$post[entry_date]";?></p>
+
 
 							<?php
 							$post_id = $post['id'];
@@ -124,9 +142,13 @@ if (isset($_POST["index-listserv-submit"])) {
 				<div id="feed-listserv">
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<input type="email" placeholder="netid@cornell.edu" required></input>
+						<input type="email" name="index-listserv-email" placeholder="netid@cornell.edu" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required></input>
 						<button name="index-listserv-submit" type="submit">subscribe</button>
 					</form>
+
+					<?php if ( isset ($_POST["index-listserv-submit"])) {
+						print_messages();
+					} ?>
 				</div>
 
 			</div>
