@@ -32,7 +32,7 @@ if ( isset($_GET["tag"])) {
 
 // listserv form
 if (isset($_POST["index-listserv-submit"])) {
-	
+}
 
 
 ?>

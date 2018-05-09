@@ -6,38 +6,9 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 
 // when the user submits a form
 if (isset($_POST["submit"])) {
-
-	$email = $_POST["userEmail"];
-	if ( !empty($email) ) {
-		// the first name field is valid
-		$emailFilled = true;
-		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$emailValid = true;
-			$emailValEmail = true;
-		} else {
-			$emailValid = false;
-			$emailValEmail = false;
-		}
-	} else {
-		$emailValid = false;
-		$emailFilled = false;
-		//disable letter error msg because filled is already showing
-		$emailValEmail = true;
-	}
-
-	$formValid = $emailValid;
-	// if valid, allow submission
-	if ($formValid) {
 		// show success message
-		record_message("You have been subscribed to the mailing list.");
-    mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
-	}
-} else {
-	// no form submitted
-	// put default behavior here
-	$emailValid = true;
-	$emailFilled = true;
-	$emailValEmail = true;
+	record_message("You have been subscribed to the mailing list.");
+  mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 }
 
 
@@ -96,21 +67,13 @@ if (isset($_POST["submitmessage"])) {
 						<div class="flex-left">
 							<h2>Mailing List</h2>
 							<p>Leave us your email for more information and updates!</p>
-							<form method="post" action="contact.php" id="joinForm" novalidate>
+							<form method="post" action="contact.php" id="joinForm">
 
 								<div class="largeContainer">
 									<div class="labelContainer">
 										<label for="userEmail">Email: </label>
 									</div>
-									<div class="inputContainer">
-										<input type="email" id="userEmail" name="userEmail" value="<?php if (!$emailValid) {echo($email);}?>" placeholder="Your Email" required>
-									</div>
-									<span class="errorContainer <?php if ($emailFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorNoEmail">
-										Email is required.
-									</span>
-									<span class="errorContainer <?php if ($emailValEmail) {echo($HIDDEN_ERROR_CLASS);}?>" id="emailErrorInvalEmail">
-										Not a valid email address.
-									</span>
+									<input type="email" placeholder="netid@cornell.edu" required></input>
 								</div>
 
 								<div id="formButton">
