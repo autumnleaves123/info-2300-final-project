@@ -458,12 +458,12 @@ a.current-page {
 
 
 #search-criteria img {
-	width: 32px;
-	height: 32px;
+	width: 28px;
+	height: 28px;
 	opacity: 0.5;
 	position: absolute;
-	top: 13px;
-	margin-left: 12px;
+	top: 15px;
+	margin-left: 10px;
 }
 
 #search-criteria img:hover {
