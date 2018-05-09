@@ -456,14 +456,18 @@ a.current-page {
 	border: 3px solid var(--darkergrey);
 } */
 
+#search-criteria a {
+	float: right;
+	margin-right: 10px;
+}
 
 #search-criteria img {
-	width: 28px;
-	height: 28px;
+	width: 26px;
+	height: 26px;
 	opacity: 0.5;
 	position: absolute;
-	top: 15px;
-	margin-left: 10px;
+	top: 18px;
+
 }
 
 #search-criteria img:hover {

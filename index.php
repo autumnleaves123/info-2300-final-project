@@ -30,6 +30,10 @@ if ( isset($_GET["tag"])) {
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 }
 
+// listserv form
+if (isset($_POST["index-listserv-submit"])) {
+	
+
 
 ?>
 
@@ -121,7 +125,7 @@ if ( isset($_GET["tag"])) {
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
 						<input type="email" placeholder="netid@cornell.edu" required></input>
-						<button name="submit" type="submit">subscribe</button>
+						<button name="index-listserv-submit" type="submit">subscribe</button>
 					</form>
 				</div>
 
