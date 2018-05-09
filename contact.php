@@ -7,6 +7,7 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // when the user submits a form
 if (isset($_POST["submit"])) {
 		// show success message
+	$email = $_POST['email'];
 	record_message("You have been subscribed to the mailing list.");
   mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 }
@@ -17,18 +18,8 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = $_POST['message'];
-	// if the first name field is not empty:
-	if ( !empty($message) ) {
-		// the first name field is valid
-		$messageFilled = true;
-    record_message("Your message has been received.");
-		mail("cudap-l-request@cornell.edu", "message", $message, "");
-	} else {
-		// the first name field is not valid
-		$messageFilled = false;
-	}
-} else {
-	$messageFilled = true;
+  record_message("Your message has been received.");
+	mail("cudap-l-request@cornell.edu", "message", $message, "");
 }
 
 ?>
@@ -73,7 +64,7 @@ if (isset($_POST["submitmessage"])) {
 									<div class="labelContainer">
 										<label for="userEmail">Email: </label>
 									</div>
-									<input type="email" placeholder="netid@cornell.edu" required></input>
+									<input name="email" type="email" placeholder="netid@cornell.edu" required></input>
 								</div>
 
 								<div id="formButton">
@@ -86,14 +77,11 @@ if (isset($_POST["submitmessage"])) {
 						<div class="flex-right">
 							<h2>Send Us A Message</h2>
 							<p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
-							<form method="post" action="contact.php" id="messageForm" novalidate>
+							<form method="post" action="contact.php" id="messageForm" >
 								Message:
 								<div class = "inputContainer">
 									<textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
 								</div>
-								<span class="errorContainer <?php if ($messageFilled) {echo($HIDDEN_ERROR_CLASS);}?>" id="msgErrorNoMsg">
-									Message is required.
-								</span>
 								<div class = "break"></div>
 								<div id="messageButton">
 									<button type="submit" name="submitmessage">submit message</button>
