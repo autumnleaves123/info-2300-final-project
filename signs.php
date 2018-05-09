@@ -32,6 +32,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
           array_push($messages, "No images found.");
         }
         ?>
+        <p>To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
       </div>
     </section>
   </div>

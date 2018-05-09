@@ -21,9 +21,6 @@
 ## Responsive Design
 * mobile version css
 
-## Resources
-* upload more?
-
 ## Gallery
 * Check for webkit in css - cannot use
 

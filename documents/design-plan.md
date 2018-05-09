@@ -1257,11 +1257,183 @@ Also a PDF version:
 
 [Copy your tasks here from Milestone 2. Update them if you need to and then conduct another cognitive walkthrough.]
 
+#### Task 1 - Cognitive Walkthrough
+
+**Task name: Update E-board**
+
+**Subgoal #1: Access login.php**
+
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
+
+        Assuming that Abby is an admin and has been properly briefed by the previous E-board to know that she must type in login.php in the URL, she will have done so to get access to the admin page. This fixes the previous issue with a "hidden button" (i.e. CUDAP logo), where normal users like Abby may accidentally click on the logo and be confused as to what the login.php page is since they aren't an admin.
+
+
+**Action #1: Type in the username and password, then click Log In**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+      Abby has some experience using technologies to accomplish her tasks. A standard login page should be something that she is already familiar and comfortable with.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+        Abby will be taken to the admin page if she successfully logs in. If not, there will be an error message below the login form.
+
+**Action #2: Click Update EBoard button**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+    Yes, Abby learns best through process oriented learning or step-by-step processes. It should be intuitive for Abby to click on the Update EBoard button on the sidebar. In addition, the sidebar provides the admin user the ability to update all the other pages, and provides comprehensive information for Abby.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Upon clicking on the link, the forms to update EBoard page will appear on the center of the webpage. This should all be familiar to Abby.
+
+**Action #3: Use delete members form to delete all existing members**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		A form is something that Abby should be familiar with, even with limited exposure to technology. In addition, the form follows a step by step process. Abby has to first select the member that she would like to delete (a drop-down). Then she needs to click the delete button.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Feedback will be provided to Abby to inform her that the persona has been deleted. In addition, Abby can verify this by clicking the Meet the Board page on the nav bar and checking that the specified member entry is gone.
+
+
+**Action #4: Using the add members form, fill out information for each e-board member and submit**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		Again, a form is something that Abby should be familiar with. The form takes Abby through the process step by step. First she needs to fill out the e-board member's information (name, position, major, etc.). It will be indicated for all the fields that they are required. Then, Abby should click the submit button.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Yes, the form will provide feedback to Abby to inform her if the e-board member has successfully been added, or whether she will have to input the information again (with appropriate error messages).
+
+**Action #5: Check the Meet the Board page to see that new e-board members have been updated**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Maybe
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		Abby will mostly likely want to check that the e-board members have been updated. This is the most logical way of doing it. Of course, Abby could also just skip this step if she is confident that the update form has done its job and has notified her with a message - i.e. everything has been successfully updated.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Yes, if she clicks on the Meet the Board page on the nav bar, she will be able to view all the newly added profiles of incoming e-board members.
+
+
+#### Task 2 - Cognitive Walkthrough
+
+**Task name: Find out time and location of Sign Choir Meetings**
+
+**Subgoal #1: Visit CUDAP website**
+
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
+
+    	Assuming that CUDAP has done its advertising well, people interested in CUDAP should have access to its URL (by Google search, Facebook link, etc.). Abby should be familiar with the process of visiting websites for more information.
+
+**Action #1: Click on Sign Choir tab in nav bar**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Maybe
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+    	Abby is risk averse about using unfamiliar technologies. The items in the horizontal nav bar should be fairly self explanatory and predictable. The Sign Choir is named exactly for what it is - signed choir, so Abby should not have trouble clicking on it.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+    	Yes, clicking on a tab in the nav bar should be fairly intuitive, even for Abby. The moment she clicks on "Sign Choir", she'll be able to see the sign choir page with a big bold title: "Sign Choir" on top of the page.
+
+**Action #2: Look for relevant information on Sign Choir page**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+    	The information about time and place of sign choir meetings is the first thing on the page, which will be the first thing the user reads. So Abby should be able to find the information easily.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+    	Abby should be familiar with the task of reading and gathering information from webpages.
+
+#### Task 3 - Cognitive Walkthrough
+
+**Task name: Find ASL learning powerpoints**
+
+**Subgoal #1: Access the CUDAP website**
+
+  - Will Abby have formed this sub-goal as a step to their overall goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Motivations/Strategies.)
+
+        Again, we would assume that Abby knows of the CUDAP website, or might even have it bookmarked.
+
+
+**Action #1: Click on the Resources page as dropdown of Learning tab in the nav bar**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Maybe
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		"Learning" is the intuitive tab that a user would normally go to when they are trying to find what ASL learning material. The moment the user hovers over the learning tab, they will see the drop-down and see the resources page button. In the beginning, Abby might be confused because there is both the learning tab and the resources tab. However, since she is looking for powerpoint slides, she will most likely click on the resources page.
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		Yes, she will be taken to the resources page if she successfully clicks on the correct tab on the nav bar.
+
+
+**Action #2: Download powerpoints**
+
+  - Will Abby know what to do at this step?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
+
+		Yes, this is the powerpoints are shown right on top and center of the page, so it should be logical for Abby to read through and see the list of powerpoint she can download. The powerpoints are underlined and blue, which will let users like Abby know that they are clickable. The directions also say to click on these links to download ASL powerpoints.
+
+
+  - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
+    - Yes, maybe or no: Yes
+    - Why? (Especially consider [persona name]'s Self-Efficacy and Attitude toward Risk.)
+
+		She will be able to obtain ASL powerpoints on various subjects.
+
+
 ### Cognitive Walk-though Results
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
-[Your responses here should be very thorough and thoughtful.]
+A side result of Cognitive Walkthrough Task #3 was that users like Abby may get confused about the Learning and Resources page, and we resolved this by adding on link on the bottom of Learning page that says, "for ASL learning websites and powerpoints, visit our Resources page."
+
+We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form on the front feed page and on the contact page because a user like Abby would make sure to not miss this information).
+
 
 ## Milestone 5: Final Notes to the Clients
 
