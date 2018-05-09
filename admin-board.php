@@ -185,7 +185,7 @@ if (isset($_POST['delete'])) {
 							      $params = array();
 							      $eboard = exec_sql_query($db, $sql, $params);
 							      if (isset($eboard) && !empty($eboard)) {
-											echo "<select name='entrytodelete'required>\n";
+											echo "<select name='entrytodelete' required>\n";
 											echo "<option value='' selected disabled>Choose Member</option>";
 							        foreach($eboard as $member) {
 							          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";

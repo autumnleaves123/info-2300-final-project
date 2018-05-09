@@ -62,9 +62,9 @@ if (isset($_POST["submitmessage"])) {
 
 								<div class="largeContainer">
 									<div class="labelContainer">
-										<label for="userEmail">Email: </label>
+										Email:
 									</div>
-									<input name="email" type="email" placeholder="netid@cornell.edu" required></input>
+									<input name="email" type="email" placeholder="netid@cornell.edu" required>
 								</div>
 
 								<div id="formButton">

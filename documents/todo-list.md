@@ -21,9 +21,6 @@
 ## Responsive Design
 * mobile version css
 
-## Resources
-* upload more?
-
 ## Meet the Board
 * new pictures
 * ~~reformat this page like this: (https://www.cuaftereight.com/members/~~)
