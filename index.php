@@ -32,7 +32,7 @@ if ( isset($_GET["tag"])) {
 
 // listserv form
 if (isset($_POST["index-listserv-submit"])) {
-	$email = filter_input(INPUT_POST, 'index-listserv-email', FILTER_SANITIZE_STRING);
+	$email = filter_input(INPUT_POST, 'index-listserv-email', FILTER_SANITIZE_EMAIL);
 	$email = strtolower($email);
 	$email = trim($email);
 
@@ -48,7 +48,7 @@ if (isset($_POST["index-listserv-submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
 	<meta charset="UTF-8" />
@@ -134,7 +134,7 @@ if (isset($_POST["index-listserv-submit"])) {
 				<div id="feed-listserv">
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<input type="email" name="index-listserv-email" placeholder="netid@cornell.edu" required></input>
+						<input type="email" name="index-listserv-email" placeholder="netid@cornell.edu" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required></input>
 						<button name="index-listserv-submit" type="submit">subscribe</button>
 					</form>
 

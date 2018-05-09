@@ -24,6 +24,9 @@
 ## Resources
 * upload more?
 
+## Gallery
+* Check for webkit in css - cannot use
+
 ## Meet the Board
 * new pictures
 * ~~reformat this page like this: (https://www.cuaftereight.com/members/~~)

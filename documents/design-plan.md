@@ -1278,3 +1278,5 @@ Design (looks bad now)
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 
 [3. Tell us anything else you need us to know for when we're looking at the project.]
+**Write something about this (Bethany)**
+Please access our login functionality at login.php
