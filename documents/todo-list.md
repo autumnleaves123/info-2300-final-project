@@ -24,12 +24,5 @@
 ## Gallery
 * Check for webkit in css - cannot use
 
-## Meet the Board
-* new pictures
-* ~~reformat this page like this: (https://www.cuaftereight.com/members/~~)
-
-## Contact
-* reformat forms
-
 ## Admin
 * LOTS
