@@ -55,12 +55,10 @@ if (isset($_POST['logout-button'])) {
 								<form method="post" action="admin-feed.php" id="add-feed" name="add-feed">
 									Title: <input type="text" required/> <div class = "break"></div>
 
-									Date: <input type="date" required/> <div class = "break"></div>
-
 									Text: <div class = "break"></div>
 
 									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
-									
+
 									<div class = "break"></div>
 									<button name="submit" type="submit">Submit</button>
 								</form><div class = "break"></div>
