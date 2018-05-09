@@ -1,3 +1,5 @@
+<!-- TODO: figure out regex for email -->
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -100,8 +102,14 @@ if (isset($_POST["index-listserv-submit"])) {
 
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
+
+							<!-- implement date ribbon here -->
+							<h6 class="date-ribbon">
+								<?php echo "$post[entry_date]";?>
+							</h6>
+
 							<h2><?php echo "$post[title]";?></h2>
-							<p><?php echo "$post[entry_date]";?></p>
+
 
 							<?php
 							$post_id = $post['id'];
