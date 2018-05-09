@@ -110,10 +110,10 @@ button:focus {
 }
 
 .message {
-  color: orange;
-  border: 1px solid orange;
-  padding: 5px;
-  border-radius: 5px;
+  color: var(--red);
+  /* border: 1px solid orange; */
+  /* padding: 5px;
+  border-radius: 5px; */
 }
 
 .link {
