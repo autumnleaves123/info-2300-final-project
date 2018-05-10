@@ -147,7 +147,7 @@ if (isset($_POST['delete'])) {
 					<?php print_messages();?>
 					<!-- Edit feed forms -->
 					<div id="admin-feed">
-						<h2>Manage E-board entries</h2>
+						<h3>Manage E-board entries</h3>
 						<div class="indentcontent">
 							<div class="border">
 								<h5>Add New Eboard Entry</h5>
@@ -177,8 +177,8 @@ if (isset($_POST['delete'])) {
 								</form><div class = "break"></div>
 							</div>
 
+							<h3>Delete Existing Eboard Entry</h3>
 							<div class="border">
-								<h5>Delete Existing Eboard Entry</h5>
 								<form method="post" action="admin-board.php" id="delete_oldboard" name="delete_oldboard">
 									Name:
 									<?php

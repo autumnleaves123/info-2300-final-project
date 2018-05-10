@@ -252,7 +252,7 @@ a.current-page {
 	flex: 1;
 	order: 1;
 	margin: 0;
-	margin-left: 50px;
+	margin-left: 20px;
 	padding: 0;
 	text-align: left;
 	/* background-color: red; */
@@ -297,6 +297,7 @@ a.current-page {
 #admin-content {
 	flex: 3;
 	order: 2;
+	margin-right: 20px;
 }
 
 #admin-content h3 {

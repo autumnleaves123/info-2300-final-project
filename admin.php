@@ -21,6 +21,17 @@ $sql = "SELECT title FROM feed";
 $params = array();
 $fetch_all_feed_titles = exec_sql_query($db, $sql, $params)->fetchAll();
 
+// deleting feed posts
+if (isset($_POST['delete-feed-button'])) {
+
+	// check that feed exists
+
+	// clear from database
+	$sql = "DELETE FROM feed WHERE";
+	$params = array();
+	$delete_feed = exec_sql_query($db, $sql, $params);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +100,7 @@ $fetch_all_feed_titles = exec_sql_query($db, $sql, $params)->fetchAll();
 								}
 							?>
 						</select>
-						<button name="submit" type="submit">delete feed</button>
+						<button name="delete-feed-button" type="submit">delete feed</button>
 					</form>
 
 
