@@ -10,13 +10,6 @@ if ($current_user == NULL) {
 	header("Location: login.php");
 }
 
-// LOGOUT
-if (isset($_POST['logout-button'])) {
-  log_out();
-	// TODO: create a logged out page?
-  header("Location: login.php");
-}
-
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
 
 if (isset($_POST['add'])) {

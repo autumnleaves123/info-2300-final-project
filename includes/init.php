@@ -221,4 +221,12 @@ if (isset($_POST['login-form-button'])) {
 
 $current_user = check_login();
 
+
+// LOGOUT
+if (isset($_POST['logout-button'])) {
+  log_out();
+	// TODO: create a logged out page?
+  header("Location: login.php");
+}
+
 ?>

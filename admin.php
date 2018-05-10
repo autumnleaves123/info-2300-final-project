@@ -9,15 +9,8 @@ if ($current_user == NULL) {
 	header("Location: login.php");
 }
 
-// LOGOUT
-if (isset($_POST['logout-button'])) {
-  log_out();
-	// TODO: create a logged out page?
-  header("Location: login.php");
-}
-
 // fetch all feeds titles
-$sql = "SELECT title FROM feed";
+$sql = "SELECT entry_date, title FROM feed";
 $params = array();
 $fetch_all_feed_titles = exec_sql_query($db, $sql, $params)->fetchAll();
 
@@ -96,7 +89,7 @@ if (isset($_POST['delete-feed-button'])) {
 							<option disabled selected value> -- select a title -- </option>
 							<?php
 								foreach ($fetch_all_feed_titles as $feed_title) {
-									echo "<option value='" . $feed_title['title'] . "'>" . $feed_title['title'] . "</option>";
+									echo "<option value='" . $feed_title['title'] . "'>" . $feed_title['entry_date'] . " - " . $feed_title['title'] . "</option>";
 								}
 							?>
 						</select>
