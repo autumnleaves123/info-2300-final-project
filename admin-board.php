@@ -1,6 +1,7 @@
 <?php
 include('includes/init.php');
 $current_page_id = "admin";
+$current_admin_page = "admin-board";
 
 $HIDDEN_ERROR_CLASS = "hiddenError";
 

@@ -1,5 +1,6 @@
 <?php include('includes/init.php');
 $current_page_id = "admin";
+$current_admin_page = "admin-gallery";
 
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
@@ -46,22 +47,28 @@ if (isset($_POST['logout-button'])) {
 				<div id="admin-content">
 
 					<!-- Edit feed forms -->
-					<div id="admin-feed">
-						<h2>Manage Gallery</h2>
-						<div class="indentcontent">
-							<div class="border">
-								<h5>Add New Feed Entry</h5>
-								<form method="post" action="admin-feed.php" id="add-feed" name="add-feed">
-									Title: <input type="text" required/> <div class = "break"></div>
-									Date: <input type="date" required/> <div class = "break"></div>
-									Text: <div class = "break"></div>
-									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
-									<div class = "break"></div>
-									<button name="submit" type="submit">Submit</button>
-								</form><div class = "break"></div>
-							</div>
-						</div>
-					</div>
+					<h3>Add New Image to Gallery</h3>
+					<form>
+						<input class="no-border" type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
+						<input class="no-border" type="file" name="attachment" required>
+						<!-- TODO: maybe assign tag to image? -->
+						<button name="submit" type="submit">add image</button>
+					</form>
+
+					<h3>Delete Image</h3>
+					<form>
+						<button name="submit" type="submit">delete image</button>
+					</form>
+
+					<h3>Create New Album Tag</h3>
+					<form>
+						<button name="submit" type="submit">create tag</button>
+					</form>
+
+					<h3>Delete Existing Album Tag</h3>
+					<form>
+						<button name="submit" type="submit">delete tag</button>
+					</form>
 
 				</div>
 			</div>

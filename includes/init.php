@@ -196,6 +196,11 @@ function sign_exists($id) {
 }
 
 /* ===============
+   		ADMIN
+   =============== */
+const MAX_FILE_SIZE = 2000000;
+
+/* ===============
    		EXECUTE
    =============== */
 

@@ -1,5 +1,8 @@
 <?php include('includes/init.php');
 $current_page_id = "admin";
+$current_admin_page = "admin";
+
+const GALLERY_UPLOADS_PATH = "uploads/feed/";
 
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
@@ -13,7 +16,10 @@ if (isset($_POST['logout-button'])) {
   header("Location: login.php");
 }
 
-
+// fetch all feeds titles
+$sql = "SELECT title FROM feed";
+$params = array();
+$fetch_all_feed_titles = exec_sql_query($db, $sql, $params)->fetchAll();
 
 ?>
 
@@ -45,27 +51,49 @@ if (isset($_POST['logout-button'])) {
 
 				<div id="admin-content">
 
-					<!-- Edit feed forms -->
-					<div id="admin-feed">
-						<h2>Manage Feed Entries</h2>
-						<div class="indentcontent">
-							<div class="border">
-								<h5>Add New Feed Entry</h5>
+					<h3>Add New Feed</h3>
 
-								<form method="post" action="admin-feed.php" id="add-feed" name="add-feed">
-									Title: <input type="text" required/> <div class = "break"></div>
+					<form method="post" action="admin-feed.php" id="add-feed" name="add-feed">
+						<label>Title (required)</label>
+						<input type="text" placeholder="CUDAP Arch Sign" required/>
 
-									Text: <div class = "break"></div>
+						<label>Text (required)</label>
+						<textarea rows="5" cols="80" placeholder="Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!"></textarea>
 
-									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
+						<label>URL 1 (optional)</label>
+						<input type="text" placeholder="https://bit.ly/2jJJ0ya" required/>
 
-									<div class = "break"></div>
-									<button name="submit" type="submit">Submit</button>
-								</form><div class = "break"></div>
-							</div>
-						</div>
-					</div>
+						<label>URL 2 (optional)</label>
+						<input type="text" placeholder="https://bit.ly/2jJJ0ya" required/>
 
+						<label>Attachment 1 (optional)</label>
+						<input class="no-border" type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
+		      	<input class="no-border" type="file" name="attachment" required>
+
+						<label>Attachment 2 (optional)</label>
+						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
+		      	<input class="no-border" type="file" name="attachment" required>
+
+						<button name="submit" type="submit">add new feed</button>
+					</form>
+
+					<h3>Delete Existing Feed</h3>
+
+					<form method="post" action="admin-feed.php" id="add-feed" name="add-feed">
+						<label>Select existing feed title</label>
+						<select name="feed-titles">
+							<option disabled selected value> -- select a title -- </option>
+							<?php
+								foreach ($fetch_all_feed_titles as $feed_title) {
+									echo "<option value='" . $feed_title['title'] . "'>" . $feed_title['title'] . "</option>";
+								}
+							?>
+						</select>
+						<button name="submit" type="submit">delete feed</button>
+					</form>
+
+
+				</div>
 				</div>
 			</div>
 

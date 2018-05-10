@@ -30,6 +30,7 @@
 	--grey: #b2b2b2;
 	--lightgrey: #f7f7f7;
 	--darkergrey: rgb(92, 91, 96);
+	--darkestgrey: rgb(53, 52, 59);
 }
 
 @font-face {
@@ -244,85 +245,109 @@ a.current-page {
 #admin-wrapper {
 	display: flex;
 	flex-direction: row;
-	padding: 50px 0;
-}
-
-#admin-sidebar h2 {
-	padding-left: 102px;
+	padding: 30px 0;
 }
 
 #admin-sidebar {
 	flex: 1;
 	order: 1;
 	margin: 0;
+	margin-left: 50px;
 	padding: 0;
+	text-align: left;
+	/* background-color: red; */
 }
 
 #admin-sidebar h2 {
 	text-align: left;
 	margin-top: 0;
+	font-size: 18px;
+	border: 1px solid silver;
+	margin-bottom: 0;
+	padding: 10px 10px;
+	width: 85%;
+	color: var(--darkergrey);
+	background-color: var(--lightgrey);
 }
 
-#grey-out {
-	background-color: grey;
+#admin-sidebar a {
+	display: block;
+	border: 1px solid silver;
+	width: 85%;
+	padding: 8px 10px;
+	border-top: none;
+	text-decoration: none;
+	color: var(--darkergrey);
+}
+
+#admin-sidebar a:last-child {
+	border-bottom: 1px solid silver;
+	background-color: red;
+}
+
+#admin-sidebar a.admin-current-page {
+	border-left: 3px solid var(--red);
+}
+
+#admin-sidebar a:hover {
+	/* border-left: 3px solid var(--red); */
+	background-color: var(--lightgrey);
 }
 
 #admin-content {
 	flex: 3;
 	order: 2;
-	/* background-color: pink; */
-	/* border: 1px solid black; */
 }
 
-#admin-content h2 {
-	padding: 0;
+#admin-content h3 {
 	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid silver;
 }
 
-#admin-eboard {
-	margin: 0;
-	padding: 0;
+#admin-content form label, #admin-content form input, #admin-content form textarea, #admin-content form select {
+	display: block;
 }
 
-#admin-sidebar ul {
-	/* background-color: white; */
-	list-style-type: none;
-	margin: 0;
-	border: 1px solid silver;
-	padding: 0;
-	width: 200px;
+#admin-content input, #admin-content textarea {
+	width: 80%;
+	border: 0.5px solid silver;
+	font-size: 14px;
+	padding: 5px;
 }
 
-#admin-sidebar li {
-	border-top: 1px solid silver;
-	margin:  0;
-	padding: 8px 0 0 7px;
-	height: 50px;
-	text-decoration: none;
-	color: var(--darkergrey);
-	border-left: 3px solid  white;
-	vertical-align: center;
+#admin-content form label {
+	color: var(--darkestgrey);
+	font-weight: bold;
+	margin: 18px 0 5px 0;
 }
 
-#admin-sidebar li:first-child {
-	border-top: none;
+#admin-content input {
+	height: 35px;
 }
 
-#admin-sidebar li:hover {
-	border-left: 3px solid var(--red);
+#admin-content input.no-border {
+	border: none;
 }
 
-#admin-sidebar li a {
-	color: var(--darkergrey);
-	text-decoration: none;
-	font-size: 150%;
+#admin-content select {
+	height: 30px;
+	margin-top: 12px;
+	border: 0.5px solid silver;
+}
+
+#admin-content button {
+	margin-top: 20px;
+	margin-bottom: 35px;
+	padding: 10px 12px;
 }
 
 #logout-form-button {
 	margin: 20px 50px 0 0px;
 	padding: 0;
-	width: 210px;
+	width: 85%;
 	height: 43px;
+	padding: 10px;
 }
 
 .indentcontent {
