@@ -168,7 +168,7 @@ if (isset($_POST['delete'])) {
 										Class year must be a valid year.
 									</span><div class = "break"></div>
 									Bio: <div class = "break"></div>
-									<textarea rows = "7" cols = "40" name = "bio"><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
+									<textarea rows = "7" cols = "40" name = "bio" required><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
 									<div class = "break"></div>
 									<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
 									Upload Image: <input type="file" name="image_file" required><div class = "break"></div><div class = "break"></div>

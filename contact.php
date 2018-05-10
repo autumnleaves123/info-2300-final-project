@@ -2,8 +2,6 @@
 include('includes/init.php');
 $current_page_id = "contact";
 
-$HIDDEN_ERROR_CLASS = "hiddenError";
-
 // when the user submits a form
 if (isset($_POST["submit"])) {
 		// show success message
