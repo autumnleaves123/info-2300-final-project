@@ -139,7 +139,7 @@ if (isset($_POST['delete'])) {
 			<div id="admin-wrapper">
 
 				<div id="admin-sidebar">
-					<?php include("includes/admin-controller.php"); ?>
+					<?php include("includes/admin-sidebar.php"); ?>
 				</div>
 
 				<div id="admin-content">
