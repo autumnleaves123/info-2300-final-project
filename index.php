@@ -90,8 +90,8 @@ if (isset($_POST["index-listserv-submit"])) {
 
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
+							<h6 class="date-ribbon"><?php echo "$post[entry_date]";?></h6>
 							<h2><?php echo "$post[title]";?></h2>
-							<p><?php echo "$post[entry_date]";?></p>
 
 							<?php
 							$post_id = $post['id'];

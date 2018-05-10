@@ -1,12 +1,11 @@
 <?php include('includes/init.php');
 $current_page_id = "admin";
-$current_admin_page = "admin-gallery";
+$current_admin_page = "admin-resources";
 
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
 }
-
 
 ?>
 
@@ -39,28 +38,26 @@ if ($current_user == NULL) {
 				<div id="admin-content">
 
 					<!-- Edit feed forms -->
-					<h3>Add New Image to Gallery</h3>
+					<h3>Add New Link</h3>
 					<form>
-						<input class="no-border" type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
-						<input class="no-border" type="file" name="attachment" required>
-						<!-- TODO: maybe assign tag to image? -->
-						<button name="submit" type="submit">add image</button>
+						<button name="submit" type="submit">add new link</button>
 					</form>
 
-					<h3>Delete Image</h3>
+					<h3>Delete Existing Link</h3>
 					<form>
-						<button name="submit" type="submit">delete image</button>
+						<button name="submit" type="submit">delete link</button>
 					</form>
 
-					<h3>Create New Album Tag</h3>
+					<h3>Upload New PowerPoint</h3>
 					<form>
-						<button name="submit" type="submit">create tag</button>
+						<button name="submit" type="submit">delete new powerpoint</button>
 					</form>
 
-					<h3>Delete Existing Album Tag</h3>
+					<h3>Delete Existing PowerPoint</h3>
 					<form>
-						<button name="submit" type="submit">delete tag</button>
+						<button name="submit" type="submit">delete powerpoint</button>
 					</form>
+
 
 				</div>
 			</div>

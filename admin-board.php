@@ -1,19 +1,13 @@
 <?php
 include('includes/init.php');
 $current_page_id = "admin";
+$current_admin_page = "admin-board";
 
 $HIDDEN_ERROR_CLASS = "hiddenError";
 
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
-}
-
-// LOGOUT
-if (isset($_POST['logout-button'])) {
-  log_out();
-	// TODO: create a logged out page?
-  header("Location: login.php");
 }
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
@@ -139,14 +133,14 @@ if (isset($_POST['delete'])) {
 			<div id="admin-wrapper">
 
 				<div id="admin-sidebar">
-					<?php include("includes/admin-controller.php"); ?>
+					<?php include("includes/admin-sidebar.php"); ?>
 				</div>
 
 				<div id="admin-content">
 					<?php print_messages();?>
 					<!-- Edit feed forms -->
 					<div id="admin-feed">
-						<h2>Manage E-board entries</h2>
+						<h3>Manage E-board entries</h3>
 						<div class="indentcontent">
 							<div class="border">
 								<h5>Add New Eboard Entry</h5>
@@ -176,8 +170,8 @@ if (isset($_POST['delete'])) {
 								</form><div class = "break"></div>
 							</div>
 
+							<h3>Delete Existing Eboard Entry</h3>
 							<div class="border">
-								<h5>Delete Existing Eboard Entry</h5>
 								<form method="post" action="admin-board.php" id="delete_oldboard" name="delete_oldboard">
 									Name:
 									<?php
