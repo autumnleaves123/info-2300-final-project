@@ -145,22 +145,14 @@ if (isset($_POST['delete'])) {
 							<div class="border">
 								<h5>Add New Eboard Entry</h5>
 								<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
-									Name: <input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" required/>
-									<span class="errorContainer <?php if ($nameValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="nameError">
-										Name must consist of 2 or more letters.
-									</span><div class = "break"></div>
-									Position: <input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" required/>
-									<span class="errorContainer <?php if ($positionValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="positionError">
-										Position must consist of 2 or more letters.
-									</span><div class = "break"></div>
-									Major: <input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" required/>
-									<span class="errorContainer <?php if ($majorValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="majorError">
-										Major must consist of 2 or more letters.
-									</span><div class = "break"></div>
-									Class Year: <input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" required/>
-									<span class="errorContainer <?php if ($classyearValid) {echo($HIDDEN_ERROR_CLASS);}?>" id="classyearError">
-										Class year must be a valid year.
-									</span><div class = "break"></div>
+									Name: <input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Name must consist of 2 or more letters." required/>
+									<div class = "break"></div>
+									Position: <input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Position must consist of 2 or more letters." required/>
+									<div class = "break"></div>
+									Major: <input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
+									<div class = "break"></div>
+									Class Year: <input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" pattern="[1-2]{1}[0-9]{3}" title="Class year must be a valid year." required/>
+									<div class = "break"></div>
 									Bio: <div class = "break"></div>
 									<textarea rows = "7" cols = "40" name = "bio" required><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
 									<div class = "break"></div>
