@@ -14,82 +14,61 @@ const IMAGE_UPLOADS_PATH = "uploads/eboard/";
 
 if (isset($_POST['add'])) {
   $upload_info = $_FILES["image_file"];
+
   $name = $_POST['name'];
   $name = filter_var($name, FILTER_SANITIZE_STRING);
   $name = trim($name);
-	if ((strlen(strval($name)) >= 2) && (ctype_alpha(str_replace(' ', '', $name)))) {
-		$nameValid = true;
-	} else {
-		$nameValid = false;
-	}
+
   $position = $_POST['position'];
   $position = filter_var($position, FILTER_SANITIZE_STRING);
   $position = trim($position);
-	if ((strlen(strval($position)) >= 2) && (ctype_alpha(str_replace(' ', '', $position)))) {
-		$positionValid = true;
-	} else {
-		$oositionValid = false;
-	}
+
 	$major = $_POST['major'];
   $major = filter_var($major, FILTER_SANITIZE_STRING);
   $major = trim($major);
-	if ((strlen(strval($major)) >= 2) && (ctype_alpha(str_replace(' ', '', $major)))) {
-		$majorValid = true;
-	} else {
-		$majorValid = false;
-	}
+
 	$classyear = $_POST['classyear'];
   $classyear = filter_var($classyear, FILTER_SANITIZE_STRING);
   $classyear = trim($classyear);
-	if (strtotime($classyear)) {
-		$classyearValid = true;
-	} else {
-		$classyearValid = false;
-	}
+
 	$bio = $_POST['bio'];
   $bio = filter_var($bio, FILTER_SANITIZE_STRING);
   $bio = trim($bio);
-	if ($nameValid && $positionValid && $majorValid && $classyearValid) {
-  	if ($upload_info['error'] == UPLOAD_ERR_OK) {
-			$target_file = basename($_FILES["image_file"]["name"]);
-	    $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-	    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
-	      array_push($messages, "[Error uploading your image.]");
-	      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
-	    } else {
-	      $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
-	      $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
-	      $records = exec_sql_query($db, $sql, $params);
 
-	      $fileid = $db->lastInsertId("id");
-	      $newfilename = "$fileid.$filetype";
-	      $destination = IMAGE_UPLOADS_PATH . $newfilename;
-				$sql = "UPDATE eboard SET image = :newfilename WHERE name = :name";
-	      $params = array(':newfilename' => $newfilename, ':name' => $name);
-	      $records = exec_sql_query($db, $sql, $params);
-	      if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
-	          array_push($messages, "[The new member ". htmlspecialchars($name) . " has been added.]");
-	          $name = NULL;
-						$position = NULL;
-						$major = NULL;
-						$classyear = NULL;
-	          $bio = NULL;
-	      } else {
-	          array_push($messages, "[Error uploading your image.]");
-	      }
-	    }
-	  } else {
-	    array_push($messages, "[Error uploading your image.]");
-	    if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
-	      array_push($messages, "[Image size too large.]");
-	    }
-	  }
-	}
-} else {
-	$nameValid = true;
-	$positionValid = true;
-	$majorValid = true;
-	$classyearValid = true;
+	if ($upload_info['error'] == UPLOAD_ERR_OK) {
+		$target_file = basename($_FILES["image_file"]["name"]);
+    $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+      array_push($messages, "[Error uploading your image.]");
+      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+    } else {
+      $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
+      $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
+      $records = exec_sql_query($db, $sql, $params);
+
+      $fileid = $db->lastInsertId("id");
+      $newfilename = "$fileid.$filetype";
+      $destination = IMAGE_UPLOADS_PATH . $newfilename;
+			$sql = "UPDATE eboard SET image = :newfilename WHERE name = :name";
+      $params = array(':newfilename' => $newfilename, ':name' => $name);
+      $records = exec_sql_query($db, $sql, $params);
+      if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
+          array_push($messages, "[The new member ". htmlspecialchars($name) . " has been added.]");
+          $name = NULL;
+					$position = NULL;
+					$major = NULL;
+					$classyear = NULL;
+          $bio = NULL;
+      } else {
+          array_push($messages, "[Error uploading your image.]");
+      }
+    }
+  } else {
+    array_push($messages, "[Error uploading your image.]");
+    if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
+      array_push($messages, "[Image size too large.]");
+    }
+  }
 }
 
 if (isset($_POST['delete'])) {
