@@ -1,5 +1,7 @@
 <?php
+
 include('includes/init.php');
+
 $current_page_id = "admin";
 $current_admin_page = "admin-board";
 
@@ -12,6 +14,7 @@ if ($current_user == NULL) {
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
 
+// add eboard form processing
 if (isset($_POST['add'])) {
   $upload_info = $_FILES["image_file"];
   $name = $_POST['name'];
@@ -28,7 +31,7 @@ if (isset($_POST['add'])) {
 	if ((strlen(strval($position)) >= 2) && (ctype_alpha(str_replace(' ', '', $position)))) {
 		$positionValid = true;
 	} else {
-		$oositionValid = false;
+		$positionValid = false;
 	}
 	$major = $_POST['major'];
   $major = filter_var($major, FILTER_SANITIZE_STRING);
@@ -92,6 +95,7 @@ if (isset($_POST['add'])) {
 	$classyearValid = true;
 }
 
+// delete eboard form processing
 if (isset($_POST['delete'])) {
   $entrytodelete = $_POST['entrytodelete'];
 	$entrytodelete = filter_var($entrytodelete, FILTER_SANITIZE_STRING);

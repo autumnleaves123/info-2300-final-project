@@ -91,8 +91,8 @@ button:hover {
 	position: fixed;
   top: 40%;
   left: 50%;
-	margin-top: -70px;
-  margin-left: -100px;
+	margin-top: -90px;
+  margin-left: -120px;
 	text-align: center;
 }
 
@@ -300,6 +300,10 @@ a.current-page {
 	margin-right: 20px;
 }
 
+#admin-content form {
+	margin-bottom: 35px;
+}
+
 #admin-content h3 {
 	margin: 0;
 	padding: 10px 0;
@@ -339,7 +343,7 @@ a.current-page {
 
 #admin-content button {
 	margin-top: 20px;
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 	padding: 10px 12px;
 }
 
@@ -464,24 +468,6 @@ a.current-page {
 	display: inline-block;
 }
 
-/* #search-criteria a {
-	color: white;
-	text-decoration: none;
-	margin: 0 0 0 50px;
-	padding: 0;
-	font-size: 25px;
-	border: 3px solid var(--grey);
-	border-radius: 100px;
-	background-color: var(--grey);
-	font-weight: bold;
-	text-align: center;
-}
-
-#search-criteria a:hover {
-	background-color: var(--darkergrey);
-	border: 3px solid var(--darkergrey);
-} */
-
 #search-criteria a {
 	float: right;
 	margin-right: 20px;
@@ -512,6 +498,23 @@ a.current-page {
 .post {
 	margin: 40px 60px;
 }
+
+.post h3 {
+	font-size: 16px;
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+}
+
+.post .url {
+	word-break: break-all;
+  white-space: normal;
+	color: var(--red);
+	margin: 0;
+	padding: 0;
+}
+
+
 
 #feed-tags, #feed-listserv, #facebook-like {
 	margin: 40px 60px 40px 10px;
@@ -585,7 +588,7 @@ h6.date-ribbon {
 	margin: 0 10px 25px -40px;
 	color: white;
 	background-color: var(--red);
-	box-shadow: 0px 2px 4px #888;
+	box-shadow: 0px 1px 1px #888;
 	}
 
 h6:before, h6:after {

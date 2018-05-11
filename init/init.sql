@@ -6,11 +6,22 @@ CREATE TABLE feed (
 	title TEXT NOT NULL,
 	entry_date TEXT NOT NULL,
 	content TEXT NOT NULL,
-	file_name TEXT,
-	file_ext TEXT,
+	url_1 TEXT,
+	url_2 TEXT
+);
+
+CREATE TABLE feed_attachments (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	file_name_1 TEXT,
+	file_ext_1 TEXT,
 	file_name_2 TEXT,
-	file_ext_2 TEXT,
-	url TEXT
+	file_ext_2 TEXT
+);
+
+CREATE TABLE feed_to_feed_attachments (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	feed_id INTEGER NOT NULL,
+	feed_attachment_id INTEGER NOT NULL
 );
 
 CREATE TABLE feed_tags (
@@ -74,6 +85,8 @@ CREATE TABLE users (
 
 
 
+
+
 /* TODO: initial seed data */
 
 /* Home page (newsfeed) */
@@ -83,7 +96,8 @@ CREATE TABLE users (
 /* 4 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Openings", "April 12, 2018", "We are excited to announce that the following positions will be open on our executive board for the Fall 2018 Semester: Treasurer, Secretary, Outreach Chair, Publicity Coordinator, and Events Coordinator. Descriptions of all board positions can be found below. If you're interested, please fill out the application. Applications are due Wednesday, April 25th to cudap@cornell.edu. Any questions or concerns may be directed to our email or any current board member. We encourage any student, regardless of ability or experience, to apply!");
 /* 5 */INSERT INTO feed (title, entry_date, content) VALUES ("Apparel Sale", "April 10, 2018", "Thank you to everyone who ordered from CUDAP's first apparel sale! The apparel has been ordered and should arrive within the next two weeks; if you ordered, we will send you an email when it comes in.");
 /* 6 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Office Hours", "April 9, 2018", "If you'd like extra practice with a song or vocabulary we've done in Sign Choir, or are interested in learning more about ASL, Deaf culture, or CUDAP, feel free to come to any board member's office hours; times are on the attached board list. Please notify them via email so they know to expect you.");
-/* 7 */INSERT INTO feed (title, entry_date, content, url) VALUES ("D/deaf / Hard of Hearing School Counseling Survey", "April 1, 2018", "Phoebe Lo, a New York University graduate student studying School Counseling, is researching how school counselors can understand and help students who are D/deaf / hard of hearing. To facilitate this, she is looking for D/deaf / hard of hearing students to fill out a survey about their experiences. All responses are confidential and used solely for research.", "https://docs.google.com/forms/d/e/1FAIpQLScuN2dMY6eJeJdQdv_RRA7uWD4sifVXAYNZ9AZ6EgZP__ugbQ/viewform");
+/* 7 */INSERT INTO feed (title, entry_date, content, url_1) VALUES ("D/deaf / Hard of Hearing School Counseling Survey", "April 1, 2018", "Phoebe Lo, a New York University graduate student studying School Counseling, is researching how school counselors can understand and help students who are D/deaf / hard of hearing. To facilitate this, she is looking for D/deaf / hard of hearing students to fill out a survey about their experiences. All responses are confidential and used solely for research.", "https://docs.google.com/forms/d/e/1FAIpQLScuN2dMY6eJeJdQdv_RRA7uWD4sifVXAYNZ9AZ6EgZP__ugbQ/viewform");
+
 
 INSERT INTO feed_tags (name) VALUES ("#signchoir");
 INSERT INTO feed_tags (name) VALUES ("#performance");
