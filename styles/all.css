@@ -60,7 +60,7 @@ header {
 	text-align: center;
 }
 
-button {
+/*button {
 	background: white;
 	border: 1px solid silver;
 	font-size: 16px;
@@ -69,6 +69,20 @@ button {
 }
 
 button:hover {
+	background-color: var(--red);
+	color: white;
+}*/
+
+button {
+	padding: 12px 16px;
+	text-decoration: none;
+	border: 1px solid var(--grey);
+	color: var(--darkergrey);
+	font-weight: lighter;
+}
+
+button:hover {
+	/* switch for lighter color */
 	background-color: var(--red);
 	color: white;
 }
@@ -828,13 +842,7 @@ textarea {
 #formButton button {
 	/*margin-top: 0;*/
 	margin: 30px auto;
-	border: 2px solid silver;
-	width: 250px;
-	text-decoration: none;
 	font-size: 16px;
-	border-radius: 1px;
-	padding: 10px;
-	font-weight: normal;
 }
 
 /* #formButton button:active {
@@ -843,11 +851,6 @@ textarea {
 
 #messageButton button {
 	margin: 30px auto;
-	border: 2px solid silver;
-	width: 250px;
-	text-decoration: none;
-	margin: 0 auto;
-	padding: 10px;
 	font-size: 16px;
 }
 
