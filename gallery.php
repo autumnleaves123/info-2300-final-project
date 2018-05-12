@@ -31,6 +31,15 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
 		<!-- Maybe add tags at the top for filtering? -->
 
+    <!-- Category Buttons -->
+
+    <div id="category-buttons">
+      <button>All photos</button>
+      <button>Category 1</button>
+      <button>Category 2</button>
+      <button>Category 3</button>
+    </div>
+
     <!-- GALLERY -->
     <div class="row">
       <?php $colsize = (int) floor(count($records) / 4);
