@@ -12,10 +12,8 @@ CREATE TABLE feed (
 
 CREATE TABLE feed_attachments (
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	file_name_1 TEXT,
-	file_ext_1 TEXT,
-	file_name_2 TEXT,
-	file_ext_2 TEXT
+	file_name TEXT,
+	file_ext TEXT
 );
 
 CREATE TABLE feed_to_feed_attachments (

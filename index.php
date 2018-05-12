@@ -110,6 +110,7 @@ if (isset($_POST["index-listserv-submit"])) {
 							<p><?php echo "$post[content]";?></p>
 
 							<!-- TODO: echo attachments and links -->
+							<!-- TODO: add http -->
 							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
 							} else { echo "<h3>Links</h3>"; }; ?>
 							<p class="url"><?php echo "<a href=$post[url_1] target='_blank'>$post[url_1]</a>";?></p>
