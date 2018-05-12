@@ -559,7 +559,7 @@ a.current-page {
 	background-color: var(--darkergrey);
 }
 
-#feed-tags ul li a:hover {
+#feed-tags ul li:hover a {
 	color: white;
 }
 
