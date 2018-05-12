@@ -120,22 +120,22 @@ if (isset($_POST['delete'])) {
 						<h3>Add New E-board Entry</h3>
 						<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
 
-							<label>Name (required)</label>
+							<label>Name <span class="required">(required)</span></label>
 							<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Name must consist of 2 or more letters." required/>
 
-							<label>Position (required)</label>
+							<label>Position <span class="required">(required)</span></label>
 							<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Position must consist of 2 or more letters." required/>
 
-							<label>Major (required)</label>
+							<label>Major <span class="required">(required)</span></label>
 							<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
 
-							<label>Class Year (required)</label>
+							<label>Class Year <span class="required">(required)</span></label>
 							<input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" pattern="[1-2]{1}[0-9]{3}" title="Class year must be a valid year." required/>
 
-							<label>Bio (required)</label>
+							<label>Bio <span class="required">(required)</span></label>
 							<textarea rows="7" cols="40" name="bio" required><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
 
-							<label>Upload Photo (required)</label>
+							<label>Upload Photo <span class="required">(required)</span></label>
 							<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
  							<input type="file" name="image_file" required>
 

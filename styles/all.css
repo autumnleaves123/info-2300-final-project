@@ -138,6 +138,11 @@ button:focus {
 	font-size: 25px;
 }
 
+.required {
+	color: red;
+	font-size: 12px;
+}
+
 /* ===============
    			NAV
    =============== */

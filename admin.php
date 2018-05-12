@@ -137,26 +137,26 @@ if (isset($_POST['delete-feed-button'])) {
 				<div id="admin-content">
 
 					<h3>Add New Post</h3>
-					<form method="post" action="admin.php" id="add-feed" name="add-feed">
-						<label>Title (required)</label>
+					<form method="post" action="admin.php" id="add-feed" name="add-feed" enctype="multipart/form-data">
+						<label>Title <span class="required">(required)</span></label>
 						<input type="text" name="feed-title" placeholder="CUDAP Arch Sign" required/>
 
-						<label>Text (required)</label>
+						<label>Text <span class="required">(required)</span></label>
 						<textarea name="feed-text" rows="5" cols="80" placeholder="Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!"></textarea>
 
-						<label>URL 1 (optional)</label>
+						<label>URL 1</label>
 						<input type="text" name="feed-url-1" placeholder="https://bit.ly/2jJJ0ya"/>
 
-						<label>URL 2 (optional)</label>
+						<label>URL 2</label>
 						<input type="text" name="feed-url-2" placeholder="https://bit.ly/2jJJ0ya"/>
 
-						<label>Attachment 1 (optional)</label>
+						<label>Attachment 1</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
-		      	<input class="no-border" type="file" name="feed-file-1"/>
+		      	<input type="file" name="feed-file-1"/>
 
-						<label>Attachment 2 (optional)</label>
+						<label>Attachment 2</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
-		      	<input class="no-border" type="file" name="feed-file-2"/>
+		      	<input type="file" name="feed-file-2"/>
 
 						<button name="add-feed-button" type="submit">add new feed</button>
 						<p class="message"><?php if (isset($_POST['add-feed-button'])) { print_messages(); }?></p>
