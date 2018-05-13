@@ -20,11 +20,11 @@
 /feed/*
 
 # Tell Git to NOT ignore your EACH seed file in your your upload folders.
-!/eboard/1.jpg
-!/eboard/2.jpg
-!/eboard/3.jpg
-!/eboard/4.jpg
-!/eboard/5.jpg
+!/eboard/1.png
+!/eboard/2.png
+!/eboard/3.png
+!/eboard/4.png
+!/eboard/5.png
 !/eboard/6.jpg
 
 !/signs/a.jpg
