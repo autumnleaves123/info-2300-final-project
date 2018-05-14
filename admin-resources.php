@@ -129,7 +129,7 @@ if (isset($_POST['delete-ppt-button'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section class="content2">
+	<section class="content">
 		<h1>Admin Portal</h1>
 
 		<div class="white-background">

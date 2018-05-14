@@ -1,5 +1,5 @@
 /* For smaller desktop screens and potentially tablets (iPads)*/
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 900px) {
 
 	.content {
 		padding: 20px 30px;
@@ -25,7 +25,7 @@
 		margin: 0 5px;
 	}
 
-	/* Feed */
+	/* Index */
 	#welcome {
 		padding: 30px 30px 20px 30px;
 		flex: none;
@@ -41,6 +41,19 @@
 
 	#welcome h1 {
 		/* font-size: 30px; */
+	}
+
+	#feed {
+		flex-direction: column;
+	}
+
+	#feed-flex-right {
+		order: 1;
+		display: flex;
+	}
+
+	#feed-flex-left {
+		order: 2;
 	}
 
 

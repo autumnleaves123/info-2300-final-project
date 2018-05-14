@@ -31,9 +31,12 @@ if (empty($_GET['category'])) {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
+
   <script src="scripts/gallery.js"></script>
 
   <title>Gallery</title>
@@ -42,7 +45,7 @@ if (empty($_GET['category'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-  <section class = "content2">
+  <section class="content">
 		<h1>Gallery</h1>
 
 		<!-- Maybe add tags at the top for filtering? -->

@@ -102,14 +102,14 @@ if (isset($_POST['delete'])) {
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
 	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
-	
+
   <title>Admin</title>
 </head>
 
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section class="content2">
+	<section class="content">
 		<h1>Admin Portal</h1>
 
 		<div class="white-background">

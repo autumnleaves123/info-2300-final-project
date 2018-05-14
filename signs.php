@@ -23,7 +23,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 <body>
   <?php include("includes/header.php"); ?>
   <div id='learn-div'>
-    <section class="content2">
+    <section class="content">
       <h1>Learn ASL with Us</h1>
 
       <div id='main-div'>
