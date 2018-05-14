@@ -157,6 +157,18 @@ INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
+INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 
 INSERT INTO categories (name) VALUES ('Sign Choir');
 INSERT INTO categories (name) VALUES ('Workshops');

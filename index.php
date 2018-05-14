@@ -25,7 +25,7 @@ if ( isset($_GET["tag"])) {
 	$current_tag = NULL;
 
 	// fetch feed content
-	$sql = "SELECT * FROM feed ORDER BY id DESC";
+	$sql = "SELECT * FROM feed ORDER BY id DESC LIMIT 10";
 	$params = array();
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 }
@@ -134,6 +134,8 @@ if (isset($_POST["index-listserv-submit"])) {
 
 						</div>
 				<?php } ?>
+
+				<div id="tenposts"><p>Displaying up to 10 most recent posts.</p></div>
 			</div>
 
 			<div id="feed-flex-right">
@@ -155,7 +157,10 @@ if (isset($_POST["index-listserv-submit"])) {
 				</div>
 
 			</div>
+
 		</div>
+
+
 
 	</section>
 

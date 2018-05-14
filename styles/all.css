@@ -562,8 +562,6 @@ a.current-page {
 	margin-top: 10px;
 }
 
-
-
 #feed-tags, #feed-listserv, #facebook-like {
 	margin: 40px 60px 40px 10px;
 }
@@ -654,6 +652,10 @@ h6.date-ribbon:after {
 	border-color: #666 #666 transparent transparent;
 	}
 
+#tenposts {
+	margin: 20px 60px 40px;
+	text-align: center;
+}
 
 /* ===============
 	 MEET THE BOARD
@@ -795,15 +797,15 @@ table td {
 .flex-left {
 	flex: 1;
 	order: 1;
-	padding: 10px;
+	padding: 30px 40px;
 	border-right: 1px solid var(--grey);
 }
 
 .flex-right {
-	padding: 10px;
+	padding: 30px 40px;
 	flex: 1;
 	order: 2;
-	border-left: 1px solid var(--grey);
+	/* border-left: 1px solid var(--grey); */
 }
 
 .indent {

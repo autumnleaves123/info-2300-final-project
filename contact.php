@@ -10,8 +10,6 @@ if (isset($_POST["submit"])) {
   mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 }
 
-
-//
 // when the user submits a form
 if (isset($_POST["submitmessage"])) {
 	// validate form here
@@ -57,7 +55,7 @@ if (isset($_POST["submitmessage"])) {
 						<!-- TODO: create listserv form -->
 						<div class="flex-left">
 							<h2>Mailing List</h2>
-							<p>Leave us your email for more information and updates!</p>
+							<p>Leave us your email for information and updates!</p>
 							<form method="post" action="contact.php" id="joinForm">
 
 								<div class="largeContainer">
@@ -70,17 +68,17 @@ if (isset($_POST["submitmessage"])) {
 								<div id="formButton">
 									<button name="submit" type="submit" class="submit">subscribe to listserv</button>
 								</div>
+
 							</form>
 						</div>
 
 						<!-- TODO: create contact form -->
 						<div class="flex-right">
 							<h2>Send Us A Message</h2>
-							<p>Any inquiries, comments, and/or feedback you may have, <br/>you can communicate to us using this message form.</p>
+							<p>Please leave any inquiries, comments, and/or feedback you might have.</p>
 							<form method="post" action="contact.php" id="messageForm" >
-								Message:
 								<div class = "inputContainer">
-									<textarea rows = "7" cols = "40" name = "message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+									<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
 								</div>
 								<div class = "break"></div>
 								<div id="messageButton">
