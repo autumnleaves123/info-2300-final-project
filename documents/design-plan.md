@@ -576,8 +576,6 @@ Table: images
   * surrogate key for images, also file name when stored
 * **title**: text (non-null)
   * title of image
-* **caption**: text
-  * caption for image, optional
 * **file_ext**: text (non-null)
   * file type of the image, could be png or jpg or whatever
 

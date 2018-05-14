@@ -10,6 +10,7 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
@@ -41,10 +42,11 @@ if (isset($_POST['add'])) {
 	if ($upload_info['error'] == UPLOAD_ERR_OK) {
 		$target_file = basename($_FILES["image_file"]["name"]);
     $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg") {
       array_push($messages, "[Error uploading your image.]");
-      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+      array_push($messages, "[Wrong file type. Only JPG, JPEG, & PNG files are allowed.]");
     } else {
+			$db->beginTransaction();
       $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
       $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
       $records = exec_sql_query($db, $sql, $params);
@@ -65,6 +67,7 @@ if (isset($_POST['add'])) {
       } else {
           array_push($messages, "[Error uploading your image.]");
       }
+			$db->commit();
     }
   } else {
     array_push($messages, "[Error uploading your image.]");
@@ -79,6 +82,7 @@ if (isset($_POST['delete'])) {
   $entrytodelete = $_POST['entrytodelete'];
 	$entrytodelete = filter_var($entrytodelete, FILTER_SANITIZE_STRING);
   $entrytodelete = trim($entrytodelete);
+	$db->beginTransaction();
 	$sqlimage = "SELECT image FROM eboard WHERE name = :entrytodelete";
   $paramsimage = array(':entrytodelete' => $entrytodelete);
   $imageofentry = exec_sql_query($db, $sqlimage, $paramsimage)->fetchAll();
@@ -89,6 +93,7 @@ if (isset($_POST['delete'])) {
 
   unlink(IMAGE_UPLOADS_PATH . $locationofimage);
   array_push($messages, "[The entry for member ". htmlspecialchars($entrytodelete) . " has been deleted.]");
+	$db->commit();
 }
 
 ?>

@@ -7,6 +7,7 @@ const GALLERY_UPLOADS_PATH = "uploads/feed/";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 /*
@@ -17,6 +18,8 @@ if a user includes attachments, add those to uploads/feed folder
 if any part fails, return message saying that the user is unable to add a new feed post
 */
 if (isset($_POST['add-feed-button'])) {
+
+	$db->beginTransaction();
 
 	// grab all parameters and sanitize
 	$title = filter_input(INPUT_POST, 'feed-title', FILTER_SANITIZE_STRING);
@@ -142,7 +145,7 @@ if (isset($_POST['add-feed-button'])) {
 		// file_count < 0
 		record_message("Failed to add post.");
 	}
-
+	$db->commit();
 }
 
 
