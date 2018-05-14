@@ -1441,6 +1441,12 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 [Include any other information that your client needs to know about your final website design. For example, what client wants or needs were unable to be realized in your final product? Why were you unable to meet those wants/needs?]
 
+To CUDAP:
+
+In order to make this website go live, you will likely need to purchase a web domain. They usually cost about $10-$12 a year. Here are some that you could consider:
+* https://domains.google.com/m/registrar/search?hl=en&_ga=2.63776363.592382675.1526320322-190975561.1526320322&searchTerm=cornell%20cudap
+* https://www.godaddy.com/dpp/find?isc=gofd1001aj&checkAvail=1&tmskey=&domainToCheck=cudap
+
 ## Milestone 5: Final Notes to the Graders
 
 [1. Give us three specific strengths of your site that sets it apart from the previous website of the client (if applicable) and/or from other websites. Think of this as your chance to argue for the things you did really well.]
@@ -1453,10 +1459,12 @@ Feed is pretty cool
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 
-* Allow users/eboard to make their own accounts
-* Ajax for feed so it doesn't go to the top of the page each time it loads
-* Embed social media
+Some features that we would have liked to implement:
 
+* Ability for E-board to create their own accounts instead of having one general account
+* Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag
+* Embed social media such as Facebook on the front page
+* Embed Google calendar on the events page
 
 [3. Tell us anything else you need us to know for when we're looking at the project.]
 **Write something about this (Bethany)**
