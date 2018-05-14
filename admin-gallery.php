@@ -110,26 +110,42 @@ if (isset($_POST['delete-ppt-button'])) {
 
 					<!-- Edit feed forms -->
 					<h3>Add New Image to Gallery</h3>
-					<form>
+					<form method="post" action="admin-gallery.php" method="post" enctype="multipart/form-data">
+						<label>Enter a title <span class="required">(required)</span></label>
+						<input name="title" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Title must consist of 2 or more letters." required/>
+						<label>Assign a category <span class="required">(required)</span></label>
+						<select name="feed-titles">
+							<option disabled selected value> -- select a category -- </option>
+							<?php
+								// fetch all categories
+								$sql = "SELECT * FROM categories;";
+								$params = array();
+								$categories = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($categories as $category) {
+									echo "<option value='" . $category['name'] . "'>" . $category['name'] . "</option>";
+								}
+							?>
+						</select>
+						<label>Upload file <span class="required">(required)</span></label>
 						<input class="no-border" type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 						<input class="no-border" type="file" name="attachment" required>
-						<!-- TODO: maybe assign tag to image? -->
 						<button name="submit" type="submit">add image</button>
 					</form>
 
 					<h3>Delete Image</h3>
-					<form>
+					<form method="post" action="admin-gallery.php" method="post">
 						<button name="submit" type="submit">delete image</button>
 					</form>
 
-					<h3>Create New Album Tag</h3>
-					<form>
-						<button name="submit" type="submit">create tag</button>
+					<h3>Create New Category</h3>
+					<form method="post" action="admin-gallery.php" method="post">
+						<button name="submit" type="submit">create category</button>
 					</form>
 
-					<h3>Delete Existing Album Tag</h3>
-					<form>
-						<button name="submit" type="submit">delete tag</button>
+					<h3>Delete Existing Category</h3>
+					<form method="post" action="admin-gallery.php" method="post">
+						<button name="submit" type="submit">delete category</button>
 					</form>
 
 				</div>
