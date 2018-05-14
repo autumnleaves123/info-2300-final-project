@@ -145,6 +145,10 @@ button:focus {
 	font-weight: bold;
 }
 
+.link:hover {
+	color: var(--brighter_red);
+}
+
 .center-text {
 	text-align: center;
 }

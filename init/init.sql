@@ -71,8 +71,17 @@ CREATE TABLE signs (
 );
 
 /* Resources */
+CREATE TABLE links (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	name TEXT NOT NULL UNIQUE,
+	url TEXT NOT NULL UNIQUE
+);
 
-
+CREATE TABLE ppts (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	label TEXT NOT NULL UNIQUE,
+	file TEXT NOT NULL UNIQUE
+);
 
 /* Log in */
 --> this is my example users table from P3 for login testing purposes - Autumn */
@@ -81,9 +90,6 @@ CREATE TABLE users (
   username TEXT NOT NULL,
   password TEXT NOT NULL
 );
-
-
-
 
 
 /* TODO: initial seed data */
@@ -214,7 +220,18 @@ INSERT INTO signs(word, frame, image_path) VALUES ('sign', '2', 'uploads/signs/3
 INSERT INTO signs(word, frame, image_path) VALUES ('sign', '3', 'uploads/signs/40.jpg');
 
 /* Resources */
+INSERT INTO links(name, url) VALUES ('www.startasl.com', 'https://www.startasl.com/learn-sign-language-asl');
+INSERT INTO links(name, url) VALUES ('www.signlanguage101.com', 'http://www.signlanguage101.com/');
+INSERT INTO links(name, url) VALUES ('www.aslpro.com', 'http://www.aslpro.com/');
+INSERT INTO links(name, url) VALUES ('www.theaslapp.com', 'http://theaslapp.com/');
 
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/animal.pptx', 'Animal Vocab');
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/education.pptx', 'Education Vocab');
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/emotions.pptx', 'Emotions Vocab');
+INSERT INTO ppts(file, label) VALUES ('"uploads/resourcesppt/health.pptx', 'Health Vocab');
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/occupations.pptx', 'Occupations Vocab');
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/majors.pptx', 'Majors Vocab');
+INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/december.pptx', 'December Holidays Vocab');
 
 
 /* Log in */

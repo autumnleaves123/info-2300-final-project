@@ -26,7 +26,7 @@ $current_page_id = "login";
 				<input type="text" name="username" placeholder="Username" required/>
 				<input type="password" name="password" placeholder="Password" required/>
 				<!-- TODO: create button -->
-				<button id="login-form-button" type="submit" name="login-form-button">Log In</button>
+				<button id="login-form-button" type="submit" name="login-form-button">log in</button>
 			</form>
 
 			<p>-- or --</p>

@@ -40,6 +40,12 @@ if ($current_user == NULL) {
 					<!-- Edit feed forms -->
 					<h3>Add New Link</h3>
 					<form>
+						<label>Title <span class="required">(required)</span></label>
+						<input type="text" name="feed-title" placeholder="www.aslpro.com" required/>
+
+						<label>URL <span class="required">(required)</span></label>
+						<input type="text" name="feed-url-1" placeholder="http://www.aslpro.com/" required/>
+
 						<button name="submit" type="submit">add new link</button>
 					</form>
 
@@ -50,7 +56,7 @@ if ($current_user == NULL) {
 
 					<h3>Upload New PowerPoint</h3>
 					<form>
-						<button name="submit" type="submit">delete new powerpoint</button>
+						<button name="submit" type="submit">upload new powerpoint</button>
 					</form>
 
 					<h3>Delete Existing PowerPoint</h3>
