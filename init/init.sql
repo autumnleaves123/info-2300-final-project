@@ -146,27 +146,29 @@ INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 
 INSERT INTO categories (name) VALUES ('Sign Choir');
+INSERT INTO categories (name) VALUES ('Workshops');
+INSERT INTO categories (name) VALUES ('Deaf Awareness Week');
 
-INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('3', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('4', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('5', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('6', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('7', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('8', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('9', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('10', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('11', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('12', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('13', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('14', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('15', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('16', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('3', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('4', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('5', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('6', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('7', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('8', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('9', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('10', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('11', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('12', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('13', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('14', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('15', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('16', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '3');
 
 
 /* Learn ASL */
