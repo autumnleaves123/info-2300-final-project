@@ -16,7 +16,7 @@ if ( isset($_GET["tag"])) {
 	$current_tag = filter_input(INPUT_GET, 'tag', FILTER_SANITIZE_STRING);
 
 	// fetch images based on TAGS
-	$sql = "SELECT * FROM feed_to_tags INNER JOIN feed ON feed_to_tags.feed_id = feed.id WHERE tag_id = :current_tag";
+	$sql = "SELECT * FROM feed_to_tags INNER JOIN feed ON feed_to_tags.feed_id = feed.id WHERE tag_id = :current_tag ORDER BY feed.id DESC";
 	$params = array(':current_tag' => $current_tag);
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 
@@ -25,7 +25,7 @@ if ( isset($_GET["tag"])) {
 	$current_tag = NULL;
 
 	// fetch feed content
-	$sql = "SELECT * FROM feed";
+	$sql = "SELECT * FROM feed ORDER BY id DESC";
 	$params = array();
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 }
@@ -42,8 +42,10 @@ if (isset($_POST["index-listserv-submit"])) {
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" href="styles/all.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
 	<title>Home</title>
 </head>
@@ -89,7 +91,7 @@ if (isset($_POST["index-listserv-submit"])) {
 					</div>
 				<?php } ?>
 
-				<!-- Echo out all the posts -->
+				<!-- for each post -->
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
 							<h6 class="date-ribbon"><?php echo "$post[entry_date]";?></h6>
@@ -112,15 +114,23 @@ if (isset($_POST["index-listserv-submit"])) {
 							<!-- TODO: echo attachments and links -->
 							<!-- TODO: add http -->
 							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
-							} else { echo "<h3>Links</h3>"; }; ?>
-							<p class="url"><?php echo "<a href=$post[url_1] target='_blank'>$post[url_1]</a>";?></p>
-							<p class="url"><?php echo "<a href=$post[url_2] target='_blank'>$post[url_2]</a>";?></p>
+							} else { echo "<h3>Links:</h3>"; }; ?>
+							<?php echo "<a class='url' href=$post[url_1] target='_blank'>$post[url_1]</a>";?>
+							<?php echo "<a class='url' href=$post[url_2] target='_blank'>$post[url_2]</a>";?>
 
 							<!-- TODO: handle attachment stuff (href)-->
-							<?php // if ($post['file_name'] == NULL && $post['file_name_2'] == NULL) { echo "";
-							// }  else { echo "<h3>Attachments</h3>"; }; ?>
-							<!-- <p class="attachments"><?php // echo "<a href='uploads/feed/ target='_blank'>$post[file_ext]</a>";?></p>
-							<p class="attachments"><?php // echo "<a href='uploads/feed/' target='_blank'>$post[file_ext_2]</a>";?></p> -->
+							<?php
+								$sql = "SELECT feed_attachment_id, file_ext, file_name FROM feed_to_feed_attachments INNER JOIN feed_attachments ON feed_attachments.id = feed_to_feed_attachments.feed_attachment_id WHERE feed_id = :post_id";
+								$params = array(':post_id' => $post_id);
+								$fetch_attachments = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								if (sizeof($fetch_attachments)>0) {
+									echo "<h3 id='attachment-title'>Attachments:</h3>";
+									foreach($fetch_attachments as $attachment) {
+										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . $attachment['feed_attachment_id'] . "." . $attachment['file_ext'] . "'>" . $attachment['file_name'] . "</a>";
+									}
+								}
+							?>
 
 						</div>
 				<?php } ?>

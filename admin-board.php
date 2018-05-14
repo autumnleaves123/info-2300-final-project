@@ -10,6 +10,7 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";
@@ -41,10 +42,11 @@ if (isset($_POST['add'])) {
 	if ($upload_info['error'] == UPLOAD_ERR_OK) {
 		$target_file = basename($_FILES["image_file"]["name"]);
     $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg") {
       array_push($messages, "[Error uploading your image.]");
-      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+      array_push($messages, "[Wrong file type. Only JPG, JPEG, & PNG files are allowed.]");
     } else {
+			$db->beginTransaction();
       $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
       $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
       $records = exec_sql_query($db, $sql, $params);
@@ -65,6 +67,7 @@ if (isset($_POST['add'])) {
       } else {
           array_push($messages, "[Error uploading your image.]");
       }
+			$db->commit();
     }
   } else {
     array_push($messages, "[Error uploading your image.]");
@@ -79,6 +82,7 @@ if (isset($_POST['delete'])) {
   $entrytodelete = $_POST['entrytodelete'];
 	$entrytodelete = filter_var($entrytodelete, FILTER_SANITIZE_STRING);
   $entrytodelete = trim($entrytodelete);
+	$db->beginTransaction();
 	$sqlimage = "SELECT image FROM eboard WHERE name = :entrytodelete";
   $paramsimage = array(':entrytodelete' => $entrytodelete);
   $imageofentry = exec_sql_query($db, $sqlimage, $paramsimage)->fetchAll();
@@ -89,6 +93,7 @@ if (isset($_POST['delete'])) {
 
   unlink(IMAGE_UPLOADS_PATH . $locationofimage);
   array_push($messages, "[The entry for member ". htmlspecialchars($entrytodelete) . " has been deleted.]");
+	$db->commit();
 }
 
 ?>
@@ -97,10 +102,11 @@ if (isset($_POST['delete'])) {
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
-	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Admin</title>
 </head>
@@ -108,67 +114,62 @@ if (isset($_POST['delete'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section class="content2">
+	<section class="content">
 		<h1>Admin Portal</h1>
 
 		<div class="white-background">
 			<div id="admin-wrapper">
 				<div id="admin-sidebar"><?php include("includes/admin-sidebar.php"); ?></div>
-
 				<div id="admin-content">
+					<h3>Add New E-board Entry</h3>
+					<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
 
-						<h3>Add New E-board Entry</h3>
-						<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
+						<label>Name <span class="required">(required)</span></label>
+						<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Name must consist of 2 or more letters." required/>
 
-							<label>Name <span class="required">(required)</span></label>
-							<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Name must consist of 2 or more letters." required/>
+						<label>Position <span class="required">(required)</span></label>
+						<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Position must consist of 2 or more letters." required/>
 
-							<label>Position <span class="required">(required)</span></label>
-							<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Position must consist of 2 or more letters." required/>
+						<label>Major <span class="required">(required)</span></label>
+						<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
 
-							<label>Major <span class="required">(required)</span></label>
-							<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
+						<label>Class Year <span class="required">(required)</span></label>
+						<input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" pattern="[1-2]{1}[0-9]{3}" title="Class year must be a valid year." required/>
 
-							<label>Class Year <span class="required">(required)</span></label>
-							<input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" pattern="[1-2]{1}[0-9]{3}" title="Class year must be a valid year." required/>
+						<label>Bio <span class="required">(required)</span></label>
+						<textarea rows="7" cols="40" name="bio" required><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
 
-							<label>Bio <span class="required">(required)</span></label>
-							<textarea rows="7" cols="40" name="bio" required><?php if (isset($bio)) {echo htmlentities($bio, ENT_QUOTES); } ?></textarea>
+						<label>Upload Photo <span class="required">(required)</span></label>
+						<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+							<input type="file" name="image_file" required>
 
-							<label>Upload Photo <span class="required">(required)</span></label>
-							<input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
- 							<input type="file" name="image_file" required>
-
-							<button name="add" type="submit">add eboard entry</button>
-							<p class="message"><?php if (isset($_POST['add'])) { print_messages(); }?></p>
-						</form>
+						<button name="add" type="submit">add eboard entry</button>
+						<p class="message"><?php if (isset($_POST['add'])) { print_messages(); }?></p>
+					</form>
 
 
-							<h3>Delete Existing Eboard Entry</h3>
-							<form method="post" action="admin-board.php" id="delete_oldboard" name="delete_oldboard">
+					<h3>Delete Existing Eboard Entry</h3>
+					<form method="post" action="admin-board.php" id="delete_oldboard" name="delete_oldboard">
 
-								<label>E-board Member Name</label>
-								<?php
-						      $sql = "SELECT * FROM eboard";
-						      $params = array();
-						      $eboard = exec_sql_query($db, $sql, $params);
-						      if (isset($eboard) && !empty($eboard)) {
-										echo "<select name='entrytodelete' required>\n";
-										echo "<option value='' selected disabled>Choose Member</option>";
-						        foreach($eboard as $member) {
-						          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";
-						        }
-										echo "</select>";
-										echo '<button name="delete" type="submit">Submit</button>';
-						      } else {
-										echo "<p>No eboard members.</p>";
-									}
-						    ?>
+						<label>E-board Member Name</label>
+						<?php
+				      $sql = "SELECT * FROM eboard";
+				      $params = array();
+				      $eboard = exec_sql_query($db, $sql, $params);
+				      if (isset($eboard) && !empty($eboard)) {
+								echo "<select name='entrytodelete' required>\n";
+								echo "<option value='' selected disabled>Choose Member</option>";
+				        foreach($eboard as $member) {
+				          echo "<option value='" . htmlspecialchars($member['name']) . "'>" . htmlspecialchars($member['name']) . "</option>";
+				        }
+								echo "</select>";
+								echo '<button name="delete" type="submit">Submit</button>';
+				      } else {
+								echo "<p>No eboard members.</p>";
+							}
+				    ?>
 
-								</form>
-							</div>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

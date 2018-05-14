@@ -20,10 +20,11 @@ $sign_records = exec_sql_query($db, $sql, $params)->fetchAll();
 <html>
 
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+		<meta charset="UTF-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
     <title>Image View</title>
   </head>
@@ -31,7 +32,7 @@ $sign_records = exec_sql_query($db, $sql, $params)->fetchAll();
   <body>
     <?php include("includes/header.php"); ?>
 
-    <section class = "content single-view">
+    <section class="content single-view">
       <?php
       if (isset($sign_records) and !empty($sign_records)) {
         single_view($sign_records);

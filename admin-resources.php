@@ -5,12 +5,15 @@ $current_admin_page = "admin-resources";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 const FILE_UPLOADS_PATH = "uploads/resourcesppt/";
 
 // add link form processing
 if (isset($_POST['add-link-button'])) {
+
+	$db->beginTransaction();
 
 	$name = $_POST['link-name'];
 	$name = strtolower(trim(filter_var($name, FILTER_SANITIZE_STRING)));
@@ -45,10 +48,14 @@ if (isset($_POST['add-link-button'])) {
 			array_push($messages, "[Link failed to add.]");
 		}
 	}
+	$db->commit();
 }
 
 // delete link form processing
 if (isset($_POST['delete-link-button'])) {
+
+	$db->beginTransaction();
+
   $link_delete = $_POST['link-names'];
 	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
 
@@ -57,10 +64,13 @@ if (isset($_POST['delete-link-button'])) {
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
   array_push($messages, "[The link (". htmlspecialchars($link_delete) . ") has been deleted.]");
+	$db->commit();
 }
 
 // upload ppt form processing
 if (isset($_POST['add-ppt-button'])) {
+
+	$db->beginTransaction();
 
 	$label = $_POST['ppt-label'];
 	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
@@ -96,10 +106,14 @@ if (isset($_POST['add-ppt-button'])) {
 			array_push($messages, "[Upload failed.]");
 		}
 	}
+	$db->commit();
 }
 
 // delete powerpoint file form processing
 if (isset($_POST['delete-ppt-button'])) {
+
+	$db->beginTransaction();
+
 	$link_delete = $_POST['ppt-names'];
 	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
 
@@ -108,6 +122,8 @@ if (isset($_POST['delete-ppt-button'])) {
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
   array_push($messages, "[The resource (". ucwords(htmlspecialchars($link_delete)) . ") has been deleted.]");
+
+	$db->commit();
 }
 
 
@@ -117,10 +133,11 @@ if (isset($_POST['delete-ppt-button'])) {
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
-	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Admin</title>
 </head>
@@ -128,7 +145,7 @@ if (isset($_POST['delete-ppt-button'])) {
 <body>
   <?php include("includes/header.php"); ?>
 
-	<section class="content2">
+	<section class="content">
 		<h1>Admin Portal</h1>
 
 		<div class="white-background">

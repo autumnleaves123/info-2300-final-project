@@ -6,15 +6,17 @@ $current_page_id = "events"; ?>
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="styles/all.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Events</title>
 </head>
 
 <body>
   <?php include("includes/header.php"); ?>
-  <section class="content2">
+  <section class="content">
 		<h1>Events</h1>
 
 		<div class="white-background">
