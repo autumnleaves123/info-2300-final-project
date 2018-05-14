@@ -156,6 +156,8 @@ delete post from the database
 */
 if (isset($_POST['delete-feed-button'])) {
 
+	$db->beginTransaction();
+
 	$title_to_delete = filter_input(INPUT_POST, 'feed-titles', FILTER_SANITIZE_STRING);
 
 	// get feed id and check that it exists
@@ -193,12 +195,16 @@ if (isset($_POST['delete-feed-button'])) {
 		record_message("Please select an existing feed from the dropdown menu.");
 	}
 
+	$db->commit();
+
 }
 
 /*
 create new tag
 */
 if (isset($_POST['create-tag-button'])) {
+
+	$db->beginTransaction();
 
 	$new_tag = filter_input(INPUT_POST, 'new-tag', FILTER_SANITIZE_STRING);
 
@@ -229,6 +235,8 @@ if (isset($_POST['create-tag-button'])) {
 		record_message($new_tag . " is an existing tag.");
 	}
 
+	$db->commit();
+
 }
 
 
@@ -236,6 +244,8 @@ if (isset($_POST['create-tag-button'])) {
 delete existing tag
 */
 if (isset($_POST['delete-tag-button'])) {
+
+	$db->beginTransaction();
 
 	$tag = filter_input(INPUT_POST, 'tag-to-delete', FILTER_SANITIZE_STRING);
 
@@ -265,6 +275,8 @@ if (isset($_POST['delete-tag-button'])) {
 
 		record_message("Successfully deleted $tag.");
 	}
+
+	$db->commit();
 
 }
 
