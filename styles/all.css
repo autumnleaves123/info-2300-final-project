@@ -901,7 +901,7 @@ textarea {
 #learn-div {
   position: relative;
   float:right;
-  height: auto ;
+  height: auto;
   top: 0px;
   bottom: 0px;
 	margin-bottom: 20px;
@@ -912,7 +912,7 @@ textarea {
 
 #main-div {
   position: relative;
-  float:right;
+  float: right;
   height: auto ;
   top: 0px;
   bottom: 0px;
@@ -921,6 +921,12 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   min-height: 100%;
+}
+
+#signs-text {
+	margin: 50px 0 0 0;
+	padding: 0;
+	text-align: center;
 }
 
 #signs-container img {

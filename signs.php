@@ -24,7 +24,10 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
     <section class="content2">
       <h1>Learn ASL with Us</h1>
 
+			<p id="signs-text">To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
+
       <div id='main-div'>
+
         <?php
         if (isset($records) and !empty($records)) {
           gallery($records);
@@ -33,7 +36,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
         }
         ?>
       </div>
-      <p>To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
+
     </section>
   </div>
   <?php include('includes/footer.php'); ?>
