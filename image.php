@@ -34,19 +34,8 @@ $sign_records = exec_sql_query($db, $sql, $params)->fetchAll();
     <section class = "content single-view">
       <?php
       if (isset($sign_records) and !empty($sign_records)) {
-        single_view($sign_records);?>
-
-        <!--DELETE IMAGE FORM if logged in-->
-        <!--NOT IMPLEMENTED YET-->
-        <?php if ($current_user) { ?>
-        <form action="" method="post">
-          <button name="delete_image" value="foo" type="submit">Delete Image</button>
-        </form>
-        <?php } ?>
-
-      <?php
-      }
-      else {
+        single_view($sign_records);
+      } else {
         array_push($messages, "Not a valid image view.");
       }
       ?>

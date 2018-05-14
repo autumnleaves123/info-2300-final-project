@@ -13,9 +13,6 @@
 !/signs/
 /signs/*
 
-!/resourcesppt/
-/resourcesppt/*
-
 !/feed/
 /feed/*
 
@@ -92,11 +89,3 @@
 !/images/18.jpg
 !/images/19.jpg
 !/images/20.jpg
-
-!/resourcesppt/animal.pptx
-!/resourcesppt/education.pptx
-!/resourcesppt/emotions.pptx
-!/resourcesppt/health.pptx
-!/resourcesppt/occupations.pptx
-!/resourcesppt/majors.pptx
-!/resourcesppt/december.pptx

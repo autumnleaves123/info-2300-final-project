@@ -1445,7 +1445,11 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 [1. Give us three specific strengths of your site that sets it apart from the previous website of the client (if applicable) and/or from other websites. Think of this as your chance to argue for the things you did really well.]
 
+(this is very loose right now)
 Design (looks bad now)
+Learning page is a novel Ideas
+User friendly admin portal
+Feed is pretty cool
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 

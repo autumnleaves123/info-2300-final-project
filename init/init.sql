@@ -207,9 +207,6 @@ INSERT INTO signs(word, frame, image_path) VALUES ('why', '2', 'uploads/signs/26
 INSERT INTO signs(word, frame, image_path, description) VALUES ('how', '1', 'uploads/signs/27.jpg', 'lorem ipsum');
 INSERT INTO signs(word, frame, image_path) VALUES ('how', '2', 'uploads/signs/28.jpg');
 INSERT INTO signs(word, frame, image_path) VALUES ('how', '3', 'uploads/signs/29.jpg');
-INSERT INTO signs(word, frame, image_path, description) VALUES ('when', '1', 'uploads/signs/30.jpg', 'lorem ipsum');
-INSERT INTO signs(word, frame, image_path) VALUES ('when', '2', 'uploads/signs/31.jpg');
-INSERT INTO signs(word, frame, image_path) VALUES ('when', '3', 'uploads/signs/32.jpg');
 INSERT INTO signs(word, frame, image_path, description) VALUES ('Ithaca', '1', 'uploads/signs/33.jpg', 'lorem ipsum');
 INSERT INTO signs(word, frame, image_path) VALUES ('Ithaca', '2', 'uploads/signs/34.jpg');
 INSERT INTO signs(word, frame, image_path) VALUES ('Ithaca', '3', 'uploads/signs/35.jpg');
