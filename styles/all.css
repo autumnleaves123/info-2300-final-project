@@ -656,6 +656,10 @@ h6.date-ribbon:after {
 	 MEET THE BOARD
    =============== */
 
+#board-wrapper {
+	padding-top: 100px;
+}
+
 #content-eboard {
 	padding: 40px 0;
 	background-color: white;

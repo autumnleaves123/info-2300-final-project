@@ -26,7 +26,7 @@ $current_page_id = "about";
     <!-- TODO: create a div class for each person
     Each div contains photo, name, title etc.
     Pull info from database array above (php code) -->
-    <div class="white-background">
+    <div class="white-background" id="board-wrapper">
       <?php
       $sql = "SELECT * FROM eboard";
       $params = array();
