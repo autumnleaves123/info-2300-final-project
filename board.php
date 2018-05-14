@@ -3,7 +3,6 @@ include('includes/init.php');
 
 $current_page_id = "about";
 
-// Fetch eboard array
 
 ?>
 
@@ -14,6 +13,8 @@ $current_page_id = "about";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Meet the Board</title>
 </head>
@@ -21,11 +22,9 @@ $current_page_id = "about";
 <body>
   <?php include("includes/header.php"); ?>
 
-  <section class="content2">
+  <section class="content">
     <h1>Executive Board</h1>
-    <!-- TODO: create a div class for each person
-    Each div contains photo, name, title etc.
-    Pull info from database array above (php code) -->
+
     <div class="white-background" id="board-wrapper">
       <?php
       $sql = "SELECT * FROM eboard";

@@ -1,0 +1,67 @@
+/* For smaller desktop screens and potentially tablets (iPads)*/
+@media only screen and (max-width: 1100px) {
+
+	.content {
+		padding: 20px 30px;
+		background-color: var(--lightgrey);
+		margin: 20px auto;
+	}
+
+	.white-background {
+		width: 90%;
+		margin: 10px auto;
+		padding: 30px 60px;
+	}
+
+	h1 {
+		font-size: 50px
+	}
+
+	/* Nav */
+	a.top-nav, .dropdown {
+		display: inline-block;
+		font-size: 16px;
+		padding: 8px 6px;
+		margin: 0 5px;
+	}
+
+	/* Feed */
+	#welcome {
+		padding: 30px 30px 20px 30px;
+		flex: none;
+	}
+
+	#welcome-flex-left, #welcome-flex-right {
+		flex: 0;
+	}
+
+	#welcome-flex-right {
+		display: none;
+	}
+
+	#welcome h1 {
+		/* font-size: 30px; */
+	}
+
+
+
+}
+
+@media only screen and (max-width: 900px) {
+
+
+
+}
+
+@media only screen and (max-width: 800px) {
+
+
+}
+
+@media only screen and (max-width: 700px) {
+
+
+
+
+
+}

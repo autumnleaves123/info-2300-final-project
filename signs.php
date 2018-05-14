@@ -11,9 +11,11 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Learn ASL</title>
 </head>
@@ -23,8 +25,6 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
   <div id='learn-div'>
     <section class="content2">
       <h1>Learn ASL with Us</h1>
-
-			<p id="signs-text">To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
 
       <div id='main-div'>
 
@@ -36,6 +36,8 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
         }
         ?>
       </div>
+
+			<p id="signs-text">To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
 
     </section>
   </div>
