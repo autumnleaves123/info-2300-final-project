@@ -5,6 +5,7 @@ $current_admin_page = "admin-resources";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 const FILE_UPLOADS_PATH = "uploads/resourcesppt/";

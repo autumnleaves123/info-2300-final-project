@@ -10,6 +10,7 @@ $HIDDEN_ERROR_CLASS = "hiddenError";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 const IMAGE_UPLOADS_PATH = "uploads/eboard/";

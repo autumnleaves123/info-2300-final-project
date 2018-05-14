@@ -7,6 +7,7 @@ const GALLERY_UPLOADS_PATH = "uploads/feed/";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 /*

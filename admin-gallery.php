@@ -5,6 +5,7 @@ $current_admin_page = "admin-gallery";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
+	exit;
 }
 
 /*
@@ -111,11 +112,11 @@ if (isset($_POST['delete-ppt-button'])) {
 
 					<!-- Edit feed forms -->
 					<h3>Add New Image to Gallery</h3>
-					<form method="post" action="admin-gallery.php" method="post" enctype="multipart/form-data">
+					<form method="post" action="admin-gallery.php" enctype="multipart/form-data">
 						<label>Enter a title <span class="required">(required)</span></label>
 						<input name="title" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Title must consist of 2 or more letters." required/>
 						<label>Assign a category <span class="required">(required)</span></label>
-						<select name="feed-titles">
+						<select name="category">
 							<option disabled selected value> -- select a category -- </option>
 							<?php
 								// fetch all categories
@@ -135,17 +136,48 @@ if (isset($_POST['delete-ppt-button'])) {
 					</form>
 
 					<h3>Delete Image</h3>
-					<form method="post" action="admin-gallery.php" method="post">
+					<form method="post" action="admin-gallery.php">
+						<label>Select an image <span class="required">(required)</span></label>
+						<select name="category">
+							<option disabled selected value> -- select an image -- </option>
+							<?php
+								// fetch all categories
+								$sql = "SELECT * FROM images;";
+								$params = array();
+								$images = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($images as $image) {
+									echo "<option value='" . $image['title'] . "'>" . $image['title'] . "</option>";
+								}
+							?>
+						</select>
 						<button name="submit" type="submit">delete image</button>
 					</form>
 
 					<h3>Create New Category</h3>
-					<form method="post" action="admin-gallery.php" method="post">
+					<form method="post" action="admin-gallery.php">
+						<label>Enter a category name <span class="required">(required)</span></label>
+						<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Category name must consist of 2 or more letters." required/>
 						<button name="submit" type="submit">create category</button>
 					</form>
 
 					<h3>Delete Existing Category</h3>
-					<form method="post" action="admin-gallery.php" method="post">
+					<p><strong>Warning:</strong> Deleting a category will delete all associated images!</p>
+					<form method="post" action="admin-gallery.php">
+						<label>Select a category <span class="required">(required)</span></label>
+						<select name="category">
+							<option disabled selected value> -- select a category -- </option>
+							<?php
+								// fetch all categories
+								$sql = "SELECT * FROM categories;";
+								$params = array();
+								$categories = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($categories as $category) {
+									echo "<option value='" . $category['name'] . "'>" . $category['name'] . "</option>";
+								}
+							?>
+						</select>
 						<button name="submit" type="submit">delete category</button>
 					</form>
 
