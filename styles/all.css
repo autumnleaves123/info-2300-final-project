@@ -82,8 +82,22 @@ button {
 	font-size: 14px;
 }
 
-button:hover {
+button:hover, button.selected {
 	/* switch for lighter color */
+	background-color: var(--red);
+	color: white;
+}
+
+a.button {
+	padding: 12px 16px;
+	text-decoration: none;
+	border: 1px solid var(--grey);
+	color: var(--darkergrey);
+	font-weight: lighter;
+	font-size: 14px;
+}
+
+a.button:hover {
 	background-color: var(--red);
 	color: white;
 }
@@ -932,6 +946,10 @@ textarea {
 #category-buttons button {
 	font-size: 15px;
 	margin: 0 5px;
+}
+
+#category-buttons form {
+	display: inline;
 }
 
 .row {

@@ -4,14 +4,26 @@ include('includes/init.php');
 
 $current_page_id = "gallery";
 
-// just select all images for the time being
-$sql = "SELECT * FROM images;";
-$params = array();
-$images = exec_sql_query($db, $sql, $params)->fetchAll();
-
 $sql = "SELECT * FROM categories;";
 $params = array();
 $categories = exec_sql_query($db, $sql, $params)->fetchAll();
+
+$selected_cat = 'all';
+
+if (empty($_GET['category'])) {
+  $sql = "SELECT * FROM images;";
+  $params = array();
+  $images = exec_sql_query($db, $sql, $params)->fetchAll();
+} else {
+  foreach ($categories as $category) {
+    if ($_GET['category'] == $category['name']) {
+      $selected_cat = $category['name'];
+      $sql = "SELECT images.*  FROM images INNER JOIN images_cats ON images.id = images_cats.image_id INNER JOIN categories ON images_cats.cat_id = categories.id WHERE categories.name = :cat;";
+      $params = array(':cat' => $category['name']);
+      $images = exec_sql_query($db, $sql, $params)->fetchAll();
+    }
+  }
+}
 
 ?>
 
@@ -38,11 +50,16 @@ $categories = exec_sql_query($db, $sql, $params)->fetchAll();
     <!-- Category Buttons -->
 
     <div id="category-buttons">
-      <button>All photos</button>
+      <form action="gallery.php" method="get">
+        <button <?php if ($selected_cat == 'all') echo "class=\"selected\""; ?> type="submit">All photos</button>
+      </form>
       <?php
-        foreach ($categories as $category) {
-          echo "<button>" . $category['name'] . "</button>";
-        }
+        foreach ($categories as $category) { ?>
+          <form action="gallery.php" method="get">
+            <input hidden name="category" value="<?php echo $category['name']; ?>" />
+            <button <?php if ($selected_cat == $category['name']) echo "class=\"selected\""; ?> type="submit"><?php echo $category['name']; ?></button>
+          </form>
+        <?php }
       ?>
     </div>
 
