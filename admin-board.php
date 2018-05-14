@@ -41,9 +41,9 @@ if (isset($_POST['add'])) {
 	if ($upload_info['error'] == UPLOAD_ERR_OK) {
 		$target_file = basename($_FILES["image_file"]["name"]);
     $filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg" && $filetype != "gif" ) {
+    if($filetype != "jpg" && $filetype != "png" && $filetype != "jpeg") {
       array_push($messages, "[Error uploading your image.]");
-      array_push($messages, "[Wrong file type. Only JPG, JPEG, PNG & GIF files are allowed.]");
+      array_push($messages, "[Wrong file type. Only JPG, JPEG, & PNG files are allowed.]");
     } else {
       $sql = "INSERT INTO eboard (name, position, major, classyear, bio, image) VALUES (:name, :position, :major, :classyear, :bio, :target_file)";
       $params = array(':target_file' => $target_file, ':name' => $name, ':position' => $position, ':major' => $major, ':classyear' => $classyear, ':bio' => $bio);
