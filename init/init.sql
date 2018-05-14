@@ -149,10 +149,6 @@ INSERT INTO categories (name) VALUES ('Sign Choir');
 INSERT INTO categories (name) VALUES ('Workshops');
 INSERT INTO categories (name) VALUES ('Deaf Awareness Week');
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 821a312622dcc17d34d9a5c91eb057ecdcceab7b
 INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('3', '3');
@@ -173,32 +169,6 @@ INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '3');
-<<<<<<< HEAD
-=======
-=======
-INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('3', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('4', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('5', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('6', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('7', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('8', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('9', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('10', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('11', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('12', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('13', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('14', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('15', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('16', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '1');
-INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '1');
->>>>>>> 0342bceb743e710e3371ee5e4a74d28173127260
-
->>>>>>> 821a312622dcc17d34d9a5c91eb057ecdcceab7b
 
 /* Learn ASL */
 INSERT INTO signs(word, image_path, description) VALUES ('a', 'uploads/signs/a.jpg', 'lorem ipsum');
