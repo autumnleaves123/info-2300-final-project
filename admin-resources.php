@@ -12,6 +12,8 @@ const FILE_UPLOADS_PATH = "uploads/resourcesppt/";
 // add link form processing
 if (isset($_POST['add-link-button'])) {
 
+	$db->beginTransaction();
+
 	$name = $_POST['link-name'];
 	$name = strtolower(trim(filter_var($name, FILTER_SANITIZE_STRING)));
 
@@ -45,10 +47,14 @@ if (isset($_POST['add-link-button'])) {
 			array_push($messages, "[Link failed to add.]");
 		}
 	}
+	$db->commit();
 }
 
 // delete link form processing
 if (isset($_POST['delete-link-button'])) {
+
+	$db->beginTransaction();
+
   $link_delete = $_POST['link-names'];
 	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
 
@@ -57,10 +63,13 @@ if (isset($_POST['delete-link-button'])) {
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
   array_push($messages, "[The link (". htmlspecialchars($link_delete) . ") has been deleted.]");
+	$db->commit();
 }
 
 // upload ppt form processing
 if (isset($_POST['add-ppt-button'])) {
+
+	$db->beginTransaction();
 
 	$label = $_POST['ppt-label'];
 	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
@@ -96,10 +105,14 @@ if (isset($_POST['add-ppt-button'])) {
 			array_push($messages, "[Upload failed.]");
 		}
 	}
+	$db->commit();
 }
 
 // delete powerpoint file form processing
 if (isset($_POST['delete-ppt-button'])) {
+
+	$db->beginTransaction();
+
 	$link_delete = $_POST['ppt-names'];
 	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
 
@@ -108,6 +121,8 @@ if (isset($_POST['delete-ppt-button'])) {
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
   array_push($messages, "[The resource (". ucwords(htmlspecialchars($link_delete)) . ") has been deleted.]");
+
+	$db->commit();
 }
 
 

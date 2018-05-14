@@ -18,6 +18,8 @@ if any part fails, return message saying that the user is unable to add a new fe
 */
 if (isset($_POST['add-feed-button'])) {
 
+	$db->beginTransaction();
+
 	// grab all parameters and sanitize
 	$title = filter_input(INPUT_POST, 'feed-title', FILTER_SANITIZE_STRING);
 	$title = trim($title);
@@ -135,7 +137,7 @@ if (isset($_POST['add-feed-button'])) {
 		// file_count < 0
 		record_message("Failed to add post.");
 	}
-
+	$db->commit();
 }
 
 
