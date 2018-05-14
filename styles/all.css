@@ -537,9 +537,10 @@ a.current-page {
 
 .post h3 {
 	font-size: 16px;
-	font-weight: normal;
+	font-weight: bold;
 	padding: 0;
 	margin: 0;
+	color: var(--darkergrey);
 }
 
 .post .url {
@@ -548,6 +549,17 @@ a.current-page {
 	color: var(--red);
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
+}
+
+.post .file-attachment {
+	display: block;
+	color: var(--red);
+	text-decoration: none;
+}
+
+#attachment-title {
+	margin-top: 10px;
 }
 
 
