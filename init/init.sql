@@ -103,7 +103,6 @@ CREATE TABLE users (
 /* 6 */INSERT INTO feed (title, entry_date, content) VALUES ("Rehearsal this week", "April 18, 2018", "Join CUDAP this Wednesday, from 5:30 to 6:30, in GSH room 164 for our weekly Sign Choir meeting! We will be reviewing three songs from this past year: Cups Song - Anna Kendrick, It's Time - Imagine Dragons, and Shape of You - Ed Sheeran.");
 /* 7 */INSERT INTO feed (title, entry_date, content) VALUES ("CUDAP Arch Sign", "April 23, 2018", "Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!");
 
-
 INSERT INTO feed_tags (name) VALUES ("#signchoir");
 INSERT INTO feed_tags (name) VALUES ("#performance");
 INSERT INTO feed_tags (name) VALUES ("#eboard");
@@ -120,6 +119,13 @@ INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 3);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 6);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 
+INSERT INTO feed_attachments (file_name, file_ext) VALUES ("officehourslist.docx", "docx");
+INSERT INTO feed_attachments (file_name, file_ext) VALUES ("board-descriptions.pdf", "pdf");
+INSERT INTO feed_attachments (file_name, file_ext) VALUES ("board-application", "pdf");
+
+INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (2, 1);
+INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (4, 2);
+INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (4, 3);
 
 /* Meet the board (board members) */
 INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Mary Grace Hager', 'President', 'Mathematics & Computer Science', '2019', 'She joined CUDAP her freshman year to learn more about ASL and Deaf culture. Mary Grace became Treasurer in the spring of 2016 and transitioned into Co-President a year later.', '1.png');
