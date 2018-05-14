@@ -170,7 +170,6 @@ INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '3');
 
-
 /* Learn ASL */
 INSERT INTO signs(word, image_path, description) VALUES ('a', 'uploads/signs/a.jpg', 'lorem ipsum');
 INSERT INTO signs(word, image_path, description) VALUES ('b', 'uploads/signs/b.jpg', 'lorem ipsum');
