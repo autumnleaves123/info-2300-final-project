@@ -20,6 +20,7 @@
 
 ## Responsive Design
 * mobile version css
+* fix welcome div on homepage
 
 ## Gallery
 * Check for webkit in css - cannot use
