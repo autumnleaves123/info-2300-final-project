@@ -40,22 +40,65 @@ if ($current_user == NULL) {
 					<!-- Edit feed forms -->
 					<h3>Add New Link</h3>
 					<form>
-						<button name="submit" type="submit">add new link</button>
+						<label>Title <span class="required">(required)</span></label>
+						<input type="text" name="feed-title" placeholder="www.aslpro.com" required/>
+
+						<label>URL <span class="required">(required)</span></label>
+						<input type="text" name="feed-url-1" placeholder="http://www.aslpro.com/" required/>
+
+						<button name="add-link-button" type="submit">add new link</button>
+						<p class="message"><?php if (isset($_POST['add-link-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Delete Existing Link</h3>
 					<form>
-						<button name="submit" type="submit">delete link</button>
+						<select name="link-names">
+							<option disabled selected value> -- select a link -- </option>
+							<?php
+								// fetch all feeds titles
+								$sql = "SELECT name FROM links";
+								$params = array();
+								$fetch_all_links = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($fetch_all_links as $link_name) {
+									echo "<option value='" . htmlspecialchars($link_name['name']) . "'>" . htmlspecialchars($link_name['name']) . "</option>";
+								}
+							?>
+						</select>
+						<button name="delete-link-button" type="submit">delete link</button>
+						<p class="message"><?php if (isset($_POST['delete-link-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Upload New PowerPoint</h3>
-					<form>
-						<button name="submit" type="submit">delete new powerpoint</button>
+					<form method="post" action="admin-resources.php" id="add-feed" name="add-ppt" enctype="multipart/form-data">
+						<label>Label <span class="required">(required)</span></label>
+						<input type="text" name="ppt-label" placeholder="Animal Vocab" required/>
+
+						<label>Powerpoint File <span class="required">(required)</span></label>
+						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>" required/>
+		      	<input type="file" name="ppt-file"/>
+
+						<button name="add-ppt-button" type="submit">upload new powerpoint</button>
+						<p class="message"><?php if (isset($_POST['add-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Delete Existing PowerPoint</h3>
-					<form>
-						<button name="submit" type="submit">delete powerpoint</button>
+					<form method="post" action="admin-resources.php" id="delete-feed" name="delete-ppt">
+						<select name="ppt-names">
+							<option disabled selected value> -- select a powerpoint -- </option>
+							<?php
+								// fetch all feeds titles
+								$sql = "SELECT label FROM ppts";
+								$params = array();
+								$fetch_all_ppts = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($fetch_all_ppts as $ppt_label) {
+									echo "<option value='" . htmlspecialchars($ppt_label['label']) . "'>" . htmlspecialchars($ppt_label['label']) . "</option>";
+								}
+							?>
+						</select>
+						<button name="delete-ppt-button" type="submit">delete powerpoint</button>
+						<p class="message"><?php if (isset($_POST['delete-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
 

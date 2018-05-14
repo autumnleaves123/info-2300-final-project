@@ -21,12 +21,12 @@ $current_page_id = "login";
 		<?php if ($current_user) { header("Location: admin.php"); } ?>
 
 		<div class="centered">
-      <h1>Log-in</h1>
+      <h1>Log In</h1>
 			<form id="login-form" action="login.php" method="POST">
 				<input type="text" name="username" placeholder="Username" required/>
 				<input type="password" name="password" placeholder="Password" required/>
 				<!-- TODO: create button -->
-				<button id="login-form-button" type="submit" name="login-form-button">Log In</button>
+				<button id="login-form-button" type="submit" name="login-form-button">log in</button>
 			</form>
 
 			<p>-- or --</p>
