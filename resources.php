@@ -39,11 +39,11 @@ $ppts = exec_sql_query($db, $sql, $params);
   	    </p>
       </div>
       <div class="flex-right resource-padding">
-  	    <p>Click on the links below to download our learning ASL Powerpoints:
+  	    <p>Click on the links below to view our learning ASL Powerpoints and Docs:
           <?php if (isset($ppts) && !empty($ppts)) {
             foreach ($ppts as $ppt) {
             ?>
-            <div class="indent"><a href=<?php echo htmlspecialchars($ppt['file']); ?>><?php echo htmlspecialchars($ppt['label']); ?></a><br/></div>
+            <div class="indent"><a href=<?php echo htmlspecialchars($ppt['link']); ?>><?php echo ucwords(htmlspecialchars($ppt['label'])); ?></a><br/></div>
           <?php }
         } ?>
   	    </p>

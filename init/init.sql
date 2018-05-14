@@ -79,8 +79,8 @@ CREATE TABLE links (
 
 CREATE TABLE ppts (
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	label TEXT NOT NULL UNIQUE,
-	file TEXT NOT NULL UNIQUE
+	link TEXT NOT NULL UNIQUE, /* google drive link */
+	label TEXT NOT NULL UNIQUE
 );
 
 /* Log in */
@@ -225,13 +225,13 @@ INSERT INTO links(name, url) VALUES ('www.signlanguage101.com', 'http://www.sign
 INSERT INTO links(name, url) VALUES ('www.aslpro.com', 'http://www.aslpro.com/');
 INSERT INTO links(name, url) VALUES ('www.theaslapp.com', 'http://theaslapp.com/');
 
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/animal.pptx', 'Animal Vocab');
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/education.pptx', 'Education Vocab');
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/emotions.pptx', 'Emotions Vocab');
-INSERT INTO ppts(file, label) VALUES ('"uploads/resourcesppt/health.pptx', 'Health Vocab');
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/occupations.pptx', 'Occupations Vocab');
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/majors.pptx', 'Majors Vocab');
-INSERT INTO ppts(file, label) VALUES ('uploads/resourcesppt/december.pptx', 'December Holidays Vocab');
+INSERT INTO ppts(link, label) VALUES ('https://drive.google.com/open?id=1GGxkO2OQfHAXbyL5fxE3WvdWNRz_zbuUmMH8QHrFr0A', 'animal vocab');
+INSERT INTO ppts(link, label) VALUES ('https://drive.google.com/open?id=1QGNO8zuwVmgnep4JpUbQPo5-ARL8LyXXEcdCoBabuq0', 'education vocab');
+INSERT INTO ppts(link, label) VALUES ('https://docs.google.com/presentation/d/17X-7bdALqNvkHFXDveoC1cfMq2JNcc8siIa72F58tf4/edit?usp=sharing', 'emotions vocab');
+INSERT INTO ppts(link, label) VALUES ('https://docs.google.com/presentation/d/1khDO5KMj6oN60cG7cU0f2sFrGYMr2Gf6feuwh7nptH4/edit?usp=sharing', 'health vocab');
+INSERT INTO ppts(link, label) VALUES ('https://docs.google.com/presentation/d/1GIrDhv07cO9qaIqyPpklsohm-st_Tl5GnxKETEBLHe4/edit?usp=sharing', 'occupations vocab');
+INSERT INTO ppts(link, label) VALUES ('https://docs.google.com/presentation/d/1XvC_OT-pbz5lymTOlO0oyxW9ZgLEol1a-V6kXTj3Kl0/edit?usp=sharing', 'majors vocab');
+INSERT INTO ppts(link, label) VALUES ('https://docs.google.com/presentation/d/1Don8sCoyG3SKTrnvdvY-bzH46WXf1Jtf6LtSSOVma34/edit?usp=sharing', 'december holidays vocab');
 
 
 /* Log in */
