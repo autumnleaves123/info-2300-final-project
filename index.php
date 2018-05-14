@@ -16,7 +16,7 @@ if ( isset($_GET["tag"])) {
 	$current_tag = filter_input(INPUT_GET, 'tag', FILTER_SANITIZE_STRING);
 
 	// fetch images based on TAGS
-	$sql = "SELECT * FROM feed_to_tags INNER JOIN feed ON feed_to_tags.feed_id = feed.id WHERE tag_id = :current_tag";
+	$sql = "SELECT * FROM feed_to_tags INNER JOIN feed ON feed_to_tags.feed_id = feed.id WHERE tag_id = :current_tag ORDER BY feed.id DESC";
 	$params = array(':current_tag' => $current_tag);
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 
@@ -25,7 +25,7 @@ if ( isset($_GET["tag"])) {
 	$current_tag = NULL;
 
 	// fetch feed content
-	$sql = "SELECT * FROM feed";
+	$sql = "SELECT * FROM feed ORDER BY id DESC";
 	$params = array();
 	$fetch_feed_content = exec_sql_query($db, $sql, $params)->fetchAll();
 }
