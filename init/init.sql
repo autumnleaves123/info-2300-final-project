@@ -176,6 +176,17 @@ INSERT INTO images_cats (image_id, cat_id) VALUES ('17', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('18', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('19', '3');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '3');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('21', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('22', '2');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('23', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('24', '2');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('25', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('26', '2');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('27', '2');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('28', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('29', '2');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('30', '1');
+INSERT INTO images_cats (image_id, cat_id) VALUES ('31', '1');
 
 /* Learn ASL */
 INSERT INTO signs(word, frame, image_path, description) VALUES ('Cornell', '1', 'uploads/signs/1.jpg', 'lorem ipsum');
