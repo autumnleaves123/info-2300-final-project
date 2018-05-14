@@ -6,11 +6,20 @@ CREATE TABLE feed (
 	title TEXT NOT NULL,
 	entry_date TEXT NOT NULL,
 	content TEXT NOT NULL,
+	url_1 TEXT,
+	url_2 TEXT
+);
+
+CREATE TABLE feed_attachments (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	file_name TEXT,
-	file_ext TEXT,
-	file_name_2 TEXT,
-	file_ext_2 TEXT,
-	url TEXT
+	file_ext TEXT
+);
+
+CREATE TABLE feed_to_feed_attachments (
+	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	feed_id INTEGER NOT NULL,
+	feed_attachment_id INTEGER NOT NULL
 );
 
 CREATE TABLE feed_tags (
@@ -74,6 +83,8 @@ CREATE TABLE users (
 
 
 
+
+
 /* TODO: initial seed data */
 
 /* Home page (newsfeed) */
@@ -83,7 +94,8 @@ CREATE TABLE users (
 /* 4 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Openings", "April 12, 2018", "We are excited to announce that the following positions will be open on our executive board for the Fall 2018 Semester: Treasurer, Secretary, Outreach Chair, Publicity Coordinator, and Events Coordinator. Descriptions of all board positions can be found below. If you're interested, please fill out the application. Applications are due Wednesday, April 25th to cudap@cornell.edu. Any questions or concerns may be directed to our email or any current board member. We encourage any student, regardless of ability or experience, to apply!");
 /* 5 */INSERT INTO feed (title, entry_date, content) VALUES ("Apparel Sale", "April 10, 2018", "Thank you to everyone who ordered from CUDAP's first apparel sale! The apparel has been ordered and should arrive within the next two weeks; if you ordered, we will send you an email when it comes in.");
 /* 6 */INSERT INTO feed (title, entry_date, content) VALUES ("E-board Office Hours", "April 9, 2018", "If you'd like extra practice with a song or vocabulary we've done in Sign Choir, or are interested in learning more about ASL, Deaf culture, or CUDAP, feel free to come to any board member's office hours; times are on the attached board list. Please notify them via email so they know to expect you.");
-/* 7 */INSERT INTO feed (title, entry_date, content, url) VALUES ("D/deaf / Hard of Hearing School Counseling Survey", "April 1, 2018", "Phoebe Lo, a New York University graduate student studying School Counseling, is researching how school counselors can understand and help students who are D/deaf / hard of hearing. To facilitate this, she is looking for D/deaf / hard of hearing students to fill out a survey about their experiences. All responses are confidential and used solely for research.", "https://docs.google.com/forms/d/e/1FAIpQLScuN2dMY6eJeJdQdv_RRA7uWD4sifVXAYNZ9AZ6EgZP__ugbQ/viewform");
+/* 7 */INSERT INTO feed (title, entry_date, content, url_1) VALUES ("D/deaf / Hard of Hearing School Counseling Survey", "April 1, 2018", "Phoebe Lo, a New York University graduate student studying School Counseling, is researching how school counselors can understand and help students who are D/deaf / hard of hearing. To facilitate this, she is looking for D/deaf / hard of hearing students to fill out a survey about their experiences. All responses are confidential and used solely for research.", "https://docs.google.com/forms/d/e/1FAIpQLScuN2dMY6eJeJdQdv_RRA7uWD4sifVXAYNZ9AZ6EgZP__ugbQ/viewform");
+
 
 INSERT INTO feed_tags (name) VALUES ("#signchoir");
 INSERT INTO feed_tags (name) VALUES ("#performance");
@@ -103,12 +115,13 @@ INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 
 
 /* Meet the board (board members) */
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Mary Grace Hager', 'President', 'Mathematics & Computer Science', '2019', 'She joined CUDAP her freshman year to learn more about ASL and Deaf culture. Mary Grace became Treasurer in the spring of 2016 and transitioned into Co-President a year later.', '1.jpg');
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Juliet Remi', 'Outreach Chair', 'Industrial and Labor Relations', '2020', 'She joined CUDAP in her freshman year to improve her American Sign Language and learn more about the Deaf community and culture.', '2.jpg');
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Katherine Dillon', 'Secretary', 'Human Biology, Health, and Society', '2019', "She joined the Cornell University Deaf Awareness Project as a freshman and has been CUDAP's secretary since Spring 2017. Katie is dedicated to CUDAP's accessibility goals.", '3.jpg');
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Lucia Gomez', 'Events Coordinator', 'Computer Science & Linguistics', '2021', "She joined CUDAP during her first semester to connect with other students who love ASL and to spread awareness about Deaf culture. Lucia loves to gloss songs, and she's translated everything from Hamilton to Twenty One Pilots.", '4.jpg');
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Alyssa Trigg', 'Treasurer', 'Computer Science & Linguistics', '2018', 'She has been a member of CUDAP since spring of 2016 and is currently the treasurer of the Cornell University Deaf Awareness Project. She is also a member of the Cornell Swing Dance Club, and assorted other clubs.', '5.jpg');
-INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Pamela Wildstein', 'Publicity Designer', 'Environmental and Sustainability Sciences', '2020', 'She joined CUDAP in the Fall of her sophmore year, after transferring from Penn State, with the goal of becoming an advocate for the Deaf community.', '6.jpg');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Mary Grace Hager', 'President', 'Mathematics & Computer Science', '2019', 'She joined CUDAP her freshman year to learn more about ASL and Deaf culture. Mary Grace became Treasurer in the spring of 2016 and transitioned into Co-President a year later.', '1.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Juliet Remi', 'Outreach Chair', 'Industrial and Labor Relations', '2020', 'She joined CUDAP in her freshman year to improve her American Sign Language and learn more about the Deaf community and culture.', '2.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Katherine Dillon', 'Secretary', 'Human Biology, Health, and Society', '2019', "She joined the Cornell University Deaf Awareness Project as a freshman and has been CUDAP's secretary since Spring 2017. Katie is dedicated to CUDAP's accessibility goals.", '3.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Lucia Gomez', 'Events Coordinator', 'Computer Science & Linguistics', '2021', "She joined CUDAP during her first semester to connect with other students who love ASL and to spread awareness about Deaf culture. Lucia loves to gloss songs, and she's translated everything from Hamilton to Twenty One Pilots.", '4.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Alyssa Trigg', 'Treasurer', 'Computer Science & Linguistics', '2018', 'She has been a member of CUDAP since spring of 2016 and is currently the treasurer of the Cornell University Deaf Awareness Project. She is also a member of the Cornell Swing Dance Club, and assorted other clubs.', '5.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Pamela Wildstein', 'Publicity Designer', 'Environmental and Sustainability Sciences', '2020', 'She joined CUDAP in the Fall of her sophmore year, after transferring from Penn State, with the goal of becoming an advocate for the Deaf community.', '6.png');
+INSERT INTO eboard(name, position, major, classyear, bio, image) VALUES ('Jonathan Masci', 'Alumni Advisor', 'Linguistics', '2016', 'He joined CUDAP his sophomore year to learn more about ASL and Deaf culture. Since graduating, he has served as an AmeriCorps member with City Year New Hampshire, where he gives students individualized tutoring in a high-need elementary school. He is honored to have the opportunity to support the newest generation of CUDAP leaders.', '7.png');
 
 /* Gallery */
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');

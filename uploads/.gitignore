@@ -9,16 +9,24 @@
 # Then tell Git to ignore all files in those folders
 !/eboard/
 /eboard/*
+
 !/signs/
 /signs/*
 
+!/resourcesppt/
+/resourcesppt/*
+
+!/feed/
+/feed/*
+
 # Tell Git to NOT ignore your EACH seed file in your your upload folders.
-!/eboard/1.jpg
-!/eboard/2.jpg
-!/eboard/3.jpg
-!/eboard/4.jpg
-!/eboard/5.jpg
-!/eboard/6.jpg
+!/eboard/1.png
+!/eboard/2.png
+!/eboard/3.png
+!/eboard/4.png
+!/eboard/5.png
+!/eboard/6.png
+!/eboard/7.png
 
 !/signs/a.jpg
 !/signs/b.jpg
@@ -57,9 +65,6 @@
 !/images/19.jpg
 !/images/20.jpg
 
-!/resourcesppt/
-/resourcesppt/*
-
 !/resourcesppt/animal.pptx
 !/resourcesppt/education.pptx
 !/resourcesppt/emotions.pptx
@@ -67,6 +72,3 @@
 !/resourcesppt/occupations.pptx
 !/resourcesppt/majors.pptx
 !/resourcesppt/december.pptx
-
-!/feed
-/feed/*

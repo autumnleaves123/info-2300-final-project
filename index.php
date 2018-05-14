@@ -74,6 +74,7 @@ if (isset($_POST["index-listserv-submit"])) {
 
 			<div id="feed-flex-left">
 
+				<!-- Search criteria that appears if a user chooses to filter posts by tags -->
 				<?php
 				if ( isset($_GET["tag"])) {
 					$sql = "SELECT * FROM feed_tags WHERE id = :current_tag";
@@ -88,6 +89,7 @@ if (isset($_POST["index-listserv-submit"])) {
 					</div>
 				<?php } ?>
 
+				<!-- Echo out all the posts -->
 				<?php foreach($fetch_feed_content as $post) { ?>
 						<div class="post">
 							<h6 class="date-ribbon"><?php echo "$post[entry_date]";?></h6>
@@ -106,6 +108,19 @@ if (isset($_POST["index-listserv-submit"])) {
 							</ul>
 
 							<p><?php echo "$post[content]";?></p>
+
+							<!-- TODO: echo attachments and links -->
+							<!-- TODO: add http -->
+							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
+							} else { echo "<h3>Links</h3>"; }; ?>
+							<p class="url"><?php echo "<a href=$post[url_1] target='_blank'>$post[url_1]</a>";?></p>
+							<p class="url"><?php echo "<a href=$post[url_2] target='_blank'>$post[url_2]</a>";?></p>
+
+							<!-- TODO: handle attachment stuff (href)-->
+							<?php // if ($post['file_name'] == NULL && $post['file_name_2'] == NULL) { echo "";
+							// }  else { echo "<h3>Attachments</h3>"; }; ?>
+							<!-- <p class="attachments"><?php // echo "<a href='uploads/feed/ target='_blank'>$post[file_ext]</a>";?></p>
+							<p class="attachments"><?php // echo "<a href='uploads/feed/' target='_blank'>$post[file_ext_2]</a>";?></p> -->
 
 						</div>
 				<?php } ?>
