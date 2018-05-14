@@ -146,6 +146,8 @@ INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 INSERT INTO images (title, file_ext) VALUES ('test', 'jpg');
 
 INSERT INTO categories (name) VALUES ('Sign Choir');
+INSERT INTO categories (name) VALUES ('Workshops');
+INSERT INTO categories (name) VALUES ('Deaf Awareness Week');
 
 INSERT INTO images_cats (image_id, cat_id) VALUES ('1', '1');
 INSERT INTO images_cats (image_id, cat_id) VALUES ('2', '1');
