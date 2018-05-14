@@ -242,7 +242,7 @@ if (isset($_POST['delete-feed-button'])) {
 					<h3>Delete Existing Post</h3>
 					<form method="post" action="admin.php" id="delete-feed" name="delete-feed">
 						<label>Select existing feed title</label>
-						<select name="feed-titles">
+						<select name="feed-titles" required>
 							<option disabled selected value> -- select a title -- </option>
 							<?php
 								// fetch all feeds titles

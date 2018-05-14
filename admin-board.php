@@ -169,12 +169,9 @@ if (isset($_POST['delete'])) {
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
-
 
 	</section>
 

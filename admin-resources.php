@@ -61,70 +61,53 @@ if (isset($_POST['delete-link-button'])) {
 
 // upload ppt form processing
 if (isset($_POST['add-ppt-button'])) {
-	$upload_info = $_FILES["ppt-file"];
 
 	$label = $_POST['ppt-label'];
 	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
 
-	if ($upload_info['error'] == UPLOAD_ERR_OK) {
-		$target_file = basename($_FILES["ppt-file"]["name"]);
-		$filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-		if($filetype != "ppt" & $filetype != "pptx") {
-			array_push($messages, "[Error uploading your file.]");
-			array_push($messages, "[Wrong file type. Only PPT & PPTX files are allowed.]");
-		} else {
-			// check if file already exists because must be UNIQUE
-			$sql = "SELECT * FROM ppts WHERE label = :label;";
-			$params = array(":label"=>$label);
-			$records = exec_sql_query($db, $sql, $params)->FetchAll();
+	$link = $_POST['ppt-link'];
+	$link = strtolower(trim(filter_var($link, FILTER_SANITIZE_STRING)));
 
-			// if $records not empty, file already exists
-			if ($records) {
-				array_push($messages, "[File already exists.]");
-			} else {
-				var_dump("in else");
-				// if $records empty, file does not exist, so upload it
-				$sql = "INSERT INTO ppts (file, label) VALUES (:target_file, :label)";
-				$params = array(':target_file' => $target_file, ':label' => $label);
-				$records = exec_sql_query($db, $sql, $params);
 
-				$fileid = $db->lastInsertId("id");
-				$newfilename = "$fileid.$filetype";
-				$destination = FILE_UPLOADS_PATH . $newfilename;
-				$sql = "UPDATE ppts SET file = :newfilename WHERE label = :label";
-				$params = array(':newfilename' => $newfilename, ':label' => $label);
-				$records = exec_sql_query($db, $sql, $params);
-				if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
-					array_push($messages, "[The new powerpoint '". htmlspecialchars($label) . "' has been added.]");
-				} else {
-					array_push($messages, "[Error uploading your powerpoint.]");
-				}
-			}
-		}
+	$sql = "SELECT * FROM ppts WHERE label = :label;";
+	$params = array(":label"=>$label);
+	$label_records = exec_sql_query($db, $sql, $params)->FetchAll();
+
+	$sql = "SELECT * FROM ppts WHERE link = :link;";
+	$params = array(":link"=>$link);
+	$link_records = exec_sql_query($db, $sql, $params)->FetchAll();
+
+	// check to see if link name or link url exists already because UNIQUE
+	if ($label_records) {
+		array_push($messages, "[Resource already exists.]");
+	} elseif ($link_records) {
+		array_push($messages, "[Resource link already used.]");
+	} elseif (strpos($link, "google.com") !== FALSE && filter_var($link, FILTER_VALIDATE_URL) === FALSE) {
+    array_push($messages, '[Not a valid Google Drive link.]');
 	} else {
-		array_push($messages, "[Error uploading your powerpoint.]");
-		if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
-			array_push($messages, "[File size too large.]");
+		// if $records empty, file does not exist, so upload it
+		$sql = "INSERT INTO ppts (link, label) VALUES (:link, :label)";
+		$params = array(':link' => $link, ':label' => $label);
+		$records = exec_sql_query($db, $sql, $params);
+
+		if ($records) {
+			array_push($messages, "[Upload successful.]");
+		} else {
+			array_push($messages, "[Upload failed.]");
 		}
 	}
 }
 
 // delete powerpoint file form processing
 if (isset($_POST['delete-ppt-button'])) {
-  $ppt_delete = $_POST['ppt-names'];
-	$ppt_delete = trim(filter_var($ppt_delete, FILTER_SANITIZE_STRING));
-	var_dump($ppt_delete);
-	$sqlfile = "SELECT file FROM ppts WHERE label = :ppt_delete";
-  $paramsfile = array(':ppt_delete' => $ppt_delete);
-  $file_delete = exec_sql_query($db, $sqlfile, $paramsfile)->fetchAll();
-	var_dump($file_delete);
-  $locationoffile = FILE_UPLOADS_PATH . $file_delete[0]['file'];
-  $sql = "DELETE FROM ppts WHERE label = :ppt_delete";
-  $params = array(':ppt_delete' => $ppt_delete);
-  $records = exec_sql_query($db, $sql, $params);
+	$link_delete = $_POST['ppt-names'];
+	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
 
-  unlink($locationoffile);
-  array_push($messages, "[The powerpoint (". ucwords(htmlspecialchars($ppt_delete)) . ") has been successfully deleted.]");
+	$sql = "DELETE FROM ppts WHERE label = :link_delete";
+  $params = array(':link_delete' => $link_delete);
+  $records = exec_sql_query($db, $sql, $params)->fetchAll();
+
+  array_push($messages, "[The resource (". ucwords(htmlspecialchars($link_delete)) . ") has been deleted.]");
 }
 
 
@@ -173,7 +156,7 @@ if (isset($_POST['delete-ppt-button'])) {
 
 					<h3>Delete Existing Link</h3>
 					<form method="post" action="admin-resources.php" id="delete-feed" name="delete-link">
-						<select name="link-names">
+						<select name="link-names" required>
 							<option disabled selected value> -- select a link -- </option>
 							<?php
 								// fetch all feeds titles
@@ -190,23 +173,22 @@ if (isset($_POST['delete-ppt-button'])) {
 						<p class="message"><?php if (isset($_POST['delete-link-button'])) { print_messages(); }?></p>
 					</form>
 
-					<h3>Upload New PowerPoint</h3>
+					<h3>Upload New Teaching Resource</h3>
 					<form method="post" action="admin-resources.php" id="add-feed" name="add-ppt" enctype="multipart/form-data">
 						<label>Label <span class="required">(required)</span></label>
 						<input type="text" name="ppt-label" placeholder="Animal Vocab" required/>
 
-						<label>Powerpoint File <span class="required">(required)</span></label>
-						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>" required/>
-		      	<input type="file" name="ppt-file"/>
+						<label>Google Drive Link <span class="required">(required)</span></label>
+						<input type="text" name="ppt-link" placeholder="https://drive.google.com/" required/>
 
-						<button name="add-ppt-button" type="submit">upload new powerpoint</button>
+						<button name="add-ppt-button" type="submit">upload new resource</button>
 						<p class="message"><?php if (isset($_POST['add-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
-					<h3>Delete Existing PowerPoint</h3>
+					<h3>Delete Existing Teaching Resource</h3>
 					<form method="post" action="admin-resources.php" id="delete-feed" name="delete-ppt">
-						<select name="ppt-names">
-							<option disabled selected value> -- select a powerpoint -- </option>
+						<select name="ppt-names" required>
+							<option disabled selected value> -- select a resource -- </option>
 							<?php
 								$sql = "SELECT label FROM ppts";
 								$params = array();
@@ -217,7 +199,7 @@ if (isset($_POST['delete-ppt-button'])) {
 								}
 							?>
 						</select>
-						<button name="delete-ppt-button" type="submit">delete powerpoint</button>
+						<button name="delete-ppt-button" type="submit">delete resource</button>
 						<p class="message"><?php if (isset($_POST['delete-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
