@@ -127,7 +127,7 @@ if (isset($_POST["index-listserv-submit"])) {
 								if (sizeof($fetch_attachments)>0) {
 									echo "<h3 id='attachment-title'>Attachments:</h3>";
 									foreach($fetch_attachments as $attachment) {
-										echo "<a class='file-attachment' href='uploads/feed/" . $attachment['feed_attachment_id'] . "." . $attachment['file_ext'] . "'>" . $attachment['file_name'] . "</a>";
+										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . $attachment['feed_attachment_id'] . "." . $attachment['file_ext'] . "'>" . $attachment['file_name'] . "</a>";
 									}
 								}
 							?>

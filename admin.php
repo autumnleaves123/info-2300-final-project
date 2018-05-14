@@ -31,17 +31,16 @@ if (isset($_POST['add-feed-button'])) {
 	$url2 = filter_INPUT(INPUT_POST, 'feed-url-2', FILTER_SANITIZE_STRING);
 	$url2 = trim($url2);
 
+	$tag = filter_INPUT(INPUT_POST, 'tag', FILTER_SANITIZE_STRING);
+	$tag = trim($tag);
+
 	// capture datetime
 	$date_today = date("F j, Y");
 
 	// file processing
-	$file_1 = $_FILES["feed-file-1"];
-	$file_2 = $_FILES["feed-file-2"];
+	$file_1 = $_FILES["feed-file-1"]; $file_2 = $_FILES["feed-file-2"];
 
-	$file_1_name = "";
-	$file_1_ext = "";
-	$file_2_name = "";
-	$file_2_ext = "";
+	$file_1_name = ""; $file_1_ext = ""; $file_2_name = ""; $file_2_ext = "";
 
 	$file_count = 0;
 
@@ -110,24 +109,32 @@ if (isset($_POST['add-feed-button'])) {
 			move_uploaded_file($file_1["tmp_name"], GALLERY_UPLOADS_PATH . "$feed_attachments_id.$file_1_ext");
 		}
 
-
 		// insert file 2
 		if ($file_2_name != "") {
 			$sql = "INSERT INTO feed_attachments (file_name, file_ext) VALUES (:file_name, :file_ext)";
-			$params = array(
-				':file_name' => $file_2_name,
-				':file_ext' => $file_2_ext);
+			$params = array(':file_name' => $file_2_name, ':file_ext' => $file_2_ext);
 			$add_feed_attachments_2 = exec_sql_query($db, $sql, $params);
 			$feed_attachments_2_id = $db->lastInsertId("id");
 
 			$sql = "INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (:feed_id, :feed_attachments_id)";
-			$params = array(
-				':feed_id' => $feed_id,
-				':feed_attachments_id' => $feed_attachments_2_id);
+			$params = array(':feed_id' => $feed_id, ':feed_attachments_id' => $feed_attachments_2_id);
 			$add_feed_to_feed_attachments_2 = exec_sql_query($db, $sql, $params);
 
 			move_uploaded_file($file_2["tmp_name"], GALLERY_UPLOADS_PATH . "$feed_attachments_2_id.$file_2_ext");
 		}
+
+		// insert tags
+		// first get tag id
+		$sql = "SELECT id FROM feed_tags WHERE name = :tag";
+		$params = array(':tag' => $tag);
+		$tag_id = exec_sql_query($db, $sql, $params)->fetchAll();
+
+		$tag_id = $tag_id[0]['id'];
+
+		// insert into database
+		$sql = "INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (:feed_id, :tag_id)";
+		$params = array(':feed_id' => $feed_id, ':tag_id' => $tag_id);
+		$insert_tag = exec_sql_query($db, $sql, $params);
 
 		record_message("Successfully added post!");
 
@@ -137,8 +144,6 @@ if (isset($_POST['add-feed-button'])) {
 	}
 
 }
-
-
 
 
 /*
@@ -183,6 +188,79 @@ if (isset($_POST['delete-feed-button'])) {
 	} else {
 		// feed doesn't exist
 		record_message("Please select an existing feed from the dropdown menu.");
+	}
+
+}
+
+/*
+create new tag
+*/
+if (isset($_POST['create-tag-button'])) {
+
+	$new_tag = filter_input(INPUT_POST, 'new-tag', FILTER_SANITIZE_STRING);
+
+	// make sure that tag has # in front of it
+	$hashtag = strpos($new_tag, "#");
+	if ($hashtag == true) {
+		$new_tag = "#" . $new_tag;
+	}
+	$new_tag = trim($new_tag);
+	$new_tag = strtolower($new_tag);
+
+	// assume valid new tag
+	// search database to check that tag does not already exist
+	$sql = "SELECT * FROM feed_tags WHERE name = :new_tag";
+	$params = array(':new_tag'=> $new_tag);
+	$check_tag = exec_sql_query($db, $sql, $params)->fetchAll();
+
+	if ($check_tag == NULL) {
+
+		$sql = "INSERT INTO feed_tags (name) VALUES (:new_tag)";
+		$params = array(':new_tag' => $new_tag);
+		$update_tbl = exec_sql_query($db, $sql, $params);
+
+		record_message("Successfully added $new_tag.");
+
+	} else {
+		// tag already exists
+		record_message($new_tag . " is an existing tag.");
+	}
+
+}
+
+
+/*
+delete existing tag
+*/
+if (isset($_POST['delete-tag-button'])) {
+
+	$tag = filter_input(INPUT_POST, 'tag-to-delete', FILTER_SANITIZE_STRING);
+
+	// check that it exists in database
+	$sql = "SELECT id FROM feed_tags WHERE name = :tag";
+	$params = array(':tag' => $tag);
+	$check_tag = exec_sql_query($db, $sql, $params)->fetchAll();
+
+	if ($check_tag == NULL) {
+		// tag doesn't exist
+		record_message("Please select an existing tag to delete.");
+
+	} else {
+		// tag can be deleted
+
+		$tag_id = $check_tag[0]['id'];
+
+		// check if there are posts associated with this tag, delete those entries
+		$sql = "DELETE FROM feed_to_tags WHERE tag_id = :tag_id";
+		$params = array(':tag_id' => $tag_id);
+		$delete_tag = exec_sql_query($db, $sql, $params);
+
+		// delete tag from feed_tags table
+		$sql = "DELETE FROM feed_tags WHERE id = :tag_id";
+		$params = array(':tag_id' => $tag_id);
+		$delete_tag = exec_sql_query($db, $sql, $params);
+
+		record_message("Successfully deleted $tag.");
 	}
 
 }
@@ -236,6 +314,20 @@ if (isset($_POST['delete-feed-button'])) {
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 		      	<input type="file" name="feed-file-2"/>
 
+						<label>Assign a tag</label>
+		      	<select name="tag">
+							<option disabled selected value> -- select a tag -- </option>
+							<?php
+								$sql = "SELECT * FROM feed_tags";
+								$params = array();
+								$fetch_tags = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($fetch_tags as $tag) {
+									echo "<option value='" . $tag['name'] . "'>" . $tag['name'] . "</option>";
+								}
+							?>
+						</select>
+
 						<button name="add-feed-button" type="submit">add new feed</button>
 						<p class="message"><?php if (isset($_POST['add-feed-button'])) { print_messages(); }?></p>
 					</form>
@@ -258,6 +350,33 @@ if (isset($_POST['delete-feed-button'])) {
 						</select>
 						<button name="delete-feed-button" type="submit">delete feed</button>
 						<p class="message"><?php if (isset($_POST['delete-feed-button'])) { print_messages(); } ?></p>
+					</form>
+
+
+					<h3>Create New Tag</h3>
+					<form method="post" action="admin.php" id="new-tag" name="new-tag">
+						<label>Tag Name <span class="required">(required)</span></label>
+						<input type="text" name="new-tag" placeholder="#cudap" required/>
+						<button name="create-tag-button" type="submit">create tag</button>
+						<p class="message"><?php if (isset($_POST['create-tag-button'])) { print_messages(); } ?></p>
+					</form>
+
+					<h3>Delete Existing Tag</h3>
+					<form method="post" action="admin.php" id="delete-tag" name="delete-tag">
+						<select name="tag-to-delete">
+							<option disabled selected value> -- select tag -- </option>
+							<?php
+								$sql = "SELECT * FROM feed_tags";
+								$params = array();
+								$fetch_tags = exec_sql_query($db, $sql, $params)->fetchAll();
+
+								foreach ($fetch_tags as $tag) {
+									echo "<option value='" . $tag['name'] . "'>" . $tag['name'] . "</option>";
+								}
+							?>
+						</select>
+						<button name="delete-tag-button" type="submit">delete tag</button>
+						<p class="message"><?php if (isset($_POST['delete-tag-button'])) { print_messages(); } ?></p>
 					</form>
 
 				</div>
