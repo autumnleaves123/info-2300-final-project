@@ -7,7 +7,11 @@ $current_page_id = "gallery";
 // just select all images for the time being
 $sql = "SELECT * FROM images;";
 $params = array();
-$records = exec_sql_query($db, $sql, $params)->fetchAll();
+$images = exec_sql_query($db, $sql, $params)->fetchAll();
+
+$sql = "SELECT * FROM categories;";
+$params = array();
+$categories = exec_sql_query($db, $sql, $params)->fetchAll();
 
 ?>
 
@@ -35,21 +39,23 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
     <div id="category-buttons">
       <button>All photos</button>
-      <button>Category 1</button>
-      <button>Category 2</button>
-      <button>Category 3</button>
+      <?php
+        foreach ($categories as $category) {
+          echo "<button>" . $category['name'] . "</button>";
+        }
+      ?>
     </div>
 
     <!-- GALLERY -->
     <div class="row">
-      <?php $colsize = (int) floor(count($records) / 4);
+      <?php $colsize = (int) floor(count($images) / 4);
       for ($i = 0; $i < 4; $i++) { ?>
         <div class="column-gal">
-        <?php for ($j = 0; $j < $colsize && !empty($records[$colsize * $i + $j]); $j++) { ?>
+        <?php for ($j = 0; $j < $colsize && !empty($images[$colsize * $i + $j]); $j++) { ?>
           <div class="container">
-            <img src="<?php echo "uploads/images/" . $records[$colsize * $i + $j]['id'] . "." . $records[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $records[$colsize * $i + $j]['title']; ?>" />
+            <img src="<?php echo "uploads/images/" . $images[$colsize * $i + $j]['id'] . "." . $images[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $images[$colsize * $i + $j]['title']; ?>" />
             <div class="overlay" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)">
-              <div class="title"><?php echo $records[$j]['title']; ?></div>
+              <div class="title"><?php echo $images[$j]['title']; ?></div>
             </div>
           </div>
         <?php } ?>
@@ -62,12 +68,12 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
       <span class="close cursor" onclick="closeModal()">&times;</span>
       <div class="modal-content">
 
-        <?php $colsize = (int) floor(count($records) / 4);
+        <?php $colsize = (int) floor(count($images) / 4);
         for ($i = 0; $i < 4; $i++) { ?>
-          <?php for ($j = 0; $j < $colsize && !empty($records[$colsize * $i + $j]); $j++) { ?>
+          <?php for ($j = 0; $j < $colsize && !empty($images[$colsize * $i + $j]); $j++) { ?>
             <div class="lightbox-image">
-              <div class="numbertext"><?php echo $colsize * $i + $j + 1 . " / " . count($records); ?></div>
-              <img src="<?php echo "uploads/images/" . $records[$colsize * $i + $j]['id'] . "." . $records[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $records[$colsize * $i + $j]['title']; ?>" />
+              <div class="numbertext"><?php echo $colsize * $i + $j + 1 . " / " . count($images); ?></div>
+              <img src="<?php echo "uploads/images/" . $images[$colsize * $i + $j]['id'] . "." . $images[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $images[$colsize * $i + $j]['title']; ?>" />
             </div>
           <?php } ?>
         <?php } ?>
