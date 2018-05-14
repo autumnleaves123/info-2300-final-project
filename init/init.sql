@@ -64,16 +64,17 @@ CREATE TABLE images_cats (
 /* Learn ASL */
 CREATE TABLE signs (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	frame INTEGER NOT NULL,
   word TEXT NOT NULL UNIQUE,
   image_path TEXT NOT NULL,
-  description TEXT NOT NULL
+  description TEXT
 );
 
 /* Resources */
 
 
 
-/* Log in
+/* Log in */
 --> this is my example users table from P3 for login testing purposes - Autumn */
 CREATE TABLE users (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
@@ -170,18 +171,47 @@ INSERT INTO images_cats (image_id, cat_id) VALUES ('20', '1');
 
 
 /* Learn ASL */
-INSERT INTO signs(word, image_path, description) VALUES ('a', 'uploads/signs/a.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('b', 'uploads/signs/b.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('c', 'uploads/signs/c.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('d', 'uploads/signs/d.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('e', 'uploads/signs/e.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('f', 'uploads/signs/f.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('g', 'uploads/signs/g.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('h', 'uploads/signs/h.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('i', 'uploads/signs/i.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('j', 'uploads/signs/j.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('k', 'uploads/signs/k.jpg', 'lorem ipsum');
-INSERT INTO signs(word, image_path, description) VALUES ('l', 'uploads/signs/l.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('Cornell', '1', 'uploads/signs/1.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('Cornell', '2', 'uploads/signs/2.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('Cornell', '3', 'uploads/signs/3.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('Deaf', '1', 'uploads/signs/4.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('Deaf', '2', 'uploads/signs/5.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('Deaf', '3', 'uploads/signs/6.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('hard of hearing', '1', 'uploads/signs/7.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('hard of hearing', '2', 'uploads/signs/8.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('hard of hearing', '3', 'uploads/signs/9.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('hearing', '1', 'uploads/signs/10.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('hearing', '2', 'uploads/signs/11.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('hearing', '3', 'uploads/signs/12.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('help', '1', 'uploads/signs/13.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('help', '2', 'uploads/signs/14.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('home', '1', 'uploads/signs/15.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('home', '2', 'uploads/signs/16.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('school', '1', 'uploads/signs/17.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('school', '2', 'uploads/signs/18.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('who', '1', 'uploads/signs/19.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('who', '2', 'uploads/signs/20.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('what', '1', 'uploads/signs/21.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('what', '2', 'uploads/signs/22.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('where', '1', 'uploads/signs/23.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('where', '2', 'uploads/signs/24.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('why', '1', 'uploads/signs/25.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('why', '2', 'uploads/signs/26.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('how', '1', 'uploads/signs/27.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('how', '2', 'uploads/signs/28.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('how', '3', 'uploads/signs/29.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('when', '1', 'uploads/signs/30.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('when', '2', 'uploads/signs/31.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('when', '3', 'uploads/signs/32.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('Ithaca', '1', 'uploads/signs/33.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('Ithaca', '2', 'uploads/signs/34.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('Ithaca', '3', 'uploads/signs/35.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('learn', '1', 'uploads/signs/36.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('learn', '2', 'uploads/signs/37.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('sign', '1', 'uploads/signs/38.jpg', 'lorem ipsum');
+INSERT INTO signs(word, image_path, description) VALUES ('sign', '2', 'uploads/signs/39.jpg');
+INSERT INTO signs(word, image_path, description) VALUES ('sign', '3', 'uploads/signs/40.jpg');
+
 
 /* Resources */
 
