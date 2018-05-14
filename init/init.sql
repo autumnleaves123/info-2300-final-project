@@ -121,7 +121,7 @@ INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 
 INSERT INTO feed_attachments (file_name, file_ext) VALUES ("officehourslist.docx", "docx");
 INSERT INTO feed_attachments (file_name, file_ext) VALUES ("board-descriptions.pdf", "pdf");
-INSERT INTO feed_attachments (file_name, file_ext) VALUES ("board-application", "pdf");
+INSERT INTO feed_attachments (file_name, file_ext) VALUES ("board-application.pdf", "pdf");
 
 INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (2, 1);
 INSERT INTO feed_to_feed_attachments (feed_id, feed_attachment_id) VALUES (4, 2);

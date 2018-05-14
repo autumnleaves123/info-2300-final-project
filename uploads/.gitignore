@@ -16,6 +16,11 @@
 !/feed/
 /feed/*
 
+!/feed/1.docx
+!/feed/2.pdf
+!/feed/3.pdf
+
+
 # Tell Git to NOT ignore your EACH seed file in your your upload folders.
 !/eboard/1.png
 !/eboard/2.png

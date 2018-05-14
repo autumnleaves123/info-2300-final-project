@@ -72,9 +72,9 @@ if (isset($_POST['add-feed-button'])) {
 	} else if ($file_2['error'] == UPLOAD_ERR_NO_FILE) {
 		// no file uploaded, skip
 
-	} else if ($file_1['error'] == UPLOAD_ERR_FORM_SIZE) {
+	} else if ($file_2['error'] == UPLOAD_ERR_FORM_SIZE) {
 		// file too large
-		record_message("Attachment 1 is too large. Maximum size = 2MB.");
+		record_message("Attachment 2 is too large. Maximum size = 2MB.");
 		$file_count = $file_count - 1;
 
 	} else {
@@ -83,7 +83,7 @@ if (isset($_POST['add-feed-button'])) {
 	}
 
 	// if post inputs are fine and files have been uploaded
-	if ($file_count == 0 or $file_count == 1 or $file_count == 2) {
+	if ($file_count >= 0) {
 		// then insert everything into database
 		$sql = "INSERT INTO feed (title, entry_date, content, url_1, url_2) VALUES (:title, :date_today, :feed_text, :url1, :url2)";
 		$params = array(
