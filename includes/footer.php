@@ -9,8 +9,7 @@
 		</div>
 
 		<div id="footer-right">
-			<!-- Source: https://en.facebookbrand.com/assets/f-logo -->
-			<!-- Facebook and email icon were designed and created by Autumn Watt -->
+			<!-- Source: Facebook and email icon were designed and created by Autumn Watt -->
 			<a href="mailto:cudap@cornell.edu" target="_blank"><img id="icon-margin" alt="Email Icon" src="images/mail.png"/></a>
 			<a href="https://www.facebook.com/cudeafawarenessproject/" target="_blank"><img alt="Facebook Logo" src="images/facebook.png"/></a>
 		</div>

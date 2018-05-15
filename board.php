@@ -24,9 +24,26 @@ $current_page_id = "about";
 
     <div class="white-background" id="board-wrapper">
       <?php
-      $sql = "SELECT * FROM eboard";
+
+			// fetch president, then vice president (doesn't currently exist), then secretary, then rest of eboard
+      $sql = "SELECT * FROM eboard WHERE position LIKE '%president%'";
       $params = array();
-      $eboard = exec_sql_query($db, $sql, $params);
+      $president = exec_sql_query($db, $sql, $params)->fetchAll();
+
+			$sql = "SELECT * FROM eboard WHERE position LIKE '%vice%president%'";
+      $params = array();
+      $vicepresident = exec_sql_query($db, $sql, $params)->fetchAll();
+
+			$sql = "SELECT * FROM eboard WHERE position LIKE '%secretary%'";
+      $params = array();
+      $secretary = exec_sql_query($db, $sql, $params)->fetchAll();
+
+			$sql = "SELECT * FROM eboard WHERE position NOT LIKE '%president%' AND position NOT LIKE '%vice%president%' AND position NOT LIKE '%secretary%'";
+      $params = array();
+      $remaining = exec_sql_query($db, $sql, $params)->fetchAll();
+
+			$eboard = array_merge($president, $vicepresident, $secretary, $remaining);
+
       $toggle = TRUE;
       if (isset($eboard) && !empty($eboard)) {
         foreach($eboard as $member) {
@@ -41,7 +58,7 @@ $current_page_id = "about";
                         htmlspecialchars($member['bio']) .
                         "</p></div>";
           $image_html = "<img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>"; ?>
-					<!-- We took all the eboard images ourselves, except the one for the alumni advisor. That particular image was provided by CUDAP, and some editing was done to it -->
+					<!-- We took all the eboard images ourselves, except the one for the alumni advisor. That particular image was provided by CUDAP, and we did some photoshop editing on it -->
 
           <div class='eboardFlex'>
             <div class='eboard-left'> <?php
@@ -51,6 +68,7 @@ $current_page_id = "about";
               echo $image_html;
             } ?>
           </div>
+
           <div class='eboard-right'> <?php
           if ($toggle==TRUE){
             echo $image_html;
@@ -60,6 +78,7 @@ $current_page_id = "about";
             $toggle = TRUE;
           } ?>
           </div>
+
         </div>
 
         <?php }
