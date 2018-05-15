@@ -58,11 +58,11 @@ if (isset($_POST['add-feed-button'])) {
 
 	} else if ($file_1['error'] == UPLOAD_ERR_FORM_SIZE) {
 		// file too large
-		record_message("Attachment 1 is too large. Maximum size = 2MB.");
+		record_message("[Attachment 1 is too large. Maximum size = 2MB.]");
 		$file_count = $file_count - 1;
 
 	} else {
-		record_message("Failed to upload attachment 1.");
+		record_message("[Failed to upload attachment 1.]");
 		$file_count = $file_count - 1;
 	}
 
@@ -76,11 +76,11 @@ if (isset($_POST['add-feed-button'])) {
 
 	} else if ($file_2['error'] == UPLOAD_ERR_FORM_SIZE) {
 		// file too large
-		record_message("Attachment 2 is too large. Maximum size = 2MB.");
+		record_message("[Attachment 2 is too large. Maximum size = 2MB.]");
 		$file_count = $file_count - 1;
 
 	} else {
-		record_message("Failed to upload attachment 2.");
+		record_message("[Failed to upload attachment 2.]");
 		$file_count = $file_count - 1;
 	}
 
@@ -139,11 +139,11 @@ if (isset($_POST['add-feed-button'])) {
 		$params = array(':feed_id' => $feed_id, ':tag_id' => $tag_id);
 		$insert_tag = exec_sql_query($db, $sql, $params);
 
-		record_message("Successfully added post!");
+		record_message("[Successfully added post!]");
 
 	} else {
 		// file_count < 0
-		record_message("Failed to add post.");
+		record_message("[Failed to add post.]");
 	}
 	$db->commit();
 }
@@ -188,11 +188,11 @@ if (isset($_POST['delete-feed-button'])) {
 		$params = array(':feed_id' => $feed_id);
 		$delete_from_feed_to_feed_attachments = exec_sql_query($db, $sql, $params);
 
-		record_message("Successfully deleted post.");
+		record_message("[Successfully deleted post.]");
 
 	} else {
 		// feed doesn't exist
-		record_message("Please select an existing feed from the dropdown menu.");
+		record_message("[Please select an existing feed from the dropdown menu.]");
 	}
 
 	$db->commit();
@@ -228,11 +228,11 @@ if (isset($_POST['create-tag-button'])) {
 		$params = array(':new_tag' => $new_tag);
 		$update_tbl = exec_sql_query($db, $sql, $params);
 
-		record_message("Successfully added $new_tag.");
+		record_message("[Successfully added $new_tag.]");
 
 	} else {
 		// tag already exists
-		record_message($new_tag . " is an existing tag.");
+		record_message("[" . $new_tag . " is an existing tag.]");
 	}
 
 	$db->commit();
@@ -256,7 +256,7 @@ if (isset($_POST['delete-tag-button'])) {
 
 	if ($check_tag == NULL) {
 		// tag doesn't exist
-		record_message("Please select an existing tag to delete.");
+		record_message("[Please select an existing tag to delete.]");
 
 	} else {
 		// tag can be deleted
@@ -273,7 +273,7 @@ if (isset($_POST['delete-tag-button'])) {
 		$params = array(':tag_id' => $tag_id);
 		$delete_tag = exec_sql_query($db, $sql, $params);
 
-		record_message("Successfully deleted $tag.");
+		record_message("[Successfully deleted $tag.]");
 	}
 
 	$db->commit();
