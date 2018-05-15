@@ -1480,7 +1480,7 @@ Our client's original website was very simple. It was an Orgsync page that most 
 Some features that we would have liked to implement:
 
 * Ability for E-board to create their own accounts instead of having one general account
-* Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag
+* Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag. For now, we've tried to reduce inconvenience by placing the feedback messages at the top of the page.
 * Embed social media such as Facebook on the front page, since many club websites at Cornell have this feature
 * Multiple photo upload and delete. Currently, our website requires admin to upload images individually, but this can become a tedious task. To delete photos, users can delete individual images or delete all images in a category/album. We would have liked to implement a feature where image thumbnails are combined with a select option menu. Users would be able to select the images that they wish to delete on a simple interface.
 
@@ -1495,4 +1495,4 @@ The Google Calendar is a feature that we implemented in the client's version of 
 
 The listserv forms on the home and contact pages will send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, you could replace the listserv email with one of your personal emails instead. It may take a while for the email to send. We have tested the php mail() function and it has worked fine so far.
 
-In the client version of the website, our client will be able to apply multiple tags to the posts, tag existing posts and delete tags from a post. However, due to the large number of forms that we already have on the site, we decided not to implement this functionality here. 
+In the client version of the website, our client will be able to apply multiple tags to the posts, tag existing posts and delete tags from a post. However, due to the large number of forms that we already have on the site, we decided not to implement this functionality here.

@@ -136,9 +136,6 @@ button:focus {
 
 .message {
   color: var(--red);
-  /* border: 1px solid orange; */
-  /* padding: 5px;
-  border-radius: 5px; */
 }
 
 .link {
@@ -799,26 +796,30 @@ table td {
 	order: 1;
 	padding: 30px 40px;
 	border-right: 1px solid var(--grey);
+	text-align: center;
 }
 
 .flex-right {
 	padding: 30px 40px;
 	flex: 1;
 	order: 2;
-	/* border-left: 1px solid var(--grey); */
 }
 
 .indent {
     text-indent: 50px;
 }
 
-textarea {
-	font-size: 12px;
-	width: 70%;
+.flex-right textarea {
+	font-size: 13px;
+	width: 90%;
+	padding: 5px;
+	margin-bottom: 20px;
+	border: 1px solid silver;
 }
 
 #contactCentering p, #contactCentering h2 {
 	text-align: center;
+	font-weight: normal;
 }
 
 .contactpage {
@@ -826,29 +827,25 @@ textarea {
 	margin-bottom: 45px;
 }
 
-.highlight {
-	color: #8f0302;
-	font-weight: bold;
-	text-decoration: none;
-}
-
 .highlight a {
 	color: var(--red);
+	text-decoration: none;
+	font-weight: bold;
 }
 
-.largeContainer {
+/* .largeContainer {
 	margin: 0 auto;
 	margin-bottom: 10px;
-}
+} */
 
-.labelContainer {
+/* .labelContainer {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
-}
+} */
 
-.inputContainer {
+/* .inputContainer {
 	display: block;
 }
 
@@ -856,10 +853,25 @@ textarea {
 	color: red;
 	font-size: 14px;
 	display: block;
+} */
+
+/* .hiddenError {
+	display: none;
+} */
+
+#joinForm {
+	text-align: center;
 }
 
-.hiddenError {
-	display: none;
+#joinForm input {
+	display: block;
+	margin: 0 auto;
+	width: 165.3px;
+	height: 35px;
+	margin-bottom: 20px;
+	padding: 5px;
+	font-size: 13px;
+	border: 1px solid silver;
 }
 
 #formButton {
@@ -873,18 +885,10 @@ textarea {
 	font-size: 16px;
 }
 
-/* #formButton button:active {
-	background-color: var(--grey);
-} */
-
 #messageButton button {
 	margin: 30px auto;
 	font-size: 16px;
 }
-
-/* #messageButton button:active {
-	background-color: var(--grey);
-} */
 
 
 /* ===============
