@@ -75,7 +75,7 @@ if (isset($_POST['add-feed-button'])) {
 		// no file uploaded, skip
 
 	} else if ($file_2['error'] == UPLOAD_ERR_FORM_SIZE) {
-		// file too larg[e
+		// file too large
 		record_message("[Attachment 2 is too large. Maximum size = 2MB.]");
 		$file_count = $file_count - 1;
 
@@ -139,7 +139,7 @@ if (isset($_POST['add-feed-button'])) {
 		$params = array(':feed_id' => $feed_id, ':tag_id' => $tag_id);
 		$insert_tag = exec_sql_query($db, $sql, $params);
 
-		record_message("[Successfully added post.]");
+		record_message("[Successfully added post!]");
 
 	} else {
 		// file_count < 0
