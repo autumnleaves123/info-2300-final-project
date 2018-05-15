@@ -16,7 +16,7 @@
 * update descriptions
 
 ## Login
-* why is default logged in?
+* why is default logged in? --> don't think it is anymore, unless you start php server from admin page
 
 ## Footer
 * how to make footer stick to bottom of page when content is short (on a really big desktop)
