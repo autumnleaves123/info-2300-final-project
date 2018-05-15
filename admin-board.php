@@ -122,7 +122,7 @@ if (isset($_POST['delete'])) {
 				<div id="admin-sidebar"><?php include("includes/admin-sidebar.php"); ?></div>
 				<div id="admin-content">
 					<p class="message"><?php print_messages(); ?></p>
-					<h3>Add New E-board Entry</h3>
+					<h3>Add New Eboard Entry</h3>
 					<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
 
 						<label>Name <span class="required">(required)</span></label>
