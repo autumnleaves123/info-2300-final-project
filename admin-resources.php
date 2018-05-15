@@ -5,7 +5,6 @@ $current_admin_page = "admin-resources";
 // redirect user to login.php if not logged in
 if ($current_user == NULL) {
 	header("Location: login.php");
-	exit;
 }
 
 const FILE_UPLOADS_PATH = "uploads/resourcesppt/";
@@ -76,7 +75,7 @@ if (isset($_POST['add-ppt-button'])) {
 	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
 
 	$link = $_POST['ppt-link'];
-	$link = trim(filter_var($link, FILTER_SANITIZE_STRING)));
+	$link = strtolower(trim(filter_var($link, FILTER_SANITIZE_STRING)));
 
 
 	$sql = "SELECT * FROM ppts WHERE label = :label;";
@@ -101,7 +100,7 @@ if (isset($_POST['add-ppt-button'])) {
 		$records = exec_sql_query($db, $sql, $params);
 
 		if ($records) {
-			array_push($messages, "[Upload successful.]");
+			array_push($messages, "[Resource upload successful.]");
 		} else {
 			array_push($messages, "[Upload failed.]");
 		}
@@ -158,6 +157,7 @@ if (isset($_POST['delete-ppt-button'])) {
 
 				<div id="admin-content">
 
+					<p class="message"><?php print_messages(); ?></p>
 					<!-- Edit feed forms -->
 					<h3>Add New Link</h3>
 					<form method="post" action="admin-resources.php" id="add-feed" name="add-link">
@@ -168,7 +168,6 @@ if (isset($_POST['delete-ppt-button'])) {
 						<input type="text" name="link-url" placeholder="http://www.aslpro.com/" required/>
 
 						<button name="add-link-button" type="submit">add new link</button>
-						<p class="message"><?php if (isset($_POST['add-link-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Delete Existing Link</h3>
@@ -187,7 +186,6 @@ if (isset($_POST['delete-ppt-button'])) {
 							?>
 						</select>
 						<button name="delete-link-button" type="submit">delete link</button>
-						<p class="message"><?php if (isset($_POST['delete-link-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Upload New Teaching Resource</h3>
@@ -199,7 +197,6 @@ if (isset($_POST['delete-ppt-button'])) {
 						<input type="text" name="ppt-link" placeholder="https://drive.google.com/" required/>
 
 						<button name="add-ppt-button" type="submit">upload new resource</button>
-						<p class="message"><?php if (isset($_POST['add-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Delete Existing Teaching Resource</h3>
@@ -217,7 +214,6 @@ if (isset($_POST['delete-ppt-button'])) {
 							?>
 						</select>
 						<button name="delete-ppt-button" type="submit">delete resource</button>
-						<p class="message"><?php if (isset($_POST['delete-ppt-button'])) { print_messages(); }?></p>
 					</form>
 
 

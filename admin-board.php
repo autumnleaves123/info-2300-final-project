@@ -121,6 +121,7 @@ if (isset($_POST['delete'])) {
 			<div id="admin-wrapper">
 				<div id="admin-sidebar"><?php include("includes/admin-sidebar.php"); ?></div>
 				<div id="admin-content">
+					<p class="message"><?php print_messages(); ?></p>
 					<h3>Add New E-board Entry</h3>
 					<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
 
@@ -144,7 +145,6 @@ if (isset($_POST['delete'])) {
 							<input type="file" name="image_file" required>
 
 						<button name="add" type="submit">add eboard entry</button>
-						<p class="message"><?php if (isset($_POST['add'])) { print_messages(); }?></p>
 					</form>
 
 
@@ -168,7 +168,6 @@ if (isset($_POST['delete'])) {
 								echo "<p>No eboard members.</p>";
 							}
 				    ?>
-						<p class="message"><?php if (isset($_POST['delete'])) { print_messages(); }?></p>
 
 					</form>
 				</div>
