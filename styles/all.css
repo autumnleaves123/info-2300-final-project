@@ -1184,6 +1184,17 @@ img.hover-shadow {
 	flex-direction: row;
 }
 
+.resource-flex-left {
+	flex: 1;
+	order: 1;
+}
+
+.resource-flex-right {
+	flex: 1;
+	order: 2;
+	border-left: 1px solid silver;
+}
+
 .resource-div a {
 	color: var(--red);
 }
@@ -1193,7 +1204,7 @@ img.hover-shadow {
 }
 
 .resource-padding {
-	padding: 0 2.5%;
+	padding: 0 4%;
 }
 
 /* ===============

@@ -30,7 +30,7 @@ $ppts = exec_sql_query($db, $sql, $params);
 		<h1>Resources</h1>
 
 		<div class="white-background resource-div">
-      <div class="flex-left resource-padding">
+      <div class="resource-flex-left resource-padding">
         <p>See the links below to learn ASL:<br/>
           <?php if (isset($links) && !empty($links)) {
             foreach ($links as $link) {
@@ -40,7 +40,7 @@ $ppts = exec_sql_query($db, $sql, $params);
         } ?>
   	    </p>
       </div>
-      <div class="flex-right resource-padding">
+      <div class="resource-flex-right resource-padding">
   	    <p>Click on the links below to view our learning ASL Powerpoints and Docs:
           <?php if (isset($ppts) && !empty($ppts)) {
             foreach ($ppts as $ppt) {
