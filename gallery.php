@@ -67,7 +67,8 @@ if (empty($_GET['category'])) {
     <!-- GALLERY -->
     <div class="row">
       <?php $colsize = (int) floor(count($images) / 4);
-      $remainder = count($images) % 4;
+      $rem = count($images) % 4;
+      $remainder = $rem;
       $counter = 0;
       for ($i = 0; $i < 4; $i++) {
         $max = $colsize;
@@ -93,14 +94,20 @@ if (empty($_GET['category'])) {
       <span class="close cursor" onclick="closeModal()">&times;</span>
       <div class="modal-content">
 
-        <?php $colsize = (int) floor(count($images) / 4);
-        for ($i = 0; $i < 4; $i++) { ?>
-          <?php for ($j = 0; $j < $colsize && !empty($images[$colsize * $i + $j]); $j++) { ?>
+        <?php $remainder = $rem;
+        $counter = 0;
+        for ($i = 0; $i < 4; $i++) {
+          $max = $colsize;
+          if ($remainder > 0) {
+            $max++;
+            $remainder--;
+          } ?>
+          <?php for ($j = 0; $j < $max; $j++) { ?>
             <div class="lightbox-image">
-              <div class="numbertext"><?php echo $colsize * $i + $j + 1 . " / " . count($images); ?></div>
-              <img src="<?php echo "uploads/images/" . $images[$colsize * $i + $j]['id'] . "." . $images[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $images[$colsize * $i + $j]['title']; ?>" />
+              <div class="numbertext"><?php echo $counter + 1 . " / " . count($images); ?></div>
+              <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
             </div>
-          <?php } ?>
+          <?php $counter++; } ?>
         <?php } ?>
 
         <!-- Next/previous controls -->
