@@ -48,8 +48,6 @@ if (empty($_GET['category'])) {
   <section class="content">
 		<h1>Gallery</h1>
 
-		<!-- Maybe add tags at the top for filtering? -->
-
     <!-- Category Buttons -->
 
     <div id="category-buttons">
@@ -69,16 +67,23 @@ if (empty($_GET['category'])) {
     <!-- GALLERY -->
     <div class="row">
       <?php $colsize = (int) floor(count($images) / 4);
-      for ($i = 0; $i < 4; $i++) { ?>
+      $remainder = count($images) % 4;
+      $counter = 0;
+      for ($i = 0; $i < 4; $i++) {
+        $max = $colsize;
+        if ($remainder > 0) {
+          $max++;
+          $remainder--;
+        } ?>
         <div class="column-gal">
-        <?php for ($j = 0; $j < $colsize && !empty($images[$colsize * $i + $j]); $j++) { ?>
+        <?php for ($j = 0; $j < $max; $j++) { ?>
           <div class="container">
-            <img src="<?php echo "uploads/images/" . $images[$colsize * $i + $j]['id'] . "." . $images[$colsize * $i + $j]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)" alt="<?php echo $images[$colsize * $i + $j]['title']; ?>" />
-            <div class="overlay" onclick="openModal();currentSlide(<?php echo $colsize * $i + $j + 1; ?>)">
-              <div class="title"><?php echo $images[$j]['title']; ?></div>
+            <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
+            <div class="overlay" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)">
+              <div class="title"><?php echo $images[$counter]['title']; ?></div>
             </div>
           </div>
-        <?php } ?>
+        <?php $counter++; } ?>
         </div>
       <?php } ?>
     </div>
