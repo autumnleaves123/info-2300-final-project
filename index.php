@@ -111,7 +111,7 @@ if (isset($_POST["index-listserv-submit"])) {
 							$feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
 							?>
 
-							<ul id="tags-in-post">
+							<ul class="tags-in-post">
 								<?php foreach ($feed_tags as $tag) { echo "<li>" .$tag['name'] ."</li>"; } ?>
 							</ul>
 
@@ -157,7 +157,7 @@ if (isset($_POST["index-listserv-submit"])) {
 				<div id="feed-listserv">
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<input type="email" name="email" placeholder="netid@cornell.edu" required></input>
+						<input type="email" name="email" placeholder="netid@cornell.edu" required>
 						<button name="index-listserv-submit" type="submit">subscribe</button>
 						<p><?php if (isset($_POST["index-listserv-submit"])) { print_messages(); } ?></p>
 					</form>
