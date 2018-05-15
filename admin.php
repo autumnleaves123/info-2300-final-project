@@ -126,18 +126,20 @@ if (isset($_POST['add-feed-button'])) {
 			move_uploaded_file($file_2["tmp_name"], GALLERY_UPLOADS_PATH . "$feed_attachments_2_id.$file_2_ext");
 		}
 
-		// insert tags
+		// insert tags if tag was selected
 		// first get tag id
-		$sql = "SELECT id FROM feed_tags WHERE name = :tag";
-		$params = array(':tag' => $tag);
-		$tag_id = exec_sql_query($db, $sql, $params)->fetchAll();
+		if ($tag != "") {
+			$sql = "SELECT id FROM feed_tags WHERE name = :tag";
+			$params = array(':tag' => $tag);
+			$tag_id = exec_sql_query($db, $sql, $params)->fetchAll();
 
-		$tag_id = $tag_id[0]['id'];
+			$tag_id = $tag_id[0]['id'];
 
-		// insert into database
-		$sql = "INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (:feed_id, :tag_id)";
-		$params = array(':feed_id' => $feed_id, ':tag_id' => $tag_id);
-		$insert_tag = exec_sql_query($db, $sql, $params);
+			// insert into database
+			$sql = "INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (:feed_id, :tag_id)";
+			$params = array(':feed_id' => $feed_id, ':tag_id' => $tag_id);
+			$insert_tag = exec_sql_query($db, $sql, $params);
+		}
 
 		record_message("[Successfully added post!]");
 
