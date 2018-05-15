@@ -58,7 +58,7 @@ if (isset($_POST['add'])) {
       $params = array(':newfilename' => $newfilename, ':name' => $name);
       $records = exec_sql_query($db, $sql, $params);
       if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
-          array_push($messages, "[The new member ". htmlspecialchars($name) . " has been added.]");
+          array_push($messages, "[The new member '". htmlspecialchars($name) . "' has been added.]");
           $name = NULL;
 					$position = NULL;
 					$major = NULL;
@@ -92,7 +92,7 @@ if (isset($_POST['delete'])) {
   $records = exec_sql_query($db, $sql, $params);
 
   unlink(IMAGE_UPLOADS_PATH . $locationofimage);
-  array_push($messages, "[The entry for member ". htmlspecialchars($entrytodelete) . " has been deleted.]");
+  array_push($messages, "[The entry for member '". htmlspecialchars($entrytodelete) . "' has been deleted.]");
 	$db->commit();
 }
 
@@ -168,6 +168,7 @@ if (isset($_POST['delete'])) {
 								echo "<p>No eboard members.</p>";
 							}
 				    ?>
+						<p class="message"><?php if (isset($_POST['delete'])) { print_messages(); }?></p>
 
 					</form>
 				</div>

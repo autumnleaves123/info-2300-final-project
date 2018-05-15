@@ -63,7 +63,7 @@ if (isset($_POST['delete-link-button'])) {
   $params = array(':link_delete' => $link_delete);
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
-  array_push($messages, "[The link (". htmlspecialchars($link_delete) . ") has been deleted.]");
+  array_push($messages, "[The link '". htmlspecialchars($link_delete) . "' has been deleted.]");
 	$db->commit();
 }
 
@@ -76,7 +76,7 @@ if (isset($_POST['add-ppt-button'])) {
 	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
 
 	$link = $_POST['ppt-link'];
-	$link = strtolower(trim(filter_var($link, FILTER_SANITIZE_STRING)));
+	$link = trim(filter_var($link, FILTER_SANITIZE_STRING)));
 
 
 	$sql = "SELECT * FROM ppts WHERE label = :label;";
@@ -121,7 +121,7 @@ if (isset($_POST['delete-ppt-button'])) {
   $params = array(':link_delete' => $link_delete);
   $records = exec_sql_query($db, $sql, $params)->fetchAll();
 
-  array_push($messages, "[The resource (". ucwords(htmlspecialchars($link_delete)) . ") has been deleted.]");
+  array_push($messages, "[The resource '". ucwords(htmlspecialchars($link_delete)) . "' has been deleted.]");
 
 	$db->commit();
 }
