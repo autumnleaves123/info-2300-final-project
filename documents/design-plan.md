@@ -1408,7 +1408,7 @@ Also a PDF version:
 		Yes, she will be taken to the resources page if she successfully clicks on the correct tab on the nav bar.
 
 
-**Action #2: Download powerpoints**
+**Action #2: Click on Google Drive link to powerpoint**
 
   - Will Abby know what to do at this step?
     - Yes, maybe or no: Yes
@@ -1490,6 +1490,10 @@ Some features that we would have liked to implement:
 **Please access our login functionality by typing login.php in the url.**
 
 We kept our admin portal separate from the rest of our website because we were afraid that users such as Abby would be confused if they came across an admin tab with a login page but did not have a username or password. We also did not want our nav bar to be overly cluttered. We spent some time researching best practices, and found that it is not uncommon for websites (e.g. Wordpress) to have separate links for their admin portals. Last week, we also met with our client to demo our draft website, and they reflected their preference for an admin portal separate from the rest of the website, although they would still like access the rest of the website while logged in as an admin user.
+
+Sample account for testing purposes:
+	- username: janedoe
+	- password: gobigred
 
 The Google Calendar is a feature that we implemented in the client's version of the site.
 
