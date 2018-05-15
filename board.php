@@ -60,7 +60,7 @@ $current_page_id = "about";
           } ?>
           </div>
         </div>
-				
+
         <?php }
       } ?>
     </div>
