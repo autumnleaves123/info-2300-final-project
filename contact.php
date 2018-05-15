@@ -15,7 +15,11 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+<<<<<<< HEAD
   record_message("[Your message has been sent.]");
+=======
+  record_message("[Your message has been received.]");
+>>>>>>> 7074e46d3a30af8a38ff6cb538ace8df7fc1ccc2
 	mail("cudap@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap@cornell.edu with your personal email in the mail() function to test that the form works
 }
@@ -43,10 +47,15 @@ if (isset($_POST["submitmessage"])) {
 		<h1>Contact Us</h1>
 
 		<div class="white-background no-padding">
+<<<<<<< HEAD
 
 			<div id="contactCentering">
 				<?php print_messages();?>
+=======
+>>>>>>> 7074e46d3a30af8a38ff6cb538ace8df7fc1ccc2
 
+			<div id="contactCentering">
+				<?php print_messages();?>
 				<div class="contactpage">
 					<h2>Questions or Feedback?</h2>
 					<p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.<br/>

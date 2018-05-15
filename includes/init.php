@@ -168,7 +168,7 @@ function gallery($images){
   foreach($images as $image) {
     if ($image["frame"] == 1) {
       if ($image_count == 1) { echo "<div class='column'>"; }
-      echo "<a href='image.php?id=" . $image["id"] . "'><img src='". $image["image_path"] . "' ></a>";
+      echo "<a href='image.php?id=" . $image["id"] . "'><img alt = " . $image["image_path"] . " src='". $image["image_path"] . "' ></a>";
       if ($image_count >= $images_in_column) { echo "</div>"; $image_count = 0; }
       $image_count += 1;
     }
