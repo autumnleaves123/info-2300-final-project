@@ -1449,8 +1449,8 @@ Thank you for working with us these past few weeks.
 
 **Admin Portal:** As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
 
-* Username:
-* Password:
+* Username: janedoe
+* Password: gobigred
 
 **Browsers and user experience:**
 The website is best viewed in Google Chrome, but works well in Firefox and Safari. It can also be viewed on tablets and mobile devices. However, we do recommend the admin portal be accessed on a laptop/desktop for the best experience.
