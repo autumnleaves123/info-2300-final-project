@@ -5,37 +5,19 @@ $current_page_id = "contact";
 // when the user submits a form
 if (isset($_POST["submit"])) {
 		// show success message
-<<<<<<< HEAD
-	$email = $_POST['email'];
-	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-	record_message("You have been subscribed to the mailing list.");
-  // mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
-	// Note to TAs: use your own emails to test this form, the client-version website will have the cudap email
-	$send = mail("hl566@cornell.edu", "join", "", "From: " . $email);
-=======
 	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 	record_message("You have been subscribed to the mailing list.");
   mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
->>>>>>> 90fb13b5276e429a2661fa90fc0596d6306a32bf
 }
 
 // when the user submits a form
 if (isset($_POST["submitmessage"])) {
 	// validate form here
-<<<<<<< HEAD
-	$message = $_POST['message'];
-	$message = filter_var($message, FILTER_SANITIZE_STRING);
-  record_message("Your message has been received.");
-	// mail("cudap-l-request@cornell.edu", "message", $message, "");
-	// Note to TAs: use your own emails to test this form, the client-version website will have the cudap email
-	mail("hl566@cornell.edu", "message", $message, "");
-=======
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
   record_message("Your message has been received.");
 	mail("cudap-l-request@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
->>>>>>> 90fb13b5276e429a2661fa90fc0596d6306a32bf
 }
 
 ?>
