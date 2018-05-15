@@ -379,6 +379,7 @@ if (isset($_POST['delete-tag-button'])) {
 
 					<h3>Delete Existing Tag</h3>
 					<form method="post" action="admin.php" id="delete-tag" name="delete-tag">
+						<label>Select existing tag</label>
 						<select name="tag-to-delete">
 							<option disabled selected value> -- select tag -- </option>
 							<?php
