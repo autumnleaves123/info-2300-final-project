@@ -119,8 +119,14 @@ if (isset($_POST["index-listserv-submit"])) {
 							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
 							} else {
 								echo "<h3>Links:</h3>";
-								echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
-								echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
+								if ($post['url_1'] && $post['url_2']) {
+									echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
+									echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
+								} elseif ($post['url_1']) {
+									echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
+								} else {
+									echo "<a class='url' href=$post[url_2] target='_blank'>Link 1</a>";
+								}
 							}?>
 
 							<!-- TODO: handle attachment stuff (href)-->
