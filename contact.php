@@ -8,7 +8,8 @@ if (isset($_POST["submit"])) {
 	$email = $_POST['email'];
 	record_message("You have been subscribed to the mailing list.");
   // mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
-	mail("bt293@cornell.edu", "join", "", "From: " . $email);
+	$send = mail("bt293@cornell.edu", "join", "", "From: " . $email);
+	var_dump($send);
 }
 
 // when the user submits a form
