@@ -6,19 +6,22 @@ $current_page_id = "contact";
 if (isset($_POST["submit"])) {
 		// show success message
 	$email = $_POST['email'];
+	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 	record_message("You have been subscribed to the mailing list.");
   // mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
-	$send = mail("bt293@cornell.edu", "join", "", "From: " . $email);
-	var_dump($send);
+	// Note to TAs: use your own emails to test this form, the client-version website will have the cudap email
+	$send = mail("hl566@cornell.edu", "join", "", "From: " . $email);
 }
 
 // when the user submits a form
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = $_POST['message'];
+	$message = filter_var($message, FILTER_SANITIZE_STRING);
   record_message("Your message has been received.");
-	mail("cudap-l-request@cornell.edu", "message", $message, "");
-	mail("bt293@cornell.edu", "message", $message, "");
+	// mail("cudap-l-request@cornell.edu", "message", $message, "");
+	// Note to TAs: use your own emails to test this form, the client-version website will have the cudap email
+	mail("hl566@cornell.edu", "message", $message, "");
 }
 
 ?>
