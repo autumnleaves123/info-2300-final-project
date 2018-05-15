@@ -490,6 +490,10 @@ a.current-page {
 	padding: 30px;
 }
 
+.post a:hover {
+	color: var(--brighter_red);
+}
+
 #search-criteria {
 	background-color: white;
 	padding: 4px 30px;
@@ -806,7 +810,7 @@ table td {
 }
 
 .indent {
-    text-indent: 50px;
+    text-indent: 25px;
 }
 
 .flex-right textarea {
