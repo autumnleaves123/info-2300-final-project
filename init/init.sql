@@ -115,7 +115,6 @@ INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (2, 1);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (3, 4);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (4, 3);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (5, 5);
-INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 3);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (6, 6);
 INSERT INTO feed_to_tags (feed_id, tag_id) VALUES (7, 4);
 

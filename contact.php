@@ -16,9 +16,15 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+<<<<<<< HEAD
   record_message("[Your message has been received.]");
 	mail("cudap-l-request@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
+=======
+  record_message("Your message has been received.");
+	mail("cudap@cornell.edu", "Message From Website", $message, "");
+	// to TAs: you can replace cudap@cornell.edu with your personal email in the mail() function to test that the form works
+>>>>>>> fa5510b2481ca9884908fb796668446db0f770a9
 }
 
 ?>
