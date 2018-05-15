@@ -71,7 +71,6 @@ if (isset($_POST["submitmessage"])) {
 							<h2>Send Us A Message</h2>
 							<p>Please leave any inquiries, comments, and/or feedback you might have.</p>
 							<form method="post" action="contact.php" id="messageForm" >
-<<<<<<< HEAD
 								<div class = "inputContainer">
 									<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required></textarea>
 								</div>
@@ -79,10 +78,6 @@ if (isset($_POST["submitmessage"])) {
 								<div id="messageButton">
 									<button type="submit" name="submitmessage">submit message</button>
 								</div>
-=======
-								<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
-								<button type="submit" name="submitmessage">submit message</button>
->>>>>>> 0dde63cb4d2c207217ef28355dd280656af96e83
 							</form>
 						</div>
 
