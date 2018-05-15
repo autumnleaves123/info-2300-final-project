@@ -45,7 +45,7 @@ $ppts = exec_sql_query($db, $sql, $params);
           <?php if (isset($ppts) && !empty($ppts)) {
             foreach ($ppts as $ppt) {
             ?>
-            <div class="indent"><a href="<?php echo htmlspecialchars($ppt['link']); ?>" target="_blank"><?php echo ucwords(htmlspecialchars($ppt['label'])); ?></a><br/></div>
+            <div class="indent"><a href="<?php echo htmlspecialchars($ppt['link']); ?>" target="_blank"><?php echo ucwords(htmlspecialchars($ppt['label'])); ?></a></div>
           <?php }
         } ?>
   	    </p>
