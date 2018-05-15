@@ -16,7 +16,7 @@ if (isset($_POST["submit_upload"])) {
   $upload_info = $_FILES["box_file"];
   $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
   if (empty($_POST['title'])) {
-    record_message("No title specified - image was not uploaded.");
+    record_message("[No title specified - image was not uploaded.]");
   } else {
     if ($upload_info['error'] == UPLOAD_ERR_OK) {
       $upload_name = basename($upload_info["name"]);
@@ -32,7 +32,7 @@ if (isset($_POST["submit_upload"])) {
       if ($result) {
         $image_id = $db->lastInsertId("id");
         if (!move_uploaded_file($upload_info["tmp_name"], BOX_UPLOADS_PATH . "$image_id.$upload_ext")){
-          record_message("Failed to upload image.");
+          record_message("[Failed to upload image.]");
         }
 
         if (!empty($_POST['category'])) {
@@ -46,18 +46,18 @@ if (isset($_POST["submit_upload"])) {
 							$params = array(':image_id' => $image_id, ':cat_id' => $category);
 							$result = exec_sql_query($db, $sql, $params);
 							if (is_null($result)) {
-								record_message("Failed to upload image.");
+								record_message("[Failed to upload image.]");
 							} else {
-								record_message("Image successfully uploaded.");
+								record_message("[Image successfully uploaded.]");
 							}
 						}
 					}
         }
       } else {
-        record_message("Failed to upload image.");
+        record_message("[Failed to upload image.]");
       }
     } else {
-      record_message("Failed to upload image.");
+      record_message("[Failed to upload image.]");
     }
   }
 }
@@ -78,18 +78,18 @@ if (isset($_POST['delete_image'])) { // TODO: delete image if received confirmat
   $result = exec_sql_query($db, $sql, $params);
 
   if (empty($result)) {
-    record_message("Error deleting image.");
+    record_message("[Error deleting image.]");
   } else {
     $sql = "DELETE FROM images_cats WHERE image_id = :image_id";
     $params = array(':image_id' => $image_id);
     $result = exec_sql_query($db, $sql, $params);
 
     if (empty($result)) {
-      record_message("Error deleting image.");
+      record_message("[Error deleting image.]");
     } else {
       // delete file
       unlink('uploads/images/' . $image_id . '.' . $image_ext);
-			record_message("Image successfully deleted.");
+			record_message("[Image successfully deleted.]");
     }
   }
 }
@@ -111,9 +111,9 @@ if (isset($_POST['create_category'])) {
 		$params = array(':name' => $category);
 		$result = exec_sql_query($db, $sql, $params);
 		if (is_null($result)) {
-			record_message("Failed to add category.");
+			record_message("[Failed to add category.]");
 		} else {
-			record_message("Category successfully added.");
+			record_message("[Category successfully added.]");
 		}
 	}
 }
@@ -147,87 +147,16 @@ if (isset($_POST['delete_category'])) {
 	  $result = exec_sql_query($db, $sql, $params);
 
 	  if (empty($result)) {
-	    record_message("Error deleting category.");
+	    record_message("[Error deleting category.]");
 			$failed = true;
 	  } else {
 			unlink('uploads/images/' . $record['image_id'] . '.' . $image_ext);
 	  }
 	}
 	if (!$failed) {
-		record_message("Category and associated images successfully deleted.");
+		record_message("[Category and associated images successfully deleted.]");
 	}
 }
-
-/*
-// upload ppt form processing
-if (isset($_POST['add-ppt-button'])) {
-	$upload_info = $_FILES["ppt-file"];
-
-	$label = $_POST['ppt-label'];
-	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
-
-	if ($upload_info['error'] == UPLOAD_ERR_OK) {
-		$target_file = basename($_FILES["ppt-file"]["name"]);
-		$filetype = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-		if($filetype != "ppt" & $filetype != "pptx") {
-			array_push($messages, "[Error uploading your file.]");
-			array_push($messages, "[Wrong file type. Only PPT & PPTX files are allowed.]");
-		} else {
-			// check if file already exists because must be UNIQUE
-			$sql = "SELECT * FROM ppts WHERE label = :label;";
-			$params = array(":label"=>$label);
-			$records = exec_sql_query($db, $sql, $params)->FetchAll();
-
-			// if $records not empty, file already exists
-			if ($records) {
-				array_push($messages, "[File already exists.]");
-			} else {
-				var_dump("in else");
-				// if $records empty, file does not exist, so upload it
-				$sql = "INSERT INTO ppts (file, label) VALUES (:target_file, :label)";
-				$params = array(':target_file' => $target_file, ':label' => $label);
-				$records = exec_sql_query($db, $sql, $params);
-
-				$fileid = $db->lastInsertId("id");
-				$newfilename = "$fileid.$filetype";
-				$destination = FILE_UPLOADS_PATH . $newfilename;
-				$sql = "UPDATE ppts SET file = :newfilename WHERE label = :label";
-				$params = array(':newfilename' => $newfilename, ':label' => $label);
-				$records = exec_sql_query($db, $sql, $params);
-				if (move_uploaded_file($upload_info["tmp_name"], $destination)) {
-					array_push($messages, "[The new powerpoint '". htmlspecialchars($label) . "' has been added.]");
-				} else {
-					array_push($messages, "[Error uploading your powerpoint.]");
-				}
-			}
-		}
-	} else {
-		array_push($messages, "[Error uploading your powerpoint.]");
-		if ($upload_info['error'] == UPLOAD_ERR_FORM_SIZE) {
-			array_push($messages, "[File size too large.]");
-		}
-	}
-}
-
-// delete powerpoint file form processing
-if (isset($_POST['delete-ppt-button'])) {
-  $ppt_delete = $_POST['ppt-names'];
-	$ppt_delete = trim(filter_var($ppt_delete, FILTER_SANITIZE_STRING));
-	var_dump($ppt_delete);
-	$sqlfile = "SELECT file FROM ppts WHERE label = :ppt_delete";
-  $paramsfile = array(':ppt_delete' => $ppt_delete);
-  $file_delete = exec_sql_query($db, $sqlfile, $paramsfile)->fetchAll();
-	var_dump($file_delete);
-  $locationoffile = FILE_UPLOADS_PATH . $file_delete[0]['file'];
-  $sql = "DELETE FROM ppts WHERE label = :ppt_delete";
-  $params = array(':ppt_delete' => $ppt_delete);
-  $records = exec_sql_query($db, $sql, $params);
-
-  unlink($locationoffile);
-  array_push($messages, "[The powerpoint (". ucwords(htmlspecialchars($ppt_delete)) . ") has been successfully deleted.]");
-}
-*/
-
 
 ?>
 
