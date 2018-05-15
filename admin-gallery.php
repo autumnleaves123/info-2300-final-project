@@ -218,7 +218,7 @@ if (isset($_POST['delete_category'])) {
 
 					<h3>Delete Image</h3>
 					<form method="post" action="admin-gallery.php">
-						<label>Select an image <span class="required">(required)</span></label>
+						<label>Select an image by its title <span class="required">(required)</span></label>
 						<select name="image">
 							<option disabled selected value> -- select an image -- </option>
 							<?php
