@@ -31,7 +31,7 @@ $ppts = exec_sql_query($db, $sql, $params);
 
 		<div class="white-background resource-div">
       <div class="resource-flex-left resource-padding">
-        <p>See the links below to learn ASL:<br/>
+        <p>See the links below to learn ASL:<br></br>
           <?php if (isset($links) && !empty($links)) {
             foreach ($links as $link) {
             ?>
