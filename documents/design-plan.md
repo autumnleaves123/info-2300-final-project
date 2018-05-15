@@ -1439,16 +1439,15 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 [Include any other information that your client needs to know about your final website design. For example, what client wants or needs were unable to be realized in your final product? Why were you unable to meet those wants/needs?]
 
-To the CUDAP E-board:
+To CUDAP:
 
 Thank you for working with us these past few weeks.
 
 **Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
 
-**Additional Features: **
+**Additional Features:** We have implemented a feed that would supplement the weekly newsblasts sent out by the club. You will be able to add links and attachments to the posts. The learning page with the ASL animations should also be an interesting learning/teaching tool. We've also implemented listserv forms (on the home and contact pages) that allow users to add themselves to the CUDAP listserv, and a messaging form where feedback will be directed to the CUDAP mailbox.
 
-** Admin Portal**
-As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
+**Admin Portal:** As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
 
 * Username:
 * Password:
@@ -1473,7 +1472,7 @@ Our client's original website was very simple. It was an Orgsync page that most 
 
 2. We are proud of our **learning page** and **gallery**. We spent an afternoon with the CUDAP e-board taking photos of different sign language signs so we could include them on the learning page as an interactive learning tool. Text with the meaning of the sign will appear if you hover over the image with your house. In addition, we also spent a lot of time implementing a gallery with the images neatly lined up in columns. The gallery also features a lightbox.
 
-3. We spent a lot of time developing an **admin portal** that would provide the CUDAP e-board with the ability to make changes to the website without having to go through the code. We provide a range of user friendly forms to allow for the creation of new posts, creation of new tags, updates to e-board, photo uploads and resource/PPT uploads etc.
+3. We spent a considerable amount of time on the **admin portal** that would provide the CUDAP e-board with the ability to make changes to the website without having to go through the code. We provide a range of user friendly forms to allow for the creation of new posts, creation of new tags, updates to e-board, photo uploads and resource/PPT uploads etc.
 
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
