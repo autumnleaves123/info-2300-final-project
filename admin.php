@@ -232,7 +232,7 @@ if (isset($_POST['create-tag-button'])) {
 
 	} else {
 		// tag already exists
-		record_message("[" . $new_tag . " is an existing tag.]");
+		record_message("[$new_tag is an existing tag.]");
 	}
 
 	$db->commit();
@@ -307,6 +307,8 @@ if (isset($_POST['delete-tag-button'])) {
 
 				<div id="admin-content">
 
+					<p class="message"><?php print_messages(); ?></p>
+
 					<h3>Add New Post</h3>
 					<form method="post" action="admin.php" id="add-feed" name="add-feed" enctype="multipart/form-data">
 						<label>Title <span class="required">(required)</span></label>
@@ -344,7 +346,6 @@ if (isset($_POST['delete-tag-button'])) {
 						</select>
 
 						<button name="add-feed-button" type="submit">add new feed</button>
-						<p class="message"><?php if (isset($_POST['add-feed-button'])) { print_messages(); }?></p>
 					</form>
 
 					<h3>Delete Existing Post</h3>
@@ -364,7 +365,6 @@ if (isset($_POST['delete-tag-button'])) {
 							?>
 						</select>
 						<button name="delete-feed-button" type="submit">delete feed</button>
-						<p class="message"><?php if (isset($_POST['delete-feed-button'])) { print_messages(); } ?></p>
 					</form>
 
 
@@ -373,7 +373,6 @@ if (isset($_POST['delete-tag-button'])) {
 						<label>Tag Name <span class="required">(required)</span></label>
 						<input type="text" name="new-tag" placeholder="#cudap" required/>
 						<button name="create-tag-button" type="submit">create tag</button>
-						<p class="message"><?php if (isset($_POST['create-tag-button'])) { print_messages(); } ?></p>
 					</form>
 
 					<h3>Delete Existing Tag</h3>
@@ -391,7 +390,6 @@ if (isset($_POST['delete-tag-button'])) {
 							?>
 						</select>
 						<button name="delete-tag-button" type="submit">delete tag</button>
-						<p class="message"><?php if (isset($_POST['delete-tag-button'])) { print_messages(); } ?></p>
 					</form>
 
 				</div>
