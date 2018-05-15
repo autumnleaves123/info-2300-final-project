@@ -1414,7 +1414,7 @@ Also a PDF version:
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-		Yes, this is the powerpoints are shown right on top and center of the page, so it should be logical for Abby to read through and see the list of powerpoint she can download. The powerpoints are underlined and blue, which will let users like Abby know that they are clickable. The directions also say to click on these links to download ASL powerpoints.
+		Yes, this is the powerpoints are shown right on top and center of the page, so it should be logical for Abby to read through and see the list of powerpoints she can click on. The powerpoints are underlined and colored red, which will let users like Abby know that they are clickable. The directions also say to click on these links to view the ASL powerpoints.
 
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
@@ -1495,7 +1495,7 @@ Sample account for testing purposes:
 	- username: janedoe
 	- password: gobigred
 
-The Google Calendar is a feature that we implemented in the client's version of the site.
+The Google Calendar is a feature that we implemented in the client's version of the site, since we cannot embed in our project submission.
 
 The listserv forms on the home and contact pages will send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, you could replace the listserv email with one of your personal emails instead. It may take a while for the email to send. We have tested the php mail() function and it has worked fine so far.
 
