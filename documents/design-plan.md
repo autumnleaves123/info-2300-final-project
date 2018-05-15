@@ -1496,7 +1496,7 @@ Sample account for testing purposes:
 	- username: janedoe
 	- password: gobigred
 
-The Google Calendar is a feature that we implemented in the client's version of the site, since we cannot embed in our project submission.
+The Google Calendar is a feature that we implemented in the client's version of the site. We decided not to spend time working on creating a calendar, but rather focus our efforts on other parts of the webpage that will be utilized in the final version that the client uses.
 
 The listserv forms on the home and contact pages will send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, you could replace the listserv email with one of your personal emails instead. It may take a while for the email to send. We have tested the php mail() function and it has worked fine so far.
 
