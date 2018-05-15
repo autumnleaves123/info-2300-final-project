@@ -1449,8 +1449,8 @@ Thank you for working with us these past few weeks.
 
 **Admin Portal:** As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
 
-* Username:
-* Password:
+* Username: janedoe
+* Password: gobigred
 
 **Browsers and user experience:**
 The website is best viewed in Google Chrome, but works well in Firefox and Safari. It can also be viewed on tablets and mobile devices. However, we do recommend the admin portal be accessed on a laptop/desktop for the best experience.
@@ -1501,4 +1501,4 @@ The listserv forms on the home and contact pages will send an email to cudap-l-r
 
 In the client version of the website, our client will be able to apply multiple tags to the posts, tag existing posts and delete tags from a post. However, due to the large number of forms that we already have on the site, we decided not to implement this functionality here.
 
-All gallery images were provided by CUDAP. We took the photos on the learn page and the board page ourselves. The Facebook and email icons in the footer were designed by Autumn Watt. 
+All gallery images were provided by CUDAP. We took the photos on the learn page and the board page ourselves. The Facebook and email icons in the footer were designed by Autumn Watt.
