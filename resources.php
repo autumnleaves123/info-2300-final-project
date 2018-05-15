@@ -31,15 +31,16 @@ $ppts = exec_sql_query($db, $sql, $params);
 
 		<div class="white-background resource-div">
       <div class="resource-flex-left resource-padding">
-        <p>See the links below to learn ASL:<br/>
+        <p>See the links below to learn ASL:</p>
+				<p></p>
           <?php if (isset($links) && !empty($links)) {
             foreach ($links as $link) {
             ?>
             <div class="indent"><a href="<?php echo htmlspecialchars($link['url']); ?>" target="_blank"><?php echo htmlspecialchars($link['name']); ?></a></div>
           <?php }
         } ?>
-  	    </p>
       </div>
+			
       <div class="resource-flex-right resource-padding">
   	    <p>Click on the links below to view our learning ASL Powerpoints and Docs:
           <?php if (isset($ppts) && !empty($ppts)) {

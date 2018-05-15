@@ -248,6 +248,10 @@ INSERT INTO links(name, url) VALUES ('www.startasl.com', 'https://www.startasl.c
 INSERT INTO links(name, url) VALUES ('www.signlanguage101.com', 'http://www.signlanguage101.com/');
 INSERT INTO links(name, url) VALUES ('www.aslpro.com', 'http://www.aslpro.com/');
 INSERT INTO links(name, url) VALUES ('www.theaslapp.com', 'http://theaslapp.com/');
+INSERT INTO links(name, url) VALUES ('http://www.lifeprint.com/', 'http://www.lifeprint.com/');
+INSERT INTO links(name, url) VALUES ('https://www.handspeak.com/', 'https://www.handspeak.com/');
+
+
 
 INSERT INTO ppts(link, label) VALUES ('https://drive.google.com/open?id=1GGxkO2OQfHAXbyL5fxE3WvdWNRz_zbuUmMH8QHrFr0A', 'animal vocab');
 INSERT INTO ppts(link, label) VALUES ('https://drive.google.com/open?id=1QGNO8zuwVmgnep4JpUbQPo5-ARL8LyXXEcdCoBabuq0', 'education vocab');
