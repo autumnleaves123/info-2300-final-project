@@ -22,9 +22,8 @@ if (isset($_POST["submit_upload"])) {
       $upload_name = basename($upload_info["name"]);
       $upload_ext = strtolower(pathinfo($upload_name, PATHINFO_EXTENSION) );
 
-      $sql = "INSERT INTO images (uploader, title, file_ext) VALUES (:uploader, :title, :file_ext);";
+      $sql = "INSERT INTO images (title, file_ext) VALUES (:title, :file_ext);";
       $params = array(
-        ':uploader' => $current_user,
         ':title' => $title,
         ':file_ext' => $upload_ext
       );
@@ -32,8 +31,8 @@ if (isset($_POST["submit_upload"])) {
 
       if ($result) {
         $image_id = $db->lastInsertId("id");
-        if (move_uploaded_file($upload_info["tmp_name"], BOX_UPLOADS_PATH . "$image_id.$upload_ext")){
-          record_message("Your image has been uploaded."); // TODO: add link to view image
+        if (!move_uploaded_file($upload_info["tmp_name"], BOX_UPLOADS_PATH . "$image_id.$upload_ext")){
+          record_message("Failed to upload image.");
         }
 
         if (!empty($_POST['category'])) {
@@ -47,7 +46,9 @@ if (isset($_POST["submit_upload"])) {
 							$params = array(':image_id' => $image_id, ':cat_id' => $category);
 							$result = exec_sql_query($db, $sql, $params);
 							if (is_null($result)) {
-								record_message("Failed to add category.");
+								record_message("Failed to upload image.");
+							} else {
+								record_message("Image successfully uploaded.");
 							}
 						}
 					}
@@ -88,6 +89,7 @@ if (isset($_POST['delete_image'])) { // TODO: delete image if received confirmat
     } else {
       // delete file
       unlink('uploads/images/' . $image_id . '.' . $image_ext);
+			record_message("Image successfully deleted.");
     }
   }
 }
@@ -95,7 +97,7 @@ if (isset($_POST['delete_image'])) { // TODO: delete image if received confirmat
 // create category
 if (isset($_POST['create_category'])) {
 	// check if this category already exists, if not, add it to categories table
-	$category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
+	$category = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 
 	$sql = "SELECT * FROM categories WHERE name = :name;";
 	$params = array(':name' => $category);
@@ -110,12 +112,15 @@ if (isset($_POST['create_category'])) {
 		$result = exec_sql_query($db, $sql, $params);
 		if (is_null($result)) {
 			record_message("Failed to add category.");
+		} else {
+			record_message("Category successfully added.");
 		}
 	}
 }
 
 // delete category (and all photos in that category)
 if (isset($_POST['delete_category'])) {
+	$failed = false;
 	$category = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_STRING);
 
 	$sql = "SELECT * FROM images_cats WHERE cat_id = :cat_id;";
@@ -124,6 +129,10 @@ if (isset($_POST['delete_category'])) {
 
 	$sql = "DELETE FROM images_cats WHERE cat_id = :cat_id";
 	$params = array(':cat_id' => $category);
+	$result = exec_sql_query($db, $sql, $params);
+
+	$sql = "DELETE FROM categories WHERE id = :id";
+	$params = array(':id' => $category);
 	$result = exec_sql_query($db, $sql, $params);
 
 	foreach ($records as $record) {
@@ -139,9 +148,13 @@ if (isset($_POST['delete_category'])) {
 
 	  if (empty($result)) {
 	    record_message("Error deleting category.");
+			$failed = true;
 	  } else {
-			unlink('uploads/images/' . $image_id . '.' . $image_ext);
+			unlink('uploads/images/' . $record['image_id'] . '.' . $image_ext);
 	  }
+	}
+	if (!$failed) {
+		record_message("Category and associated images successfully deleted.");
 	}
 }
 
@@ -247,11 +260,13 @@ if (isset($_POST['delete-ppt-button'])) {
 
 				<div id="admin-content">
 
+					<p class="message"><?php print_messages(); ?></p>
+
 					<!-- Edit feed forms -->
 					<h3>Add New Image to Gallery</h3>
 					<form method="post" action="admin-gallery.php" enctype="multipart/form-data">
 						<label>Enter a title <span class="required">(required)</span></label>
-						<input name="title" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Title must consist of 2 or more letters." required/>
+						<input name="title" type="text" required />
 						<label>Assign a category <span class="required">(required)</span></label>
 						<select name="category">
 							<option disabled selected value> -- select a category -- </option>
@@ -268,7 +283,7 @@ if (isset($_POST['delete-ppt-button'])) {
 						</select>
 						<label>Upload file <span class="required">(required)</span></label>
 						<input class="no-border" type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
-						<input class="no-border" type="file" name="attachment" required>
+						<input class="no-border" type="file" name="box_file" required>
 						<button name="submit_upload" type="submit">add image</button>
 					</form>
 
@@ -292,9 +307,10 @@ if (isset($_POST['delete-ppt-button'])) {
 					</form>
 
 					<h3>Create New Category</h3>
+					<p>Categories are <em>case-sensitive</em>! Avoid creating new categories unless necessary.</p>
 					<form method="post" action="admin-gallery.php">
 						<label>Enter a category name <span class="required">(required)</span></label>
-						<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Category name must consist of 2 or more letters." required/>
+						<input name="name" type="text" required />
 						<button name="create_category" type="submit">create category</button>
 					</form>
 
