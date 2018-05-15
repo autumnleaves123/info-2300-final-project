@@ -1,9 +1,6 @@
 <?php
 include('includes/init.php');
-
 $current_page_id = "about";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +60,7 @@ $current_page_id = "about";
           } ?>
           </div>
         </div>
+				
         <?php }
       } ?>
     </div>

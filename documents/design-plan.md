@@ -1428,9 +1428,9 @@ Also a PDF version:
 
 [Did you discover any issues with your design? What were they? How did you change your design to address the gender-inclusiveness bugs you discovered?]
 
-A side result of Cognitive Walkthrough Task #3 was that users like Abby may get confused about the Learning and Resources page, and we resolved this by adding on link on the bottom of Learning page that says, "for ASL learning websites and powerpoints, visit our Resources page."
+A side result of Cognitive Walkthrough Task #3 was that users like Abby may get confused about the Learning and Resources page, and we resolved this by adding on link on the bottom of Learning page that says, "for ASL learning websites and PowerPoints, visit our Resources page."
 
-We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form on the front feed page and on the contact page because a user like Abby would make sure to not miss this information).
+We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the listserv join form on the front feed page and on the contact page because a user like Abby would make sure to not miss this information).
 
 
 ## Milestone 5: Final Notes to the Clients
@@ -1441,19 +1441,39 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 To CUDAP:
 
-In order to make this website go live, you will likely need to purchase a web domain. They usually cost about $10-$12 a year. Here are some that you could consider:
+Thank you for working with us these past few weeks.
+
+**Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
+
+**Additional Features:** We have implemented a feed that would supplement the weekly newsblasts sent out by the club. You will be able to add links and attachments to the posts. As discussed, the feed will only display the most recent 10 posts. The learning page with the animations should also be an interesting learning/teaching tool for ASL. We've also implemented listserv forms (on the home and contact pages) that allow users to add themselves to the CUDAP listserv, and a messaging form where feedback will be directed to the CUDAP mailbox.
+
+**Admin Portal:** As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
+
+* Username:
+* Password:
+
+**Browsers and user experience:**
+The website is best viewed in Google Chrome, but works well in Firefox and Safari. It can also be viewed on tablets and mobile devices. However, we do recommend the admin portal be accessed on a laptop/desktop for the best experience.
+
+**Going Live:**
+For the website go live, you will likely need to purchase a web domain. Here are some options you could consider:
 * https://domains.google.com/m/registrar/search?hl=en&_ga=2.63776363.592382675.1526320322-190975561.1526320322&searchTerm=cornell%20cudap
 * https://www.godaddy.com/dpp/find?isc=gofd1001aj&checkAvail=1&tmskey=&domainToCheck=cudap
+
+**Port data?**
 
 ## Milestone 5: Final Notes to the Graders
 
 [1. Give us three specific strengths of your site that sets it apart from the previous website of the client (if applicable) and/or from other websites. Think of this as your chance to argue for the things you did really well.]
 
-(this is very loose right now)
-Design (looks bad now)
-Learning page is a novel Ideas
-User friendly admin portal
-Feed is pretty cool
+Our client's original website was very simple. It was an Orgsync page that most clubs at Cornell are required to have. It provided some useful information to members and the general public, but it was not aesthetically pleasing or user-friendly.
+
+1. The feed on the **homepage** is an original creation. During our initial meeting with CUDAP, we learned that the club sends our weekly news blasts to its members. We thought it would be useful for this information to be published on the website as well. The feed displays 10 of the most recent posts, and posts can include external links and attachments. In addition, there is also a search feature on the side that allows users to search the posts using tags.
+
+2. We are proud of our **learning page** and **gallery**. We spent an afternoon with the CUDAP e-board taking photos of different sign language signs so we could include them on the learning page as an interactive learning tool. Text with the meaning of the sign will appear if you hover over the image with your house. In addition, we also spent a lot of time implementing a gallery with the images neatly lined up in columns. The gallery also features a lightbox.
+
+3. We spent a considerable amount of time on the **admin portal** that would provide the CUDAP e-board with the ability to make changes to the website without having to go through the code. We provide a range of user friendly forms to allow for the creation of new posts, creation of new tags, updates to e-board, photo uploads and resource/PPT uploads etc.
+
 
 [2. Tell us about things that don't work, what you wanted to implement, or what you would do if you keep working with the client in the future. Give justifications.]
 
@@ -1461,9 +1481,16 @@ Some features that we would have liked to implement:
 
 * Ability for E-board to create their own accounts instead of having one general account
 * Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag
-* Embed social media such as Facebook on the front page
-* Embed Google calendar on the events page
+* Embed social media such as Facebook on the front page, since many club websites at Cornell have this feature
+* Multiple photo upload and delete. Currently, our website requires admin to upload images individually, but this can become a tedious task. To delete photos, users can delete individual images or delete all images in a category/album. We would have liked to implement a feature where image thumbnails are combined with a select option menu. Users would be able to select the images that they wish to delete on a simple interface.
+
 
 [3. Tell us anything else you need us to know for when we're looking at the project.]
-**Write something about this (Bethany)**
-Please access our login functionality at login.php.
+
+**Please access our login functionality by typing login.php in the url.**
+
+We kept our admin portal separate from the rest of our website because we were afraid that users such as Abby would be confused if they came across an admin tab with a login page but did not have a username or password. We also did not want our nav bar to be overly cluttered. We spent some time researching best practices, and found that it is not uncommon for websites (e.g. Wordpress) to have separate links for their admin portals. Last week, we also met with our client to demo our draft website, and they reflected their preference for an admin portal separate from the rest of the website, although they would still like access the rest of the website while logged in as an admin user.
+
+The Google Calendar is a feature that we implemented in the client's version of the site.
+
+The listserv forms on the home and contact pages are supposed to send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, we have replaced the listserv email with one of our personal emails instead. We have tested the php mail() function and it has worked fine so far.
