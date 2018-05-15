@@ -114,7 +114,7 @@ if (isset($_POST['delete-ppt-button'])) {
 	$db->beginTransaction();
 
 	$link_delete = $_POST['ppt-names'];
-	$link_delete = trim(filter_var($link_delete, FILTER_SANITIZE_STRING));
+	$link_delete = htmlspecialchars(strtolower(trim(filter_var($link_delete, FILTER_SANITIZE_STRING))));
 
 	$sql = "DELETE FROM ppts WHERE label = :link_delete";
   $params = array(':link_delete' => $link_delete);
