@@ -120,9 +120,11 @@ if (isset($_POST["index-listserv-submit"])) {
 							<!-- TODO: echo attachments and links -->
 							<!-- TODO: add http -->
 							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
-							} else { echo "<h3>Links:</h3>"; }; ?>
-							<?php echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";?>
-							<?php echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";?>
+							} else {
+								echo "<h3>Links:</h3>";
+								echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
+								echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
+							}?>
 
 							<!-- TODO: handle attachment stuff (href)-->
 							<?php
