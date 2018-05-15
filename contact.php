@@ -7,8 +7,7 @@ if (isset($_POST["submit"])) {
 		// show success message
 	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 	record_message("[You have been subscribed to the mailing list.]");
-	mail("hl566@cornell.edu", "join", "", "From: " . $email);
-  //mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
+  mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
 }
 
@@ -16,7 +15,7 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
-  record_message("Your message has been received.");
+  record_message("[Your message has been received.]");
 	mail("cudap@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap@cornell.edu with your personal email in the mail() function to test that the form works
 }
