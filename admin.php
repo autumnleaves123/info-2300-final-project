@@ -22,10 +22,10 @@ if (isset($_POST['add-feed-button'])) {
 	$db->beginTransaction();
 
 	// grab all parameters and sanitize
-	$title = filter_input(INPUT_POST, 'feed-title', FILTER_SANITIZE_STRING);
+	$title = filter_input(INPUT_POST, 'feed-title', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 	$title = trim($title);
 
-	$feed_text = filter_input(INPUT_POST, 'feed-text', FILTER_SANITIZE_STRING);
+	$feed_text = filter_input(INPUT_POST, 'feed-text', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 	$feed_text = trim($feed_text);
 
 	$url1 = filter_input(INPUT_POST, 'feed-url-1', FILTER_SANITIZE_STRING);

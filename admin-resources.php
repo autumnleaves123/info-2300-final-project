@@ -73,7 +73,7 @@ if (isset($_POST['add-ppt-button'])) {
 	$db->beginTransaction();
 
 	$label = $_POST['ppt-label'];
-	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
+	$label = htmlspecialchars(strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES))));
 
 	$link = $_POST['ppt-link'];
 	$link = trim(filter_var($link, FILTER_SANITIZE_STRING));
