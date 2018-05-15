@@ -209,7 +209,7 @@ if (isset($_POST['delete-ppt-button'])) {
 								$fetch_all_ppts = exec_sql_query($db, $sql, $params)->fetchAll();
 
 								foreach ($fetch_all_ppts as $ppt_label) {
-									echo "<option value='" . htmlspecialchars($ppt_label['label']) . "'>" . ucwords(htmlspecialchars($ppt_label['label'])). "</option>";
+									echo "<option value=\"" . htmlspecialchars($ppt_label['label']) . "\">" . ucwords(htmlspecialchars($ppt_label['label'])). "</option>";
 								}
 							?>
 						</select>

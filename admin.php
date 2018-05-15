@@ -360,7 +360,7 @@ if (isset($_POST['delete-tag-button'])) {
 								$fetch_all_feed_titles = exec_sql_query($db, $sql, $params)->fetchAll();
 
 								foreach ($fetch_all_feed_titles as $feed_title) {
-									echo "<option value='" . $feed_title['title'] . "'>" . $feed_title['entry_date'] . " - " . $feed_title['title'] . "</option>";
+									echo "<option value=\"" . $feed_title['title'] . "\">" . $feed_title['entry_date'] . " - " . $feed_title['title'] . "</option>";
 								}
 							?>
 						</select>
@@ -385,7 +385,7 @@ if (isset($_POST['delete-tag-button'])) {
 								$fetch_tags = exec_sql_query($db, $sql, $params)->fetchAll();
 
 								foreach ($fetch_tags as $tag) {
-									echo "<option value='" . $tag['name'] . "'>" . $tag['name'] . "</option>";
+									echo "<option value=\"" . $tag['name'] . "\">" . $tag['name'] . "</option>";
 								}
 							?>
 						</select>
