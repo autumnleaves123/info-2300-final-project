@@ -1463,6 +1463,7 @@ Some features that we would have liked to implement:
 * Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag
 * Embed social media such as Facebook on the front page
 * Embed Google calendar on the events page
+* Multiple photo upload and delete. Currently, our website requires admin to upload images individually, but this is a very tedious task. 
 
 [3. Tell us anything else you need us to know for when we're looking at the project.]
 **Write something about this (Bethany)**
