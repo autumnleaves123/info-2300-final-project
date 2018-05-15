@@ -1445,7 +1445,7 @@ Thank you for working with us these past few weeks.
 
 **Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
 
-**Additional Features:** We have implemented a feed that would supplement the weekly newsblasts sent out by the club. You will be able to add links and attachments to the posts. The learning page with the ASL animations should also be an interesting learning/teaching tool. We've also implemented listserv forms (on the home and contact pages) that allow users to add themselves to the CUDAP listserv, and a messaging form where feedback will be directed to the CUDAP mailbox.
+**Additional Features:** We have implemented a feed that would supplement the weekly newsblasts sent out by the club. You will be able to add links and attachments to the posts. As discussed, the feed will only display the most recent 10 posts. The learning page with the animations should also be an interesting learning/teaching tool for ASL. We've also implemented listserv forms (on the home and contact pages) that allow users to add themselves to the CUDAP listserv, and a messaging form where feedback will be directed to the CUDAP mailbox.
 
 **Admin Portal:** As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
 
@@ -1493,4 +1493,4 @@ We kept our admin portal separate from the rest of our website because we were a
 
 The Google Calendar is a feature that we implemented in the client's version of the site.
 
-The listserv forms on the home and contact pages are supposed to send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, we have replaced the listserv email with one of our personal emails instead. We have tested the php mail() function and it has worked fine so far. 
+The listserv forms on the home and contact pages are supposed to send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, we have replaced the listserv email with one of our personal emails instead. We have tested the php mail() function and it has worked fine so far.
