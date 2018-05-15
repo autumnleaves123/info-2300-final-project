@@ -33,8 +33,9 @@ if ( isset($_GET["tag"])) {
 // listserv form
 if (isset($_POST["index-listserv-submit"])) {
 	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+  // mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
+	mail("hl566@cornell.edu", "join", "testing", "From: " . $email);
 	record_message("Success!");
-  mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
 
 }

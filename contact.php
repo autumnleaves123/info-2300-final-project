@@ -15,8 +15,9 @@ if (isset($_POST["submit"])) {
 if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
-  record_message("[Your message has been received.]");
-	mail("cudap@cornell.edu", "Message From Website", $message, "");
+  record_message("[Your message has been sent.]");
+	// mail("cudap@cornell.edu", "Message From Website", $message, "");
+	mail("bt293@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap@cornell.edu with your personal email in the mail() function to test that the form works
 }
 
@@ -46,39 +47,31 @@ if (isset($_POST["submitmessage"])) {
 
 			<div id="contactCentering">
 				<?php print_messages();?>
+
 				<div class="contactpage">
 					<h2>Questions or Feedback?</h2>
-					<!-- TODO: link this to send email? -->
 					<p>Contact our officers at <span class="highlight"><a href="mailto:cudap@cornell.edu" target="_blank">cudap@cornell.edu</a></span>, or send us a message on <span class="highlight"><a class="highlight" href="https://www.facebook.com/cudeafawarenessproject/" target="_blank">Facebook</a></span>.<br/>
 						You can also send us a message through this website on the bottom of this page! </p>
 					</div>
 
 					<div class="flex-div">
-						<!-- TODO: create listserv form -->
+
+						<!-- add to listserv form -->
 						<div class="flex-left">
 							<h2>Mailing List</h2>
 							<p>Leave us your email for information and updates!</p>
 							<form method="post" action="contact.php" id="joinForm">
-
-								<div class="largeContainer">
-									<div class="labelContainer">
-										Email:
-									</div>
 									<input name="email" type="email" placeholder="netid@cornell.edu" required>
-								</div>
-
-								<div id="formButton">
 									<button name="submit" type="submit" class="submit">subscribe to listserv</button>
-								</div>
-
 							</form>
 						</div>
 
-						<!-- TODO: create contact form -->
+						<!-- contact form -->
 						<div class="flex-right">
 							<h2>Send Us A Message</h2>
 							<p>Please leave any inquiries, comments, and/or feedback you might have.</p>
 							<form method="post" action="contact.php" id="messageForm" >
+<<<<<<< HEAD
 								<div class = "inputContainer">
 									<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required></textarea>
 								</div>
@@ -86,8 +79,13 @@ if (isset($_POST["submitmessage"])) {
 								<div id="messageButton">
 									<button type="submit" name="submitmessage">submit message</button>
 								</div>
+=======
+								<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+								<button type="submit" name="submitmessage">submit message</button>
+>>>>>>> 0dde63cb4d2c207217ef28355dd280656af96e83
 							</form>
 						</div>
+
 					</div>
 				</div>
 			</div>
