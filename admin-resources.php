@@ -160,7 +160,7 @@ if (isset($_POST['delete-ppt-button'])) {
 					<p class="message"><?php print_messages(); ?></p>
 					<!-- Edit feed forms -->
 					<h3>Add New Link</h3>
-					<form method="post" action="admin-resources.php" id="add-feed" name="add-link">
+					<form method="post" action="admin-resources.php" id="add-link" name="add-link">
 						<label>Title <span class="required">(required)</span></label>
 						<input type="text" name="link-name" placeholder="www.aslpro.com" required/>
 
@@ -171,7 +171,7 @@ if (isset($_POST['delete-ppt-button'])) {
 					</form>
 
 					<h3>Delete Existing Link</h3>
-					<form method="post" action="admin-resources.php" id="delete-feed" name="delete-link">
+					<form method="post" action="admin-resources.php" id="delete-link" name="delete-link">
 						<select name="link-names" required>
 							<option disabled selected value> -- select a link -- </option>
 							<?php
@@ -189,7 +189,7 @@ if (isset($_POST['delete-ppt-button'])) {
 					</form>
 
 					<h3>Upload New Teaching Resource</h3>
-					<form method="post" action="admin-resources.php" id="add-feed" name="add-ppt" enctype="multipart/form-data">
+					<form method="post" action="admin-resources.php" id="add-resource" name="add-ppt" enctype="multipart/form-data">
 						<label>Label <span class="required">(required)</span></label>
 						<input type="text" name="ppt-label" placeholder="Animal Vocab" required/>
 
@@ -200,7 +200,7 @@ if (isset($_POST['delete-ppt-button'])) {
 					</form>
 
 					<h3>Delete Existing Teaching Resource</h3>
-					<form method="post" action="admin-resources.php" id="delete-feed" name="delete-ppt">
+					<form method="post" action="admin-resources.php" id="delete-resource" name="delete-ppt">
 						<select name="ppt-names" required>
 							<option disabled selected value> -- select a resource -- </option>
 							<?php
