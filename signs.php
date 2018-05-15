@@ -2,6 +2,7 @@
 $current_page_id = "learn";
 
 // QUERY DATABASE FOR SIGNS
+// We took all of these images ourselves 
 $sql = "SELECT * FROM signs";
 $params = array();
 $records = exec_sql_query($db, $sql, $params)->fetchAll();
