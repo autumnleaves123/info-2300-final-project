@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 include('includes/init.php');
 $current_page_id = "index";
@@ -111,7 +108,7 @@ if (isset($_POST["index-listserv-submit"])) {
 							$feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
 							?>
 
-							<ul id="tags-in-post">
+							<ul class="tags-in-post">
 								<?php foreach ($feed_tags as $tag) { echo "<li>" .$tag['name'] ."</li>"; } ?>
 							</ul>
 
@@ -133,7 +130,7 @@ if (isset($_POST["index-listserv-submit"])) {
 								$fetch_attachments = exec_sql_query($db, $sql, $params)->fetchAll();
 
 								if (sizeof($fetch_attachments)>0) {
-									echo "<h3 id='attachment-title'>Attachments:</h3>";
+									echo "<h3 class='attachment-title'>Attachments:</h3>";
 									foreach($fetch_attachments as $attachment) {
 										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . $attachment['feed_attachment_id'] . "." . $attachment['file_ext'] . "'>" . $attachment['file_name'] . "</a>";
 									}
@@ -159,7 +156,7 @@ if (isset($_POST["index-listserv-submit"])) {
 				<div id="feed-listserv">
 					<h2>Join our listserv</h2>
 					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<input type="email" name="email" placeholder="netid@cornell.edu" required></input>
+						<input type="email" name="email" placeholder="netid@cornell.edu" required>
 						<button name="index-listserv-submit" type="submit">subscribe</button>
 						<p><?php if (isset($_POST["index-listserv-submit"])) { print_messages(); } ?></p>
 					</form>
