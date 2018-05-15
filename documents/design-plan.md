@@ -1445,7 +1445,7 @@ Thank you for working with us these past few weeks.
 
 **Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
 
-**A**
+**Additional Features: **
 
 ** Admin Portal**
 As discussed during our meeting, you will be able to access the admin portal by typing in **login.php** after your website's URL. The username and password are as follows:
