@@ -1,9 +1,10 @@
 # Todo-List
 
 ## General
-* php errors versus HTML control
-* filter EVERYTHING
+* ~~php errors versus HTML control~~
+* ~~filter EVERYTHING~~
 * embed stuff
+* PEER EVALUATIONS
 
 ## Header
 * maybe make header like this? http://lingwangphotography.com/
@@ -29,5 +30,5 @@
 * Check for webkit in css - cannot use
 
 ## Admin
-* LOTS
+* ~~LOTS~~
 * ~~resources form (we changed powerpoints to not be file upload)~~
