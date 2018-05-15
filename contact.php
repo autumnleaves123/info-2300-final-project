@@ -80,7 +80,7 @@ if (isset($_POST["submitmessage"])) {
 							<p>Please leave any inquiries, comments, and/or feedback you might have.</p>
 							<form method="post" action="contact.php" id="messageForm" >
 								<div class = "inputContainer">
-									<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required><?php if (isset($message)) { echo htmlentities($message, ENT_QUOTES); } ?></textarea>
+									<textarea rows="7" cols="40" name="message" placeholder="Write your message here" required></textarea>
 								</div>
 								<div class = "break"></div>
 								<div id="messageButton">
