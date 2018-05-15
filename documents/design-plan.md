@@ -1460,7 +1460,8 @@ For the website go live, you will likely need to purchase a web domain. Here are
 * https://domains.google.com/m/registrar/search?hl=en&_ga=2.63776363.592382675.1526320322-190975561.1526320322&searchTerm=cornell%20cudap
 * https://www.godaddy.com/dpp/find?isc=gofd1001aj&checkAvail=1&tmskey=&domainToCheck=cudap
 
-**Port data?**
+**Porting data**
+We used sqlite as a development database. You will need to port the code to work with a production RDBMS like MySQL or PostgreSQL.
 
 ## Milestone 5: Final Notes to the Graders
 
