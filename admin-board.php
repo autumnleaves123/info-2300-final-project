@@ -36,7 +36,7 @@ if (isset($_POST['add'])) {
   $classyear = trim($classyear);
 
 	$bio = $_POST['bio'];
-  $bio = filter_var($bio, FILTER_SANITIZE_STRING);
+  $bio = filter_var($bio, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $bio = trim($bio);
 
 	if ($upload_info['error'] == UPLOAD_ERR_OK) {
