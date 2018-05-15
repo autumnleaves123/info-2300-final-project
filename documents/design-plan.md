@@ -1494,3 +1494,5 @@ We kept our admin portal separate from the rest of our website because we were a
 The Google Calendar is a feature that we implemented in the client's version of the site.
 
 The listserv forms on the home and contact pages will send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, you could replace the listserv email with one of your personal emails instead. It may take a while for the email to send. We have tested the php mail() function and it has worked fine so far.
+
+In the client version of the website, our client will be able to apply multiple tags to the posts, tag existing posts and delete tags from a post. However, due to the large number of forms that we already have on the site, we decided not to implement this functionality here. 
