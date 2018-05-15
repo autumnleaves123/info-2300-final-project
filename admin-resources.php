@@ -18,7 +18,7 @@ if (isset($_POST['add-link-button'])) {
 	$name = strtolower(trim(filter_var($name, FILTER_SANITIZE_STRING)));
 
 	$url = $_POST['link-url'];
-	$url = strtolower(trim(filter_var($url, FILTER_SANITIZE_STRING)));
+	$url = trim(filter_var($url, FILTER_SANITIZE_STRING));
 
 	$sql = "SELECT * FROM links WHERE url = :url;";
 	$params = array(":url"=>$url);
@@ -72,10 +72,10 @@ if (isset($_POST['add-ppt-button'])) {
 	$db->beginTransaction();
 
 	$label = $_POST['ppt-label'];
-	$label = strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING)));
+	$label = htmlspecialchars(strtolower(trim(filter_var($label, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES))));
 
 	$link = $_POST['ppt-link'];
-	$link = strtolower(trim(filter_var($link, FILTER_SANITIZE_STRING)));
+	$link = trim(filter_var($link, FILTER_SANITIZE_STRING));
 
 
 	$sql = "SELECT * FROM ppts WHERE label = :label;";
