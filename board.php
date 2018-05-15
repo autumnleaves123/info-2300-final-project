@@ -41,6 +41,7 @@ $current_page_id = "about";
                         htmlspecialchars($member['bio']) .
                         "</p></div>";
           $image_html = "<img alt='" . htmlspecialchars($member["image"]) . "' src='uploads/eboard/" . htmlspecialchars($member["image"]) . "'/>"; ?>
+					<!-- We took all the eboard images ourselves, except the one for the alumni advisor. That particular image was provided by CUDAP, and some editing was done to it -->
 
           <div class='eboardFlex'>
             <div class='eboard-left'> <?php
@@ -60,7 +61,7 @@ $current_page_id = "about";
           } ?>
           </div>
         </div>
-				
+
         <?php }
       } ?>
     </div>

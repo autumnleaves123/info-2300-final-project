@@ -65,6 +65,7 @@ if (empty($_GET['category'])) {
     </div>
 
     <!-- GALLERY -->
+		<!-- Gallery images were provided by CUDAP -->
     <div class="row">
       <?php $colsize = (int) floor(count($images) / 4);
       $rem = count($images) % 4;

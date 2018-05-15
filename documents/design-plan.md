@@ -1408,13 +1408,13 @@ Also a PDF version:
 		Yes, she will be taken to the resources page if she successfully clicks on the correct tab on the nav bar.
 
 
-**Action #2: Download powerpoints**
+**Action #2: Click on Google Drive link to powerpoint**
 
   - Will Abby know what to do at this step?
     - Yes, maybe or no: Yes
     - Why? (Especially consider Abby's Knowledge/Skills, Motivations/Strategies, Self-Efficacy and Tinkering.)
 
-		Yes, this is the powerpoints are shown right on top and center of the page, so it should be logical for Abby to read through and see the list of powerpoint she can download. The powerpoints are underlined and blue, which will let users like Abby know that they are clickable. The directions also say to click on these links to download ASL powerpoints.
+		Yes, this is the powerpoints are shown right on top and center of the page, so it should be logical for Abby to read through and see the list of powerpoints she can click on. The powerpoints are underlined and colored red, which will let users like Abby know that they are clickable. The directions also say to click on these links to view the ASL powerpoints.
 
 
   - If Abby does the right thing, will she know that she did the right thing, and is making progress towards her goal?
@@ -1491,8 +1491,14 @@ Some features that we would have liked to implement:
 
 We kept our admin portal separate from the rest of our website because we were afraid that users such as Abby would be confused if they came across an admin tab with a login page but did not have a username or password. We also did not want our nav bar to be overly cluttered. We spent some time researching best practices, and found that it is not uncommon for websites (e.g. Wordpress) to have separate links for their admin portals. Last week, we also met with our client to demo our draft website, and they reflected their preference for an admin portal separate from the rest of the website, although they would still like access the rest of the website while logged in as an admin user.
 
+Sample account for testing purposes:
+	- username: janedoe
+	- password: gobigred
+
 The Google Calendar is a feature that we implemented in the client's version of the site. We decided not to spend time working on creating a calendar, but rather focus our efforts on other parts of the webpage that will be utilized in the final version that the client uses.
 
 The listserv forms on the home and contact pages will send an email to cudap-l-request@cornell.edu with "join" as the subject line. However, to avoid sending excessive emails to our client's listserv during development and grading, you could replace the listserv email with one of your personal emails instead. It may take a while for the email to send. We have tested the php mail() function and it has worked fine so far.
 
 In the client version of the website, our client will be able to apply multiple tags to the posts, tag existing posts and delete tags from a post. However, due to the large number of forms that we already have on the site, we decided not to implement this functionality here.
+
+All gallery images were provided by CUDAP. We took the photos on the learn page and the board page ourselves. The Facebook and email icons in the footer were designed by Autumn Watt.
