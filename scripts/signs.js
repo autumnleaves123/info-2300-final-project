@@ -1,4 +1,4 @@
-// adapted from http://jsfiddle.net/twTab/3/
+// referenced from http://jsfiddle.net/twTab/3/
 
 // apparently a global variable is needed
 var x;
