@@ -1247,6 +1247,12 @@ https://docs.google.com/presentation/d/1aGvisQ-2_7qNoPQgmrPWuhemXRmfGj_0Ouy9jWUP
 Also a PDF version:
 ![](slides.pdf)
 
+## Milestone 5: Updates
+
+[If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
+* Instead of a single admin.php page, we have multiple admin pages corresponding to certain forms instead of utilizing ajax.
+* We originally planned on doing a file upload for the client's powerpoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now.
+
 ## Milestone 5: Cognitive Walkthrough
 
 [Copy your tasks here from Milestone 2. Update them if you need to and then conduct another cognitive walkthrough.]
