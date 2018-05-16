@@ -1,3 +1,5 @@
+// adapted from https://www.w3schools.com/howto/howto_js_lightbox.asp
+
 // Open the Modal
 function openModal() {
   document.getElementById('lightbox').style.display = "block";

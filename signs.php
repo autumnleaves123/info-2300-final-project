@@ -29,6 +29,8 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
     <section class="content">
       <h1>Learn ASL with Us</h1>
 
+			<p id="signs-top-text">Click on a sign to toggle its animation.</p>
+
       <div id='main-div'>
 
         <?php
@@ -40,7 +42,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
         ?>
       </div>
 
-			<p id="signs-text">To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
+			<p id="signs-bottom-text">To find more ASL learning websites and ASL powerpoints, visit our <a class="link" href='resources.php'>Resources</a> page!</p>
 
     </section>
   </div>
