@@ -31,14 +31,8 @@ if (empty($_GET['category'])) {
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
-	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
-
+	<?php include('includes/head.php'); ?>
   <script src="scripts/gallery.js"></script>
-
   <title>Gallery</title>
 </head>
 
@@ -117,9 +111,8 @@ if (empty($_GET['category'])) {
         <a class="next" onclick="plusImages(1)">&#10095;</a>
       </div>
     </div>
-
+    
   </section>
-
   <?php include('includes/footer.php'); ?>
 
 </body>

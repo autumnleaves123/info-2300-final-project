@@ -41,134 +41,125 @@ if (isset($_POST["index-listserv-submit"])) {
 <!DOCTYPE html>
 <html>
 
-<head>
-	<?php include('includes/head.php'); ?>
-	<title>Home</title>
-</head>
+	<head>
+		<?php include('includes/head.php'); ?>
+		<title>Home</title>
+	</head>
 
-<body>
-	<?php include('includes/header.php'); ?>
+	<body>
+		<?php include('includes/header.php'); ?>
+		<section id="index">
 
-	<section id="index">
+			<!-- TODO: use a different image or add some color to current banner -->
+			<img id="banner-image" alt="banner" src="images/banner2.jpg"/>
 
-		<!-- TODO: use a different image or add some color to current banner -->
-		<img id="banner-image" alt="banner" src="images/banner2.jpg"/>
+			<div id="welcome">
+				<div id="welcome-flex-left">
+					<h1>Welcome</h1>
+					<p>We are the Cornell University Deaf Awareness Project (CUDAP), a student-run program of the Cornell Public Service Center. Join us to learn more about and participate in raising awareness of the issues facing the Deaf community!</p>
+					<a href="about.php">find out more</a>
+				</div>
 
-		<div id="welcome">
-			<div id="welcome-flex-left">
-				<h1>Welcome</h1>
-
-				<p>We are the Cornell University Deaf Awareness Project (CUDAP), a student-run program of the Cornell Public Service Center. Join us to learn more about and participate in raising awareness of the issues facing the Deaf community!</p>
-
-				<a href="about.php">find out more</a>
+				<div id="welcome-flex-right">
+					<img alt="logo" src="images/welcome_image.jpg"/>
+				</div>
 			</div>
 
-			<div id="welcome-flex-right">
-				<img alt="logo" src="images/welcome_image.jpg"/>
-			</div>
-		</div>
+			<div id="feed">
+				<div id="feed-flex-left">
 
-		<div id="feed">
+					<!-- Search criteria that appears if a user chooses to filter posts by tags -->
+					<?php
+					if ( isset($_GET["tag"])) {
+						$sql = "SELECT * FROM feed_tags WHERE id = :current_tag";
+						$params = array(':current_tag' => $current_tag);
+						$fetch_tag_name = exec_sql_query($db, $sql, $params)->fetchAll();
 
-			<div id="feed-flex-left">
-
-				<!-- Search criteria that appears if a user chooses to filter posts by tags -->
-				<?php
-				if ( isset($_GET["tag"])) {
-					$sql = "SELECT * FROM feed_tags WHERE id = :current_tag";
-					$params = array(':current_tag' => $current_tag);
-					$fetch_tag_name = exec_sql_query($db, $sql, $params)->fetchAll();
-
-					?>
-					<div id="search-criteria">
-						<?php /*$unicodeChar = '\u2573';
-						json_decode('"'.$unicodeChar.'"');*/
-						echo "<p>Search results:</p><div id='tag-name'>" . htmlspecialchars($fetch_tag_name[0]['name']) . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
-					</div>
-				<?php } ?>
-
-				<!-- for each post -->
-				<?php foreach($fetch_feed_content as $post) { ?>
-						<div class="post">
-							<h6 class="date-ribbon"><?php echo "$post[entry_date]";?></h6>
-							<h2><?php echo "$post[title]";?></h2>
-
-							<?php
-							$post_id = $post['id'];
-
-							$sql = "SELECT feed_id, tag_id, name FROM feed_to_tags INNER JOIN feed_tags ON feed_to_tags.tag_id = feed_tags.id WHERE feed_id = :post_id";
-							$params = array(':post_id' => $post_id);
-							$feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
-							?>
-
-							<ul class="tags-in-post">
-								<?php foreach ($feed_tags as $tag) { echo "<li>" . htmlspecialchars($tag['name']) ."</li>"; } ?>
-							</ul>
-
-							<p><?php echo "$post[content]";?></p>
-
-							<!-- TODO: echo attachments and links -->
-							<!-- TODO: add http -->
-							<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
-							} else {
-								echo "<h3>Links:</h3>";
-								if ($post['url_1'] && $post['url_2']) {
-									echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
-									echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
-								} elseif ($post['url_1']) {
-									echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
-								} else {
-									echo "<a class='url' href=$post[url_2] target='_blank'>Link 1</a>";
-								}
-							}?>
-
-							<!-- TODO: handle attachment stuff (href)-->
-							<?php
-								$sql = "SELECT feed_attachment_id, file_ext, file_name FROM feed_to_feed_attachments INNER JOIN feed_attachments ON feed_attachments.id = feed_to_feed_attachments.feed_attachment_id WHERE feed_id = :post_id";
-								$params = array(':post_id' => $post_id);
-								$fetch_attachments = exec_sql_query($db, $sql, $params)->fetchAll();
-
-								if (sizeof($fetch_attachments)>0) {
-									echo "<h3 class='attachment-title'>Attachments:</h3>";
-									foreach($fetch_attachments as $attachment) {
-										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . htmlspecialchars($attachment['feed_attachment_id']) . "." . htmlspecialchars($attachment['file_ext']) . "'>" . htmlspecialchars($attachment['file_name']) . "</a>";
-									}
-								}
-							?>
-
-						</div>
-				<?php } ?>
-
-				<div id="tenposts"><p>Displaying up to 10 most recent posts.</p></div>
-			</div>
-
-			<div id="feed-flex-right">
-				<div id="feed-tags">
-					<h2>Tags</h2>
-					<ul>
-						<?php foreach($fetch_feed_tags as $tag) {
-							echo("<li><a href='/index.php?tag=" . htmlspecialchars($tag['id']) . "'>" . htmlspecialchars($tag['name']) ."</a></li>"); }
 						?>
-					</ul>
+						<div id="search-criteria">
+							<?php /*$unicodeChar = '\u2573';
+							json_decode('"'.$unicodeChar.'"');*/
+							echo "<p>Search results:</p><div id='tag-name'>" . htmlspecialchars($fetch_tag_name[0]['name']) . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
+						</div>
+					<?php } ?>
+
+					<!-- for each post -->
+					<?php foreach($fetch_feed_content as $post) { ?>
+							<div class="post">
+								<h6 class="date-ribbon"><?php echo "$post[entry_date]";?></h6>
+								<h2><?php echo "$post[title]";?></h2>
+
+								<?php
+								$post_id = $post['id'];
+
+								$sql = "SELECT feed_id, tag_id, name FROM feed_to_tags INNER JOIN feed_tags ON feed_to_tags.tag_id = feed_tags.id WHERE feed_id = :post_id";
+								$params = array(':post_id' => $post_id);
+								$feed_tags = exec_sql_query($db, $sql, $params)->fetchAll();
+								?>
+
+								<ul class="tags-in-post">
+									<?php foreach ($feed_tags as $tag) { echo "<li>" . htmlspecialchars($tag['name']) ."</li>"; } ?>
+								</ul>
+
+								<p><?php echo "$post[content]";?></p>
+
+								<!-- TODO: echo attachments and links -->
+								<!-- TODO: add http -->
+								<?php if ($post['url_1'] == NULL && $post['url_2'] == NULL) { echo "";
+								} else {
+									echo "<h3>Links:</h3>";
+									if ($post['url_1'] && $post['url_2']) {
+										echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
+										echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
+									} elseif ($post['url_1']) {
+										echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
+									} else {
+										echo "<a class='url' href=$post[url_2] target='_blank'>Link 1</a>";
+									}
+								}?>
+
+								<!-- TODO: handle attachment stuff (href)-->
+								<?php
+									$sql = "SELECT feed_attachment_id, file_ext, file_name FROM feed_to_feed_attachments INNER JOIN feed_attachments ON feed_attachments.id = feed_to_feed_attachments.feed_attachment_id WHERE feed_id = :post_id";
+									$params = array(':post_id' => $post_id);
+									$fetch_attachments = exec_sql_query($db, $sql, $params)->fetchAll();
+
+									if (sizeof($fetch_attachments)>0) {
+										echo "<h3 class='attachment-title'>Attachments:</h3>";
+										foreach($fetch_attachments as $attachment) {
+											echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . htmlspecialchars($attachment['feed_attachment_id']) . "." . htmlspecialchars($attachment['file_ext']) . "'>" . htmlspecialchars($attachment['file_name']) . "</a>";
+										}
+									}
+								?>
+
+							</div>
+					<?php } ?>
+
+					<div id="tenposts"><p>Displaying up to 10 most recent posts.</p></div>
 				</div>
 
-				<div id="feed-listserv">
-					<h2>Join our listserv</h2>
-					<form method="post" action="index.php" id="add-listserv" name="add-listserv">
-						<input type="email" name="email" placeholder="netid@cornell.edu" required>
-						<button name="index-listserv-submit" type="submit">subscribe</button>
-						<p><?php if (isset($_POST["index-listserv-submit"])) { print_messages(); } ?></p>
-					</form>
-				</div>
+				<div id="feed-flex-right">
+					<div id="feed-tags">
+						<h2>Tags</h2>
+						<ul>
+							<?php foreach($fetch_feed_tags as $tag) {
+								echo("<li><a href='/index.php?tag=" . htmlspecialchars($tag['id']) . "'>" . htmlspecialchars($tag['name']) ."</a></li>"); }
+							?>
+						</ul>
+					</div>
 
+					<div id="feed-listserv">
+						<h2>Join our listserv</h2>
+						<form method="post" action="index.php" id="add-listserv" name="add-listserv">
+							<input type="email" name="email" placeholder="netid@cornell.edu" required>
+							<button name="index-listserv-submit" type="submit">subscribe</button>
+							<p><?php if (isset($_POST["index-listserv-submit"])) { print_messages(); } ?></p>
+						</form>
+					</div>
+
+				</div>
 			</div>
-
-		</div>
-
-
-
-	</section>
-
+		</section>
 		<?php include('includes/footer.php'); ?>
-</body>
+	</body>
 </html>
