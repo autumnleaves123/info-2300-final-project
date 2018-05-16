@@ -538,8 +538,6 @@ Table: users
   * another natural key for users
 * **password**: text (non-null)
   * will be stored in hashed form
-* **session**: text (unique)
-  * stores session
 
 Table: eboard
 * **id**: integer (PK, AI, unique, non-null)
@@ -1249,6 +1247,12 @@ https://docs.google.com/presentation/d/1aGvisQ-2_7qNoPQgmrPWuhemXRmfGj_0Ouy9jWUP
 Also a PDF version:
 ![](slides.pdf)
 
+## Milestone 5: Updates
+
+[If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
+* Instead of a single admin.php page, we have multiple admin pages corresponding to certain forms instead of utilizing ajax.
+* We originally planned on doing a file upload for the client's powerpoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now.
+
 ## Milestone 5: Cognitive Walkthrough
 
 [Copy your tasks here from Milestone 2. Update them if you need to and then conduct another cognitive walkthrough.]
@@ -1439,7 +1443,7 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 To CUDAP:
 
-Thank you for working with us these past few weeks.
+Thank you for working with us these past few weeks. We have all thoroughly enjoyed working on your website! We have tried our very best to make it so that it can last (by implementing editing features and such) without relying on someone to code the website.
 
 **Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
 
