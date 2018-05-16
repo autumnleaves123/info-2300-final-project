@@ -168,8 +168,9 @@ if (isset($_POST['delete'])) {
 								echo "<p>No eboard members.</p>";
 							}
 				    ?>
-
 					</form>
+
+					<div id="admin-logout"><?php include("includes/admin-logout.php"); ?></div>
 				</div>
 			</div>
 		</div>

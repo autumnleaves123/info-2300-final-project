@@ -161,7 +161,6 @@ button:focus {
 	font-size: 12px;
 }
 
-
 .content {
 	padding: 40px 80px;
 	background-color: var(--lightgrey);
@@ -170,9 +169,6 @@ button:focus {
 
 .content h1 {
 	color: var(--red);
-	/* color: black; */
-	/* background-color: white; */
-	/* padding: 15px 0; */
 }
 
 .content a:hover {
@@ -386,6 +382,10 @@ a.current-page {
 	width: 85%;
 	height: 43px;
 	padding: 10px;
+}
+
+#admin-logout #logout-form-button {
+	display: none;
 }
 
 .indentcontent {
@@ -683,12 +683,6 @@ h6.date-ribbon:after {
 	width: 100%;
 }
 
-/* .eboardFlex > div {
-	width: 31%;
-  text-align: center;
-  margin: 15px 1% 10px 1%
-} */
-
 .eboardFlex img {
 	width: 90%;
 	/*height: 320px;*/
@@ -756,6 +750,10 @@ h6.date-ribbon:after {
 	max-width: 100%;
 	position: relative;
 	margin: 10px;
+}
+
+#responsive-print {
+	display: none;
 }
 
 /* ===============
@@ -1006,26 +1004,7 @@ table td {
  object-fit: cover;
 }
 
-@media screen and (max-width: 1000px) {
-	.column-gal {
-		flex: 33%;
-		max-width: 33%;
-	}
-}
 
-@media screen and (max-width: 800px) {
- .column-gal {
-   flex: 50%;
-   max-width: 50%;
- }
-}
-
-@media screen and (max-width: 600px) {
- .column-gal {
-   flex: 100%;
-   max-width: 100%;
- }
-}
 
 .container {
 	position: relative;

@@ -45,6 +45,7 @@ $current_page_id = "about";
 			$eboard = array_merge($president, $vicepresident, $secretary, $remaining);
 
       $toggle = TRUE;
+
       if (isset($eboard) && !empty($eboard)) {
         foreach($eboard as $member) {
           $text_html = "<h2>" . strtoupper(htmlspecialchars($member["position"])) .
@@ -67,20 +68,25 @@ $current_page_id = "about";
             } else {
               echo $image_html;
             } ?>
-          </div>
+          	</div>
 
-          <div class='eboard-right'> <?php
-          if ($toggle==TRUE){
-            echo $image_html;
-            $toggle = FALSE;
-          } else {
-            echo $text_html;
-            $toggle = TRUE;
-          } ?>
-          </div>
+	          <div class='eboard-right'> <?php
+	          if ($toggle==TRUE){
+	            echo $image_html;
+	            $toggle = FALSE;
+	          } else {
+	            echo $text_html;
+	            $toggle = TRUE;
+	          } ?>
+	          </div>
+					</div>
 
-        </div>
-
+					<!-- only display this for responsive version -->
+					<div id='responsive-print'>
+						<div class='eboard-left'><?php echo $image_html;?></div>
+						<div class='eboard-right'><?php echo $text_html;?></div>
+					</div>
+        	
         <?php }
       } ?>
     </div>

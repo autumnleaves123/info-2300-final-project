@@ -216,10 +216,9 @@ if (isset($_POST['delete-ppt-button'])) {
 						<button name="delete-ppt-button" type="submit">delete resource</button>
 					</form>
 
-
+					<div id="admin-logout"><?php include("includes/admin-logout.php"); ?></div>
 				</div>
 			</div>
-
 		</div>
 
 

@@ -263,11 +263,10 @@ if (isset($_POST['delete_category'])) {
 						<button name="delete_category" type="submit">delete category</button>
 					</form>
 
+					<div id="admin-logout"><?php include("includes/admin-logout.php"); ?></div>
 				</div>
 			</div>
-
 		</div>
-
 
 	</section>
 

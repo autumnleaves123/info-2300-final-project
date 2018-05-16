@@ -1,5 +1,5 @@
 /* For smaller desktop screens and potentially tablets (iPads)*/
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
 
 	.content {
 		padding: 20px 30px;
@@ -27,12 +27,17 @@
 
 	/* Index */
 	#welcome {
-		padding: 30px 30px 20px 30px;
-		flex: none;
+		padding: 0;
+		flex-direction: column;
 	}
 
 	#welcome-flex-left, #welcome-flex-right {
 		flex: 0;
+	}
+
+	#welcome-flex-left {
+		padding: 20px 20px 40px 20px;
+		margin-bottom: 10px;
 	}
 
 	#welcome-flex-right {
@@ -60,21 +65,23 @@
 
 }
 
-@media only screen and (max-width: 900px) {
-
-
-
+@media screen and (max-width: 1000px) {
+	.column-gal {
+		flex: 33%;
+		max-width: 33%;
+	}
 }
 
-@media only screen and (max-width: 800px) {
-
-
+@media screen and (max-width: 800px) {
+ .column-gal {
+   flex: 50%;
+   max-width: 50%;
+ }
 }
 
-@media only screen and (max-width: 700px) {
-
-
-
-
-
+@media screen and (max-width: 600px) {
+ .column-gal {
+   flex: 100%;
+   max-width: 100%;
+ }
 }
