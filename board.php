@@ -82,11 +82,11 @@ $current_page_id = "about";
 					</div>
 
 					<!-- only display this for responsive version -->
-					<div id='responsive-print'>
+					<div class='responsive-print'>
 						<div class='eboard-left'><?php echo $image_html;?></div>
 						<div class='eboard-right'><?php echo $text_html;?></div>
 					</div>
-        	
+
         <?php }
       } ?>
     </div>
