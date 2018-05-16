@@ -65,6 +65,7 @@ if (empty($_GET['category'])) {
     </div>
 
     <!-- GALLERY -->
+    <!-- referenced from https://www.w3schools.com/howto/howto_js_lightbox.asp and https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
 		<!-- Gallery images were provided by CUDAP -->
     <div class="row">
       <?php $colsize = (int) floor(count($images) / 4);
@@ -80,8 +81,8 @@ if (empty($_GET['category'])) {
         <div class="column-gal">
         <?php for ($j = 0; $j < $max; $j++) { ?>
           <div class="container">
-            <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
-            <div class="overlay" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)">
+            <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openLightbox();currentImage(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
+            <div class="overlay" onclick="openLightbox();currentImage(<?php echo $counter + 1; ?>)">
               <div class="title"><?php echo $images[$counter]['title']; ?></div>
             </div>
           </div>
@@ -91,9 +92,9 @@ if (empty($_GET['category'])) {
     </div>
 
     <!-- LIGHTBOX -->
-    <div id="lightbox" class="modal">
-      <span class="close cursor" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
+    <div id="lightbox-section" class="lightbox">
+      <span class="close cursor" onclick="closeLightbox()">&times;</span>
+      <div class="lightbox-content">
 
         <?php $remainder = $rem;
         $counter = 0;
@@ -106,19 +107,14 @@ if (empty($_GET['category'])) {
           <?php for ($j = 0; $j < $max; $j++) { ?>
             <div class="lightbox-image">
               <div class="numbertext"><?php echo $counter + 1 . " / " . count($images); ?></div>
-              <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openModal();currentSlide(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
+              <img src="<?php echo "uploads/images/" . $images[$counter]['id'] . "." . $images[$counter]['file_ext']; ?>" onclick="openLightbox();currentImage(<?php echo $counter + 1; ?>)" alt="<?php echo $images[$counter]['title']; ?>" />
             </div>
           <?php $counter++; } ?>
         <?php } ?>
 
         <!-- Next/previous controls -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <!-- Caption text -->
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
+        <a class="prev" onclick="plusImages(-1)">&#10094;</a>
+        <a class="next" onclick="plusImages(1)">&#10095;</a>
       </div>
     </div>
 

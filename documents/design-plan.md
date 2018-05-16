@@ -160,7 +160,7 @@ Lastly, we will implement a hidden log-in system to ensure that only admins will
 
 ### External Code
 
-We are planning to use jQuery, so that we can implement the slideshow mentioned in previous section. There will be a whole new file of our own code called "slideshow.js" that would contain the code for implementing a simple slideshow for our photo gallery.
+Although there are some external CSS and JavaScript libraries that can provide us with our desired functionality, we did not use any such libraries. Instead, we referenced online articles and tutorials, such as those from W3Schools, and used this to write our own CSS and JavaScript. This applies to the image galleries located on the gallery and learning pages, the lightbox in the gallery page, and the animations on the learning page.
 
 ### Scale
 
@@ -564,8 +564,6 @@ Table: signs
 	* surrogate key for the sign
 * **sign**: text (non-null)
 	* english translation of the sign
-* **info**: text (non-null)
-	* information on how to properly produce this sign
 * **image**: text (non-null)
 	* file path of image showing this sign (to be uploaded to images/signs folder)
 
@@ -684,7 +682,7 @@ This will be done in a similar manner to what was shown during lecture.
 * includes/footer.php
 * index.php - main page
 * about.php
-* meettheboard.php
+* board.php
 * signchoir.php
 * events.php
 * gallery.php

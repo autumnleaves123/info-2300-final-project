@@ -39,11 +39,6 @@
 }
 
 @font-face {
-	font-family: "Capture-It";
-	src: url("../fonts/Capture-It/Capture-It.ttf");
-}
-
-@font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 300;
@@ -870,13 +865,12 @@ table td {
 	z-index: 10;
 }
 
-/* overlay adapted from https://www.w3schools.com/howto/howto_css_image_overlay_title.asp */
+/* overlay referenced from https://www.w3schools.com/howto/howto_css_image_overlay_title.asp */
 
 .overlay-sign {
 	position: absolute;
   bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  background: black;
   color: #f1f1f1;
   width: 100%;
   transition: .5s ease;
@@ -966,7 +960,7 @@ table td {
    		GALLERY
    =============== */
 
-/* adapted from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
+/* referenced from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp */
 
 #category-buttons {
 	padding: 20px 0;
@@ -1006,6 +1000,8 @@ table td {
 	position: relative;
 }
 
+/* overlay referenced from https://www.w3schools.com/howto/howto_css_image_overlay.asp */
+
 .overlay {
   position: absolute;
   top: 0;
@@ -1034,15 +1030,15 @@ table td {
   text-align: center;
 }
 
-/* Lightbox */
+/* lightbox */
+/* referenced from https://www.w3schools.com/howto/howto_js_lightbox.asp */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* The Modal (background) */
-.modal {
+.lightbox {
   display: none;
   position: fixed;
   z-index: 1;
@@ -1055,8 +1051,7 @@ table td {
   background-color: black;
 }
 
-/* Modal Content */
-.modal-content {
+.lightbox-content {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -1064,7 +1059,6 @@ table td {
 	max-width: 50%;
 }
 
-/* The Close Button */
 .close {
   color: white;
   position: absolute;
@@ -1081,7 +1075,6 @@ table td {
   cursor: pointer;
 }
 
-/* Hide the slides by default */
 .lightbox-image {
   display: none;
 }
@@ -1094,7 +1087,6 @@ table td {
   max-width: 100%;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -1112,19 +1104,16 @@ table td {
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -1133,16 +1122,11 @@ table td {
   top: 0;
 }
 
-/* Caption text */
 .caption-container {
   text-align: center;
   background-color: black;
   padding: 2px 16px;
   color: white;
-}
-
-img.demo {
-  opacity: 0.6;
 }
 
 .active,
