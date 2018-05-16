@@ -395,8 +395,11 @@ if (isset($_POST['delete-tag-button'])) {
 						<button name="delete-tag-button" type="submit">delete tag</button>
 					</form>
 
+					<div id="admin-logout"><?php include("includes/admin-logout.php"); ?></div>
 				</div>
 			</div>
+
+
 		</div>
 	</section>
 

@@ -1,10 +1,208 @@
 /* For a range of mobile phone screen sizes */
 @media only screen and (max-width: 600px) {
 
+	/* General */
+	#cudap-logo img {
+		width: 300px;
+	}
+
+	h1 {
+		font-size: 35px;
+	}
+
+	.content {
+		margin: 20px auto;
+	}
+
+	.white-background {
+		margin: 20px 0;
+		padding: 25px;
+		width: 100%;
+	}
+
+	.center-text {
+		text-align: left;
+	}
+
+	nav {
+		padding: 0 20px;
+	}
+
+	/* Index */
+	#welcome {
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+
+	#feed-tags {
+		display: none;
+	}
+
+	#feed-listserv {
+		display: none;
+	}
+
+	.post {
+		margin: 30px 30px;
+	}
+
+	h6.date-ribbon {
+		width: 100%;
+	}
+
+	#tenposts {
+		font-size: 14px;
+	}
+
+	/* Board */
+	#board-wrapper {
+		padding-top: 50px;
+	}
+
+	.eboardFlex {
+		display: none;
+	}
+
+	.eboard-left, .eboard-right {
+		width: 100%;
+	}
+
+	#responsive-print {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 50px;
+	}
+
+	#responsive-print img {
+		width: 100%;
+	}
+
+	#responsive-print hr {
+		width: 20%;
+	}
+
+	#responsive-print h2 {
+		text-align: center;
+	}
+
+	.boardtext {
+		padding-top: 0;
+	}
+
+
+	/* Events */
+	table {
+		width: 250px;
+		font-size: 10px;
+	}
+
+	table td {
+		padding: 5px;
+	}
+
+	/* Gallery */
+	#category-buttons button {
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+
+	/* Learn */
+	#main-div .column {
+		flex: 100%;
+	}
+
+	/* Resources */
+	.resource-div {
+		flex-direction: column;
+	}
+
+	.resource-flex-right {
+		border-left: none;
+		margin-top: 40px;
+	}
+
+	.indent {
+		text-indent: 0;
+	}
+
+	/* Contact */
+	.contactpage {
+		margin-bottom: 15px;
+	}
+
+	.flex-div {
+		flex-direction: column;
+	}
+
+	.flex-left, .flex-right {
+		padding: 10px 10px 30px 10px;
+	}
+
+	.flex-left {
+		border-right: none;
+	}
+
+	.flex-right textarea {
+		width: 100%;
+	}
+
+	/* Footer */
+	footer {
+		flex-direction: column;
+	}
+
+	#footer-center {
+		font-size: 6px;
+	}
+
+	#footer-right {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	/* Admin */
+	#admin-wrapper {
+		flex-direction: column;
+		padding-bottom: 0;
+	}
+
+	#admin-sidebar {
+		margin-bottom: 30px;
+		margin-left: 0;
+	}
+
+	#admin-sidebar a, #admin-sidebar h2 {
+		width: 90%;
+	}
+
+	#admin-content input, #admin-content textarea {
+		width: 100%;
+	}
+
+	#admin-content select {
+		width: 100%;
+	}
+
+	#logout-form {
+		display: none;
+	}
+
+	#admin-logout {
+		margin-top: 50px;
+	}
+
+	#admin-logout #logout-form-button {
+		display: block;
+		width: 100%;
+	}
 
 }
 
 @media only screen and (max-width: 320px) {
 
-
+	h1 {
+		font-size: 30px;
+	}
 }
