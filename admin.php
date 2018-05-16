@@ -320,10 +320,10 @@ if (isset($_POST['delete-tag-button'])) {
 						<textarea name="feed-text" rows="5" cols="80" placeholder="Come to CUDAP's Arch Sign tomorrow from 9:00 to 9:30 at the Balch Arch! We'll be sharing your favorite pieces!"></textarea>
 
 						<label>URL 1</label>
-						<input type="text" name="feed-url-1" placeholder="https://bit.ly/2jJJ0ya"/>
+						<input type="text" name="feed-url-1" pattern="[http{s}:\/\/].{1,}" title="Enter valid URL beginning with http:// or https://." placeholder="https://bit.ly/2jJJ0ya"/>
 
 						<label>URL 2</label>
-						<input type="text" name="feed-url-2" placeholder="https://bit.ly/2jJJ0ya"/>
+						<input type="text" name="feed-url-2" pattern="[http{s}:\/\/].{1,}" title="Enter valid URL beginning with http:// or https://." placeholder="https://bit.ly/2jJJ0ya"/>
 
 						<label>Attachment 1</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
@@ -372,8 +372,8 @@ if (isset($_POST['delete-tag-button'])) {
 
 					<h3>Create New Tag</h3>
 					<form method="post" action="admin.php" id="new-tag" name="new-tag">
-						<label>Tag Name <span class="required">(required)</span></label>
-						<input type="text" name="new-tag" placeholder="#cudap" required/>
+						<label>Tag Name <span class="required">(required, start with #)</span></label>
+						<input type="text" name="new-tag" placeholder="#cudap" pattern=[#][a-zA-Z]{1,30} maxlength="30" title="Limit your tag to 30 characters and use only # and lowercase letters" required/>
 						<button name="create-tag-button" type="submit">create tag</button>
 					</form>
 
