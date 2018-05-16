@@ -167,7 +167,7 @@ function gallery($images){
 
     if ($current_word != $image['word']) {
       if ($image['id'] != 1) {
-        echo "<div class=\"overlay-sign\">Word: " . $image['word'] . "</div></div>";
+        echo "<div class=\"overlay-sign\">" . $current_word . "</div></div>";
         if ($image['id'] ==  15 || $image['id'] == 25) {
           echo "</div><div class='column'>";
         }
@@ -179,7 +179,7 @@ function gallery($images){
     //echo "<a href='image.php?id=" . $image["id"] . "'><img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' ></a>";
     echo "<img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' />";
     if ($image['id'] == 37) {
-      echo "<div class=\"overlay-sign\">Word: " . $image['word'] . "</div></div>";
+      echo "<div class=\"overlay-sign\">" . $image['word'] . "</div></div>";
     }
   }
   echo "</div>";

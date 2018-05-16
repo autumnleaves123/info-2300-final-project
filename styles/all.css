@@ -870,13 +870,20 @@ table td {
 .overlay-sign {
 	position: absolute;
   bottom: 0;
-  background: black;
+  /*background: black;*/
   color: #f1f1f1;
   width: 100%;
   transition: .5s ease;
   opacity:0;
   color: white;
-  font-size: 20px;
+  font-size: 45px;
+	letter-spacing: 3px;
+	font-weight: bolder;
+	text-shadow:
+		-2px -2px 0 black,
+		2px -2px 0 black,
+		-2px 2px 0 black,
+		2px 2px 0 black;
   padding: 20px;
   text-align: center;
 }
