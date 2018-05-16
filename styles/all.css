@@ -900,6 +900,13 @@ table td {
    		LEARN
    =============== */
 
+.word img {
+   display: none;
+}
+.word img:first-child {
+   display: block;
+}
+
 .column {
   flex: calc(100%/3 - 24px);
   padding: 0;
