@@ -221,10 +221,11 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 As mentioned in milestone 1 plan, we will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language.
 
-Secondly, we will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc.
-Similar interactivity element will be used for the photo gallery page, where users can click on images to see only that image on the page and its description.
+Secondly, we will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. Similar interactivity element will be used for the photo gallery page, where users can click on images to see only that image on the page and its description.
 
 Thirdly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
+
+Finally, we will also implement a tagging system on the feed for feed posts.
 
 
 ## Milestone 2, Part II: Sketches, Navigation & Wireframes
@@ -263,13 +264,11 @@ Thirdly, we will implement a hidden log-in system to ensure that only admins wil
 These will be the pages we are planning on
 * Home (top-level, maybe not in nav bar)
 * About
-  * About CUDAP
 	* Meet the Board
 * Sign Choir - G-body info, some photos
 * Events - Google calendar, a makeshift calendar for class
 * Gallery - photos of past events
-* Learning (weekly updated??)
-	* ASL signs page
+* Learning (ASL signs page)
 	* Resources (PowerPoints and links)
 * Contact
 
@@ -522,9 +521,8 @@ Task 3: Suppose that Abby is a member of the club, and would like to check the t
 
 A side result result of Cognitive Walkthrough Task #1 was that we originally were planning on using the CUDAP logo as a "secret" button for the admin to access the admin login page login.php. However, it would be confusing for general users to stumble upon the login page, so we decided to designate a url for just the admins that directs to login.php so that the general public does not encounter this page.
 
-We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the Listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
+We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the listserv join form) on the front feed page and on the contact page because a user like Abby would make sure to not miss this information that CUDAP wants to make sure they see.
 
-[Your responses here should be very thorough and thoughtful.]
 
 
 ## Milestone 2, Part IV: Database Plan
@@ -565,6 +563,53 @@ Table: signs
 * **image**: text (non-null)
 	* file path of image showing this sign (to be uploaded to images/signs folder)
 
+
+#### Tables for Feed (Index)
+
+Table: feed
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the sign
+* **title**: TEXT, NOT null
+	* title of post
+* **entry_date**: TEXT, not null
+	* post creation date
+* **content**: TEXT, not null
+	* post content
+* **url_1**: TEXT
+	* optional URL
+* **url_2**: TEXT
+	* optional URL
+
+Table: feed_attachments
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the attachment
+* **file_name**: TEXT, non-null
+	* original name of file attachment
+* **file_ext**: TEXT, non-null
+
+Table: feed_to_feed_attachments
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the attachment
+* **feed_id**: integer
+	* id of feed that the attachment is related to
+* **feed_attachment_id**: integer
+	* id of attachment
+
+Table: feed_tags
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the attachment
+* **name**: text, non-null
+	* exhaustive list of all feed tags
+
+Table: feed_to_feed_tags
+* **id**: integer (PK, AI, unique, non-null)
+	* surrogate key for the attachment*
+* **feed_id**: integer
+	* id of feed that the attachment is related to
+* **tag_id**: integer
+	* id of tag
+
+
 #### Tables for Gallery Page
 
 Table: images
@@ -589,15 +634,25 @@ Table: images_cats
 * this table facilitates the many-to-many relationship between images and categories
 * records in this table will be unique by means of a query checking if an image-category pair already exists in the table before inserting a new image-category pair into the table
 
-Table: events
+
+#### Tables for Resources Page
+
+Table: links
 * **id**: integer (PK, AI, unique, non-null)
-	* surrogate key for event
-* **title**: text (non-null)
-	* title of the event
-* **date**: datetime (non-null)
-	* date and time of the event
-* **description**: text (non-null)
-	* short description of the event
+  * surrogate key for images, also file name when stored
+* **name**: text, non-null
+	* name of website
+* **url**: text, non-null
+	* website url
+
+Table: ppts
+* **id**: integer (PK, AI, unique, non-null)
+  * surrogate key for images, also file name when stored
+* **link**: text, non-null
+	* google drive link to file
+* **label**: text, non-null
+	* name of file/description of file
+
 
 ### Database Queries
 
@@ -688,6 +743,14 @@ This will be done in a similar manner to what was shown during lecture.
 * resources.php
 * login.php
 * admin.php
+
+**M3 update - Additional PHP files**
+
+* admin-sidebar.php
+* admin-board.php
+* admin-gallery.php
+* admin-resources.php
+
 
 ### Pseudocode
 
@@ -1237,6 +1300,7 @@ Thank you!
 * login.php now redirects to admin.php if user is already logged in.
 
 
+
 ## Milestone 4: Updates
 
 [If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
@@ -1251,8 +1315,11 @@ Also a PDF version:
 ## Milestone 5: Updates
 
 [If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
-* Instead of a single admin.php page, we have multiple admin pages corresponding to certain forms instead of utilizing ajax.
-* We originally planned on doing a file upload for the client's powerpoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now, and eboard can make changes to the powerpoints wihout having to re-upload them.
+* Instead of a single admin.php page, we have multiple admin pages corresponding to certain forms instead of utilizing AJAX. We now have admin.php, admin-board.php , admin-gallery.php, and admin-resources.php
+* We originally planned on doing a file upload for the client's PowerPoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now, and E-board can make changes to the PowerPoints without having to re-upload them.
+* Our gallery images now open with a light-box, instead of on another page .
+* The signs on the learning page now no longer open up to a new page. Instead, the signs will animate when the user clicks on them. Sign names have now been placed on top of the signs.
+* We decided with our client that the feed will only include the ten most recent posts.
 
 
 ## Milestone 5: Cognitive Walkthrough
@@ -1436,6 +1503,8 @@ A side result of Cognitive Walkthrough Task #3 was that users like Abby may get 
 
 We addressed gender-inclusiveness bugs by ensuring that all features of the website are easily accessible and designated properly on the webpage. We also made sure to include some information on multiple webpages (like the listserv join form on the front feed page and on the contact page because a user like Abby would make sure to not miss this information).
 
+We also spent a lot of time deliberating how the nav bar should be presented. Our original idea was to have About on the nav bar. When users hover onto it, they will be presented with two links - About CUDAP and Meet The Board. However, after testing this with multiple users, we concluded that it might be confusing for certain users to hover on the word About and not be able to click it. We did more research, and decided that we would make About on the nav bar clickable, and link that to the About CUDAP page, while having Meet The Board as a subpage under About.
+
 
 ## Milestone 5: Final Notes to the Clients
 
@@ -1488,6 +1557,7 @@ Some features that we would have liked to implement:
 * Use of AJAX for the feed on the homepage so it doesn't bring the user back to the top of the page every time they click on a tag. For now, we've tried to reduce inconvenience by placing the feedback messages at the top of the page.
 * Embed social media such as Facebook on the front page, since many club websites at Cornell have this feature
 * Multiple photo upload and delete. Currently, our website requires admin to upload images individually, but this can become a tedious task. To delete photos, users can delete individual images or delete all images in a category/album. We would have liked to implement a feature where image thumbnails are combined with a select option menu. Users would be able to select the images that they wish to delete on a simple interface.
+* Currently, our feed only presents the ten most recent posts. If we had more time, we could probably implement a feature that would allow us to display all posts with a "view previous posts" button. However, our client believes that the ten most recent posts should suffice.
 
 
 [3. Tell us anything else you need us to know for when we're looking at the project.]
