@@ -2,7 +2,7 @@
 $current_page_id = "learn";
 
 // QUERY DATABASE FOR SIGNS
-// We took all of these images ourselves 
+// We took all of these images ourselves
 $sql = "SELECT * FROM signs";
 $params = array();
 $records = exec_sql_query($db, $sql, $params)->fetchAll();
@@ -17,6 +17,8 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
   <link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
 	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
+
+	<script src="scripts/signs.js"></script>
 
   <title>Learn ASL</title>
 </head>

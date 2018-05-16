@@ -156,23 +156,30 @@ function log_out() {
 
 function gallery($images){
   $image_count = 1;
-  $number_of_images = 0;
-  foreach($images as $image) {
-    if ($image["frame"] == 1) {
-      $number_of_images += 1;
-    }
-  }
+  $number_of_images = count($images);
   $number_of_columns = 3;
-  $images_in_column = $number_of_images / $number_of_columns;
+  $images_in_column = 5;
 
+  $current_word = '';
+
+  echo "<div class='column'>";
   foreach($images as $image) {
-    if ($image["frame"] == 1) {
-      if ($image_count == 1) { echo "<div class='column'>"; }
-      echo "<a href='image.php?id=" . $image["id"] . "'><img alt = " . $image["image_path"] . " src='". $image["image_path"] . "' ></a>";
-      if ($image_count >= $images_in_column) { echo "</div>"; $image_count = 0; }
-      $image_count += 1;
+
+    if ($current_word != $image['word']) {
+      if ($image['id'] != 1) {
+        echo "</div>";
+        if ($image['id'] ==  15 || $image['id'] == 25) {
+          echo "</div><div class='column'>";
+        }
+      }
+      echo "<div class=\"word\">";
+      $current_word = $image['word'];
     }
+
+    //echo "<a href='image.php?id=" . $image["id"] . "'><img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' ></a>";
+    echo "<img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' />";
   }
+  echo "</div>";
 }
 
 function single_view($sign_records){
