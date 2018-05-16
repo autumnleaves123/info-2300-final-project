@@ -178,6 +178,8 @@ if (isset($_POST['delete-feed-button'])) {
 		$sql = "DELETE FROM feed_to_tags WHERE feed_id = :feed_id";
 		$params = array(':feed_id' => $feed_id);
 		$delete_tag = exec_sql_query($db, $sql, $params);
+		// even if there are no longer posts associated with the post, we will not delete the tag because admin might want to use the tag again.
+
 
 		// check to see if there are attachments linked to this post in feed_attachments and feed_to_feed_attachments
 		$sql = "SELECT feed_attachment_id FROM feed_to_feed_attachments WHERE feed_id = :feed_id";
@@ -257,9 +259,9 @@ if (isset($_POST['create-tag-button'])) {
 
 }
 
-
 /*
 delete existing tag
+posts with this tag will no longer be associated with this tag
 */
 if (isset($_POST['delete-tag-button'])) {
 
@@ -278,7 +280,6 @@ if (isset($_POST['delete-tag-button'])) {
 
 	} else {
 		// tag can be deleted
-
 		$tag_id = $check_tag[0]['id'];
 
 		// check if there are posts associated with this tag, delete those entries
@@ -337,11 +338,11 @@ if (isset($_POST['delete-tag-button'])) {
 						<label>URL 2</label>
 						<input type="text" name="feed-url-2" pattern="[http{s}:\/\/].{1,}" title="Enter valid URL beginning with http:// or https://." placeholder="https://bit.ly/2jJJ0ya"/>
 
-						<label>Attachment 1</label>
+						<label>Attachment 1<span class="required"> (max file size = 2MB)</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 		      	<input type="file" name="feed-file-1"/>
 
-						<label>Attachment 2</label>
+						<label>Attachment 2<span class="required"> (max file size = 2MB)</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 		      	<input type="file" name="feed-file-2"/>
 

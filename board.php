@@ -21,7 +21,7 @@ $current_page_id = "about";
       <?php
 
 			// fetch president, then vice president (doesn't currently exist), then secretary, then rest of eboard
-      $sql = "SELECT * FROM eboard WHERE position LIKE '%president%'";
+      $sql = "SELECT * FROM eboard WHERE position LIKE 'president%' OR position LIKE 'co-president%'";
       $params = array();
       $president = exec_sql_query($db, $sql, $params)->fetchAll();
 

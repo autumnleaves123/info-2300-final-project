@@ -86,12 +86,12 @@ if (isset($_POST['delete'])) {
 	$sqlimage = "SELECT image FROM eboard WHERE name = :entrytodelete";
   $paramsimage = array(':entrytodelete' => $entrytodelete);
   $imageofentry = exec_sql_query($db, $sqlimage, $paramsimage)->fetchAll();
-  $locationofimage = IMAGE_UPLOADS_PATH . $imageofentry;
+  $locationofimage = IMAGE_UPLOADS_PATH . $imageofentry[0]['image'];
   $sql = "DELETE FROM eboard WHERE name = :entrytodelete";
   $params = array(':entrytodelete' => $entrytodelete);
   $records = exec_sql_query($db, $sql, $params);
 
-  unlink(IMAGE_UPLOADS_PATH . $locationofimage);
+  unlink($locationofimage);
   array_push($messages, "[The entry for member '". htmlspecialchars($entrytodelete) . "' has been deleted.]");
 	$db->commit();
 }
@@ -121,10 +121,10 @@ if (isset($_POST['delete'])) {
 					<form method="post" action="admin-board.php" id="add_eboard" name="add_newboard" enctype="multipart/form-data">
 
 						<label>Name <span class="required">(required)</span></label>
-						<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Name must consist of 2 or more letters." required/>
+						<input name="name" type="text" value="<?php if (isset($name)) {echo htmlentities($name, ENT_QUOTES); } ?>" pattern="[A-z\s-]{2,}" title="Name must consist of 2 or more letters." required/>
 
 						<label>Position <span class="required">(required)</span></label>
-						<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Position must consist of 2 or more letters." required/>
+						<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z\s-]{2,}" title="Position must consist of 2 or more letters." required/>
 
 						<label>Major <span class="required">(required)</span></label>
 						<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
