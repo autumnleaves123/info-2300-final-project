@@ -1443,7 +1443,7 @@ We addressed gender-inclusiveness bugs by ensuring that all features of the webs
 
 To CUDAP:
 
-Thank you for working with us these past few weeks.
+Thank you for working with us these past few weeks. We have all thoroughly enjoyed working on your website! We have tried our very best to make it so that it can last (by implementing editing features and such) without relying on someone to code the website.
 
 **Website Requirements:** As requested, the website includes an About page which states the mission of the club, and a Meet the Board page to list all members of the current executive board. We've also included a gallery to display the images that you have shared with us, and a resources page that provides links to the ASL PowerPoint. In addition, the admin portal will allow you to make changes to the website without having to access the code.
 
