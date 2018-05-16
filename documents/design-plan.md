@@ -538,8 +538,6 @@ Table: users
   * another natural key for users
 * **password**: text (non-null)
   * will be stored in hashed form
-* **session**: text (unique)
-  * stores session
 
 Table: eboard
 * **id**: integer (PK, AI, unique, non-null)
