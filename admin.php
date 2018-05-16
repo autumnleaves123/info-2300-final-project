@@ -338,11 +338,11 @@ if (isset($_POST['delete-tag-button'])) {
 						<label>URL 2</label>
 						<input type="text" name="feed-url-2" pattern="[http{s}:\/\/].{1,}" title="Enter valid URL beginning with http:// or https://." placeholder="https://bit.ly/2jJJ0ya"/>
 
-						<label>Attachment 1<span class="required"> (max file size = 2MB)</label>
+						<label>Attachment 1<span class="required"> (max file size = 2MB)</span></label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 		      	<input type="file" name="feed-file-1"/>
 
-						<label>Attachment 2<span class="required"> (max file size = 2MB)</label>
+						<label>Attachment 2<span class="required"> (max file size = 2MB)</span></label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_FILE_SIZE; ?>"/>
 		      	<input type="file" name="feed-file-2"/>
 
