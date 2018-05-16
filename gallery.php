@@ -43,7 +43,6 @@ if (empty($_GET['category'])) {
 		<h1>Gallery</h1>
 
     <!-- Category Buttons -->
-
     <div id="category-buttons">
       <form action="gallery.php" method="get">
         <button <?php if ($selected_cat == 'all') echo "class=\"selected\""; ?> type="submit">All photos</button>
@@ -111,7 +110,7 @@ if (empty($_GET['category'])) {
         <a class="next" onclick="plusImages(1)">&#10095;</a>
       </div>
     </div>
-    
+
   </section>
   <?php include('includes/footer.php'); ?>
 

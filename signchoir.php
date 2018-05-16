@@ -2,7 +2,7 @@
 $current_page_id = "signchoir"; ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <?php include('includes/head.php'); ?>

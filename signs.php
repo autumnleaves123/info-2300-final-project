@@ -9,7 +9,7 @@ $records = exec_sql_query($db, $sql, $params)->fetchAll();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
 		<?php include('includes/head.php'); ?>

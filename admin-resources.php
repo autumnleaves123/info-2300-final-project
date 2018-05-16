@@ -129,7 +129,7 @@ if (isset($_POST['delete-ppt-button'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<?php include('includes/head.php'); ?>

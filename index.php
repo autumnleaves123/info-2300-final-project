@@ -39,7 +39,7 @@ if (isset($_POST["index-listserv-submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
 		<?php include('includes/head.php'); ?>
@@ -79,7 +79,7 @@ if (isset($_POST["index-listserv-submit"])) {
 						<div id="search-criteria">
 							<?php /*$unicodeChar = '\u2573';
 							json_decode('"'.$unicodeChar.'"');*/
-							echo "<p>Search results:</p><div id='tag-name'>" . htmlspecialchars($fetch_tag_name[0]['name']) . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
+							echo "<p>Search results:</p><div id='tag-name'>" . htmlspecialchars($fetch_tag_name[0]['name']) . "</div><a href='index.php'><img alt='xout' src='../images/xout.png'></a>"; ?>
 						</div>
 					<?php } ?>
 
@@ -111,6 +111,7 @@ if (isset($_POST["index-listserv-submit"])) {
 									if ($post['url_1'] && $post['url_2']) {
 										echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
 										echo "<a class='url' href=$post[url_2] target='_blank'>Link 2</a>";
+
 									} elseif ($post['url_1']) {
 										echo "<a class='url' href=$post[url_1] target='_blank'>Link 1</a><br>";
 									} else {
@@ -118,7 +119,6 @@ if (isset($_POST["index-listserv-submit"])) {
 									}
 								}?>
 
-								<!-- TODO: handle attachment stuff (href)-->
 								<?php
 									$sql = "SELECT feed_attachment_id, file_ext, file_name FROM feed_to_feed_attachments INNER JOIN feed_attachments ON feed_attachments.id = feed_to_feed_attachments.feed_attachment_id WHERE feed_id = :post_id";
 									$params = array(':post_id' => $post_id);

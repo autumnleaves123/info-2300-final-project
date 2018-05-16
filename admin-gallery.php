@@ -161,7 +161,7 @@ if (isset($_POST['delete_category'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<?php include('includes/head.php'); ?>

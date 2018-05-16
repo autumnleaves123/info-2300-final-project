@@ -16,15 +16,14 @@ if (isset($_POST["submitmessage"])) {
 	// validate form here
 	$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
   record_message("[Your message has been sent.]");
-	// mail("cudap@cornell.edu", "Message From Website", $message, "");
-	mail("bt293@cornell.edu", "Message From Website", $message, "");
+	mail("cudap@cornell.edu", "Message From Website", $message, "");
 	// to TAs: you can replace cudap@cornell.edu with your personal email in the mail() function to test that the form works
 }
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<?php include('includes/head.php'); ?>
@@ -74,6 +73,6 @@ if (isset($_POST["submitmessage"])) {
 			</div>
 		</section>
 		<?php include('includes/footer.php'); ?>
-		
+
 	</body>
 </html>

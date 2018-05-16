@@ -12,7 +12,7 @@ $ppts = exec_sql_query($db, $sql, $params);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<?php include('includes/head.php'); ?>
@@ -26,7 +26,7 @@ $ppts = exec_sql_query($db, $sql, $params);
 
 		<div class="white-background resource-div">
       <div class="resource-flex-left resource-padding">
-        <p>See the links below to learn ASL:<br></br>
+        <p>See the links below to learn ASL:</p><br>
           <?php if (isset($links) && !empty($links)) {
             foreach ($links as $link) {
             ?>
@@ -36,14 +36,13 @@ $ppts = exec_sql_query($db, $sql, $params);
       </div>
 
       <div class="resource-flex-right resource-padding">
-  	    <p>Click on the links below to view our learning ASL Powerpoints and Docs:
+  	    <p>Click on the links below to view our learning ASL Powerpoints and Docs:</p>
           <?php if (isset($ppts) && !empty($ppts)) {
             foreach ($ppts as $ppt) {
             ?>
             <div class="indent"><a href="<?php echo htmlspecialchars($ppt['link']); ?>" target="_blank"><?php echo ucwords(htmlspecialchars($ppt['label'])); ?></a></div>
           <?php }
         } ?>
-  	    </p>
       </div>
 		</div>
   </section>

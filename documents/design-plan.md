@@ -1247,11 +1247,13 @@ https://docs.google.com/presentation/d/1aGvisQ-2_7qNoPQgmrPWuhemXRmfGj_0Ouy9jWUP
 Also a PDF version:
 ![](slides.pdf)
 
+
 ## Milestone 5: Updates
 
 [If you make any changes to your plan or design based on your peers' feedback, make a list of the changes here.]
 * Instead of a single admin.php page, we have multiple admin pages corresponding to certain forms instead of utilizing ajax.
-* We originally planned on doing a file upload for the client's powerpoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now.
+* We originally planned on doing a file upload for the client's powerpoints, but because they were downloaded from a google drive link anyways, we decided to use the google drive link instead, which is easier because we will not have to store the file now, and eboard can make changes to the powerpoints wihout having to re-upload them.
+
 
 ## Milestone 5: Cognitive Walkthrough
 

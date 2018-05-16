@@ -45,25 +45,25 @@ if (isset($_POST['add-feed-button'])) {
 
 	$file_1_name = ""; $file_1_ext = ""; $file_2_name = ""; $file_2_ext = "";
 
-	$file_count = 0;
+	$file_1_ready = true;
+	$file_2_ready = true;
 
 	if ($file_1['error'] == UPLOAD_ERR_OK) {
 		// no upload errors
 		$file_1_name = basename($file_1["name"]);
 		$file_1_ext = strtolower(pathinfo($file_1_name, PATHINFO_EXTENSION));
-		$file_count = $file_count + 1;
 
 	} else if ($file_1['error'] == UPLOAD_ERR_NO_FILE) {
 		// no file uploaded, skip
 
 	} else if ($file_1['error'] == UPLOAD_ERR_FORM_SIZE) {
 		// file too large
+		$file_1_ready = false;
 		record_message("[Attachment 1 is too large. Maximum size = 2MB.]");
-		$file_count = $file_count - 1;
 
 	} else {
+		$file_1_ready = false;
 		record_message("[Failed to upload attachment 1.]");
-		$file_count = $file_count - 1;
 	}
 
 	if ($file_2['error'] == UPLOAD_ERR_OK) {
@@ -77,15 +77,15 @@ if (isset($_POST['add-feed-button'])) {
 	} else if ($file_2['error'] == UPLOAD_ERR_FORM_SIZE) {
 		// file too large
 		record_message("[Attachment 2 is too large. Maximum size = 2MB.]");
-		$file_count = $file_count - 1;
+		$file_2_ready = false;
 
 	} else {
 		record_message("[Failed to upload attachment 2.]");
-		$file_count = $file_count - 1;
+		$file_2_ready = false;
 	}
 
 	// if post inputs are fine and files have been uploaded
-	if ($file_count >= 0) {
+	if ($file_1_ready && $file_2_ready) {
 		// then insert everything into database
 		$sql = "INSERT INTO feed (title, entry_date, content, url_1, url_2) VALUES (:title, :date_today, :feed_text, :url1, :url2)";
 		$params = array(
@@ -174,6 +174,11 @@ if (isset($_POST['delete-feed-button'])) {
 		$params = array(':feed_id' => $feed_id);
 		$delete_feed = exec_sql_query($db, $sql, $params);
 
+		// delete relevant tags
+		$sql = "DELETE FROM feed_to_tags WHERE feed_id = :feed_id";
+		$params = array(':feed_id' => $feed_id);
+		$delete_tag = exec_sql_query($db, $sql, $params);
+
 		// check to see if there are attachments linked to this post in feed_attachments and feed_to_feed_attachments
 		$sql = "SELECT feed_attachment_id FROM feed_to_feed_attachments WHERE feed_id = :feed_id";
 		$params = array(':feed_id' => $feed_id);
@@ -181,9 +186,20 @@ if (isset($_POST['delete-feed-button'])) {
 
 		foreach ($fetch_attachment_id as $attachment) {
 			$attachment_id = $attachment[0];
+
+			// fetch file extension
+			$sql = "SELECT file_ext FROM feed_attachments WHERE id = :id";
+			$params = array(':id' => $attachment_id);
+			$fetch_attachment_ext = exec_sql_query($db, $sql, $params)->fetchAll();
+
+			$attachment_ext = $fetch_attachment_ext[0]['file_ext'];
+
 			$sql = "DELETE FROM feed_attachments WHERE id = :id";
 			$params = array(':id' => $attachment_id);
 			$delete_from_feed_attachments = exec_sql_query($db, $sql, $params);
+
+			// remove file from uploads folder
+			unlink(GALLERY_UPLOADS_PATH . $attachment_id . '.' . $attachment_ext);
 		}
 
 		$sql = "DELETE FROM feed_to_feed_attachments WHERE feed_id = :feed_id";

@@ -542,9 +542,9 @@ a.current-page {
 }
 
 .post .file-attachment {
-	display: block;
 	color: var(--red);
 	text-decoration: none;
+	display: block;
 }
 
 .attachment-title {
