@@ -741,7 +741,7 @@ h6.date-ribbon:after {
 	margin: 10px;
 }
 
-#responsive-print {
+.responsive-print {
 	display: none;
 }
 
