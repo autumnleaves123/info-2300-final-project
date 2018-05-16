@@ -219,13 +219,13 @@ CUDAP would like to have an events page on their website. Given that CUDAP alrea
 
 [Describe here what you plan to do for your PHP Interactivity requirement.]
 
-As mentioned in milestone 1 plan, we will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language.
+As mentioned in milestone 1 plan, we will implement a slideshow using Javascript, which the user can click arrows to view several images of the club activities like sign choirs and photos of club members interacting with one another in sign language. PHP will be used in the gallery categories, which act as album markers. We will send the relevant category to the url, and use SQL and PHP to return the images in that particular category.
 
 Secondly, we will use PHP to implement a "learning" page where users can learn some basic signs of ASL, and there will be several images with different signs and when user clicks on it, the website would display information on what it means, etc. Similar interactivity element will be used for the photo gallery page, where users can click on images to see only that image on the page and its description.
 
 Thirdly, we will implement a hidden log-in system to ensure that only admins will have access to admin functionality (forms for changing content on website). There will most likely be an "admin-only" nav bar button that shows the log-in form, which only the admins will know the password to log-in and unlock admin functionality.
 
-Finally, we will also implement a tagging system on the feed for feed posts.
+Finally, we will also implement a tagging system on the feed for feed posts. Tags will be given ids, and the tag id will be sent to the url when a user clicks on a particular tag. We will then use PHP to GET the tag id and search through the database for relevant posts.
 
 
 ## Milestone 2, Part II: Sketches, Navigation & Wireframes
@@ -262,15 +262,15 @@ Finally, we will also implement a tagging system on the feed for feed posts.
 [Tip: If you use card sorting for your navigation, show us that work by including a picture!]
 
 These will be the pages we are planning on
-* Home (top-level, maybe not in nav bar)
-* About
-	* Meet the Board
-* Sign Choir - G-body info, some photos
-* Events - Google calendar, a makeshift calendar for class
-* Gallery - photos of past events
-* Learning (ASL signs page)
+* Home (top-level, maybe not in nav bar) - brief introduction to club, add listserv form, feed posts and tags for feed posts
+* About - describes the mission and goals of the club
+	* Meet the Board - pictures and descriptions of eboard members 
+* Sign Choir - G-body info
+* Events - Google calendar [client version], a makeshift calendar for class
+* Gallery - photos of past events, buttons to act as categories for sorting images
+* Learning (ASL signs page - interactive)
 	* Resources (PowerPoints and links)
-* Contact
+* Contact: information on how to contact CUDAP, add to listserv form, messaging form
 
 We plan to implement a navigation menu that will be our header. However, when the width of the browser gets below a minimum width set, we will collapse the navigation bar.
 
@@ -746,7 +746,7 @@ This will be done in a similar manner to what was shown during lecture.
 
 **M3 update - Additional PHP files**
 
-* admin-sidebar.php
+* includes/admin-sidebar.php
 * admin-board.php
 * admin-gallery.php
 * admin-resources.php
