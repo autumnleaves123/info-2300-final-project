@@ -187,6 +187,9 @@ button:focus {
    			NAV
    =============== */
 
+/* Inspiration from W3Schools
+https://www.w3schools.com/css/css_navbar.asp */
+
 nav {
 	 text-align: center;
 }
