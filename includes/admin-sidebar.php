@@ -18,6 +18,6 @@ foreach ($sidebar_pages as $page=>$page_name) {
 
 ?>
 
-<form id="logout-form" action="admin.php" method="POST">
-	<button id="logout-form-button" type="submit" name="logout-button">log out</button>
+<form class="logout-form" action="admin.php" method="POST">
+	<button class="logout-form-button" type="submit" name="logout-button">log out</button>
 </form>
