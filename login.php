@@ -24,6 +24,7 @@ $current_page_id = "login";
 					<input type="password" name="password" placeholder="Password" required/>
 					<!-- TODO: create button -->
 					<button id="login-form-button" type="submit" name="login-form-button">log in</button>
+					<p class="message"><?php print_messages(); ?></p>
 				</form>
 				<p>-- or --</p>
 				<a href="index.php" class="link">Return to website</a>

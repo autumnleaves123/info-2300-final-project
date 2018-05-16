@@ -144,7 +144,7 @@ if (isset($_POST['add-feed-button'])) {
 		record_message("[Successfully added post!]");
 
 	} else {
-		// file_count < 0
+
 		record_message("[Failed to add post.]");
 	}
 	$db->commit();

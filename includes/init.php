@@ -176,7 +176,6 @@ function gallery($images){
       $current_word = $image['word'];
     }
 
-    //echo "<a href='image.php?id=" . $image["id"] . "'><img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' ></a>";
     echo "<img alt=\"" . $image["image_path"] . "\" src='". $image["image_path"] . "' />";
     if ($image['id'] == 37) {
       echo "<div class=\"overlay-sign\">" . $image['word'] . "</div></div>";
@@ -190,15 +189,6 @@ function single_view($sign_records){
   echo "<p><strong>Word: </strong>" . htmlspecialchars($sign_records[0]["word"]) . "</p>";
   echo "<p><strong>Description: </strong>" . $sign_records[0]["description"] . "</p>";
 
-  /* IF CREDIT IS ADDED
-  echo "<p><strong>Source Credit: </strong>";
-  if (empty($photo_records[0]["credit"])) { // if no credit, assuming user made
-    echo "created by user";
-  } else {
-    echo htmlspecialchars($photo_records[0]["credit"]);
-  }
-  echo "</p>";
-  */
 }
 
 function sign_exists($id) {
