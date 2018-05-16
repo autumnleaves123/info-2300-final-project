@@ -895,6 +895,7 @@ table td {
 .word img {
    display: none;
 }
+
 .word img:first-child {
    display: block;
 }
