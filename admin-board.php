@@ -127,7 +127,7 @@ if (isset($_POST['delete'])) {
 						<input name="position" type="text" value="<?php if (isset($position)) {echo htmlentities($position, ENT_QUOTES); } ?>" pattern="[A-z\s-]{2,}" title="Position must consist of 2 or more letters." required/>
 
 						<label>Major <span class="required">(required)</span></label>
-						<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z]{2,}" title="Major must consist of 2 or more letters." required/>
+						<input name="major" type="text" value="<?php if (isset($major)) {echo htmlentities($major, ENT_QUOTES); } ?>" pattern="[A-z\s-]{2,}" title="Major must consist of 2 or more letters." required/>
 
 						<label>Class Year <span class="required">(required)</span></label>
 						<input name="classyear" type="text" value="<?php if (isset($classyear)) {echo htmlentities($classyear, ENT_QUOTES); } ?>" pattern="[1-2]{1}[0-9]{3}" title="Class year must be a valid year." required/>
