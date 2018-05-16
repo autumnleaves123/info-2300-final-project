@@ -1,5 +1,5 @@
 /* For smaller desktop screens and potentially tablets (iPads)*/
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1030px) {
 
 	.content {
 		padding: 20px 30px;
@@ -44,10 +44,6 @@
 		display: none;
 	}
 
-	#welcome h1 {
-		/* font-size: 30px; */
-	}
-
 	#feed {
 		flex-direction: column;
 	}
@@ -55,10 +51,21 @@
 	#feed-flex-right {
 		order: 1;
 		display: flex;
+		/* margin-bottom: 0; */
 	}
 
 	#feed-flex-left {
 		order: 2;
+		/* margin-top: 0; */
+	}
+
+	#feed-tags {
+		margin-left: 60px;
+		padding-right: 0;
+	}
+
+	#search-criteria {
+		margin-top: 0;
 	}
 
 

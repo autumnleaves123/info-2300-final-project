@@ -30,8 +30,7 @@ if ( isset($_GET["tag"])) {
 // listserv form
 if (isset($_POST["index-listserv-submit"])) {
 	$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-  // mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
-	mail("acw227@cornell.edu", "join", "", "From: " . $email);
+  mail("cudap-l-request@cornell.edu", "join", "", "From: " . $email);
 	record_message("[Success!]");
 	// to TAs: you can replace cudap-l-request@cornell.edu with your personal email in the mail() function to test that the form works
 
@@ -90,7 +89,7 @@ if (isset($_POST["index-listserv-submit"])) {
 					<div id="search-criteria">
 						<?php /*$unicodeChar = '\u2573';
 						json_decode('"'.$unicodeChar.'"');*/
-						echo "<p>Search results:</p><div id='tag-name'>" . $fetch_tag_name[0]['name'] . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
+						echo "<p>Search results:</p><div id='tag-name'>" . htmlspecialchars($fetch_tag_name[0]['name']) . "</div><a href='index.php'><img src='../images/xout.png'></a>"; ?>
 					</div>
 				<?php } ?>
 
@@ -109,7 +108,7 @@ if (isset($_POST["index-listserv-submit"])) {
 							?>
 
 							<ul class="tags-in-post">
-								<?php foreach ($feed_tags as $tag) { echo "<li>" .$tag['name'] ."</li>"; } ?>
+								<?php foreach ($feed_tags as $tag) { echo "<li>" . htmlspecialchars($tag['name']) ."</li>"; } ?>
 							</ul>
 
 							<p><?php echo "$post[content]";?></p>
@@ -138,7 +137,7 @@ if (isset($_POST["index-listserv-submit"])) {
 								if (sizeof($fetch_attachments)>0) {
 									echo "<h3 class='attachment-title'>Attachments:</h3>";
 									foreach($fetch_attachments as $attachment) {
-										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . $attachment['feed_attachment_id'] . "." . $attachment['file_ext'] . "'>" . $attachment['file_name'] . "</a>";
+										echo "<a class='file-attachment' target='_blank' href='uploads/feed/" . htmlspecialchars($attachment['feed_attachment_id']) . "." . htmlspecialchars($attachment['file_ext']) . "'>" . htmlspecialchars($attachment['file_name']) . "</a>";
 									}
 								}
 							?>
@@ -154,7 +153,7 @@ if (isset($_POST["index-listserv-submit"])) {
 					<h2>Tags</h2>
 					<ul>
 						<?php foreach($fetch_feed_tags as $tag) {
-							echo("<li><a href='/index.php?tag=" . $tag['id'] . "'>" . $tag['name'] ."</a></li>"); }
+							echo("<li><a href='/index.php?tag=" . htmlspecialchars($tag['id']) . "'>" . htmlspecialchars($tag['name']) ."</a></li>"); }
 						?>
 					</ul>
 				</div>
