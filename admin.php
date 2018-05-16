@@ -305,7 +305,11 @@ if (isset($_POST['delete-tag-button'])) {
 <html lang="en">
 
 <head>
-	<?php include('includes/head.php'); ?>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="styles/all.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="styles/tablet.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
 
   <title>Admin</title>
 </head>
