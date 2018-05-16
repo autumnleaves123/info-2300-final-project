@@ -51,12 +51,24 @@
 	#feed-flex-right {
 		order: 1;
 		display: flex;
-		margin-bottom: 0;
+		/* margin-bottom: 0; */
 	}
 
 	#feed-flex-left {
 		order: 2;
+		/* margin-top: 0; */
 	}
+
+	#feed-tags {
+		margin-left: 60px;
+		padding-right: 0;
+	}
+
+	#search-criteria {
+		margin-top: 0;
+	}
+
+
 
 }
 

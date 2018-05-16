@@ -102,14 +102,6 @@ a.button:hover {
   margin: 20px;
 }
 
-/* .content {
-	padding: 40px 80px;
-	background-color: var(--lightgrey);
-	width: 80%;
-	margin: 20px auto;
-	border-radius: 10px;
-} */
-
 /* Centers content on a page that does not scroll */
 .centered {
 	position: fixed;
@@ -287,7 +279,6 @@ a.current-page {
 	margin-left: 20px;
 	padding: 0;
 	text-align: left;
-	/* background-color: red; */
 }
 
 #admin-sidebar h2 {
@@ -838,32 +829,6 @@ table td {
 	font-weight: bold;
 }
 
-/* .largeContainer {
-	margin: 0 auto;
-	margin-bottom: 10px;
-} */
-
-/* .labelContainer {
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-	width: 100%;
-} */
-
-/* .inputContainer {
-	display: block;
-}
-
-.errorContainer {
-	color: red;
-	font-size: 14px;
-	display: block;
-} */
-
-/* .hiddenError {
-	display: none;
-} */
-
 #joinForm {
 	text-align: center;
 }
@@ -941,11 +906,9 @@ table td {
 	margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  /* min-height: 100%; */
 }
 
 #signs-text {
-	/* margin: 100px 0 0 0; */
 	text-align: center;
 }
 
@@ -1007,8 +970,6 @@ table td {
  object-fit: cover;
 }
 
-
-
 .container {
 	position: relative;
 }
@@ -1042,7 +1003,6 @@ table td {
 }
 
 /* Lightbox */
-
 .row:after {
   content: "";
   display: table;
